@@ -1,26 +1,44 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* === Design Tokens from UI Spec === */
+  --color-bg-canvas: #0B0C10;
+  --color-bg-surface: #14161D;
+  --color-bg-surface-alt: #1E212B;
+  --color-text-heading: #FFFFFF;
+  --color-text-body: #BAC4D1;
+  --color-text-muted: #768294;
+  --color-brand-primary: #3A86FF;
+  --color-accent-garden: #00E676;
+  --color-accent-rangers: #FF3D00;
+  --color-border-subdued: #252936;
+
+  /* Typography */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0B0C10;
+  color: #BAC4D1;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Custom utility for code/badge text */
+.code-text {
+  font-family: "Inter", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0B0C10; }
+::-webkit-scrollbar-thumb { background: #252936; border-radius: 3px; }
+

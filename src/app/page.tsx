@@ -1,65 +1,101 @@
-import Image from "next/image";
+﻿import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import PromoCard from "@/components/PromoCard";
+import GameHub from "@/components/GameHub";
+import TrendingGuides from "@/components/TrendingGuides";
+import SEOFAQ from "@/components/SEOFAQ";
+import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
+
+const gardenTableLinks = [
+  { title: "🌱 Rarity Mutation Tier List (V2.1)", href: "/garden/mutation-tier-list", meta: "Tier List" },
+  { title: "🐣 Pet Hatching & Multiplier Guide", href: "/garden/pet-tier-list", meta: "Guide" },
+  { title: "💰 Economy Crop Value List", href: "/garden/crop-values", meta: "Values" },
+  { title: "📮 Active World Event Calendar Guide", href: "/garden/codes", meta: "Events" },
+];
+
+const rangersTableLinks = [
+  { title: "⚔️ Mythic Unit Strategic Tier List", href: "/rangers/unit-tier-list", meta: "Tier List" },
+  { title: "🧬 Character Trait Modifier Table", href: "/rangers/trait-tier-list", meta: "Guide" },
+  { title: "🔮 Unit Evolution Requirements Guide", href: "/rangers/evolution-guide", meta: "Guide" },
+  { title: "💵 Infinite Mode Fast Gem Farming Guide", href: "/rangers/codes", meta: "Farming" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Header />
+
+      <main>
+        <Hero />
+
+        <SectionDivider />
+
+        <section
+          className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
+          aria-labelledby="codes-heading"
+        >
+          <h2
+            id="codes-heading"
+            className="mb-8 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+          >
+            🎁 Latest Active Promo Codes{" "}
+            <span className="text-sm font-normal text-[#768294]">(Updated Daily)</span>
+          </h2>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="space-y-4">
+              <PromoCard code="GAG_SPRING26" reward="Reward: x10 Mutation Shards (Active)" accent="garden" />
+              <PromoCard code="GARDEN_FEST" reward="Reward: x500 Coins & Lucky Clover (Active)" accent="garden" />
+            </div>
+            <div className="space-y-4">
+              <PromoCard code="RANGERS_UPD6" reward="Reward: x500 Gems & XP Boost (Active)" accent="rangers" />
+              <PromoCard code="ANIMEX_WAVE" reward="Reward: x300 Gems & Rare Trait Roll (Active)" accent="rangers" />
+            </div>
+          </div>
+        </section>
+
+        <SectionDivider />
+
+        <GameHub
+          id="garden"
+          accent="garden"
+          icon="🌱"
+          subtitle="GROW A GARDEN CENTRAL"
+          title="Grow a Garden Master Wiki Guides"
+          description="Master your farm with our vetted crop value sheets, mutation breakdowns, and pet multiplier systems."
+          tableLinks={gardenTableLinks}
+          patchDate="April 2026"
+          patchTitle="Easter Event Update"
+          patchDescription="Introduced the tier-5 Bunny Mutation, path fixes, and permanent trade catalog codes."
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <SectionDivider />
+
+        <GameHub
+          id="rangers"
+          accent="rangers"
+          icon="⚔️"
+          subtitle="ANIME RANGERS X CENTRAL"
+          title="Anime Rangers X Tier Lists & Guides"
+          description="Build the perfect team using current meta unit tier lists, evolution paths, and optimal trait rolls."
+          tableLinks={rangersTableLinks}
+          patchDate="June 2026"
+          patchTitle="Re:Rangers Title Restructure"
+          patchDescription="Complete progression overhaul balancing infinite wave drop rates and base unit pools."
+        />
+
+        <SectionDivider />
+
+        <TrendingGuides />
+
+        <SectionDivider />
+
+        <SEOFAQ />
+
+        <SectionDivider />
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }
