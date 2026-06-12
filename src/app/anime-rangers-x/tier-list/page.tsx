@@ -38,7 +38,7 @@ function ArticleJsonLd() {
     headline: data.title,
     description: data.description,
     datePublished: "2026-06-09",
-    dateModified: "2026-06-09",
+    dateModified: "2026-06-12",
     author: { "@type": "Organization", name: "BloxPulse" },
     publisher: { "@type": "Organization", name: "BloxPulse" },
     mainEntityOfPage: {
@@ -109,6 +109,7 @@ export default function TierListPage() {
         breadcrumbs={data.breadcrumbs}
         canonicalPath="/anime-rangers-x/tier-list"
         accent="rangers"
+        updatedAt={data.updatedAt}
       >
         {/* Last Updated */}
         <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">

@@ -20,7 +20,7 @@ const tierBadge: Record<string, string> = {
 
 export default function BeginnerGuidePage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/anime-rangers-x/beginner-guide" accent="rangers">
+    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/anime-rangers-x/beginner-guide" accent="rangers" updatedAt={data.updatedAt}>
 
       {/* Last Updated */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">

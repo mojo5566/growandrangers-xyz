@@ -28,12 +28,21 @@ export const metadata: Metadata = {
       "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
     url: BASE_URL,
     locale: "en_US",
+    images: [
+      {
+        url: `${BASE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides",
     description:
       "Updated working Roblox codes, tier lists, and gameplay guides.",
+    images: [`${BASE_URL}/og-image.png`],
   },
   robots: {
     index: true,

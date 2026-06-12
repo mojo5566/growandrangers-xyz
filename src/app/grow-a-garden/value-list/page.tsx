@@ -46,7 +46,7 @@ function ArticleJsonLd() {
     headline: data.title,
     description: data.description,
     datePublished: "2026-06-09",
-    dateModified: "2026-06-09",
+    dateModified: "2026-06-12",
     author: {
       "@type": "Organization",
       name: "BloxPulse",
@@ -79,6 +79,7 @@ export default function ValueListPage() {
         breadcrumbs={data.breadcrumbs}
         canonicalPath="/grow-a-garden/value-list"
         accent="garden"
+        updatedAt={data.updatedAt}
       >
         {/* Last Updated */}
         <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">

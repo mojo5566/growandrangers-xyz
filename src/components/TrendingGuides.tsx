@@ -20,7 +20,7 @@ const trendingGuides: GuideCard[] = [
   },
   {
     title: "Chrono Slayer Full Kit Breakdown & Best Trait Pairings",
-    href: "/rangers/unit-tier-list",
+    href: "/anime-rangers-x/tier-list",
     category: "Anime Rangers X",
     accent: "rangers",
     description: "Deep dive into the Mythic unit's abilities, optimal trait combos, and team compositions for Infinite Mode past wave 100.",
@@ -36,7 +36,7 @@ const trendingGuides: GuideCard[] = [
   },
   {
     title: "Re:Rangers Update — Every Unit Buff, Nerf & Meta Shift",
-    href: "/rangers/evolution-guide",
+    href: "/anime-rangers-x/unit-tier-list",
     category: "Anime Rangers X",
     accent: "rangers",
     description: "Complete patch note analysis of the June title restructure: drop rate changes, stat rebalances, and what it means for your roster.",
@@ -52,7 +52,7 @@ const trendingGuides: GuideCard[] = [
   },
   {
     title: "Infinite Mode Wave 100+ Guide — Team Comp & Gem Farming",
-    href: "/rangers/codes",
+    href: "/anime-rangers-x/team-guide",
     category: "Anime Rangers X",
     accent: "rangers",
     description: "Step-by-step strategy for pushing past wave 100 in Infinite Mode. Includes optimal team builds, trait setups, and gem-per-hour calculations.",

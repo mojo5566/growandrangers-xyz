@@ -12,6 +12,7 @@ interface ContentLayoutProps {
   breadcrumbs: BreadcrumbItem[];
   accent: "garden" | "rangers";
   canonicalPath: string;
+  updatedAt?: string;
   children: ReactNode;
 }
 
@@ -35,20 +36,65 @@ function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
   );
 }
 
+function ArticleJsonLd({
+  title,
+  description,
+  canonicalPath,
+  updatedAt,
+}: {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  updatedAt?: string;
+}) {
+  const dateModified = updatedAt
+    ? new Date(updatedAt).toISOString().split("T")[0]
+    : "2026-06-12";
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: "2026-06-01",
+    dateModified,
+    author: { "@type": "Organization", name: "BloxPulse" },
+    publisher: { "@type": "Organization", name: "BloxPulse" },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://growandrangers.xyz${canonicalPath}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export default function ContentLayout({
   title,
   description,
   breadcrumbs,
   accent,
   canonicalPath,
+  updatedAt,
   children,
 }: ContentLayoutProps) {
   const accentColor = accent === "garden" ? "#00E676" : "#FF3D00";
   const accentBg = accent === "garden" ? "rgba(0,230,118,0.08)" : "rgba(255,61,0,0.08)";
+  const displayDate = updatedAt || "June 2026";
 
   return (
     <article className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6 lg:py-12">
       <BreadcrumbSchema items={breadcrumbs} />
+      <ArticleJsonLd
+        title={title}
+        description={description}
+        canonicalPath={canonicalPath}
+        updatedAt={updatedAt}
+      />
 
       <link rel="canonical" href={`https://growandrangers.xyz${canonicalPath}`} />
 
@@ -92,7 +138,7 @@ export default function ContentLayout({
       {/* Updated date */}
       <footer className="mt-12 border-t border-[#252936] pt-6">
         <p className="text-xs text-[#768294]">
-          Last updated: June 2026 • Content verified by the BloxPulse editorial team
+          Last updated: {displayDate} • Content verified by the BloxPulse editorial team
         </p>
       </footer>
     </article>

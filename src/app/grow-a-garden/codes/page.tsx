@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function GrowAGardenCodesPage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/codes" accent="garden">
+    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/codes" accent="garden" updatedAt={data.updatedAt}>
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">
         <div className="flex items-center gap-2">
           <span className="text-sm">🕒</span>
