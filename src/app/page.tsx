@@ -13,17 +13,21 @@ export const metadata: Metadata = {
 };
 
 const gardenTableLinks = [
-  { title: "🌱 Rarity Mutation Tier List (V2.1)", href: "/garden/mutation-tier-list", meta: "Tier List" },
-  { title: "🐣 Pet Hatching & Multiplier Guide", href: "/garden/pet-tier-list", meta: "Guide" },
-  { title: "💰 Economy Crop Value List", href: "/garden/crop-values", meta: "Values" },
-  { title: "📮 Active World Event Calendar Guide", href: "/garden/codes", meta: "Events" },
+  { title: "🌱 Rarity Mutation Tier List (V2.1)", href: "/grow-a-garden/mutation-tier-list", meta: "Tier List" },
+  { title: "🐣 Pet Hatching & Multiplier Guide", href: "/grow-a-garden/pet-tier-list", meta: "Guide" },
+  { title: "💰 Economy Crop Value List", href: "/grow-a-garden/value-list", meta: "Values" },
+  { title: "📮 Active Codes & Event Calendar", href: "/grow-a-garden/codes", meta: "Events" },
+  { title: "🌾 Beginner Farming Guide", href: "/grow-a-garden/beginner-guide", meta: "Guide" },
+  { title: "💵 Money Making Guide", href: "/grow-a-garden/money-making-guide", meta: "Farming" },
 ];
 
 const rangersTableLinks = [
-  { title: "⚔️ Mythic Unit Strategic Tier List", href: "/rangers/unit-tier-list", meta: "Tier List" },
-  { title: "🧬 Character Trait Modifier Table", href: "/rangers/trait-tier-list", meta: "Guide" },
-  { title: "🔮 Unit Evolution Requirements Guide", href: "/rangers/evolution-guide", meta: "Guide" },
-  { title: "💵 Infinite Mode Fast Gem Farming Guide", href: "/rangers/codes", meta: "Farming" },
+  { title: "⚔️ Unit Tier List (All Units Ranked)", href: "/anime-rangers-x/tier-list", meta: "Tier List" },
+  { title: "🧬 Character Trait Modifier Table", href: "/anime-rangers-x/trait-tier-list", meta: "Guide" },
+  { title: "🔮 Unit Evolution Requirements Guide", href: "/anime-rangers-x/evolution-guide", meta: "Guide" },
+  { title: "💎 Active Codes & Gem Farming", href: "/anime-rangers-x/codes", meta: "Farming" },
+  { title: "🆕 Beginner Progression Guide", href: "/anime-rangers-x/beginner-guide", meta: "Guide" },
+  { title: "👥 Best Team Compositions", href: "/anime-rangers-x/team-guide", meta: "Team" },
 ];
 
 export default function Home() {
@@ -49,12 +53,12 @@ export default function Home() {
           </h2>
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="space-y-4">
-              <PromoCard code="GAG_SPRING26" reward="Reward: x10 Mutation Shards (Active)" accent="garden" />
-              <PromoCard code="GARDEN_FEST" reward="Reward: x500 Coins & Lucky Clover (Active)" accent="garden" />
+              <PromoCard code="HONEYBEE2025" reward="Rare Pet Egg + Bee Hat (Active)" accent="garden" />
+              <PromoCard code="GOLDENCARROT" reward="Golden Fertilizer + 200 Coins (Active)" accent="garden" />
             </div>
             <div className="space-y-4">
-              <PromoCard code="RANGERS_UPD6" reward="Reward: x500 Gems & XP Boost (Active)" accent="rangers" />
-              <PromoCard code="ANIMEX_WAVE" reward="Reward: x300 Gems & Rare Trait Roll (Active)" accent="rangers" />
+              <PromoCard code="ECLIPSE" reward="100 Trait Rerolls + 75 Egg of Sacrifice (Active)" accent="rangers" />
+              <PromoCard code="SACRIFICE" reward="20 Trait Rerolls + 100K Gold (Active)" accent="rangers" />
             </div>
           </div>
         </section>
