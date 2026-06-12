@@ -47,7 +47,7 @@ export default function GardenCodesPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Codes", href: "/garden/codes" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/codes" accent="garden"
     >
       {/* Code Table */}
       <section aria-labelledby="active-codes">

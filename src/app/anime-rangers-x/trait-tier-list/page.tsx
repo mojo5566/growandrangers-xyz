@@ -82,7 +82,7 @@ export default function TraitTierListPage() {
       title="Anime Rangers X Trait Tier List — Every Trait Ranked (June 2026)"
       description="All traits ranked from Mythic to Common with detailed strengths, weaknesses, optimal unit pairings, and reroll strategy. Includes the Re:Rangers trait system rework changes."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Anime Rangers X Trait Tier List", href: "/anime-rangers-x/trait-tier-list" }]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/trait-tier-list" accent="rangers"
     >
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">Trait Ranking System</h2>

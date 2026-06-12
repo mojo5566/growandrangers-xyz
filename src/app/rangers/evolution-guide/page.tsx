@@ -40,7 +40,7 @@ export default function EvolutionGuidePage() {
         { label: "Home", href: "/" },
         { label: "Anime Rangers X Evolution Guide", href: "/rangers/evolution-guide" },
       ]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/evolution-guide" accent="rangers"
     >
       {/* Stage Overview */}
       <section aria-labelledby="evo-stages">

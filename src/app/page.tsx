@@ -1,4 +1,5 @@
-﻿import Header from "@/components/Header";
+﻿import type { Metadata } from "next";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PromoCard from "@/components/PromoCard";
 import GameHub from "@/components/GameHub";
@@ -6,6 +7,10 @@ import TrendingGuides from "@/components/TrendingGuides";
 import SEOFAQ from "@/components/SEOFAQ";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const gardenTableLinks = [
   { title: "🌱 Rarity Mutation Tier List (V2.1)", href: "/garden/mutation-tier-list", meta: "Tier List" },

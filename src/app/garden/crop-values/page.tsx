@@ -54,7 +54,7 @@ export default function CropValuesPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Crop Value List", href: "/garden/crop-values" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/crop-value-list" accent="garden"
     >
       {/* Crop Table */}
       <section aria-labelledby="crop-table">

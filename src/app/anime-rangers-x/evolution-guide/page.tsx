@@ -79,7 +79,7 @@ export default function EvolutionGuidePage() {
       title="Anime Rangers X Evolution Guide — Full Requirements & Strategy (June 2026)"
       description="Step-by-step evolution guide covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, priority order, and common mistakes to avoid."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Anime Rangers X Evolution Guide", href: "/anime-rangers-x/evolution-guide" }]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/evolution-guide" accent="rangers"
     >
       {/* Evolution Overview */}
       <section aria-labelledby="overview">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AnimeRangersXCodesPage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} accent="rangers">
+    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/anime-rangers-x/codes" accent="rangers">
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">
         <div className="flex items-center gap-2"><span className="text-sm">🕒</span><p className="text-sm text-[#BAC4D1]"><strong className="text-white">Last Updated:</strong> {data.updatedAt} — All {data.activeCodes.length} active codes verified and working.</p></div>
       </section>

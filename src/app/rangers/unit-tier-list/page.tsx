@@ -47,7 +47,7 @@ export default function UnitTierListPage() {
         { label: "Home", href: "/" },
         { label: "Anime Rangers X Unit Tier List", href: "/rangers/unit-tier-list" },
       ]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/unit-tier-list" accent="rangers"
     >
       {/* Tier Explanation */}
       <section aria-labelledby="tier-guide">

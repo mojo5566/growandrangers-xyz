@@ -47,7 +47,7 @@ export default function TraitTierListPage() {
         { label: "Home", href: "/" },
         { label: "Anime Rangers X Trait Tier List", href: "/rangers/trait-tier-list" },
       ]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/trait-tier-list" accent="rangers"
     >
       <section aria-labelledby="trait-table">
         <h2 id="trait-table" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">

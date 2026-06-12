@@ -100,7 +100,7 @@ export default function CropValueListPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Crop Value List", href: "/grow-a-garden/crop-value-list" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/crop-value-list" accent="garden"
     >
       {/* Tier Explanation */}
       <section aria-labelledby="tiers-heading">

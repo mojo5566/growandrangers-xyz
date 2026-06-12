@@ -94,7 +94,7 @@ export default function PetTierListPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Pet Tier List", href: "/grow-a-garden/pet-tier-list" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/pet-tier-list" accent="garden"
     >
       {/* Tier Explanation */}
       <section aria-labelledby="tiers-heading">

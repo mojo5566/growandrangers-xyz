@@ -11,6 +11,7 @@ interface ContentLayoutProps {
   description: string;
   breadcrumbs: BreadcrumbItem[];
   accent: "garden" | "rangers";
+  canonicalPath: string;
   children: ReactNode;
 }
 
@@ -22,7 +23,7 @@ function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      item: `https://bloxpulse.com${item.href}`,
+      item: `https://growandrangers.xyz${item.href}`,
     })),
   };
 
@@ -39,6 +40,7 @@ export default function ContentLayout({
   description,
   breadcrumbs,
   accent,
+  canonicalPath,
   children,
 }: ContentLayoutProps) {
   const accentColor = accent === "garden" ? "#00E676" : "#FF3D00";
@@ -47,6 +49,8 @@ export default function ContentLayout({
   return (
     <article className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6 lg:py-12">
       <BreadcrumbSchema items={breadcrumbs} />
+
+      <link rel="canonical" href={`https://growandrangers.xyz${canonicalPath}`} />
 
       {/* Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="mb-6">

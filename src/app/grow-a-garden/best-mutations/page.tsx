@@ -20,7 +20,7 @@ const tierBadge: Record<string, string> = {
 
 export default function BestMutationsPage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} accent="garden">
+    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/best-mutations" accent="garden">
 
       {/* Last Updated */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">

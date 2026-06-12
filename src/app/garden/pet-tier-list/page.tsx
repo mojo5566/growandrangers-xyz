@@ -46,7 +46,7 @@ export default function PetTierListPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Pet Tier List", href: "/garden/pet-tier-list" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/pet-tier-list" accent="garden"
     >
       <section aria-labelledby="pet-rankings">
         <h2 id="pet-rankings" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">

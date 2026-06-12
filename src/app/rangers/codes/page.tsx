@@ -43,7 +43,7 @@ export default function RangersCodesPage() {
         { label: "Home", href: "/" },
         { label: "Anime Rangers X Codes", href: "/rangers/codes" },
       ]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/codes" accent="rangers"
     >
       <section aria-labelledby="active-codes">
         <h2 id="active-codes" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">

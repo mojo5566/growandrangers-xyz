@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
 
-const BASE_URL = "https://bloxpulse.com";
+const BASE_URL = "https://growandrangers.xyz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -20,9 +20,6 @@ export const metadata: Metadata = {
     "mutation tier list",
     "unit tier list",
   ],
-  alternates: {
-    canonical: BASE_URL,
-  },
   openGraph: {
     type: "website",
     siteName: "BloxPulse",

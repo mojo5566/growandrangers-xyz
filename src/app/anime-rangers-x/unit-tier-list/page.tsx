@@ -97,7 +97,7 @@ export default function UnitTierListPage() {
       title="Anime Rangers X Unit Tier List — All Units Ranked (June 2026)"
       description="Every unit ranked from S-Tier to C-Tier with detailed strengths, weaknesses, best use cases, optimal trait pairings, and recommended team compositions."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Anime Rangers X Unit Tier List", href: "/anime-rangers-x/unit-tier-list" }]}
-      accent="rangers"
+      canonicalPath="/anime-rangers-x/unit-tier-list" accent="rangers"
     >
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">Tier Ranking System</h2>

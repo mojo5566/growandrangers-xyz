@@ -62,6 +62,8 @@ export interface TierListPageData extends GuidePageData {
   strategyTips?: string[];
   teamComps?: { name: string; units: string; desc: string }[];
   pairingTable?: { trait: string; unit: string; why: string }[];
+  beginnerPicks?: { name: string; why: string; replacement: string }[];
+  progressionAdvice?: { stage: string; targetUnits: string; goal: string }[];
 }
 
 export interface CropValueEntry {
@@ -95,4 +97,53 @@ export interface EvolutionPageData extends GuidePageData {
   bestUnitsSteps: { step: string; title: string; desc: string }[];
   priorityList: { tier: string; unit: string; reason: string }[];
   mistakes: { title: string; desc: string }[];
+}
+
+export interface TierCropDetail {
+  name: string;
+  coins: number;
+  growthTime: string;
+  season: string;
+  coinsPerMinute: number;
+  description: string;
+  recommendedUse: string;
+}
+
+export interface StageCrop {
+  name: string;
+  why: string;
+  priority: number;
+}
+
+export interface ProfitComparisonRow {
+  name: string;
+  baseCoins: number;
+  growthTime: string;
+  coinsPerMinute: number;
+  coinsPerHour: number;
+  withMutation4x: number;
+  withMutationAndPet20x: number;
+  season: string;
+  tier: string;
+}
+
+export interface FarmingTip {
+  title: string;
+  description: string;
+}
+
+export interface ValueListPageData extends GuidePageData {
+  introduction: string;
+  valueListUses: string[];
+  tierCrops: {
+    S: TierCropDetail[];
+    A: TierCropDetail[];
+    B: TierCropDetail[];
+    C: TierCropDetail[];
+  };
+  beginnerCrops: StageCrop[];
+  midGameCrops: StageCrop[];
+  endgameCrops: StageCrop[];
+  profitComparison: ProfitComparisonRow[];
+  farmingTips: FarmingTip[];
 }

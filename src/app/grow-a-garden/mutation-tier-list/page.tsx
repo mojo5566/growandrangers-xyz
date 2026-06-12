@@ -144,7 +144,7 @@ export default function MutationTierListPage() {
         { label: "Home", href: "/" },
         { label: "Grow a Garden Mutation Tier List", href: "/grow-a-garden/mutation-tier-list" },
       ]}
-      accent="garden"
+      canonicalPath="/grow-a-garden/mutation-tier-list" accent="garden"
     >
       {/* Tier Explanation */}
       <section aria-labelledby="tiers-heading">

@@ -47,19 +47,15 @@ export default function ContentFAQ({ faqs }: ContentFAQProps) {
         📖 Frequently Asked Questions
       </h2>
 
-      <div
-        className="rounded-xl border border-[#252936] divide-y divide-[#252936] overflow-hidden"
-        itemScope
-        itemType="https://schema.org/FAQPage"
-      >
+      <div className="rounded-xl border border-[#252936] divide-y divide-[#252936] overflow-hidden">
         {faqs.map((faq, i) => (
-          <div key={i} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+          <div key={i}>
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               className="flex w-full items-center justify-between px-4 py-3 text-left transition hover:bg-[#1E212B]"
               aria-expanded={openIndex === i}
             >
-              <span className="text-sm font-semibold text-[#BAC4D1] pr-4" itemProp="name">
+              <span className="text-sm font-semibold text-[#BAC4D1] pr-4">
                 {faq.question}
               </span>
               <span
@@ -70,8 +66,8 @@ export default function ContentFAQ({ faqs }: ContentFAQProps) {
               </span>
             </button>
             {openIndex === i && (
-              <div className="px-4 pb-3" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                <p className="text-sm leading-relaxed text-[#768294]" itemProp="text">
+              <div className="px-4 pb-3">
+                <p className="text-sm leading-relaxed text-[#768294]">
                   {faq.answer}
                 </p>
               </div>
