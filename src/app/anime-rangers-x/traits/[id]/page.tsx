@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!trait) return { title: "Trait Not Found | BloxPulse" };
 
   return {
-    title: `${trait.name} — Anime Rangers X Trait Guide | BloxPulse`,
+    title: `${trait.name} — Anime Rangers X Trait Guide (June 2026) | BloxPulse`,
     description: `${trait.description}. ${trait.effect} View ${trait.name}'s full effect, strengths, weaknesses, and best unit pairings in the Anime Rangers X trait database.`,
     keywords: [
       `${trait.name} Anime Rangers X`,

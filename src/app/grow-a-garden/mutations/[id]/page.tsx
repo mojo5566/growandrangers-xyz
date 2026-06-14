@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
+import RelatedContent from "@/components/RelatedContent";
 import { mutations, getMutationById } from "@/data/garden/database/mutations";
 
 interface PageProps {
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!mutation) return { title: "Mutation Not Found | BloxPulse" };
 
   return {
-    title: `${mutation.name} — Grow a Garden Mutation Guide | BloxPulse`,
+    title: `${mutation.name} — Grow a Garden Mutation Guide (June 2026) | BloxPulse`,
     description: mutation.description,
     keywords: [
       mutation.name,
@@ -207,25 +208,11 @@ export default async function MutationDetailPage({ params }: PageProps) {
       )}
 
       {/* Related Guides */}
-      <section aria-labelledby="related-heading">
-        <h2 id="related-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">
-          🔗 Related Guides
-        </h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {relatedGuides.map((g) => (
-            <Link
-              key={g.href}
-              href={g.href}
-              className="rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676] group"
-            >
-              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">
-                {g.label} →
-              </span>
-              <p className="mt-1 text-xs text-[#768294]">{g.description}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <RelatedContent
+        category="mutations"
+        game="garden"
+        currentPath={`/grow-a-garden/mutations/${mutation.id}`}
+      />
 
       <ContentFAQ faqs={faqs} />
     </ContentLayout>

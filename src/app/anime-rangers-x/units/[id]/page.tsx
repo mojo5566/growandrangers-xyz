@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!unit) return { title: "Unit Not Found | BloxPulse" };
 
   return {
-    title: `${unit.name} — Anime Rangers X Unit Guide | BloxPulse`,
+    title: `${unit.name} — Anime Rangers X Unit Guide (June 2026) | BloxPulse`,
     description: `${unit.description} View ${unit.name}'s stats, abilities, best traits, and evolution cost in the Anime Rangers X unit database.`,
     keywords: [
       `${unit.name} Anime Rangers X`,
