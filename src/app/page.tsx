@@ -1,34 +1,153 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PromoCard from "@/components/PromoCard";
-import GameHub from "@/components/GameHub";
 import TrendingGuides from "@/components/TrendingGuides";
 import SEOFAQ from "@/components/SEOFAQ";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "BloxPulse",
+    title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides (June 2026)",
+    description:
+      "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+    url: "https://growandrangers.xyz",
+    locale: "en_US",
+  },
 };
 
-const gardenTableLinks = [
-  { title: "🌱 Rarity Mutation Tier List (V2.1)", href: "/grow-a-garden/mutation-tier-list", meta: "Tier List" },
-  { title: "🐣 Pet Hatching & Multiplier Guide", href: "/grow-a-garden/pet-tier-list", meta: "Guide" },
-  { title: "💰 Economy Crop Value List", href: "/grow-a-garden/value-list", meta: "Values" },
-  { title: "📮 Active Codes & Event Calendar", href: "/grow-a-garden/codes", meta: "Events" },
-  { title: "🌾 Beginner Farming Guide", href: "/grow-a-garden/beginner-guide", meta: "Guide" },
-  { title: "💵 Money Making Guide", href: "/grow-a-garden/money-making-guide", meta: "Farming" },
+const databaseCards = [
+  {
+    icon: "🌾",
+    title: "Crops Database",
+    count: "11 crops",
+    description: "Complete crop stats — coins, growth times, seasons, and tier rankings.",
+    href: "/grow-a-garden/crops",
+    accent: "garden" as const,
+  },
+  {
+    icon: "🧬",
+    title: "Mutations Database",
+    count: "14 mutations",
+    description: "Every mutation with multipliers, roll rates, passives, and best use cases.",
+    href: "/grow-a-garden/mutations",
+    accent: "garden" as const,
+  },
+  {
+    icon: "🐾",
+    title: "Pets Database",
+    count: "12 pets",
+    description: "All pets ranked — multipliers, abilities, egg sources, and seasonal bonuses.",
+    href: "/grow-a-garden/pets",
+    accent: "garden" as const,
+  },
+  {
+    icon: "⚔️",
+    title: "Units Database",
+    count: "20 units",
+    description: "Full unit stats — ATK, HP, element, role, ultimates, and evolution costs.",
+    href: "/anime-rangers-x/units",
+    accent: "rangers" as const,
+  },
+  {
+    icon: "💎",
+    title: "Traits Database",
+    count: "25 traits",
+    description: "Every trait with effects, roll rates, best units, and tier rankings.",
+    href: "/anime-rangers-x/traits",
+    accent: "rangers" as const,
+  },
 ];
 
-const rangersTableLinks = [
-  { title: "⚔️ Unit Tier List (All Units Ranked)", href: "/anime-rangers-x/tier-list", meta: "Tier List" },
-  { title: "🧬 Character Trait Modifier Table", href: "/anime-rangers-x/trait-tier-list", meta: "Guide" },
-  { title: "🔮 Unit Evolution Requirements Guide", href: "/anime-rangers-x/evolution-guide", meta: "Guide" },
-  { title: "💎 Active Codes & Gem Farming", href: "/anime-rangers-x/codes", meta: "Farming" },
-  { title: "🆕 Beginner Progression Guide", href: "/anime-rangers-x/beginner-guide", meta: "Guide" },
-  { title: "👥 Best Team Compositions", href: "/anime-rangers-x/team-guide", meta: "Team" },
+const popularGuides = [
+  {
+    title: "Mutation Tier List",
+    description: "Every mutation ranked S to C with detailed analysis",
+    href: "/grow-a-garden/mutation-tier-list",
+    accent: "garden" as const,
+  },
+  {
+    title: "Pet Tier List",
+    description: "All pets ranked by hatching value and farm impact",
+    href: "/grow-a-garden/pet-tier-list",
+    accent: "garden" as const,
+  },
+  {
+    title: "Crop Value List",
+    description: "Complete profit rankings with mutation stacking",
+    href: "/grow-a-garden/crop-value-list",
+    accent: "garden" as const,
+  },
+  {
+    title: "Money Making Guide",
+    description: "Maximize coins per hour with proven strategies",
+    href: "/grow-a-garden/money-making-guide",
+    accent: "garden" as const,
+  },
+  {
+    title: "Best Crops Guide",
+    description: "Top crops ranked by CPM and seasonal value",
+    href: "/grow-a-garden/best-crops",
+    accent: "garden" as const,
+  },
+  {
+    title: "Beginner Farming",
+    description: "Step-by-step walkthrough for new farmers",
+    href: "/grow-a-garden/beginner-farming",
+    accent: "garden" as const,
+  },
+  {
+    title: "Unit Tier List",
+    description: "Every unit ranked by power and utility",
+    href: "/anime-rangers-x/unit-tier-list",
+    accent: "rangers" as const,
+  },
+  {
+    title: "Trait Tier List",
+    description: "All traits ranked by modifier strength",
+    href: "/anime-rangers-x/trait-tier-list",
+    accent: "rangers" as const,
+  },
+  {
+    title: "Evolution Guide",
+    description: "Complete evolution paths and requirements",
+    href: "/anime-rangers-x/evolution-guide",
+    accent: "rangers" as const,
+  },
+  {
+    title: "Team Guide",
+    description: "Optimal team compositions for every mode",
+    href: "/anime-rangers-x/team-guide",
+    accent: "rangers" as const,
+  },
+  {
+    title: "Beginner Guide",
+    description: "Progression tips and early goals for new players",
+    href: "/anime-rangers-x/beginner-guide",
+    accent: "rangers" as const,
+  },
+  {
+    title: "Best Units",
+    description: "Top-performing units in the current meta",
+    href: "/anime-rangers-x/best-units",
+    accent: "rangers" as const,
+  },
 ];
+
+const featuredContent = {
+  accent: "garden" as const,
+  badge: "⭐ Editor's Pick",
+  title: "Golden Wheat vs Crystal Berry: The Definitive Profit Breakdown",
+  description:
+    "We ran the numbers across 100 harvests with every mutation and pet combination. The results surprised even us — Golden Wheat isn't always the best choice. Read the full breakdown to optimize your farm for your specific playstyle and mutation inventory.",
+  href: "/grow-a-garden/best-crops",
+  date: "June 14, 2026",
+};
 
 export default function Home() {
   return (
@@ -40,58 +159,201 @@ export default function Home() {
 
         <SectionDivider />
 
+        {/* ===== SECTION 1: Database Entry Points ===== */}
+        <section
+          className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
+          aria-labelledby="db-heading"
+        >
+          <h2
+            id="db-heading"
+            className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+          >
+            📊 Explore the Databases
+          </h2>
+          <p className="mb-8 text-sm text-[#768294]">
+            Browse every crop, mutation, pet, unit, and trait with detailed stats and rankings.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {databaseCards.map((card) => {
+              const accentColor = card.accent === "garden" ? "#00E676" : "#FF3D00";
+              const accentBg =
+                card.accent === "garden"
+                  ? "rgba(0,230,118,0.08)"
+                  : "rgba(255,61,0,0.08)";
+              return (
+                <Link
+                  key={card.href}
+                  href={card.href}
+                  className="group flex flex-col rounded-xl border border-[#252936] bg-[#14161D] p-5 transition hover:border-[#3A86FF]"
+                >
+                  <span className="text-2xl mb-2">{card.icon}</span>
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#3A86FF] transition">
+                      {card.title}
+                    </span>
+                    <span
+                      className="code-text rounded px-1.5 py-0.5 text-xs"
+                      style={{ color: accentColor, backgroundColor: accentBg }}
+                    >
+                      {card.count}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#768294] leading-relaxed flex-1">
+                    {card.description}
+                  </p>
+                  <span
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-semibold transition"
+                    style={{ color: accentColor }}
+                  >
+                    Browse →
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        <SectionDivider />
+
+        {/* ===== SECTION 2: Latest Codes ===== */}
         <section
           className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
           aria-labelledby="codes-heading"
         >
           <h2
             id="codes-heading"
-            className="mb-8 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+            className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
           >
             🎁 Latest Active Promo Codes{" "}
-            <span className="text-sm font-normal text-[#768294]">(Updated Daily)</span>
+            <span className="text-sm font-normal text-[#768294]">(Updated June 2026)</span>
           </h2>
+          <p className="mb-8 text-sm text-[#768294]">
+            One-click copy — paste these codes in-game for free rewards.
+          </p>
+
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="space-y-4">
-              <PromoCard code="HONEYBEE2025" reward="Rare Pet Egg + Bee Hat (Active)" accent="garden" />
-              <PromoCard code="GOLDENCARROT" reward="Golden Fertilizer + 200 Coins (Active)" accent="garden" />
+              <PromoCard code="HONEYBEE2025" reward="Rare Pet Egg + Bee Hat" accent="garden" />
+              <PromoCard code="GOLDENCARROT" reward="Golden Fertilizer + 200 Coins" accent="garden" />
+              <PromoCard code="GARDEN2026" reward="2 Mutation Shards + Basic Egg" accent="garden" />
+              <PromoCard code="SPRINGGROW" reward="Lucky Carrot Seeds + 100 Coins" accent="garden" />
             </div>
             <div className="space-y-4">
-              <PromoCard code="ECLIPSE" reward="100 Trait Rerolls + 75 Egg of Sacrifice (Active)" accent="rangers" />
-              <PromoCard code="SACRIFICE" reward="20 Trait Rerolls + 100K Gold (Active)" accent="rangers" />
+              <PromoCard code="ECLIPSE" reward="100 Trait Rerolls + 75 Egg of Sacrifice" accent="rangers" />
+              <PromoCard code="SACRIFICE" reward="20 Trait Rerolls + 100K Gold" accent="rangers" />
+              <PromoCard code="RERANGERS2026" reward="50 Evolution Stones + 10K Gems" accent="rangers" />
+              <PromoCard code="SUMMONBOOST" reward="Mythic Summon Ticket + 25K Gems" accent="rangers" />
             </div>
+          </div>
+
+          <div className="mt-6 flex justify-center gap-4">
+            <Link
+              href="/grow-a-garden/codes"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00E676] hover:underline"
+            >
+              View All Garden Codes →
+            </Link>
+            <Link
+              href="/anime-rangers-x/codes"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF3D00] hover:underline"
+            >
+              View All Rangers Codes →
+            </Link>
           </div>
         </section>
 
         <SectionDivider />
 
-        <GameHub
-          id="garden"
-          accent="garden"
-          icon="🌱"
-          subtitle="GROW A GARDEN CENTRAL"
-          title="Grow a Garden Master Wiki Guides"
-          description="Master your farm with our vetted crop value sheets, mutation breakdowns, and pet multiplier systems."
-          tableLinks={gardenTableLinks}
-          patchDate="April 2026"
-          patchTitle="Easter Event Update"
-          patchDescription="Introduced the tier-5 Bunny Mutation, path fixes, and permanent trade catalog codes."
-        />
+        {/* ===== SECTION 3: Popular Guides ===== */}
+        <section
+          className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
+          aria-labelledby="guides-heading"
+        >
+          <h2
+            id="guides-heading"
+            className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+          >
+            🔥 Popular Guides
+          </h2>
+          <p className="mb-8 text-sm text-[#768294]">
+            The most-visited tier lists, farming guides, and strategy breakdowns on BloxPulse.
+          </p>
+
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {popularGuides.map((guide) => {
+              const accentColor = guide.accent === "garden" ? "#00E676" : "#FF3D00";
+              const accentBg =
+                guide.accent === "garden"
+                  ? "rgba(0,230,118,0.08)"
+                  : "rgba(255,61,0,0.08)";
+              return (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#3A86FF]"
+                >
+                  <span
+                    className="code-text inline-block rounded px-1.5 py-0.5 text-xs mb-2"
+                    style={{ color: accentColor, backgroundColor: accentBg }}
+                  >
+                    {guide.accent === "garden" ? "🌱 Garden" : "⚔️ Rangers"}
+                  </span>
+                  <span className="block text-sm font-semibold text-[#BAC4D1] group-hover:text-[#3A86FF] transition">
+                    {guide.title} →
+                  </span>
+                  <p className="mt-1 text-xs text-[#768294]">{guide.description}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
 
         <SectionDivider />
 
-        <GameHub
-          id="rangers"
-          accent="rangers"
-          icon="⚔️"
-          subtitle="ANIME RANGERS X CENTRAL"
-          title="Anime Rangers X Tier Lists & Guides"
-          description="Build the perfect team using current meta unit tier lists, evolution paths, and optimal trait rolls."
-          tableLinks={rangersTableLinks}
-          patchDate="June 2026"
-          patchTitle="Re:Rangers Title Restructure"
-          patchDescription="Complete progression overhaul balancing infinite wave drop rates and base unit pools."
-        />
+        {/* ===== SECTION : Featured Content ===== */}
+        <section
+          className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
+          aria-labelledby="featured-heading"
+        >
+          <h2
+            id="featured-heading"
+            className="mb-8 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+          >
+            🌟 Featured Content
+          </h2>
+
+          <Link
+            href={featuredContent.href}
+            className="group block rounded-xl border border-[#00E676]/30 bg-[#14161D] p-6 lg:p-8 transition hover:border-[#00E676]"
+          >
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+              <div className="flex-1">
+                <span
+                  className="code-text inline-block rounded-md px-2.5 py-1 text-xs mb-3"
+                  style={{ color: "#FFD700", backgroundColor: "rgba(255,215,0,0.12)" }}
+                >
+                  {featuredContent.badge}
+                </span>
+                <h3 className="font-heading text-[22px] font-semibold text-white lg:text-[28px] group-hover:text-[#00E676] transition">
+                  {featuredContent.title}
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm text-[#768294] leading-relaxed">
+                  {featuredContent.description}
+                </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <span
+                    className="inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-bold text-[#0B0C10] transition hover:brightness-110"
+                    style={{ backgroundColor: "#00E676" }}
+                  >
+                    Read Full Guide →
+                  </span>
+                  <span className="text-xs text-[#768294]">{featuredContent.date}</span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </section>
 
         <SectionDivider />
 

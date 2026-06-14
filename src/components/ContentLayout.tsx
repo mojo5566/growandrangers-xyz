@@ -13,6 +13,7 @@ interface ContentLayoutProps {
   accent: "garden" | "rangers";
   canonicalPath: string;
   updatedAt?: string;
+  itemList?: { name: string; position: number; url: string }[];
   children: ReactNode;
 }
 
@@ -73,6 +74,26 @@ function ArticleJsonLd({
   );
 }
 
+function ItemListSchema({ items }: { items: { name: string; position: number; url: string }[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: `https://growandrangers.xyz${item.url}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export default function ContentLayout({
   title,
   description,
@@ -80,6 +101,7 @@ export default function ContentLayout({
   accent,
   canonicalPath,
   updatedAt,
+  itemList,
   children,
 }: ContentLayoutProps) {
   const accentColor = accent === "garden" ? "#00E676" : "#FF3D00";
@@ -95,6 +117,7 @@ export default function ContentLayout({
         canonicalPath={canonicalPath}
         updatedAt={updatedAt}
       />
+      {itemList && <ItemListSchema items={itemList} />}
 
       {/* Canonical is handled via Next.js metadata API in each page */}
 
