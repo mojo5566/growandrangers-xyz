@@ -4,6 +4,7 @@
 // All page data files should import from here.
 // ============================================================
 
+/** traits interface */
 export interface Trait {
   id: string;
   name: string;
@@ -20,8 +21,7 @@ export interface Trait {
 }
 
 export const traits: Trait[] = [
-  // === MYTHIC ===
-  {
+{
     id: "time-rewind",
     name: "Time Rewind",
     aliases: ["TR", "Cooldown Reset"],
@@ -42,10 +42,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Chrono Slayer", "Void Empress"],
     rollRate: "0.5%",
+    imagePlaceholder: "/placeholder-traits-time-rewind.png",
+    tierRating: 10
   },
-    imagePlaceholder: "/placeholder-trait-time-rewind.png",
-    tierRating: 10,
-  {
+{
     id: "god-speed",
     name: "God-Speed",
     aliases: ["GS", "Attack Speed Stack"],
@@ -66,12 +66,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Storm Ronin", "Blaze Archon"],
     rollRate: "0.5%",
-    imagePlaceholder: "/placeholder-trait-god-speed.png",
-    tierRating: 10,
+    imagePlaceholder: "/placeholder-traits-god-speed.png",
+    tierRating: 10
   },
-
-  // === LEGENDARY ===
-  {
+{
     id: "monarch",
     name: "Monarch",
     aliases: ["Stat Boost", "HP Gate"],
@@ -92,10 +90,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Blaze Archon", "Frost Monarch"],
     rollRate: "3%",
+    imagePlaceholder: "/placeholder-traits-monarch.png",
+    tierRating: 9
   },
-    imagePlaceholder: "/placeholder-trait-void-touch.png",
-    tierRating: 3,
-  {
+{
     id: "void-touch",
     name: "Void Touch",
     aliases: ["Defense Pen", "Def Ignore"],
@@ -116,10 +114,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Void Empress", "Chrono Slayer"],
     rollRate: "3%",
+    imagePlaceholder: "/placeholder-traits-void-touch.png",
+    tierRating: 9
   },
-    imagePlaceholder: "/placeholder-trait-berserker.png",
-    tierRating: 3,
-  {
+{
     id: "berserker",
     name: "Berserker",
     aliases: ["Low HP Boost", "Rage"],
@@ -140,10 +138,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Storm Ronin", "Blaze Archon"],
     rollRate: "3%",
+    imagePlaceholder: "/placeholder-traits-berserker.png",
+    tierRating: 9
   },
-    imagePlaceholder: "/placeholder-trait-phoenix-soul.png",
-    tierRating: 3,
-  {
+{
     id: "phoenix-soul",
     name: "Phoenix Soul",
     aliases: ["Revive", "Second Life"],
@@ -164,12 +162,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Stone Colossus", "Tide Guardian"],
     rollRate: "3%",
+    imagePlaceholder: "/placeholder-traits-phoenix-soul.png",
+    tierRating: 9
   },
-
-  // === EPIC ===
-    imagePlaceholder: "/placeholder-trait-drop-rate-plus.png",
-    tierRating: 3,
-  {
+{
     id: "drop-rate-plus",
     name: "Drop Rate+",
     aliases: ["DR+", "Lucky Drops"],
@@ -190,10 +186,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any farming unit"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-drop-rate-plus.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-trait-cooldown-minus.png",
-    tierRating: 3,
-  {
+{
     id: "cooldown-minus",
     name: "Cooldown-",
     aliases: ["CDR", "CD Reduction"],
@@ -214,10 +210,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Frost Monarch", "Tide Guardian"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-cooldown-minus.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-trait-lifesteal.png",
-    tierRating: 3,
-  {
+{
     id: "lifesteal",
     name: "Lifesteal",
     aliases: ["LS", "Life Drain"],
@@ -238,10 +234,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Blaze Archon", "Storm Ronin"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-lifesteal.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-trait-critical-strike-plus.png",
-    tierRating: 7,
-  {
+{
     id: "critical-strike-plus",
     name: "Critical Strike+",
     aliases: ["Crit+", "Crit Chance"],
@@ -262,10 +258,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Chrono Slayer", "Blaze Archon"],
     rollRate: "8%",
-    imagePlaceholder: "/placeholder-trait-defense-aura.png",
-    tierRating: 7,
+    imagePlaceholder: "/placeholder-traits-critical-strike-plus.png",
+    tierRating: 7
   },
-  {
+{
     id: "defense-aura",
     name: "Defense Aura",
     aliases: ["Def Aura", "Team Def"],
@@ -286,10 +282,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Stone Colossus", "Tide Guardian"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-defense-aura.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-trait-mana-surge.png",
-    tierRating: 3,
-  {
+{
     id: "shield-bash",
     name: "Shield Bash",
     aliases: ["Stun on Crit", "Bash"],
@@ -310,10 +306,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Storm Ronin", "Wind Scout"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-shield-bash.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-trait-fortress.png",
-    tierRating: 3,
-  {
+{
     id: "mana-surge",
     name: "Mana Surge",
     aliases: ["Ability DMG", "Spell Power"],
@@ -334,12 +330,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Void Empress", "Frost Monarch"],
     rollRate: "8%",
+    imagePlaceholder: "/placeholder-traits-mana-surge.png",
+    tierRating: 7
   },
-
-  // === RARE ===
-    imagePlaceholder: "/placeholder-trait-scout.png",
-    tierRating: 3,
-  {
+{
     id: "fortress",
     name: "Fortress",
     aliases: ["Tank", "Taunt"],
@@ -360,10 +354,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Stone Colossus"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-fortress.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-trait-quick-draw.png",
-    tierRating: 3,
-  {
+{
     id: "scout",
     name: "Scout",
     aliases: ["Speed Detect", "Reveal"],
@@ -383,10 +377,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Wind Scout"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-scout.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-trait-healing-touch.png",
-    tierRating: 3,
-  {
+{
     id: "quick-draw",
     name: "Quick Draw",
     aliases: ["QD", "Atk Spd"],
@@ -407,10 +401,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Storm Ronin", "Blaze Archon"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-quick-draw.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-trait-iron-will.png",
-    tierRating: 3,
-  {
+{
     id: "healing-touch",
     name: "Healing Touch",
     aliases: ["HT", "Heal on Ability"],
@@ -431,10 +425,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Frost Monarch", "Tide Guardian"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-healing-touch.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-trait-blood-pact.png",
-    tierRating: 3,
-  {
+{
     id: "iron-will",
     name: "Iron Will",
     aliases: ["CC Resist", "Willpower"],
@@ -455,10 +449,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Stone Colossus", "Blaze Archon"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-iron-will.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-trait-keen-eye.png",
-    tierRating: 5,
-  {
+{
     id: "blood-pact",
     name: "Blood Pact",
     aliases: ["Ally Damage", "Pact"],
@@ -479,10 +473,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Blaze Archon", "Void Empress"],
     rollRate: "15%",
-    imagePlaceholder: "/placeholder-trait-basic-atk-plus.png",
-    tierRating: 5,
+    imagePlaceholder: "/placeholder-traits-blood-pact.png",
+    tierRating: 5
   },
-  {
+{
     id: "keen-eye",
     name: "Keen Eye",
     aliases: ["Crit Reveal", "Eye"],
@@ -503,12 +497,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Chrono Slayer", "Wind Scout"],
     rollRate: "15%",
+    imagePlaceholder: "/placeholder-traits-keen-eye.png",
+    tierRating: 5
   },
-
-  // === COMMON ===
-    imagePlaceholder: "/placeholder-trait-speed-plus.png",
-    tierRating: 3,
-  {
+{
     id: "basic-atk-plus",
     name: "Basic ATK+",
     aliases: ["ATK+", "Attack Up"],
@@ -528,10 +520,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any unit (placeholder)"],
     rollRate: "25%",
+    imagePlaceholder: "/placeholder-traits-basic-atk-plus.png",
+    tierRating: 3
   },
-    imagePlaceholder: "/placeholder-trait-defense-plus.png",
-    tierRating: 3,
-  {
+{
     id: "hp-boost",
     name: "HP Boost",
     aliases: ["HP+", "Health Up"],
@@ -551,10 +543,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any unit (placeholder)"],
     rollRate: "25%",
+    imagePlaceholder: "/placeholder-traits-hp-boost.png",
+    tierRating: 3
   },
-    imagePlaceholder: "/placeholder-trait-luck-plus.png",
-    tierRating: 3,
-  {
+{
     id: "speed-plus",
     name: "Speed+",
     aliases: ["SPD+", "Move Up"],
@@ -574,8 +566,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any unit (placeholder)"],
     rollRate: "25%",
+    imagePlaceholder: "/placeholder-traits-speed-plus.png",
+    tierRating: 3
   },
-  {
+{
     id: "defense-plus",
     name: "Defense+",
     aliases: ["DEF+", "Def Up"],
@@ -595,8 +589,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any unit (placeholder)"],
     rollRate: "25%",
+    imagePlaceholder: "/placeholder-traits-defense-plus.png",
+    tierRating: 3
   },
-  {
+{
     id: "luck-plus",
     name: "Luck+",
     aliases: ["LCK+", "Item Find"],
@@ -616,12 +612,10 @@ export const traits: Trait[] = [
     ],
     bestOn: ["Any farming unit (placeholder)"],
     rollRate: "25%",
-  },
+    imagePlaceholder: "/placeholder-traits-luck-plus.png",
+    tierRating: 3
+  }
 ];
-
-// ============================================================
-// Helper Functions
-// ============================================================
 
 export function getTraitsByTier(tier: Trait["tier"]): Trait[] {
   return traits.filter((t) => t.tier === tier);

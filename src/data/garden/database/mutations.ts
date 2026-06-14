@@ -4,6 +4,7 @@
 // All page data files should import from here.
 // ============================================================
 
+/** mutations interface */
 export interface Mutation {
   id: string;
   name: string;
@@ -23,8 +24,7 @@ export interface Mutation {
 }
 
 export const mutations: Mutation[] = [
-  // === S-TIER ===
-  {
+{
     id: "aurelian-crown",
     name: "Aurelian Crown",
     aliases: ["Golden Bloom"],
@@ -44,10 +44,10 @@ export const mutations: Mutation[] = [
       "Requires connected plot layout for full passive value",
     ],
     bestUse: "Main crop plot. Pair with Golden Phoenix Chick (5.0x) for 20.0x total yield — the theoretical maximum.",
-    imagePlaceholder: "/placeholder-mutation-aurelian-crown.png",
-    tierRating: 10,
+    imagePlaceholder: "/placeholder-mutations-aurelian-crown.png",
+    tierRating: 10
   },
-  {
+{
     id: "crystalline-mycelium",
     name: "Crystalline Mycelium",
     aliases: ["Crystal Vine"],
@@ -67,10 +67,10 @@ export const mutations: Mutation[] = [
       "Very rare — ~1.4% roll rate",
     ],
     bestUse: "Large farms with 6+ plots where manual watering becomes tedious. Combines well with Aqua Otter Kit for hands-off farming.",
-    imagePlaceholder: "/placeholder-mutation-crystalline-mycelium.png",
-    tierRating: 9,
+    imagePlaceholder: "/placeholder-mutations-crystalline-mycelium.png",
+    tierRating: 10
   },
-  {
+{
     id: "leporine-bloom",
     name: "Leporine Bloom",
     aliases: ["Bunny T5", "Easter Bunny Mutation"],
@@ -92,18 +92,14 @@ export const mutations: Mutation[] = [
     ],
     bestUse: "Paired exclusively with Lucky Clover Bunny. Best seasonal investment in the game if you own both.",
     seasonal: "Easter",
-    imagePlaceholder: "/placeholder-mutation-leporine-bloom.png",
-    tierRating: 9,
+    imagePlaceholder: "/placeholder-mutations-leporine-bloom.png",
+    tierRating: 10
   },
-
-  // === A-TIER ===
-  {
+{
     id: "phosphor-sporebloom",
     name: "Phosphor Sporebloom",
     aliases: ["Neon Spore"],
     multiplier: 3.0,
-    imagePlaceholder: "/placeholder-mutation-phosphor-sporebloom.png",
-    tierRating: 8,
     conditionalBonus: { condition: "6PM-6AM in-game time", bonusMultiplier: 3.2 },
     tier: "A",
     rollRate: "~5.8%",
@@ -120,8 +116,10 @@ export const mutations: Mutation[] = [
       "Outclassed during daytime",
     ],
     bestUse: "Players who primarily farm during night hours. Pairs with Celestial Fox Kit for stacked night bonuses.",
+    imagePlaceholder: "/placeholder-mutations-phosphor-sporebloom.png",
+    tierRating: 8
   },
-  {
+{
     id: "basalt-carapace",
     name: "Basalt Carapace",
     aliases: [],
@@ -141,16 +139,14 @@ export const mutations: Mutation[] = [
       "S-Tier mutations generate more profit even accounting for occasional losses",
     ],
     bestUse: "High-value crop plots where losing a harvest to pests/blight would be most painful. Good secondary plot mutation.",
+    imagePlaceholder: "/placeholder-mutations-basalt-carapace.png",
+    tierRating: 8
   },
-    imagePlaceholder: "/placeholder-mutation-basalt-carapace.png",
-    tierRating: 7,
-  {
+{
     id: "eclipse-corolla",
     name: "Eclipse Corolla",
     aliases: [],
     multiplier: 2.7,
-    imagePlaceholder: "/placeholder-mutation-eclipse-corolla.png",
-    tierRating: 7,
     conditionalBonus: { condition: "Eclipse weather cycle", bonusMultiplier: 3.3 },
     tier: "A",
     rollRate: "~6.2%",
@@ -167,10 +163,10 @@ export const mutations: Mutation[] = [
       "Unreliable for consistent income planning",
     ],
     bestUse: "Secondary plot where inconsistent performance is acceptable. Not recommended for main income plot.",
+    imagePlaceholder: "/placeholder-mutations-eclipse-corolla.png",
+    tierRating: 8
   },
-
-  // === B-TIER ===
-  {
+{
     id: "pyroclast-husk",
     name: "Pyroclast Husk",
     aliases: [],
@@ -190,16 +186,14 @@ export const mutations: Mutation[] = [
       "Outclassed by A-Tier for passive/AFK farming",
     ],
     bestUse: "Active players who harvest frequently. Best on fast-growing crops like Lucky Carrot (2 min).",
+    imagePlaceholder: "/placeholder-mutations-pyroclast-husk.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-mutation-pyroclast-husk.png",
-    tierRating: 6,
-  {
+{
     id: "hoarfrost-corolla",
     name: "Hoarfrost Corolla",
     aliases: [],
     multiplier: 2.0,
-    imagePlaceholder: "/placeholder-mutation-hoarfrost-corolla.png",
-    tierRating: 6,
     conditionalBonus: { condition: "Winter season", bonusMultiplier: 2.5 },
     tier: "B",
     rollRate: "~11%",
@@ -216,14 +210,14 @@ export const mutations: Mutation[] = [
     ],
     bestUse: "Winter-focused farming. Apply to a secondary plot and switch to all-season mutations in other seasons.",
     seasonal: "Winter",
+    imagePlaceholder: "/placeholder-mutations-hoarfrost-corolla.png",
+    tierRating: 6
   },
-  {
+{
     id: "igneous-spore",
     name: "Igneous Spore",
     aliases: [],
     multiplier: 1.8,
-    imagePlaceholder: "/placeholder-mutation-igneous-spore.png",
-    tierRating: 5,
     conditionalBonus: { condition: "Summer season", bonusMultiplier: 2.25 },
     tier: "B",
     rollRate: "~11%",
@@ -241,14 +235,14 @@ export const mutations: Mutation[] = [
     ],
     bestUse: "Summer-focused secondary plot. Switch away during other seasons.",
     seasonal: "Summer",
+    imagePlaceholder: "/placeholder-mutations-igneous-spore.png",
+    tierRating: 6
   },
-  {
+{
     id: "torrential-frond",
     name: "Torrential Frond",
     aliases: [],
     multiplier: 1.7,
-    imagePlaceholder: "/placeholder-mutation-torrential-frond.png",
-    tierRating: 5,
     conditionalBonus: { condition: "Rain weather", bonusMultiplier: 3.4 },
     tier: "B",
     rollRate: "~10%",
@@ -265,16 +259,14 @@ export const mutations: Mutation[] = [
       "Inconsistent income",
     ],
     bestUse: "Gamble plot — keep as secondary and harvest aggressively during rain events.",
+    imagePlaceholder: "/placeholder-mutations-torrential-frond.png",
+    tierRating: 6
   },
-
-  // === C-TIER ===
-  {
+{
     id: "umbral-thorn",
     name: "Umbral Thorn",
     aliases: [],
     multiplier: 1.4,
-    imagePlaceholder: "/placeholder-mutation-umbral-thorn.png",
-    tierRating: 4,
     conditionalBonus: { condition: "Night hours only", bonusMultiplier: 1.4 },
     tier: "C",
     rollRate: "~24%",
@@ -291,14 +283,14 @@ export const mutations: Mutation[] = [
       "Outclassed by B-Tier and above",
     ],
     bestUse: "Night-time farming placeholder while saving shards for better rolls.",
+    imagePlaceholder: "/placeholder-mutations-umbral-thorn.png",
+    tierRating: 4
   },
-  {
+{
     id: "verdant-runner",
     name: "Verdant Runner",
     aliases: [],
     multiplier: 1.2,
-    imagePlaceholder: "/placeholder-mutation-verdant-runner.png",
-    tierRating: 3,
     conditionalBonus: { condition: "Max stacks (10 consecutive harvests)", bonusMultiplier: 1.5 },
     tier: "C",
     rollRate: "~24%",
@@ -315,8 +307,10 @@ export const mutations: Mutation[] = [
       "Outclassed by B-Tier even at max stacks",
     ],
     bestUse: "Active players who harvest frequently on fast-growing crops. Replace when B-Tier becomes available.",
+    imagePlaceholder: "/placeholder-mutations-verdant-runner.png",
+    tierRating: 4
   },
-  {
+{
     id: "common-prairie-grass",
     name: "Common Prairie Grass",
     aliases: [],
@@ -335,10 +329,10 @@ export const mutations: Mutation[] = [
       "Placeholder only — replace immediately",
     ],
     bestUse: "Free placeholder on new plots. Never intentionally roll for this.",
+    imagePlaceholder: "/placeholder-mutations-common-prairie-grass.png",
+    tierRating: 4
   },
-    imagePlaceholder: "/placeholder-mutation-common-prairie-grass.png",
-    tierRating: 2,
-  {
+{
     id: "withered-husk",
     name: "Withered Husk",
     aliases: [],
@@ -356,11 +350,11 @@ export const mutations: Mutation[] = [
       "No competitive or economic value",
     ],
     bestUse: "None. Overwrite immediately.",
-  },
+    imagePlaceholder: "/placeholder-mutations-withered-husk.png",
+    tierRating: 4
+  }
 ];
 
-    imagePlaceholder: "/placeholder-mutation-withered-husk.png",
-    tierRating: 1,
 export function getMutationById(id: string): Mutation | undefined {
   return mutations.find((m) => m.id === id);
 }

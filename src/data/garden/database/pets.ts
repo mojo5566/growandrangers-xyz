@@ -4,6 +4,7 @@
 // All page data files should import from here.
 // ============================================================
 
+/** pets interface */
 export interface Pet {
   id: string;
   name: string;
@@ -18,18 +19,10 @@ export interface Pet {
   weaknesses: string[];
   imagePlaceholder: string;
   tierRating: number;
-};
-  tier: "S" | "A" | "B" | "C";
-  abilities: string[];
-  source: "Basic Egg" | "Rare Egg" | "Legendary Egg" | "Seasonal Event";
-  description: string;
-  strengths: string[];
-  weaknesses: string[];
 }
 
 export const pets: Pet[] = [
-  // === S-TIER ===
-  {
+{
     id: "golden-phoenix-chick",
     name: "Golden Phoenix Chick",
     aliases: [],
@@ -49,10 +42,10 @@ export const pets: Pet[] = [
       "Legendary Eggs cost 10,000 Coins each",
       "No seasonal or synergy bonus — pure raw power",
     ],
+    imagePlaceholder: "/placeholder-pets-golden-phoenix-chick.png",
+    tierRating: 9
   },
-    imagePlaceholder: "/placeholder-pet-golden-phoenix-chick.png",
-    tierRating: 9,
-  {
+{
     id: "crystal-unicorn-foal",
     name: "Crystal Unicorn Foal",
     aliases: [],
@@ -71,12 +64,10 @@ export const pets: Pet[] = [
       "Lower base multiplier than Golden Phoenix Chick",
       "Legendary Egg requirement",
     ],
-    imagePlaceholder: "/placeholder-pet-crystal-unicorn-foal.png",
-    tierRating: 9,
+    imagePlaceholder: "/placeholder-pets-crystal-unicorn-foal.png",
+    tierRating: 9
   },
-
-  // === A-TIER ===
-  {
+{
     id: "neon-dragon-hatchling",
     name: "Neon Dragon Hatchling",
     aliases: [],
@@ -94,10 +85,10 @@ export const pets: Pet[] = [
       "Fire-proof passive is rarely relevant",
       "Outclassed by S-Tier pets for general farming",
     ],
+    imagePlaceholder: "/placeholder-pets-neon-dragon-hatchling.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-pet-celestial-fox-kit.png",
-    tierRating: 3,
-  {
+{
     id: "celestial-fox-kit",
     name: "Celestial Fox Kit",
     aliases: ["Shadow Fox Kit"],
@@ -117,10 +108,10 @@ export const pets: Pet[] = [
       "Time-gated bonus requires scheduling around night cycles",
       "Outclassed by unconditional S-Tier pets",
     ],
+    imagePlaceholder: "/placeholder-pets-celestial-fox-kit.png",
+    tierRating: 7
   },
-    imagePlaceholder: "/placeholder-pet-lucky-clover-bunny.png",
-    tierRating: 3,
-  {
+{
     id: "lucky-clover-bunny",
     name: "Lucky Clover Bunny",
     aliases: [],
@@ -139,12 +130,10 @@ export const pets: Pet[] = [
       "3.2x base is lower than Neon Dragon Hatchling (3.5x)",
       "Synergy requires owning Leporine Bloom mutation",
     ],
+    imagePlaceholder: "/placeholder-pets-lucky-clover-bunny.png",
+    tierRating: 7
   },
-
-  // === B-TIER ===
-    imagePlaceholder: "/placeholder-pet-frost-wolf-pup.png",
-    tierRating: 3,
-  {
+{
     id: "frost-wolf-pup",
     name: "Frost Wolf Pup",
     aliases: [],
@@ -164,10 +153,10 @@ export const pets: Pet[] = [
       "Season-locked value proposition",
       "Outclassed by all-season A-Tier pets in other seasons",
     ],
+    imagePlaceholder: "/placeholder-pets-frost-wolf-pup.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-pet-magma-lizard-hatchling.png",
-    tierRating: 3,
-  {
+{
     id: "magma-lizard-hatchling",
     name: "Magma Lizard Hatchling",
     aliases: [],
@@ -186,8 +175,10 @@ export const pets: Pet[] = [
       "Drops to 2.0x outside Summer",
       "Season-locked — half the year at reduced power",
     ],
+    imagePlaceholder: "/placeholder-pets-magma-lizard-hatchling.png",
+    tierRating: 5
   },
-  {
+{
     id: "aqua-otter-kit",
     name: "Aqua Otter Kit",
     aliases: [],
@@ -206,10 +197,10 @@ export const pets: Pet[] = [
       "Auto-water is redundant if using Crystalline Mycelium (auto-waters)",
       "No seasonal bonus",
     ],
+    imagePlaceholder: "/placeholder-pets-aqua-otter-kit.png",
+    tierRating: 5
   },
-    imagePlaceholder: "/placeholder-pet-thunder-hawk-chick.png",
-    tierRating: 3,
-  {
+{
     id: "thunder-hawk-chick",
     name: "Thunder Hawk Chick",
     aliases: [],
@@ -228,12 +219,10 @@ export const pets: Pet[] = [
       "Outclassed by Rare Egg B-Tier pets",
       "No seasonal bonus",
     ],
+    imagePlaceholder: "/placeholder-pets-thunder-hawk-chick.png",
+    tierRating: 5
   },
-
-  // === C-TIER ===
-    imagePlaceholder: "/placeholder-pet-bamboo-panda-cub.png",
-    tierRating: 3,
-  {
+{
     id: "bamboo-panda-cub",
     name: "Bamboo Panda Cub",
     aliases: [],
@@ -252,10 +241,10 @@ export const pets: Pet[] = [
       "Even at max stacks, outclassed by B-Tier",
       "Replace as soon as possible",
     ],
+    imagePlaceholder: "/placeholder-pets-bamboo-panda-cub.png",
+    tierRating: 3
   },
-    imagePlaceholder: "/placeholder-pet-common-garden-cat.png",
-    tierRating: 3,
-  {
+{
     id: "common-garden-cat",
     name: "Common Garden Cat",
     aliases: ["Common Prairie Dog"],
@@ -273,8 +262,10 @@ export const pets: Pet[] = [
       "No abilities or passives",
       "Replace immediately",
     ],
+    imagePlaceholder: "/placeholder-pets-common-garden-cat.png",
+    tierRating: 3
   },
-  {
+{
     id: "dust-bunny",
     name: "Dust Bunny",
     aliases: [],
@@ -292,7 +283,9 @@ export const pets: Pet[] = [
       "No abilities affecting gameplay",
       "Not worth Coins for farming purposes",
     ],
-  },
+    imagePlaceholder: "/placeholder-pets-dust-bunny.png",
+    tierRating: 3
+  }
 ];
 
 export function getPetById(id: string): Pet | undefined {

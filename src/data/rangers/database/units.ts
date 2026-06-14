@@ -4,6 +4,7 @@
 // All page data files should import from here.
 // ============================================================
 
+/** units interface */
 export interface Unit {
   id: string;
   name: string;
@@ -27,8 +28,7 @@ export interface Unit {
 }
 
 export const units: Unit[] = [
-  // === S-TIER — META-DEFINING UNITS ===
-  {
+{
     id: "chrono-slayer",
     name: "Chrono Slayer",
     aliases: ["CS", "Chrono"],
@@ -57,10 +57,10 @@ export const units: Unit[] = [
     bestTraits: ["Time Rewind", "God-Speed", "Monarch"],
     sources: ["Mythic summon banner (low rate)", "Limited event banners (boosted rates)"],
     evolutionCost: "500 Evolution Stones + 50,000 Gems + 1 Awakening Core",
+    imagePlaceholder: "/placeholder-units-chrono-slayer.png",
+    tierRating: 10
   },
-    imagePlaceholder: "/placeholder-unit-chrono-slayer.png",
-    tierRating: 10,
-  {
+{
     id: "void-empress",
     name: "Void Empress",
     aliases: ["VE", "Empress"],
@@ -89,12 +89,10 @@ export const units: Unit[] = [
     bestTraits: ["Void Touch", "Time Rewind", "Lifesteal"],
     sources: ["Mythic summon banner (low rate)", "Limited event banners (boosted rates)"],
     evolutionCost: "500 Evolution Stones + 50,000 Gems + 1 Awakening Core",
-    imagePlaceholder: "/placeholder-unit-void-empress.png",
-    tierRating: 10,
+    imagePlaceholder: "/placeholder-units-void-empress.png",
+    tierRating: 10
   },
-
-  // === A-TIER — EXCELLENT UNITS ===
-  {
+{
     id: "blaze-archon",
     name: "Blaze Archon",
     aliases: ["BA", "Archon"],
@@ -123,10 +121,10 @@ export const units: Unit[] = [
     bestTraits: ["God-Speed", "Monarch", "Void Touch"],
     sources: ["Legendary summon banner (decent rate)", "Rare banner (low chance)", "Event rewards"],
     evolutionCost: "250 Evolution Stones + 25,000 Gems",
+    imagePlaceholder: "/placeholder-units-blaze-archon.png",
+    tierRating: 8
   },
-    imagePlaceholder: "/placeholder-unit-frost-monarch.png",
-    tierRating: 3,
-  {
+{
     id: "frost-monarch",
     name: "Frost Monarch",
     aliases: ["FM", "Frost"],
@@ -155,10 +153,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Monarch", "Lifesteal"],
     sources: ["Legendary summon banner", "Rare banner (low chance)", "Event shops"],
     evolutionCost: "250 Evolution Stones + 25,000 Gems",
+    imagePlaceholder: "/placeholder-units-frost-monarch.png",
+    tierRating: 8
   },
-    imagePlaceholder: "/placeholder-unit-storm-ronin.png",
-    tierRating: 3,
-  {
+{
     id: "storm-ronin",
     name: "Storm Ronin",
     aliases: ["SR", "Ronin"],
@@ -187,12 +185,10 @@ export const units: Unit[] = [
     bestTraits: ["God-Speed", "Time Rewind", "Monarch"],
     sources: ["Epic summon banner", "Rare banner (low chance)", "Event rewards"],
     evolutionCost: "150 Evolution Stones + 15,000 Gems",
+    imagePlaceholder: "/placeholder-units-storm-ronin.png",
+    tierRating: 8
   },
-
-  // === B-TIER — SOLID MID-GAME UNITS ===
-    imagePlaceholder: "/placeholder-unit-shadow-kunoichi.png",
-    tierRating: 3,
-  {
+{
     id: "shadow-kunoichi",
     name: "Shadow Kunoichi",
     aliases: ["SK", "Kunoichi"],
@@ -220,10 +216,10 @@ export const units: Unit[] = [
     bestTraits: ["Void Touch", "Lifesteal", "Monarch"],
     sources: ["Epic summon banner", "Rare banner (low chance)"],
     evolutionCost: "150 Evolution Stones + 15,000 Gems",
+    imagePlaceholder: "/placeholder-units-shadow-kunoichi.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-tide-guardian.png",
-    tierRating: 3,
-  {
+{
     id: "tide-guardian",
     name: "Tide Guardian",
     aliases: ["TG", "Guardian"],
@@ -251,10 +247,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Monarch", "Lifesteal"],
     sources: ["Epic summon banner", "Event shops"],
     evolutionCost: "150 Evolution Stones + 15,000 Gems",
+    imagePlaceholder: "/placeholder-units-tide-guardian.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-stone-colossus.png",
-    tierRating: 3,
-  {
+{
     id: "stone-colossus",
     name: "Stone Colossus",
     aliases: ["SC", "Colossus"],
@@ -282,10 +278,10 @@ export const units: Unit[] = [
     bestTraits: ["Fortress", "Monarch", "Lifesteal"],
     sources: ["Epic summon banner", "Rare banner (low chance)"],
     evolutionCost: "150 Evolution Stones + 15,000 Gems",
+    imagePlaceholder: "/placeholder-units-stone-colossus.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-flame-warden.png",
-    tierRating: 3,
-  {
+{
     id: "flame-warden",
     name: "Flame Warden",
     aliases: ["FW", "Warden"],
@@ -313,10 +309,10 @@ export const units: Unit[] = [
     bestTraits: ["Fortress", "Lifesteal", "Monarch"],
     sources: ["Rare summon banner", "Event rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
+    imagePlaceholder: "/placeholder-units-flame-warden.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-aqua-healer.png",
-    tierRating: 3,
-  {
+{
     id: "aqua-healer",
     name: "Aqua Healer",
     aliases: ["AH", "Healer"],
@@ -344,12 +340,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Lifesteal", "Monarch"],
     sources: ["Rare summon banner", "Event shops", "Story mode rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
+    imagePlaceholder: "/placeholder-units-aqua-healer.png",
+    tierRating: 6
   },
-
-  // === C-TIER — STARTER UNITS ===
-    imagePlaceholder: "/placeholder-unit-wind-scout.png",
-    tierRating: 3,
-  {
+{
     id: "wind-scout",
     name: "Wind Scout",
     aliases: ["WS", "Scout"],
@@ -377,10 +371,10 @@ export const units: Unit[] = [
     bestTraits: ["Scout", "Basic ATK+"],
     sources: ["Tutorial reward (free)"],
     evolutionCost: "30 Evolution Stones + 3,000 Gems",
+    imagePlaceholder: "/placeholder-units-wind-scout.png",
+    tierRating: 3
   },
-    imagePlaceholder: "/placeholder-unit-flame-recruit.png",
-    tierRating: 3,
-  {
+{
     id: "flame-recruit",
     name: "Flame Recruit",
     aliases: ["FR", "Recruit"],
@@ -408,10 +402,10 @@ export const units: Unit[] = [
     bestTraits: ["Basic ATK+", "Scout"],
     sources: ["Tutorial reward (free)"],
     evolutionCost: "30 Evolution Stones + 3,000 Gems",
+    imagePlaceholder: "/placeholder-units-flame-recruit.png",
+    tierRating: 3
   },
-    imagePlaceholder: "/placeholder-unit-aqua-squire.png",
-    tierRating: 3,
-  {
+{
     id: "aqua-squire",
     name: "Aqua Squire",
     aliases: ["AS", "Squire"],
@@ -439,12 +433,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Basic ATK+"],
     sources: ["Tutorial reward (free)"],
     evolutionCost: "30 Evolution Stones + 3,000 Gems",
+    imagePlaceholder: "/placeholder-units-aqua-squire.png",
+    tierRating: 3
   },
-
-  // === ADDITIONAL UNITS — FILLING OUT THE ROSTER ===
-    imagePlaceholder: "/placeholder-unit-lightning-sage.png",
-    tierRating: 3,
-  {
+{
     id: "lightning-sage",
     name: "Lightning Sage",
     aliases: ["LS", "Sage"],
@@ -472,10 +464,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Monarch", "Lifesteal"],
     sources: ["Legendary summon banner", "Event shops"],
     evolutionCost: "250 Evolution Stones + 25,000 Gems",
+    imagePlaceholder: "/placeholder-units-lightning-sage.png",
+    tierRating: 8
   },
-    imagePlaceholder: "/placeholder-unit-ember-knight.png",
-    tierRating: 3,
-  {
+{
     id: "ember-knight",
     name: "Ember Knight",
     aliases: ["EK", "Knight"],
@@ -503,10 +495,10 @@ export const units: Unit[] = [
     bestTraits: ["God-Speed", "Lifesteal", "Monarch"],
     sources: ["Rare summon banner", "Event rewards", "Story mode rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
+    imagePlaceholder: "/placeholder-units-ember-knight.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-glacial-archer.png",
-    tierRating: 3,
-  {
+{
     id: "glacial-archer",
     name: "Glacial Archer",
     aliases: ["GA", "Archer"],
@@ -534,10 +526,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Monarch", "Scout"],
     sources: ["Rare summon banner", "Event shops"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
+    imagePlaceholder: "/placeholder-units-glacial-archer.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-earthshaker.png",
-    tierRating: 3,
-  {
+{
     id: "earthshaker",
     name: "Earthshaker",
     aliases: ["ES", "Shaker"],
@@ -565,10 +557,10 @@ export const units: Unit[] = [
     bestTraits: ["Fortress", "Cooldown-", "Monarch"],
     sources: ["Rare summon banner", "Event rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
+    imagePlaceholder: "/placeholder-units-earthshaker.png",
+    tierRating: 6
   },
-    imagePlaceholder: "/placeholder-unit-celestial-priest.png",
-    tierRating: 6,
-  {
+{
     id: "celestial-priest",
     name: "Celestial Priest",
     aliases: ["CP", "Priest"],
@@ -596,10 +588,10 @@ export const units: Unit[] = [
     bestTraits: ["Cooldown-", "Monarch", "Lifesteal"],
     sources: ["Rare summon banner", "Event shops", "Story mode rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
-    imagePlaceholder: "/placeholder-unit-tempest-assassin.png",
-    tierRating: 6,
+    imagePlaceholder: "/placeholder-units-celestial-priest.png",
+    tierRating: 6
   },
-  {
+{
     id: "tempest-assassin",
     name: "Tempest Assassin",
     aliases: ["TA", "Tempest"],
@@ -627,8 +619,10 @@ export const units: Unit[] = [
     bestTraits: ["God-Speed", "Monarch", "Lifesteal"],
     sources: ["Epic summon banner", "Rare banner (low chance)"],
     evolutionCost: "150 Evolution Stones + 15,000 Gems",
+    imagePlaceholder: "/placeholder-units-tempest-assassin.png",
+    tierRating: 6
   },
-  {
+{
     id: "iron-sentinel",
     name: "Iron Sentinel",
     aliases: ["IS", "Sentinel"],
@@ -656,10 +650,10 @@ export const units: Unit[] = [
     bestTraits: ["Fortress", "Lifesteal", "Monarch"],
     sources: ["Rare summon banner", "Story mode rewards"],
     evolutionCost: "100 Evolution Stones + 10,000 Gems",
-  },
+    imagePlaceholder: "/placeholder-units-iron-sentinel.png",
+    tierRating: 6
+  }
 ];
-
-// === HELPER FUNCTIONS ===
 
 export function getUnitsByTier(tier: Unit["tier"]): Unit[] {
   return units.filter((u) => u.tier === tier);
