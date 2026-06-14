@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,20 +10,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-[#252936] bg-[#0B0C10]/95 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4 lg:px-6">
         {/* Logo */}
-        <a href="/" className="font-heading text-xl font-bold text-white lg:text-2xl">
+        <Link href="/" className="font-heading text-xl font-bold text-white lg:text-2xl">
           BloxPulse
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-6 lg:flex">
-          <NavLink href="#garden" accent="garden">🌱 Grow a Garden</NavLink>
-          <NavLink href="#rangers" accent="rangers">⚔️ Anime Rangers X</NavLink>
-          <a
-            href="#search"
-            className="flex items-center gap-1 rounded-lg border border-[#252936] bg-[#1E212B] px-4 py-2 text-sm text-[#BAC4D1] transition hover:border-[#3A86FF]"
-          >
-            🔍 <span>Search</span>
-          </a>
+          <NavLink href="/grow-a-garden/" accent="garden">🌱 Grow a Garden</NavLink>
+          <NavLink href="/anime-rangers-x/" accent="rangers">⚔️ Anime Rangers X</NavLink>
+          <NavLink href="/grow-a-garden/codes" accent="garden">🎁 Codes</NavLink>
         </div>
 
         {/* Mobile toggle */}
@@ -41,19 +37,15 @@ export default function Header() {
       {mobileOpen && (
         <div className="border-t border-[#252936] bg-[#14161D] px-4 py-4 lg:hidden">
           <div className="flex flex-col gap-3">
-            <MobileNavLink href="#garden" accent="garden" onClick={() => setMobileOpen(false)}>
+            <MobileNavLink href="/grow-a-garden/" accent="garden" onClick={() => setMobileOpen(false)}>
               🌱 Grow a Garden
             </MobileNavLink>
-            <MobileNavLink href="#rangers" accent="rangers" onClick={() => setMobileOpen(false)}>
+            <MobileNavLink href="/anime-rangers-x/" accent="rangers" onClick={() => setMobileOpen(false)}>
               ⚔️ Anime Rangers X
             </MobileNavLink>
-            <a
-              href="#search"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-lg border border-[#252936] bg-[#1E212B] px-4 py-2.5 text-sm text-[#BAC4D1]"
-            >
-              🔍 Search codes & guides
-            </a>
+            <MobileNavLink href="/grow-a-garden/codes" accent="garden" onClick={() => setMobileOpen(false)}>
+              🎁 Codes
+            </MobileNavLink>
           </div>
         </div>
       )}
@@ -72,9 +64,9 @@ function NavLink({
 }) {
   const colors = accent === "garden" ? "hover:text-[#00E676]" : "hover:text-[#FF3D00]";
   return (
-    <a href={href} className={`text-sm font-semibold text-[#BAC4D1] transition ${colors}`}>
+    <Link href={href} className={`text-sm font-semibold text-[#BAC4D1] transition ${colors}`}>
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -94,12 +86,12 @@ function MobileNavLink({
       ? "border-l-[#00E676] text-[#00E676]"
       : "border-l-[#FF3D00] text-[#FF3D00]";
   return (
-    <a
+    <Link
       href={href}
       onClick={onClick}
       className={`border-l-2 bg-[#1E212B] px-4 py-2.5 text-sm font-semibold transition ${colors}`}
     >
       {children}
-    </a>
+    </Link>
   );
 }

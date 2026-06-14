@@ -9,6 +9,13 @@ export interface RelatedGuide {
   description: string;
 }
 
+export interface RelatedLink {
+  label: string;
+  href: string;
+  description: string;
+  category: string;
+}
+
 export interface TierEntry {
   name: string;
   tier: string;

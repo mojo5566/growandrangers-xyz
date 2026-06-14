@@ -15,6 +15,8 @@ export interface Crop {
   tier: "S" | "A" | "B" | "C";
   coinsPerMinute: number;
   description: string;
+  imagePlaceholder: string;
+  tierRating: number;
 }
 
 export const crops: Crop[] = [
@@ -30,6 +32,8 @@ export const crops: Crop[] = [
     tier: "S",
     coinsPerMinute: 160,
     description: "The most profitable crop in the game at 160 coins-per-minute. All-season availability means you never need to rotate it out. Stacked with S-Tier mutation and pet, a single harvest yields 9,600 coins.",
+    imagePlaceholder: "/placeholder-crop-golden-wheat.png",
+    tierRating: 10,
   },
   {
     id: "crystal-berry",
@@ -42,6 +46,8 @@ export const crops: Crop[] = [
     tier: "S",
     coinsPerMinute: 84,
     description: "Second most valuable all-season crop at 84 coins-per-minute. The longer 5-minute growth cycle means fewer replanting actions — ideal for semi-AFK farmers who check in periodically.",
+    imagePlaceholder: "/placeholder-crop-crystal-berry.png",
+    tierRating: 9,
   },
 
   // === A-TIER ===
@@ -56,6 +62,8 @@ export const crops: Crop[] = [
     tier: "A",
     coinsPerMinute: 48,
     description: "The most valuable seasonal crop during Autumn with a +20% seasonal bonus. Slow growth (8 min) but high per-harvest value. Switch to all-season crops in other seasons.",
+    imagePlaceholder: "/placeholder-crop-neon-pumpkin.png",
+    tierRating: 8,
   },
   {
     id: "frost-melon",
@@ -68,6 +76,8 @@ export const crops: Crop[] = [
     tier: "A",
     coinsPerMinute: 58,
     description: "Winter seasonal specialist at 58 coins-per-minute. Pairs well with Frost Wolf Pup and Hoarfrost Corolla for stacked Winter farming bonuses.",
+    imagePlaceholder: "/placeholder-crop-frost-melon.png",
+    tierRating: 7,
   },
   {
     id: "magma-pepper",
@@ -80,6 +90,8 @@ export const crops: Crop[] = [
     tier: "A",
     coinsPerMinute: 80,
     description: "Fast-growing Summer crop at 80 coins-per-minute. The 4-minute growth cycle rewards active players. Pairs with Magma Lizard Hatchling and Igneous Spore.",
+    imagePlaceholder: "/placeholder-crop-magma-pepper.png",
+    tierRating: 7,
   },
 
   // === B-TIER ===
@@ -94,6 +106,8 @@ export const crops: Crop[] = [
     tier: "B",
     coinsPerMinute: 140,
     description: "The fastest non-C-tier crop at 140 coins-per-minute. Excellent for active players in Spring. The short growth cycle demands frequent attention but rewards with high throughput.",
+    imagePlaceholder: "/placeholder-crop-lucky-carrot.png",
+    tierRating: 6,
   },
   {
     id: "moonflower",
@@ -106,6 +120,8 @@ export const crops: Crop[] = [
     tier: "B",
     coinsPerMinute: 26,
     description: "Slowest all-season crop at 26 coins-per-minute. The 10-minute cycle is ideal for AFK players — plant and forget. Low profit rate but minimal attention required.",
+    imagePlaceholder: "/placeholder-crop-moonflower.png",
+    tierRating: 5,
   },
   {
     id: "blaze-berry",
@@ -118,6 +134,8 @@ export const crops: Crop[] = [
     tier: "B",
     coinsPerMinute: 80,
     description: "Summer seasonal at 80 coins-per-minute. Fast growth but lower per-harvest value than Magma Pepper. A weaker Summer alternative — phase out for Magma Pepper when available.",
+    imagePlaceholder: "/placeholder-crop-blaze-berry.png",
+    tierRating: 5,
   },
 
   // === C-TIER ===
@@ -132,6 +150,8 @@ export const crops: Crop[] = [
     tier: "C",
     coinsPerMinute: 200,
     description: "Technically the highest coins-per-minute crop at 200, but only grows in Summer and requires constant attention (1-min cycle). Impractical for sustained farming but fun for speed-challenge sessions.",
+    imagePlaceholder: "/placeholder-crop-sun-tomato.png",
+    tierRating: 4,
   },
   {
     id: "basic-potato",
@@ -144,6 +164,8 @@ export const crops: Crop[] = [
     tier: "C",
     coinsPerMinute: 200,
     description: "Fast all-season crop at 200 coins-per-minute raw rate. The 30-second cycle demands near-constant attention. Useful for tutorial/introduction but impractical for sustained farming.",
+    imagePlaceholder: "/placeholder-crop-basic-potato.png",
+    tierRating: 3,
   },
   {
     id: "wild-grass",
@@ -156,6 +178,8 @@ export const crops: Crop[] = [
     tier: "C",
     coinsPerMinute: 200,
     description: "The fastest crop at 200 coins-per-minute raw rate but lowest per-harvest value (50 coins). Free starter seed. Replace immediately — every other crop is more profitable per action.",
+    imagePlaceholder: "/placeholder-crop-wild-grass.png",
+    tierRating: 2,
   },
 ];
 

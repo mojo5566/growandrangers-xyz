@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 interface BreadcrumbItem {
@@ -96,7 +96,7 @@ export default function ContentLayout({
         updatedAt={updatedAt}
       />
 
-      <link rel="canonical" href={`https://growandrangers.xyz${canonicalPath}`} />
+      {/* Canonical is handled via Next.js metadata API in each page */}
 
       {/* Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="mb-6">

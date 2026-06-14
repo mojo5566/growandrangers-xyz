@@ -1,4 +1,6 @@
-﻿export default function Footer() {
+import Link from "next/link";
+
+export default function Footer() {
   return (
     <footer className="border-t border-[#252936] bg-[#0B0C10]" role="contentinfo">
       <div className="mx-auto max-w-[1200px] px-4 py-10 lg:px-6">
@@ -17,14 +19,14 @@
             <h4 className="code-text mb-3 text-[#768294] uppercase tracking-wider">Game Hubs</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#garden" className="text-sm text-[#BAC4D1] transition hover:text-[#00E676]">
+                <Link href="/grow-a-garden/" className="text-sm text-[#BAC4D1] transition hover:text-[#00E676]">
                   Grow a Garden
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#rangers" className="text-sm text-[#BAC4D1] transition hover:text-[#FF3D00]">
+                <Link href="/anime-rangers-x/" className="text-sm text-[#BAC4D1] transition hover:text-[#FF3D00]">
                   Anime Rangers X
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -34,14 +36,14 @@
             <h4 className="code-text mb-3 text-[#768294] uppercase tracking-wider">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#faq" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                <Link href="/#faq" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#search" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
-                  Search Codes
-                </a>
+                <Link href="/grow-a-garden/codes" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  Latest Codes
+                </Link>
               </li>
             </ul>
           </div>

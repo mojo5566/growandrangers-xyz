@@ -16,6 +16,15 @@ export interface Pet {
   description: string;
   strengths: string[];
   weaknesses: string[];
+  imagePlaceholder: string;
+  tierRating: number;
+};
+  tier: "S" | "A" | "B" | "C";
+  abilities: string[];
+  source: "Basic Egg" | "Rare Egg" | "Legendary Egg" | "Seasonal Event";
+  description: string;
+  strengths: string[];
+  weaknesses: string[];
 }
 
 export const pets: Pet[] = [
@@ -41,6 +50,8 @@ export const pets: Pet[] = [
       "No seasonal or synergy bonus — pure raw power",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-golden-phoenix-chick.png",
+    tierRating: 9,
   {
     id: "crystal-unicorn-foal",
     name: "Crystal Unicorn Foal",
@@ -60,6 +71,8 @@ export const pets: Pet[] = [
       "Lower base multiplier than Golden Phoenix Chick",
       "Legendary Egg requirement",
     ],
+    imagePlaceholder: "/placeholder-pet-crystal-unicorn-foal.png",
+    tierRating: 9,
   },
 
   // === A-TIER ===
@@ -82,6 +95,8 @@ export const pets: Pet[] = [
       "Outclassed by S-Tier pets for general farming",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-celestial-fox-kit.png",
+    tierRating: 3,
   {
     id: "celestial-fox-kit",
     name: "Celestial Fox Kit",
@@ -103,6 +118,8 @@ export const pets: Pet[] = [
       "Outclassed by unconditional S-Tier pets",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-lucky-clover-bunny.png",
+    tierRating: 3,
   {
     id: "lucky-clover-bunny",
     name: "Lucky Clover Bunny",
@@ -125,6 +142,8 @@ export const pets: Pet[] = [
   },
 
   // === B-TIER ===
+    imagePlaceholder: "/placeholder-pet-frost-wolf-pup.png",
+    tierRating: 3,
   {
     id: "frost-wolf-pup",
     name: "Frost Wolf Pup",
@@ -146,6 +165,8 @@ export const pets: Pet[] = [
       "Outclassed by all-season A-Tier pets in other seasons",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-magma-lizard-hatchling.png",
+    tierRating: 3,
   {
     id: "magma-lizard-hatchling",
     name: "Magma Lizard Hatchling",
@@ -186,6 +207,8 @@ export const pets: Pet[] = [
       "No seasonal bonus",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-thunder-hawk-chick.png",
+    tierRating: 3,
   {
     id: "thunder-hawk-chick",
     name: "Thunder Hawk Chick",
@@ -208,6 +231,8 @@ export const pets: Pet[] = [
   },
 
   // === C-TIER ===
+    imagePlaceholder: "/placeholder-pet-bamboo-panda-cub.png",
+    tierRating: 3,
   {
     id: "bamboo-panda-cub",
     name: "Bamboo Panda Cub",
@@ -228,6 +253,8 @@ export const pets: Pet[] = [
       "Replace as soon as possible",
     ],
   },
+    imagePlaceholder: "/placeholder-pet-common-garden-cat.png",
+    tierRating: 3,
   {
     id: "common-garden-cat",
     name: "Common Garden Cat",
