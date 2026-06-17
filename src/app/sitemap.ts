@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { crops } from "@/data/garden/database/crops";
 import { mutations } from "@/data/garden/database/mutations";
 import { pets } from "@/data/garden/database/pets";
@@ -8,6 +8,7 @@ import { traits } from "@/data/rangers/database/traits";
 const BASE_URL = "https://growandrangers.xyz";
 
 const staticPages = [
+  { path: "/guides/summer-2026-tier-list-and-garden", priority: 0.7, changefreq: "weekly" as const },
   { path: "", priority: 1.0, changefreq: "daily" as const },
   { path: "/grow-a-garden/", priority: 0.9, changefreq: "daily" as const },
   { path: "/anime-rangers-x/", priority: 0.9, changefreq: "daily" as const },

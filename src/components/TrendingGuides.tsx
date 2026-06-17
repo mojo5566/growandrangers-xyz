@@ -11,6 +11,14 @@ interface GuideCard {
 
 const trendingGuides: GuideCard[] = [
   {
+    title: "Summer 2026: Best Characters Tier List & Micro Garden Crossover Guide",
+    href: "/guides/summer-2026-tier-list-and-garden",
+    category: "Anime Rangers X + Garden",
+    accent: "rangers",
+    description: "T0 character rankings for the June 2026 patch plus a real-world micro garden guide to build your own anime terrarium.",
+    date: "June 17, 2026",
+  },
+  {
     title: "Golden Bloom vs Crystal Vine: Which S-Tier Mutation Wins?",
     href: "/grow-a-garden/mutation-tier-list",
     category: "Grow a Garden",
