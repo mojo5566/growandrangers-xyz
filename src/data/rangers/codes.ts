@@ -1,14 +1,14 @@
-﻿import type { CodesPageData } from "../types";
+import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
   title: "Anime Rangers X (Re:Rangers X) Codes — Active & Expired Promo Codes (June 2026)",
-  description: "Working Re:Rangers X (Update 7) promo codes for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Gear Fragments, and Dr. Megga Punk. All codes verified against multiple community sources — last checked June 12, 2026.",
-  updatedAt: "June 12, 2026",
-  lastChecked: "June 12, 2026",
+  description: "Working Re:Rangers X (Update 7) promo codes for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Gear Fragments, and Dr. Megga Punk. All codes verified against multiple community sources — last checked June 28, 2026.",
+  updatedAt: "June 28, 2026",
+  lastChecked: "June 28, 2026",
   sources: [
-    { name: "MobileMatters", url: "https://mobilematters.gg/guides/redeem-codes/rerangers-x", type: "Community", lastChecked: "June 12, 2026" },
-    { name: "Roonby", url: "https://roonby.com/2026/05/31/anime-rangers-x-codes/", type: "Community", lastChecked: "June 12, 2026" },
-    { name: "MrGuider", url: "https://www.mrguider.org/roblox/re-rangers-x-codes/", type: "Community", lastChecked: "June 12, 2026" },
+    { name: "MobileMatters", url: "https://mobilematters.gg/guides/redeem-codes/rerangers-x", type: "Community", lastChecked: "June 28, 2026" },
+    { name: "Roonby", url: "https://roonby.com/2026/05/31/anime-rangers-x-codes/", type: "Community", lastChecked: "June 28, 2026" },
+    { name: "ProGameGuides", url: "https://progameguides.com/roblox/re-rangers-x-codes/", type: "Community", lastChecked: "June 28, 2026" },
   ],
   breadcrumbs: [
     { label: "Home", href: "/" },

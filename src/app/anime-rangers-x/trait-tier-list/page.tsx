@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "Void Touch",
     "Monarch trait",
   ],
+  alternates: { canonical: "/anime-rangers-x/trait-tier-list" },
   openGraph: {
     title: data.title,
     description: data.description,

@@ -1,9 +1,9 @@
-﻿import type { EvolutionPageData } from "../types";
+import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
   title: "Re:Rangers X Best Units Guide — Top DPS, Supports & Team Building (June 2026)",
   description: "Complete guide to the best units in Re:Rangers X. Learn which units to summon for, how to build the optimal 4-unit team, elemental synergies, evolution priority, and which units are worth your Gems and Evolution Stones.",
-  updatedAt: "June 8, 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Re:Rangers X Best Units Guide", href: "/anime-rangers-x/best-units" },
@@ -18,6 +18,7 @@ const data: EvolutionPageData = {
       "Elemental synergy matters — pairing complementary elements boosts team performance",
       "One hyper-evolved carry outperforms five evenly-leveled units every time",
       "Traits can double a unit's effectiveness — always fill trait slots on permanent units",
+      "The 2026 anime crossover event is the biggest content drop of the year — Kirito (SAO) and Goku (Dragon Ball) are now S-Tier Mythics rivaling Chrono Slayer and Void Empress",
     ],
   },
 
@@ -58,6 +59,20 @@ const data: EvolutionPageData = {
       sources: ["Legendary summon banner", "Rare banner (low chance)", "Event shops"],
       tip: "The most versatile support unit. Evolve to Epic for Trait Slot 2, equip Cooldown- trait, and freeze enemies on cooldown. Works with every DPS — keeps enemies in Chrono Slayer's attack range, groups them for Void Empress AOE, and holds them in Blaze Archon's burn radius.",
     },
+    {
+      name: "Kirito (Dark, S-Tier) — SAO Crossover",
+      icon: "⚔️",
+      desc: "The new top single-target DPS from the 2026 Sword Art Online crossover event. A Mythic Dark unit whose dual-blade burst combo rivals Chrono Slayer for pure boss-melting potential. High base ATK with a cooldown-resetting critical passive that triggers on kill, enabling back-to-back burst windows. The anime crossover event is the biggest content drop of 2026 — Kirito is its flagship unit.",
+      sources: ["Limited SAO crossover banner (time-gated)", "Crossover event shop (exchange tokens)"],
+      tip: "If you pull Kirito, treat him like Chrono Slayer — build your entire account around him. Evolve to Mythic first for Trait Slot 3. Pair with Frost Monarch (CC) and Tide Guardian (sustain) since he has no self-heal. His burst windows are shorter than Chrono Slayer's, so time your other units' ultimates to land inside Kirito's burst. Rivals Chrono Slayer for the #1 single-target DPS slot.",
+    },
+    {
+      name: "Goku (Fire, S-Tier) — Dragon Ball Crossover",
+      icon: "🌋",
+      desc: "The new best AOE fire DPS from the 2026 Dragon Ball crossover event. A Mythic Fire unit whose screen-wide Kamehameha-style ultimate rivals Void Empress for AOE damage. Stacking charge mechanic increases damage the longer he stays in combat, rewarding sustained Infinite Mode runs. The anime crossover event is the biggest content drop of 2026 — Goku is the premier AOE carry for fire-weak content.",
+      sources: ["Limited Dragon Ball crossover banner (time-gated)", "Crossover event shop (exchange tokens)"],
+      tip: "If you pull Goku, build around him the same way you would Void Empress. Evolve to Mythic first for Trait Slot 3. His charge mechanic rewards long waves — pair with Frost Monarch (CC) to keep enemies grouped while he ramps up. Equip God-Speed trait to shorten his charge window. Rivals Void Empress for the #1 AOE DPS slot and is the clear pick against Ice-weak bosses.",
+    },
   ],
 
   bestUnitsSteps: [
@@ -73,6 +88,8 @@ const data: EvolutionPageData = {
   priorityList: [
     { tier: "S", unit: "Chrono Slayer (Time, S-Tier)", reason: "Highest DPS, time-freeze ultimate, cooldown reset passive. The best unit in the game by a significant margin. Build your entire account around this unit if you pull it. Pairs with Time Rewind trait for infinite ultimate chains." },
     { tier: "S", unit: "Void Empress (Dark, S-Tier)", reason: "Best AOE damage, self-heal sustain, high base HP. The ideal solo-carry for new players. Pairs with Void Touch trait. Excels in boss fights and wave clear. If you pull both Mythics, use Chrono Slayer as main DPS and Void Empress as secondary." },
+    { tier: "S", unit: "Kirito (Dark, S-Tier) — SAO Crossover", reason: "The new top single-target DPS from the 2026 SAO crossover, rivaling Chrono Slayer. Mythic Dark unit with a cooldown-resetting critical passive on kill. Part of the anime crossover event — the biggest content drop of 2026. Build around him exactly as you would Chrono Slayer. Pairs with Frost Monarch and Tide Guardian." },
+    { tier: "S", unit: "Goku (Fire, S-Tier) — Dragon Ball Crossover", reason: "The new best AOE fire DPS from the 2026 Dragon Ball crossover, rivaling Void Empress. Mythic Fire unit with a stacking charge mechanic that rewards sustained Infinite Mode runs. The clear AOE pick against Ice-weak bosses. Part of the anime crossover event — the biggest content drop of 2026." },
     { tier: "A", unit: "Blaze Archon (Fire, A-Tier)", reason: "Best accessible DPS. Burn stacking melts bosses. Legendary summon rate means you will actually get this unit. Evolve to Legendary for Ultimate. The realistic main DPS for players who have not pulled a Mythic." },
     { tier: "A", unit: "Frost Monarch (Ice, A-Tier)", reason: "Essential crowd control. Freeze, ice wall, slow. Makes high-wave content possible. Every serious team needs CC, and Frost Monarch is the best in slot. Evolve to Epic for Trait Slot 2, equip Cooldown-." },
     { tier: "A", unit: "Storm Ronin (Lightning, A-Tier)", reason: "Speed farming specialist. Chain lightning attack hits multiple enemies. Best unit for fast Infinite Mode clears to farm Evolution Stones. Pair with Shadow Kunoichi for maximum speed." },

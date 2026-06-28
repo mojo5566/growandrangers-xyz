@@ -1,4 +1,4 @@
-﻿import type { EvolutionPageData } from "../types";
+import type { EvolutionPageData } from "../types";
 import { pets } from "./database/pets";
 
 const goldenPhoenix = pets.find((p) => p.id === "golden-phoenix-chick")!;
@@ -12,7 +12,7 @@ function buildBestPetsData(): EvolutionPageData {
   return {
     title: "Grow a Garden Best Pets Guide — Top Pets for Coin Farming (June 2026)",
     description: "Complete guide to the best pets in Grow a Garden. Learn which pets to hatch first, how pet multipliers work, egg hatching strategy, mutation synergy combos, and how to maximize your coin income with the right pet selection.",
-    updatedAt: "June 8, 2026",
+    updatedAt: "June 28, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Best Pets Guide", href: "/grow-a-garden/best-pets" },

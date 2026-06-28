@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
+import { units } from "@/data/rangers/database/units";
+import { traits } from "@/data/rangers/database/traits";
 
 export const metadata: Metadata = {
   title:
@@ -19,15 +21,15 @@ export const metadata: Metadata = {
 const databaseCards = [
   {
     title: "Units Database",
-    description: "20 units with stats, abilities, and evolution requirements.",
+    description: "All units with stats, abilities, and evolution requirements.",
     href: "/anime-rangers-x/units",
-    count: "20 units",
+    count: `${units.length} units`,
   },
   {
     title: "Traits Database",
-    description: "25 traits with modifier values, rarity, and optimal unit pairings.",
+    description: "All traits with modifier values, rarity, and optimal unit pairings.",
     href: "/anime-rangers-x/traits",
-    count: "25 traits",
+    count: `${traits.length} traits`,
   },
 ];
 

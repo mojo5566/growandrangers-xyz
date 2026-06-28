@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
+import { crops } from "@/data/garden/database/crops";
+import { mutations } from "@/data/garden/database/mutations";
+import { pets } from "@/data/garden/database/pets";
 
 export const metadata: Metadata = {
   title: "Grow a Garden — Codes, Tier Lists, Crop Values & Guides | BloxPulse",
@@ -18,21 +21,21 @@ export const metadata: Metadata = {
 const databaseCards = [
   {
     title: "Crops Database",
-    description: "140 crops with values, growth times, and mutation compatibility.",
+    description: "All crops with values, growth times, and mutation compatibility.",
     href: "/grow-a-garden/crops",
-    count: "140 crops",
+    count: `${crops.length} crops`,
   },
   {
     title: "Mutations Database",
-    description: "112 mutations ranked by rarity, multiplier, and pet synergy.",
+    description: "All mutations ranked by rarity, multiplier, and pet synergy.",
     href: "/grow-a-garden/mutations",
-    count: "112 mutations",
+    count: `${mutations.length} mutations`,
   },
   {
     title: "Pets Database",
-    description: "68 pets with hatching odds, abilities, and multiplier stats.",
+    description: "All pets with hatching odds, abilities, and multiplier stats.",
     href: "/grow-a-garden/pets",
-    count: "68 pets",
+    count: `${pets.length} pets`,
   },
 ];
 

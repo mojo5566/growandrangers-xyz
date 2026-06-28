@@ -1,10 +1,10 @@
-﻿import type { TierListPageData } from "../types";
+import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
   title: "Anime Rangers X Tier List (June 2026) — Best Units Ranked",
   description:
     "Complete Anime Rangers X tier list ranking every unit from S-Tier to C-Tier. Includes detailed strengths, weaknesses, beginner recommendations, best team compositions, and progression advice for Infinite Mode and gem farming.",
-  updatedAt: "June 9, 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Tier List", href: "/anime-rangers-x/tier-list" },
@@ -20,10 +20,13 @@ const data: TierListPageData = {
   tiers: [
     {
       name: "S-Tier — Meta-Defining Units",
-      description: "Two Mythic units that define the endgame meta. Highest DPS, game-changing ultimates, and the best scaling in Infinite Mode.",
+      description: "Mythic units that define the endgame meta, now featuring 2026 Anime Crossover units. Highest DPS, game-changing ultimates, and the best scaling in Infinite Mode.",
       entries: [
         { name: "Chrono Slayer (Time)", tier: "S", description: "Best DPS, time-freeze ultimate, infinite scaling cooldown passive" },
         { name: "Void Empress (Dark)", tier: "S", description: "AOE nuke covering entire screen, self-heal sustain, highest base HP among DPS" },
+        { name: "Kirito (Dark)", tier: "S", description: "2026 Anime Crossover — SAO Dual Wield single-target burst, highest sustained DPS after Chrono Slayer" },
+        { name: "Goku (Fire)", tier: "S", description: "2026 Anime Crossover — DBZ Spirit Bomb ultimate, stacking ATK buff passive for scaling damage" },
+        { name: "Asuna (Lightning)", tier: "S", description: "2026 Anime Crossover — SAO speed-based rapier DPS, lightning-fast attack chains" },
       ],
     },
     {
@@ -33,6 +36,12 @@ const data: TierListPageData = {
         { name: "Blaze Archon (Fire)", tier: "A", description: "Stacking burn DOTs, boss-killing ultimate explosion" },
         { name: "Storm Ronin (Lightning)", tier: "A", description: "Speed buff support, chain lightning multi-target" },
         { name: "Frost Monarch (Ice)", tier: "A", description: "Freeze crowd control, defensive wall for team protection" },
+        { name: "Naruto (Air)", tier: "A", description: "2026 Anime Crossover — Naruto shadow clone ultimate, multi-target air CC" },
+        { name: "Sasuke (Lightning)", tier: "A", description: "2026 Anime Crossover — Naruto lightning chidori burst, high single-target DPS" },
+        { name: "Vegeta (Fire)", tier: "A", description: "2026 Anime Crossover — DBZ galick gun AOE, aggressive fire burst DPS" },
+        { name: "Luffy (Earth)", tier: "A", description: "2026 Anime Crossover — One Piece gear-shift tank, stretchy AOE melee" },
+        { name: "Ichigo (Dark)", tier: "A", description: "2026 Anime Crossover — Bleach Bankai burst, hybrid AOE/single-target dark DPS" },
+        { name: "Zoro (Air)", tier: "A", description: "2026 Anime Crossover — One Piece three-sword style, multi-hit air DPS" },
       ],
     },
     {
@@ -42,6 +51,8 @@ const data: TierListPageData = {
         { name: "Shadow Kunoichi (Dark)", tier: "B", description: "Stealth assassin, 400% critical burst damage" },
         { name: "Tide Guardian (Water)", tier: "B", description: "Best team healer, 64% total HP heal-over-time" },
         { name: "Stone Colossus (Earth)", tier: "B", description: "Premier tank, taunt + 20% team damage reduction" },
+        { name: "Gon (Earth)", tier: "B", description: "2026 Anime Crossover — HxH jajanken rock-paper-scissors flex burst, adaptive earth DPS" },
+        { name: "Killua (Lightning)", tier: "B", description: "2026 Anime Crossover — HxH lightning godspeed, rapid chain lightning DPS" },
       ],
     },
     {
@@ -75,6 +86,24 @@ const data: TierListPageData = {
       bestUse: "AOE wave-clear specialist for Infinite Mode. Pair with Blaze Archon for stacking burn synergy. Apply Void Touch trait for 25% defense penetration against armored bosses.",
       color: "#FF3D00",
     },
+    {
+      name: "Kirito (Dark)",
+      rank: "S-Tier #3 — Single-Target Burst",
+      desc: "Kirito is the centerpiece of the 2026 SAO Anime Crossover and the highest single-target burst DPS in the game after Chrono Slayer. His Dual Wield passive splits each attack into two hits at 75% ATK each — a 50% total damage increase that scales multiplicatively with attack speed buffs. His ultimate, Starburst Stream, unleashes 16 consecutive strikes totaling 4,200% ATK against a single target, the strongest single-target ultimate in Anime Rangers X. With the new Dual Wield trait equipped, his dual-hit passive procs on every attack including ultimate hits, doubling the effective ultimate multiplier. A must-pull for any player focused on boss-killing content.",
+      strengths: ["Highest single-target burst after Chrono Slayer (4,200% ATK ultimate)", "Dual Wield passive — +50% effective damage on every attack", "Dual Wield trait doubles ultimate hit count for absurd burst", "2026 SAO crossover — limited availability, prioritized for Mythic summons"],
+      weaknesses: ["Purely single-target — weak in dense wave content", "No self-sustain or defensive abilities", "Dark element weak against Light bosses", "Dual Wield trait is Mythic-rarity — extremely rare roll"],
+      bestUse: "Primary single-target DPS in boss content. Pair with Frost Monarch (CC) + Tide Guardian (Sustain). Apply Dual Wield trait for ultimate hit-doubling. 2026 SAO crossover — best used alongside Asuna for SAO team synergy bonuses.",
+      color: "#FF3D00",
+    },
+    {
+      name: "Goku (Fire)",
+      rank: "S-Tier #4 — Stacking Hyper-Carry",
+      desc: "Goku is the 2026 Dragon Ball crossover's flagship unit and the premier scaling hyper-carry in Anime Rangers X. His signature passive, Saiyan Pride, grants a permanent +5% ATK buff per kill — stacking infinitely across an entire Infinite Mode run. By wave 50, a well-fed Goku easily surpasses 5,000 effective ATK, outscaling even Chrono Slayer in prolonged content. His Spirit Bomb ultimate deals 3,500% ATK in a massive AOE, and the new Spirit Bomb trait reduces its cooldown by 30% and adds a 10% max HP true damage proc. A uniquely powerful unit for Infinite Mode pushing where wave density enables the stacking passive to snowball.",
+      strengths: ["Infinite stacking +5% ATK per kill — best late-game scaling in the game", "3,500% ATK Spirit Bomb ultimate is the strongest AOE nuke", "Spirit Bomb trait adds cooldown reduction + true damage proc", "2026 Dragon Ball crossover — high Mythic summon priority"],
+      weaknesses: ["Stacks reset on unit death — extremely punishing", "Ramps slowly — weak in early waves and short stages", "No defensive passives or sustain — needs heavy team support", "Spirit Bomb trait is Legendary-rarity — significant investment required"],
+      bestUse: "Scaling hyper-carry for extended Infinite Mode pushes. Pair with Stone Colossus (taunt protection) + Tide Guardian (sustain) to prevent death and preserve stacks. Apply Spirit Bomb trait for ultimate cooldown reduction. 2026 DBZ crossover — pairs thematically with Vegeta for Saiyan team bonuses.",
+      color: "#FF3D00",
+    },
     // A-TIER
     {
       name: "Blaze Archon (Fire)",
@@ -101,6 +130,15 @@ const data: TierListPageData = {
       strengths: ["3-second AOE freeze — best CC in the game", "Defensive wall blocks all projectiles for 5 seconds", "Irreplaceable for Infinite Mode wave 80+ pushes", "CC enables DPS units to maximize damage safely"],
       weaknesses: ["Low personal damage (1,800 ATK)", "Freeze duration halved (1.5s) on bosses", "Defensive wall has 30-second cooldown", "Requires strong DPS teammates to capitalize on CC windows"],
       bestUse: "CC support in all team compositions. Essential for Infinite Mode. Pair with Chrono Slayer or Void Empress. Apply Cooldown Reduction trait for more frequent freezes.",
+      color: "#FF8C00",
+    },
+    {
+      name: "Naruto (Air)",
+      rank: "A-Tier — Shadow Clone CC",
+      desc: "Naruto is the 2026 Naruto crossover's flagship unit and the premier Air-element crowd-control DPS. His signature Multi-Shadow Clone Jutsu ultimate spawns up to 8 shadow clones that each deal 280% ATK and apply a 1-second stagger — totaling 2,240% ATK plus 8 seconds of total enemy CC. This makes him a unique hybrid DPS/CC unit, capable of locking down entire waves while still dealing strong damage. His Rasengan trait, new with the crossover, adds a stacking 5% damage bonus per clone spawned, snowballing his damage in extended fights. A versatile A-Tier pick that brings both damage and CC utility to any team.",
+      strengths: ["Shadow Clone ultimate — 2,240% ATK + 8 seconds of total CC", "Hybrid DPS/CC role — fills two team slots in one", "Rasengan trait stacks damage per clone spawned", "2026 Naruto crossover — pairs thematically with Sasuke for Team 7 bonuses"],
+      weaknesses: ["Stagger CC is weaker than Frost Monarch's hard freeze", "Lower personal damage than dedicated A-Tier DPS units", "Air element weak against Earth bosses", "Clone AI can scatter enemies, making follow-up AOE harder"],
+      bestUse: "Hybrid DPS/CC in any team needing both damage and crowd control. Pair with Goku (DPS) + Tide Guardian (sustain) for a balanced crossover team. Apply Rasengan trait for stacking clone damage. 2026 Naruto crossover — pairs thematically with Sasuke for Team 7 synergy.",
       color: "#FF8C00",
     },
     // B-TIER
@@ -212,6 +250,11 @@ const data: TierListPageData = {
       units: "Void Empress + Blaze Archon + Stone Colossus",
       desc: "High single-target burst with tank support. Blaze Archon burn stacks amplify Void Empress ultimate damage. Stone Colossus taunt redirects boss attacks. Best for event boss content.",
     },
+    {
+      name: "Anime Crossover Team",
+      units: "Kirito + Goku + Asuna",
+      desc: "Maximum DPS with no CC or sustain. Pure damage race team for event content. Kirito handles single-target burst, Goku stacks ATK over the run, Asuna covers spread targets. Bring your own dodge skills — there is no safety net.",
+    },
   ],
 
   strategyTips: [
@@ -256,6 +299,11 @@ const data: TierListPageData = {
       question: "What gems should I save for summons?",
       answer:
         "Always save for the 10-summon bundle (2,700 gems = 10% discount vs single summons). Do not spend gems on cosmetics, stamina refills, or instant completes — all gems should go into unit summons until you have at least two S-Tier or A-Tier units at max evolution. After assembling your core team, spend excess gems on Trait Rolls for S-Tier units.",
+    },
+    {
+      question: "What is the 2026 Anime Crossover update?",
+      answer:
+        "The 2026 Anime Crossover update is a limited-time event that added 11 new crossover units from six iconic anime franchises — Sword Art Online (Kirito, Asuna), Dragon Ball Z (Goku, Vegeta), Naruto (Naruto, Sasuke), One Piece (Luffy, Zoro), Bleach (Ichigo), and Hunter x Hunter (Gon, Killua). It also introduced 7 new crossover traits including the Mythic-rarity Dual Wield and Sharingan. Crossover units and traits are only available from the limited-time Anime Crossover banner — pool your gems and prioritize the S-Tier Mythics (Kirito, Goku, Asuna) before the banner ends.",
     },
   ],
 

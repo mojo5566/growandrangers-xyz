@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import Link from "next/link";
@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: `${data.title} | BloxPulse`,
   description: data.description,
   keywords: ["Grow a Garden best mutations", "best mutations Grow a Garden", "mutation rolling guide", "mutation shard farming", "mutation strategy", "mutation boosted events"],
+  alternates: { canonical: "/grow-a-garden/best-mutations" },
   openGraph: { title: data.title, description: data.description, type: "website" },
 };
 

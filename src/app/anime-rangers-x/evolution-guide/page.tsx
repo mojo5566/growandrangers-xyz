@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Awakening Core",
     "how to evolve units",
   ],
+  alternates: { canonical: "/anime-rangers-x/evolution-guide" },
   openGraph: {
     title: data.title,
     description: data.description,

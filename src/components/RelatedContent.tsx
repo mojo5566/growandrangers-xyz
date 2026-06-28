@@ -40,12 +40,12 @@ export default function RelatedContent({
           <Link
             key={link.href}
             href={link.href}
-            className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676]"
-            style={{ ["--hover-border" as string]: accentBorder } as React.CSSProperties}
+            className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[var(--accent-border)]"
+            style={{ ["--accent-border" as string]: accentBorder } as React.CSSProperties}
           >
             <span
-              className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[var(--hover-accent)] transition"
-              style={{ color: "inherit" } as React.CSSProperties}
+              className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[var(--accent-color)] transition"
+              style={{ ["--accent-color" as string]: accentColor } as React.CSSProperties}
             >
               {link.label} →
             </span>

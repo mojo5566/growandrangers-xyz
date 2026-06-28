@@ -1,26 +1,26 @@
-﻿import type { CodesPageData } from "../types";
+import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
   title: "Grow a Garden Codes — Active & Expired Promo Codes (June 2026)",
-  description: "Working Grow a Garden promo codes for free decorations, hats, and exclusive items. All codes verified against official sources — last checked June 12, 2026.",
-  updatedAt: "June 12, 2026",
-  lastChecked: "June 12, 2026",
+  description: "Working Grow a Garden promo codes for free decorations, hats, and exclusive items. All codes verified against official sources — last checked June 28, 2026.",
+  updatedAt: "June 28, 2026",
+  lastChecked: "June 28, 2026",
   sources: [
-    { name: "Roonby", url: "https://roonby.com/2026/05/30/grow-a-garden-codes/", type: "Community", lastChecked: "June 12, 2026" },
-    { name: "MobileMatters", url: "https://mobilematters.gg/guides/redeem-codes/grow-garden-new-roblox-codes", type: "Community", lastChecked: "June 12, 2026" },
-    { name: "Gamer Choice", url: "https://gamer-choice.com/grow-a-garden-codes/", type: "Community", lastChecked: "June 12, 2026" },
+    { name: "Roonby", url: "https://roonby.com/2026/05/30/grow-a-garden-codes/", type: "Community", lastChecked: "June 28, 2026" },
+    { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "June 28, 2026" },
+    { name: "NetEase Gaming", url: "https://www.163.com/dy/article/L058JERK05561FY6.html", type: "Community", lastChecked: "June 28, 2026" },
   ],
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Grow a Garden Codes", href: "/grow-a-garden/codes" },
   ],
   activeCodes: [
-    { code: "RDCAward", reward: "RDC Award Trophy (cosmetic decoration)", note: "Verified June 2026 — no expiration", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
-    { code: "BEANORLEAVE10", reward: "Green Bean Chamber (cosmetic decoration)", note: "Verified June 2026 — no expiration", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
-    { code: "torigate", reward: "Whispering Torii Gate (cosmetic decoration)", note: "Case-sensitive — use lowercase only", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
-    { code: "HONEYBEE2025", reward: "x1 Rare Pet Egg + Bee Hat Item", note: "Bizzy Bees Update — may be expired, test to confirm", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
+    { code: "RDCAward", reward: "RDC Award Trophy (cosmetic decoration)", note: "Zen Update — verified June 2026, no expiration", source: "https://www.163.com/dy/article/L058JERK05561FY6.html" },
+    { code: "BEANORLEAVE10", reward: "Green Bean Chamber (cosmetic decoration)", note: "Zen Update — verified June 2026, no expiration", source: "https://www.163.com/dy/article/L058JERK05561FY6.html" },
+    { code: "torigate", reward: "Whispering Torii Gate (cosmetic decoration)", note: "Zen Update — case-sensitive, use lowercase only. Verified June 2026", source: "https://www.163.com/dy/article/L058JERK05561FY6.html" },
   ],
   expiredCodes: [
+    { code: "HONEYBEE2025", reward: "x1 Rare Pet Egg + Bee Hat Item", expiredOn: "Bizzy Bees Update — expired post-Zen Update", source: "https://www.163.com/dy/article/L058JERK05561FY6.html" },
     { code: "GOLDENCARROT", reward: "x1 Golden Fertilizer + 200 Coins", expiredOn: "2025 (100M Visits Milestone)", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
     { code: "WIKIFRIEND", reward: "Wiki Hat + 300 Coins", expiredOn: "2025 (Wiki Launch)", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },
     { code: "SUMMERFUN25", reward: "Summer Hat + x2 Uncommon Seed Packs + 1,000 Coins", expiredOn: "September 15, 2025", source: "https://roonby.com/2026/05/30/grow-a-garden-codes/" },

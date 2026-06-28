@@ -1,4 +1,4 @@
-﻿import type { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { crops } from "@/data/garden/database/crops";
 import { mutations } from "@/data/garden/database/mutations";
 import { pets } from "@/data/garden/database/pets";
@@ -25,7 +25,11 @@ const staticPages = [
   { path: "/grow-a-garden/best-mutations", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/best-pets", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/money-making-guide", priority: 0.7, changefreq: "weekly" as const },
-  { path: "/grow-a-garden/value-list", priority: 0.7, changefreq: "weekly" as const },
+  { path: "/grow-a-garden-2/", priority: 0.9, changefreq: "daily" as const },
+  { path: "/grow-a-garden-2/codes", priority: 0.9, changefreq: "daily" as const },
+  { path: "/grow-a-garden-2/beginner-guide", priority: 0.8, changefreq: "weekly" as const },
+  { path: "/grow-a-garden-2/night-stealing-guide", priority: 0.8, changefreq: "weekly" as const },
+  { path: "/grow-a-garden-2/guild-guide", priority: 0.8, changefreq: "weekly" as const },
   { path: "/anime-rangers-x/codes", priority: 0.9, changefreq: "daily" as const },
   { path: "/anime-rangers-x/tier-list", priority: 0.8, changefreq: "weekly" as const },
   { path: "/anime-rangers-x/unit-tier-list", priority: 0.8, changefreq: "weekly" as const },

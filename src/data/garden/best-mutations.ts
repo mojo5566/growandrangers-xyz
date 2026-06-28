@@ -1,4 +1,4 @@
-﻿import type { EvolutionPageData } from "../types";
+import type { EvolutionPageData } from "../types";
 import { mutations } from "./database/mutations";
 
 const aurelianCrown = mutations.find((m) => m.id === "aurelian-crown")!;
@@ -12,7 +12,7 @@ function buildBestMutationsData(): EvolutionPageData {
   return {
     title: "Grow a Garden Best Mutations Guide — Top Mutations & Rolling Strategy (June 2026)",
     description: "Master the mutation system in Grow a Garden. Learn how Mutation Shards work, which mutations to target at each stage, optimal rolling strategy during boosted events, and how to pair mutations with pets for maximum crop yields.",
-    updatedAt: "June 8, 2026",
+    updatedAt: "June 28, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Best Mutations Guide", href: "/grow-a-garden/best-mutations" },

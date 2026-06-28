@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "Aurelian Crown",
     "Leporine Bloom",
   ],
+  alternates: { canonical: "/grow-a-garden/mutation-tier-list" },
   openGraph: {
     title: data.title,
     description: data.description,

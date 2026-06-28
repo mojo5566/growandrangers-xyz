@@ -1,9 +1,9 @@
-﻿import type { EvolutionPageData } from "../types";
+import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
   title: "Anime Rangers X Evolution Guide — Full Requirements & Strategy (June 2026)",
   description: "Step-by-step evolution guide covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, priority order, and common mistakes to avoid.",
-  updatedAt: "June 8, 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Evolution Guide", href: "/anime-rangers-x/evolution-guide" },
@@ -22,6 +22,9 @@ const data: EvolutionPageData = {
     { from: "Rare → Epic", mats: "x120 Evolution Stones + x12,000 Gems", stats: "+75% stats, unlock Trait Slot 2" },
     { from: "Epic → Legendary", mats: "x250 Evolution Stones + x25,000 Gems", stats: "+100% stats, unlock Ultimate" },
     { from: "Legendary → Mythic", mats: "x500 Evolution Stones + x50,000 Gems + x1 Awakening Core", stats: "+150% stats, unlock Trait Slot 3" },
+    { from: "Kirito (SAO Crossover) → Mythic", mats: "x200 Evolution Stones + x15,000 Gems", stats: "Full Mythic evolution for the 2026 SAO crossover's top single-target DPS. Dark element, rivals Chrono Slayer." },
+    { from: "Goku (Dragon Ball Crossover) → Mythic", mats: "x200 Evolution Stones + x15,000 Gems", stats: "Full Mythic evolution for the 2026 Dragon Ball crossover's best AOE fire DPS. Rivals Void Empress." },
+    { from: "Naruto (Anime Crossover) → Legendary", mats: "x100 Evolution Stones + x8,000 Gems", stats: "Legendary evolution for the anime crossover's air-element CC unit. Unlock Ultimate and Trait Slot 2." },
   ],
   totalCost: "Total to Mythic from Common: 920 Evolution Stones + 92,000 Gems + 1 Awakening Core",
   materials: [

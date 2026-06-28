@@ -7,6 +7,8 @@ import SEOFAQ from "@/components/SEOFAQ";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 import Link from "next/link";
+import gardenCodes from "@/data/garden/codes";
+import rangersCodes from "@/data/rangers/codes";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -20,6 +22,9 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
 };
+
+const gardenActiveCodes = gardenCodes.activeCodes.slice(0, 4);
+const rangersActiveCodes = rangersCodes.activeCodes.slice(0, 4);
 
 const databaseCards = [
   {
@@ -216,6 +221,46 @@ export default function Home() {
 
         <SectionDivider />
 
+        {/* ===== SECTION: Grow a Garden 2 — NEW GAME ===== */}
+        <section
+          className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
+          aria-labelledby="gag2-heading"
+        >
+          <span className="code-text inline-block rounded-md bg-[#00E676]/10 px-2.5 py-1 text-xs font-bold text-[#00E676] mb-3">
+            🆕 NEW GAME — LAUNCHED JUNE 2026
+          </span>
+          <h2
+            id="gag2-heading"
+            className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
+          >
+            🌱 Grow a Garden 2 — Just Launched
+          </h2>
+          <p className="mb-8 text-sm text-[#768294]">
+            The sequel hit 300 million visits in its first week. New features include night stealing, guilds, and the Sheckles economy.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Link href="/grow-a-garden-2/" className="group rounded-lg border border-[#00E676]/30 bg-[#14161D] p-4 transition hover:border-[#00E676]">
+              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">GaG2 Hub →</span>
+              <p className="mt-1 text-xs text-[#768294]">All new features and guides</p>
+            </Link>
+            <Link href="/grow-a-garden-2/codes" className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676]">
+              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">Active Codes →</span>
+              <p className="mt-1 text-xs text-[#768294]">TEAMGREENBEAN + future codes</p>
+            </Link>
+            <Link href="/grow-a-garden-2/beginner-guide" className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676]">
+              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">Beginner Guide →</span>
+              <p className="mt-1 text-xs text-[#768294]">Day/night cycle, Sheckles, guilds</p>
+            </Link>
+            <Link href="/grow-a-garden-2/night-stealing-guide" className="group rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676]">
+              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">Night Stealing →</span>
+              <p className="mt-1 text-xs text-[#768294]">Raid tactics and defense setups</p>
+            </Link>
+          </div>
+        </section>
+
+        <SectionDivider />
+
         {/* ===== SECTION 2: Latest Codes ===== */}
         <section
           className="mx-auto max-w-[1200px] px-4 py-12 lg:px-6 lg:py-16"
@@ -234,16 +279,14 @@ export default function Home() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="space-y-4">
-              <PromoCard code="HONEYBEE2025" reward="Rare Pet Egg + Bee Hat" accent="garden" />
-              <PromoCard code="GOLDENCARROT" reward="Golden Fertilizer + 200 Coins" accent="garden" />
-              <PromoCard code="GARDEN2026" reward="2 Mutation Shards + Basic Egg" accent="garden" />
-              <PromoCard code="SPRINGGROW" reward="Lucky Carrot Seeds + 100 Coins" accent="garden" />
+              {gardenActiveCodes.map((c) => (
+                <PromoCard key={c.code} code={c.code} reward={c.reward} accent="garden" />
+              ))}
             </div>
             <div className="space-y-4">
-              <PromoCard code="ECLIPSE" reward="100 Trait Rerolls + 75 Egg of Sacrifice" accent="rangers" />
-              <PromoCard code="SACRIFICE" reward="20 Trait Rerolls + 100K Gold" accent="rangers" />
-              <PromoCard code="RERANGERS2026" reward="50 Evolution Stones + 10K Gems" accent="rangers" />
-              <PromoCard code="SUMMONBOOST" reward="Mythic Summon Ticket + 25K Gems" accent="rangers" />
+              {rangersActiveCodes.map((c) => (
+                <PromoCard key={c.code} code={c.code} reward={c.reward} accent="rangers" />
+              ))}
             </div>
           </div>
 

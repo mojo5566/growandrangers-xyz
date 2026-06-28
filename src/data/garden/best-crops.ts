@@ -19,7 +19,7 @@ const bestCrops: GuidePageData & {
 } = {
   title: "Best Crops Guide — Grow a Garden (June 2026)",
   description: "Discover the absolute best crops in Grow a Garden ranked by coins-per-minute, seasonal value, and endgame profit potential. Updated for June 2026.",
-  updatedAt: "June 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -28,7 +28,7 @@ const bestCrops: GuidePageData & {
   faq: [
     {
       question: "What is the best crop in Grow a Garden?",
-      answer: "Golden Wheat is the undisputed best crop at 160 coins-per-minute with all-season availability. It requires no seasonal rotation and stacks multiplicatively with the best mutations and pets for up to 20× total yield.",
+      answer: "Golden Wheat remains the undisputed best crop at 160 coins-per-minute with all-season availability. New S-Tier additions Star Melon (125 CPM, all-season) and Phoenix Bloom (104 CPM, Summer) round out the top tier. Golden Wheat requires no seasonal rotation and stacks multiplicatively with the best mutations and pets for up to 20× total yield.",
     },
     {
       question: "Should I plant seasonal or all-season crops?",
@@ -36,7 +36,7 @@ const bestCrops: GuidePageData & {
     },
     {
       question: "What crop gives the most coins per harvest?",
-      answer: "Golden Wheat gives 480 coins per harvest — the highest in the game. With a 4.0× mutation and 5.0× pet, a single harvest can yield 9,600 coins.",
+      answer: "Phoenix Bloom gives 520 coins per harvest — the highest in the game — followed by Star Melon (500) and Golden Wheat (480). With a 4.0× mutation and 5.0× pet, a single Phoenix Bloom harvest can yield 10,400 coins.",
     },
     {
       question: "Are fast-growing crops better than slow ones?",
@@ -63,6 +63,18 @@ const bestCrops: GuidePageData & {
       imagePlaceholder: "/placeholder-crop-golden-wheat.png",
     },
     {
+      name: "Star Melon",
+      tier: "S",
+      coins: 500,
+      growthTime: "4 min",
+      season: "All",
+      coinsPerMinute: 125,
+      tierRating: 9,
+      why: "Third S-Tier all-season crop at 125 coins-per-minute — the highest per-harvest value of any all-season crop at 500 coins. The 4-minute cycle beats Crystal Berry's throughput while delivering superior per-harvest value.",
+      bestWith: "Aurelian Crown (4.0×) + Golden Phoenix Chick (5.0×) = 20.0× total yield (10,000 coins/harvest)",
+      imagePlaceholder: "/placeholder-crop-star-melon.png",
+    },
+    {
       name: "Crystal Berry",
       tier: "S",
       coins: 420,
@@ -75,6 +87,18 @@ const bestCrops: GuidePageData & {
       imagePlaceholder: "/placeholder-crop-crystal-berry.png",
     },
     {
+      name: "Phoenix Bloom",
+      tier: "S",
+      coins: 520,
+      growthTime: "5 min",
+      season: "Summer",
+      coinsPerMinute: 104,
+      tierRating: 9,
+      why: "The best Summer-season crop at 104 coins-per-minute with the highest per-harvest value in the game (520 coins). Reborn from seasonal ashes, it out-earns Magma Pepper per harvest. With the Summer +20% bonus, it dominates the season.",
+      bestWith: "Igneous Spore (2.25× Summer) + Magma Lizard Hatchling (3.0× Summer) = 6.75× total (Summer)",
+      imagePlaceholder: "/placeholder-crop-phoenix-bloom.png",
+    },
+    {
       name: "Magma Pepper",
       tier: "A",
       coins: 320,
@@ -82,7 +106,7 @@ const bestCrops: GuidePageData & {
       season: "Summer",
       coinsPerMinute: 80,
       tierRating: 7,
-      why: "Fast-growing Summer specialist at 80 CPM. The 4-minute cycle rewards active players, and the Summer +20% seasonal bonus pushes it above Crystal Berry during Summer months.",
+      why: "Fast-growing Summer specialist at 80 CPM — the #2 Summer crop behind Phoenix Bloom. The 4-minute cycle rewards active players, and the Summer +20% seasonal bonus pushes it above Crystal Berry during Summer months.",
       bestWith: "Igneous Spore (2.25× Summer) + Magma Lizard Hatchling (3.0× Summer) = 6.75× total (Summer)",
       imagePlaceholder: "/placeholder-crop-magma-pepper.png",
     },
@@ -111,6 +135,18 @@ const bestCrops: GuidePageData & {
       imagePlaceholder: "/placeholder-crop-frost-melon.png",
     },
     {
+      name: "Dragon Fruit",
+      tier: "A",
+      coins: 300,
+      growthTime: "4 min",
+      season: "All",
+      coinsPerMinute: 75,
+      tierRating: 7,
+      why: "The strongest all-season A-Tier crop at 75 coins-per-minute — a reliable fallback when S-Tier seeds are scarce. Its 4-minute cycle matches Magma Pepper's pace without the seasonal restriction.",
+      bestWith: "Aurelian Crown (4.0×) + Golden Phoenix Chick (5.0×) = 20.0× total yield (6,000 coins/harvest)",
+      imagePlaceholder: "/placeholder-crop-dragon-fruit.png",
+    },
+    {
       name: "Lucky Carrot",
       tier: "B",
       coins: 280,
@@ -124,8 +160,8 @@ const bestCrops: GuidePageData & {
     },
   ],
   strategyTips: [
-    "Main plot: Always plant Golden Wheat. It's the best crop in the game and the foundation of any profitable farm.",
-    "Secondary plots: Rotate seasonal crops (Magma Pepper → Neon Pumpkin → Frost Melon → Lucky Carrot) for the +20% seasonal bonus.",
+    "Main plot: Always plant Golden Wheat. It's the best crop in the game and the foundation of any profitable farm. Star Melon (125 CPM) is a strong all-season alternative when Golden Wheat seeds are scarce.",
+    "Secondary plots: Rotate seasonal crops (Phoenix Bloom → Neon Pumpkin → Frost Melon → Lucky Carrot) for the +20% seasonal bonus. Phoenix Bloom is the new Summer king at 104 CPM.",
     "AFK farming: Use Crystal Berry or Neon Pumpkin on your main plot. Longer growth cycles mean less management.",
     "Active farming: Lucky Carrot and Magma Pepper reward frequent harvesting with high throughput.",
     "Never plant Wild Grass or Basic Potato past the tutorial. Their 200 CPM is misleading — the 15-30 second cycles require impossibly constant attention.",

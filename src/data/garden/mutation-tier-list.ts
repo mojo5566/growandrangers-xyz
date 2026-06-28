@@ -1,4 +1,4 @@
-﻿import type { TierListPageData } from "../types";
+import type { TierListPageData } from "../types";
 import { mutations, getMutationsByTier } from "./database/mutations";
 
 function buildTierListData(): TierListPageData {
@@ -33,7 +33,7 @@ function buildTierListData(): TierListPageData {
   return {
     title: "Grow a Garden Mutation Tier List (V2.1) — All Mutations Ranked",
     description: "Every Grow a Garden mutation ranked from S-Tier to C-Tier based on crop value multiplier, seasonal bonuses, passive abilities, and pet synergy. Find the best mutation for your farming strategy.",
-    updatedAt: "June 8, 2026",
+    updatedAt: "June 28, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Mutation Tier List", href: "/grow-a-garden/mutation-tier-list" },

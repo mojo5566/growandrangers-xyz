@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "best DPS units",
     "Anime Rangers X meta",
   ],
+  alternates: { canonical: "/anime-rangers-x/unit-tier-list" },
   openGraph: {
     title: data.title,
     description: data.description,

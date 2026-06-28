@@ -11,11 +11,11 @@ interface GuideCard {
 
 const trendingGuides: GuideCard[] = [
   {
-    title: "Summer 2026: Best Characters Tier List & Micro Garden Crossover Guide",
+    title: "庄稼与刀剑！植物Buff搭配与动漫战队完美开局流",
     href: "/guides/summer-2026-tier-list-and-garden",
     category: "Anime Rangers X + Garden",
     accent: "rangers",
-    description: "T0 character rankings for the June 2026 patch plus a real-world micro garden guide to build your own anime terrarium.",
+    description: "花园产出决定Rangers战力上限！烈焰向日葵暴击+35%、千手神木回血光环、闪电风铃草超导过载AOE——完整联动开局策略。",
     date: "June 17, 2026",
   },
   {

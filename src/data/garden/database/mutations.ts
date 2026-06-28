@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // Grow a Garden — Canonical Mutation Database
 // Single source of truth for all mutation entities.
 // All page data files should import from here.
@@ -351,6 +351,192 @@ export const mutations: Mutation[] = [
     ],
     bestUse: "None. Overwrite immediately.",
     imagePlaceholder: "/placeholder-mutations-withered-husk.png",
+    tierRating: 4
+  },
+{
+    id: "midas-bloom",
+    name: "Midas Bloom",
+    aliases: ["Gold Mutation", "Golden Hue"],
+    multiplier: 5.0,
+    tier: "S",
+    rollRate: "~0.8%",
+    passives: ["Converts harvested crops to gold — 25% chance to double coin payout"],
+    description: "The mythical gold mutation at 5.0x — the highest base multiplier in the game. A 25% chance to double coin payouts pushes the effective ceiling above even Aurelian Crown. Rarer than any other mutation, requiring exceptional luck or dedicated shard farming.",
+    strengths: [
+      "Highest base multiplier in the game (5.0x)",
+      "25% double-payout chance raises effective value to ~6.25x",
+      "Prestigious visual — golden crops signal wealth",
+    ],
+    weaknesses: [
+      "Extremely rare — ~0.8% roll rate",
+      "No synergy with adjacent plots or pets",
+      "Shard investment risk — many rolls yield nothing",
+    ],
+    bestUse: "Main crop plot for maximum coin-per-harvest value. Pair with Golden Phoenix Chick (5.0x) for 25.0x total yield.",
+    imagePlaceholder: "/placeholder-mutations-midas-bloom.png",
+    tierRating: 10
+  },
+{
+    id: "prismatic-rainbow",
+    name: "Prismatic Rainbow",
+    aliases: ["Rainbow Mutation", "Spectrum Bloom"],
+    multiplier: 6.0,
+    tier: "S",
+    rollRate: "~0.2%",
+    passives: ["Crops cycle through all seasonal bonuses simultaneously"],
+    description: "The rarest mutation in existence at 6.0x — a true trophy item. Its unique passive cycles through all seasonal bonuses at once, meaning it is always in its peak season regardless of the current calendar.",
+    strengths: [
+      "Highest multiplier in the game (6.0x)",
+      "Always in peak season — ignores seasonal restrictions",
+      "Ultra-rare collectible with prestige value",
+    ],
+    weaknesses: [
+      "Effectively unobtainable — ~0.2% roll rate",
+      "Shard cost to roll for this is astronomical",
+      "No pet synergy — stands alone",
+    ],
+    bestUse: "Trophy plot. If obtained, place on your highest-value crop and never move it.",
+    imagePlaceholder: "/placeholder-mutations-prismatic-rainbow.png",
+    tierRating: 10
+  },
+{
+    id: "frozen-bloom",
+    name: "Frozen Bloom",
+    aliases: ["Frozen Mutation", "Ice Mutation"],
+    multiplier: 3.2,
+    conditionalBonus: { condition: "Winter season", bonusMultiplier: 3.8 },
+    tier: "A",
+    rollRate: "~5.5%",
+    passives: ["Crops preserved indefinitely until harvested — never spoils"],
+    description: "3.2x with a unique preservation passive that prevents crops from ever spoiling. During Winter, jumps to 3.8x — competitive with S-Tier. The preservation passive is unmatched for AFK farming.",
+    strengths: [
+      "3.8x during Winter rivals S-Tier performance",
+      "Preservation passive enables indefinite AFK farming",
+      "Strong 3.2x base multiplier",
+    ],
+    weaknesses: [
+      "Lower multiplier than S-Tier outside Winter",
+      "Preservation is redundant for active players who harvest promptly",
+      "Overlaps with Hoarfrost Corolla for Winter synergy",
+    ],
+    bestUse: "AFK farming plots where preservation prevents losses from forgotten harvests.",
+    seasonal: "Winter",
+    imagePlaceholder: "/placeholder-mutations-frozen-bloom.png",
+    tierRating: 8
+  },
+{
+    id: "giant-bloom",
+    name: "Giant Bloom",
+    aliases: ["Giant Mutation", "Large Mutation"],
+    multiplier: 3.0,
+    tier: "A",
+    rollRate: "~6.0%",
+    passives: ["Harvested crops count as two — effectively doubling yield"],
+    description: "3.0x with a double-yield passive that makes each harvest count as two. The effective multiplier is closer to 6.0x in terms of items produced, making it exceptional for crop-volume-based objectives.",
+    strengths: [
+      "Effective 6.0x yield when counting item volume",
+      "No seasonal or time-of-day restrictions",
+      "Strong A-Tier base multiplier",
+    ],
+    weaknesses: [
+      "Double-yield does not double coin value per item",
+      "Requires inventory space for doubled drops",
+      "Outclassed by S-Tier for pure coin farming",
+    ],
+    bestUse: "Crop-volume objectives and events requiring large harvest counts.",
+    imagePlaceholder: "/placeholder-mutations-giant-bloom.png",
+    tierRating: 8
+  },
+{
+    id: "wet-bloom",
+    name: "Wet Bloom",
+    aliases: ["Wet Mutation", "Moist Mutation"],
+    multiplier: 1.9,
+    conditionalBonus: { condition: "Rain weather", bonusMultiplier: 2.3 },
+    tier: "B",
+    rollRate: "~10.5%",
+    passives: ["+20% bonus during rain weather"],
+    description: "1.9x base with a reliable rain bonus pushing it to 2.3x. Higher base than Torrential Frond, making it more consistent overall, though with a lower spike ceiling.",
+    strengths: [
+      "2.3x during rain — solid B-Tier performance",
+      "Higher base multiplier than Torrential Frond (1.9x vs 1.7x)",
+      "Good roll rate (~10.5%)",
+    ],
+    weaknesses: [
+      "Lower rain-spike than Torrential Frond (2.3x vs 3.4x)",
+      "Rain-dependent bonus is unpredictable",
+      "Outclassed by A-Tier outside of rain",
+    ],
+    bestUse: "Consistent rain-weather farming where reliability matters more than peak spikes.",
+    imagePlaceholder: "/placeholder-mutations-wet-bloom.png",
+    tierRating: 6
+  },
+{
+    id: "glowing-bloom",
+    name: "Glowing Bloom",
+    aliases: ["Glowing Mutation", "Luminous Mutation"],
+    multiplier: 2.3,
+    tier: "B",
+    rollRate: "~10%",
+    passives: ["Attracts rare pollinators — 5% chance for bonus seeds on harvest"],
+    description: "2.3x with a pollinator passive that has a 5% chance to drop bonus seeds on each harvest. The seed drops can be valuable for expanding farm operations, adding long-term value beyond the multiplier.",
+    strengths: [
+      "Highest unconditional B-Tier multiplier (2.3x)",
+      "Bonus seed drops accelerate farm expansion",
+      "No seasonal or weather restrictions",
+    ],
+    weaknesses: [
+      "5% seed drop is RNG-dependent",
+      "Lower ceiling than conditional B-Tier mutations",
+      "Outclassed by A-Tier mutations",
+    ],
+    bestUse: "Expansion-phase farms where bonus seeds provide compounding value.",
+    imagePlaceholder: "/placeholder-mutations-glowing-bloom.png",
+    tierRating: 6
+  },
+{
+    id: "toxic-bloom",
+    name: "Toxic Bloom",
+    aliases: ["Toxic Mutation", "Poison Mutation"],
+    multiplier: 1.3,
+    tier: "C",
+    rollRate: "~22%",
+    passives: ["Deters common pests — 30% reduced pest invasion chance"],
+    description: "1.3x with a pest-deterrent passive that reduces pest invasion chance by 30%. A defensive C-Tier mutation that provides modest value through reduced crop losses rather than raw multiplier.",
+    strengths: [
+      "30% reduced pest invasions saves crops over time",
+      "Good roll rate (~22%)",
+      "Useful for high-value crops vulnerable to pests",
+    ],
+    weaknesses: [
+      "1.3x multiplier is weak compared to B-Tier",
+      "Defensive passive is redundant with Basalt Carapace (full immunity)",
+      "Outclassed by any B-Tier or above",
+    ],
+    bestUse: "Temporary pest defense on high-value plots while saving for better rolls.",
+    imagePlaceholder: "/placeholder-mutations-toxic-bloom.png",
+    tierRating: 4
+  },
+{
+    id: "rotten-bloom",
+    name: "Rotten Bloom",
+    aliases: ["Rotten Mutation", "Decay Mutation"],
+    multiplier: 0.5,
+    tier: "C",
+    rollRate: "~5%",
+    passives: ["Spreads rot to adjacent plots — corrupts neighboring mutations"],
+    description: "0.5x — the worst mutation in the game, even worse than Withered Husk. Its rot spreads to adjacent plots and can corrupt neighboring mutations, making it actively destructive. Remove immediately if rolled.",
+    strengths: [
+      "None of farming value — purely negative",
+    ],
+    weaknesses: [
+      "0.5x severely reduces crop value",
+      "Spreads rot to adjacent plots — corrupts neighbors",
+      "Can ruin an entire farm layout if left untreated",
+      "Removal requires shard expenditure",
+    ],
+    bestUse: "None. Remove immediately to prevent spread to adjacent plots.",
+    imagePlaceholder: "/placeholder-mutations-rotten-bloom.png",
     tierRating: 4
   }
 ];

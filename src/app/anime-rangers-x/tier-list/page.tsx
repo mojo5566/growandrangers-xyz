@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import TierTable from "@/components/TierTable";
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "Anime Rangers X meta",
     "Re:Rangers tier list",
   ],
+  alternates: { canonical: "/anime-rangers-x/tier-list" },
   openGraph: {
     title: data.title,
     description: data.description,

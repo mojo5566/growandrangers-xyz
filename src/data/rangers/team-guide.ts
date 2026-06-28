@@ -1,9 +1,9 @@
-﻿import type { EvolutionPageData } from "../types";
+import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
   title: "Re:Rangers X Team Guide — Best Compositions for Every Mode (June 2026)",
   description: "Complete team composition guide for Re:Rangers X. Meta team builds for Infinite Mode, Boss Raids, Speed Farming, and PvP. Includes unit synergies, elemental pairings, positioning strategy, and how to adapt your team as you unlock new units.",
-  updatedAt: "June 8, 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Re:Rangers X Team Guide", href: "/anime-rangers-x/team-guide" },
@@ -57,6 +57,20 @@ const data: EvolutionPageData = {
       desc: "Blaze Archon (Main DPS) + Frost Monarch (CC) + Aqua Squire (Support) + Flame Recruit (Flex). The most accessible team for new players who have not pulled Mythic units. Blaze Archon provides reliable burn DPS. Frost Monarch adds essential CC. Aqua Squire is a starter healer — replace with Tide Guardian as soon as possible.",
       sources: ["Optimal traits: Blaze Archon (Cooldown-), Frost Monarch (any trait), Aqua Squire (Drop Rate+), Flame Recruit (anything — temporary)"],
       tip: "Replace Flame Recruit first — any summoned B-Tier or higher unit is an upgrade. Replace Aqua Squire second — Tide Guardian provides significantly better healing and team shielding. This comp should carry you to wave 30-40 while you save Gems for better summons.",
+    },
+    {
+      name: "Anime Crossover Team",
+      icon: "🎌",
+      desc: "Kirito (Main DPS) + Goku (Sub-DPS/AOE) + Asuna (Secondary DPS). Pure DPS anime dream team. No CC or sustain — for event content and damage races only. Kirito's burst combo deletes single targets while Goku's charged AOE clears waves. Asuna's lightning DPS picks off stragglers between the two Mythic windows. A 2026 crossover showcase comp, not a general-purpose team.",
+      sources: ["Optimal traits: Kirito (Time Rewind), Goku (God-Speed), Asuna (Cooldown-)"],
+      tip: "Do not run this comp in Infinite Mode past wave 60 — without CC or a healer, the team gets overwhelmed by enemy density. Use it for time-limited crossover event content, boss damage races, and speedrun challenges where kill speed is the only metric that matters. Swap to Balanced Crossover for sustained content.",
+    },
+    {
+      name: "Balanced Crossover",
+      icon: "⚖️",
+      desc: "Kirito (Main DPS) + Frost Monarch (CC) + Tide Guardian (Support) + Flex. Kirito's burst damage with CC and sustain support. Viable for Infinite Mode wave 80+. Frost Monarch freezes enemies inside Kirito's burst windows, and Tide Guardian's heal-over-time compensates for Kirito's lack of self-sustain. The flex slot adapts to the mode — Stone Colossus for tanking, Asuna for extra DPS, or Blaze Archon for burn synergy.",
+      sources: ["Optimal traits: Kirito (Time Rewind), Frost Monarch (Cooldown-), Tide Guardian (Monarch), Flex (Drop Rate+ or God-Speed)"],
+      tip: "Position: Stone Colossus or tank flex front-left, Frost Monarch front-right, Kirito center, Tide Guardian back-center. Time Frost Monarch's freeze to land right before Kirito's burst window so enemies cannot move during the kill combo. This is the realistic Infinite Mode comp for players who pulled Kirito but not Chrono Slayer.",
     },
   ],
 

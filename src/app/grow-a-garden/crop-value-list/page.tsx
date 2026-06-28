@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "golden wheat value",
     "crop value list",
   ],
+  alternates: { canonical: "/grow-a-garden/crop-value-list" },
   openGraph: {
     title: data.title,
     description: data.description,

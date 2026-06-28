@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "crop multiplier pet",
     "Golden Phoenix Chick",
   ],
+  alternates: { canonical: "/grow-a-garden/pet-tier-list" },
   openGraph: {
     title: data.title,
     description: data.description,

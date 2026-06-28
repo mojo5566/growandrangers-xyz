@@ -1,4 +1,4 @@
-﻿import type { TierListPageData } from "../types";
+import type { TierListPageData } from "../types";
 import { pets, getPetsByTier } from "./database/pets";
 
 function buildPetTierListData(): TierListPageData {
@@ -33,7 +33,7 @@ function buildPetTierListData(): TierListPageData {
   return {
     title: "Grow a Garden Pet Tier List — All Hatchable Pets Ranked (2026)",
     description: "Every Grow a Garden pet ranked from S-Tier to C-Tier based on crop value multiplier, special abilities, seasonal bonuses, hatching odds, and mutation synergy. Build your perfect farm team.",
-    updatedAt: "June 8, 2026",
+    updatedAt: "June 28, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Pet Tier List", href: "/grow-a-garden/pet-tier-list" },

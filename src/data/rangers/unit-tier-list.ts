@@ -1,9 +1,9 @@
-﻿import type { TierListPageData } from "../types";
+import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
   title: "Anime Rangers X Unit Tier List — All Units Ranked (June 2026)",
   description: "Every Anime Rangers X unit ranked from S-Tier to C-Tier with detailed strengths, weaknesses, best use cases, optimal trait pairings, and recommended team compositions.",
-  updatedAt: "June 8, 2026",
+  updatedAt: "June 28, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Unit Tier List", href: "/anime-rangers-x/unit-tier-list" },
@@ -15,19 +15,30 @@ const data: TierListPageData = {
     { tier: "C", color: "#3A86FF", label: "Budget", desc: "Starter units; replace ASAP" },
   ],
   tiers: [
-    { name: "S-Tier — Meta-Defining Units", description: "These two Mythic units define the endgame meta. Highest DPS, game-changing ultimates, best Infinite Mode scaling.", entries: [
+    { name: "S-Tier — Meta-Defining Units", description: "These Mythic units define the endgame meta, now featuring 2026 Anime Crossover units. Highest DPS, game-changing ultimates, best Infinite Mode scaling.", entries: [
       { name: "Chrono Slayer (Time)", tier: "S", description: "Best DPS, time-freeze ultimate" },
       { name: "Void Empress (Dark)", tier: "S", description: "AOE nuke, self-heal passive" },
+      { name: "Kirito (Dark)", tier: "S", description: "2026 SAO crossover — Dual Wield single-target burst" },
+      { name: "Goku (Fire)", tier: "S", description: "2026 DBZ crossover — Spirit Bomb ultimate, stacking ATK passive" },
+      { name: "Asuna (Lightning)", tier: "S", description: "2026 SAO crossover — rapier speed DPS" },
     ]},
     { name: "A-Tier — Excellent Units", description: "Strong Legendary and Epic units that form the backbone of most competitive teams. Easier to summon than Mythics.", entries: [
       { name: "Blaze Archon (Fire)", tier: "A", description: "Burn stacking, wave clear" },
       { name: "Storm Ronin (Lightning)", tier: "A", description: "Speed buff, chain attack" },
       { name: "Frost Monarch (Ice)", tier: "A", description: "Freeze CC, defensive wall" },
+      { name: "Naruto (Air)", tier: "A", description: "2026 Naruto crossover — shadow clone CC ultimate" },
+      { name: "Sasuke (Lightning)", tier: "A", description: "2026 Naruto crossover — chidori burst DPS" },
+      { name: "Vegeta (Fire)", tier: "A", description: "2026 DBZ crossover — galick gun AOE burst" },
+      { name: "Luffy (Earth)", tier: "A", description: "2026 One Piece crossover — gear-shift tank" },
+      { name: "Ichigo (Dark)", tier: "A", description: "2026 Bleach crossover — Bankai hybrid DPS" },
+      { name: "Zoro (Air)", tier: "A", description: "2026 One Piece crossover — three-sword multi-hit" },
     ]},
     { name: "B-Tier — Solid Mid-Game Units", description: "Viable units for mid-game progression. Useful while saving summons for higher tiers.", entries: [
       { name: "Shadow Kunoichi (Dark)", tier: "B", description: "Stealth crit, single-target burst" },
       { name: "Tide Guardian (Water)", tier: "B", description: "Heal support, team shield" },
       { name: "Stone Colossus (Earth)", tier: "B", description: "Tank, damage reduction aura" },
+      { name: "Gon (Earth)", tier: "B", description: "2026 HxH crossover — jajanken adaptive flex DPS" },
+      { name: "Killua (Lightning)", tier: "B", description: "2026 HxH crossover — godspeed chain lightning" },
     ]},
     { name: "C-Tier — Starter Units", description: "Free starter units. Use them to learn the game, then replace immediately.", entries: [
       { name: "Wind Scout (Air)", tier: "C", description: "Budget speed unit, scouting" },
@@ -38,6 +49,8 @@ const data: TierListPageData = {
   detailCards: [
     { name: "Chrono Slayer (Time)", rank: "S-Tier #1", desc: "The undisputed king. Highest base DPS with a time-freeze ultimate that stops enemies for 4 seconds. Kill-based cooldown passive enables near-infinite ultimate chains at high wave density.", strengths: ["Highest raw DPS (3,200 ATK at max)","Time-freeze enables safe boss damage windows","Cooldown passive scales infinitely in waves","Pairs perfectly with Time Rewind trait"], weaknesses: ["Low base HP (8,500)","Requires high wave density for max value","Weak against freeze-immune bosses","Steep gem cost for full Mythic evolution"], bestUse: "Primary DPS in Infinite Mode. Pair with Frost Monarch (CC) and Tide Guardian (sustain) for wave 100+ pushes. Apply Time Rewind trait.", color: "#FF3D00" },
     { name: "Void Empress (Dark)", rank: "S-Tier #2", desc: "The premier AOE dealer. Ultimate creates a void rift dealing 2,800% ATK to all enemies. Self-heal restores 15% HP per kill, eliminating need for a dedicated healer in most content.", strengths: ["Massive AOE ultimate covers entire screen","Self-heal provides incredible sustain","High base HP (12,000)","Void Touch trait amplifies damage by 25% pen"], weaknesses: ["Long ultimate cooldown (25 sec base)","Lower single-target DPS vs Chrono Slayer","Dark element weak against Light bosses","Heal is kill-dependent"], bestUse: "AOE wave-clear specialist. Solo-carry with tank support or pair with Blaze Archon for burn synergy. Apply Void Touch trait.", color: "#FF3D00" },
+    { name: "Kirito (Dark)", rank: "S-Tier #3 — 2026 SAO Crossover", desc: "The 2026 SAO crossover flagship. Dual Wield passive splits every attack into two hits at 75% ATK each — a +50% effective damage multiplier that scales with attack speed. Starburst Stream ultimate unleashes 16 consecutive strikes totaling 4,200% ATK against a single target, the strongest single-target ultimate in the game. With the new Dual Wield trait, the dual-hit passive procs on ultimate hits, doubling the effective multiplier.", strengths: ["Highest single-target burst after Chrono Slayer (4,200% ATK ultimate)","Dual Wield passive — +50% damage on every attack","Dual Wield trait doubles ultimate hit count","2026 SAO crossover — pairs with Asuna for team bonuses"], weaknesses: ["Purely single-target — weak in dense waves","No self-sustain or defensive passives","Dark element weak against Light bosses","Dual Wield trait is Mythic rarity — rare roll"], bestUse: "Primary single-target DPS in boss content. Pair with Frost Monarch (CC) + Tide Guardian (sustain). Apply Dual Wield trait for ultimate hit-doubling.", color: "#FF3D00" },
+    { name: "Goku (Fire)", rank: "S-Tier #4 — 2026 DBZ Crossover", desc: "The 2026 Dragon Ball crossover flagship and the premier scaling hyper-carry. Saiyan Pride passive grants a permanent +5% ATK buff per kill, stacking infinitely across an Infinite Mode run — by wave 50 a fed Goku surpasses 5,000 effective ATK. Spirit Bomb ultimate deals 3,500% ATK in a massive AOE, the strongest AOE nuke in the game. The new Spirit Bomb trait cuts its cooldown by 30% and adds a 10% max HP true damage proc.", strengths: ["Infinite +5% ATK stacking per kill — best late-game scaling","3,500% ATK Spirit Bomb is strongest AOE ultimate","Spirit Bomb trait adds CDR + true damage proc","2026 DBZ crossover — pairs with Vegeta for Saiyan bonuses"], weaknesses: ["Stacks reset on death — extremely punishing","Ramps slowly — weak in early waves and short stages","No defensive passives or sustain","Spirit Bomb trait is Legendary rarity — significant investment"], bestUse: "Scaling hyper-carry for extended Infinite Mode pushes. Pair with Stone Colossus (taunt protection) + Tide Guardian (sustain) to preserve stacks. Apply Spirit Bomb trait.", color: "#FF3D00" },
     { name: "Blaze Archon (Fire)", rank: "A-Tier #3", desc: "Best non-Mythic DPS. Applies stacking burn DOTs (200% ATK/sec for 5s) that melt bosses and dense waves. Ultimate explodes all burning enemies for bonus damage.", strengths: ["Burn DOT provides consistent damage while dodging","Ultimate explosion scales with burning count","Accessible Legendary tier summon rate","No common elemental weakness"], weaknesses: ["Burn needs time to ramp up","Lower base ATK (2,400) vs Mythics","No self-sustain or defensive abilities","Burn can be cleansed by some bosses"], bestUse: "Secondary DPS alongside Chrono Slayer or Void Empress. Excellent in boss fights. Pair with Frost Monarch to keep enemies in burn radius.", color: "#FF8C00" },
     { name: "Storm Ronin (Lightning)", rank: "A-Tier #4", desc: "Speed-farming specialist. Team-wide +25% movement and attack speed buff. Chain attack bounces between 4 enemies for 180% ATK per hit.", strengths: ["Team speed buff improves farming by ~30%","Chain attack handles spread-out formations","Fast base movement (4.2) for dodging","God-Speed trait enables extreme attack speed"], weaknesses: ["Low base ATK (2,100)","Chain damage falls off vs single targets","Speed buff does not stack with other sources","Squishy (9,000 HP)"], bestUse: "Speed farming team leader. Pair with Shadow Kunoichi for max clear speed. Apply God-Speed trait. Swap out for boss fights.", color: "#FF8C00" },
     { name: "Frost Monarch (Ice)", rank: "A-Tier #5", desc: "Premier crowd-control support. Freezes enemies in a wide cone for 3 seconds. Defensive wall blocks all projectiles for 6 seconds — essential for high-wave Infinite Mode.", strengths: ["Best CC in the game (3s AOE freeze)","Defensive wall blocks all projectiles","Freeze enables easy critical hits","High base HP (14,000) for frontlining"], weaknesses: ["Low personal damage","Freeze duration halved on bosses","Defensive wall has 30s cooldown","Requires DPS teammates"], bestUse: "CC support in any team. Essential for Infinite Mode wave 80+. Pair with Chrono Slayer or Void Empress. Apply Cooldown- trait.", color: "#FF8C00" },

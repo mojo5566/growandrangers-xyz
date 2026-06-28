@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import Link from "next/link";
@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: `${data.title} | BloxPulse`,
   description: data.description,
   keywords: ["Re:Rangers X beginner guide", "Anime Rangers X beginner guide", "how to start Re:Rangers X", "Re:Rangers X tutorial", "Re:Rangers X progression", "best starter units Re:Rangers X"],
+  alternates: { canonical: "/anime-rangers-x/beginner-guide" },
   openGraph: { title: data.title, description: data.description, type: "website" },
 };
 

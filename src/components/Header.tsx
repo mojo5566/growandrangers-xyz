@@ -17,6 +17,7 @@ export default function Header() {
         {/* Desktop nav */}
         <div className="hidden items-center gap-6 lg:flex">
           <NavLink href="/grow-a-garden/" accent="garden">🌱 Grow a Garden</NavLink>
+          <NavLink href="/grow-a-garden-2/" accent="garden">🌿 GaG 2 (NEW)</NavLink>
           <NavLink href="/anime-rangers-x/" accent="rangers">⚔️ Anime Rangers X</NavLink>
           <NavLink href="/grow-a-garden/codes" accent="garden">🎁 Codes</NavLink>
         </div>
@@ -39,6 +40,9 @@ export default function Header() {
           <div className="flex flex-col gap-3">
             <MobileNavLink href="/grow-a-garden/" accent="garden" onClick={() => setMobileOpen(false)}>
               🌱 Grow a Garden
+            </MobileNavLink>
+            <MobileNavLink href="/grow-a-garden-2/" accent="garden" onClick={() => setMobileOpen(false)}>
+              🌿 GaG 2 (NEW)
             </MobileNavLink>
             <MobileNavLink href="/anime-rangers-x/" accent="rangers" onClick={() => setMobileOpen(false)}>
               ⚔️ Anime Rangers X

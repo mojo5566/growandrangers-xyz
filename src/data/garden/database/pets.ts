@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // Grow a Garden — Canonical Pet Database
 // Single source of truth for all pet entities.
 // All page data files should import from here.
@@ -284,6 +284,183 @@ export const pets: Pet[] = [
       "Not worth Coins for farming purposes",
     ],
     imagePlaceholder: "/placeholder-pets-dust-bunny.png",
+    tierRating: 3
+  },
+{
+    id: "golden-dragon",
+    name: "Golden Dragon",
+    aliases: ["Gold Dragon"],
+    multiplier: 4.8,
+    tier: "S",
+    abilities: ["Doubles coin value of all golden-tier crops"],
+    source: "Legendary Egg",
+    description: "A close rival to the Golden Phoenix Chick at 4.8x. Its golden-crop doubling passive synergizes with gold mutations for explosive coin value. Slightly lower base multiplier but higher ceiling on golden-crop farms.",
+    strengths: [
+      "Near-top multiplier (4.8x)",
+      "Doubles golden-tier crop value — explosive synergy",
+      "Legendary prestige pet",
+    ],
+    weaknesses: [
+      "Synergy requires golden-tier crops to shine",
+      "Legendary Egg cost (10,000 Coins)",
+      "Lower base than Golden Phoenix Chick (4.8x vs 5.0x)",
+    ],
+    imagePlaceholder: "/placeholder-pets-golden-dragon.png",
+    tierRating: 9
+  },
+{
+    id: "phoenix-hatchling",
+    name: "Phoenix Hatchling",
+    aliases: ["Phoenix"],
+    multiplier: 3.4,
+    tier: "A",
+    abilities: ["Revives one wilted or spoiled crop per day"],
+    source: "Rare Egg",
+    description: "3.4x with a unique daily revival passive that rescues one wilted or spoiled crop. Strong A-Tier multiplier with a safety-net ability that protects high-value investments.",
+    strengths: [
+      "Strong 3.4x A-Tier multiplier",
+      "Daily revival saves high-value crops from total loss",
+      "Rare Egg accessibility (2,000 Coins)",
+    ],
+    weaknesses: [
+      "Revival is once-daily — limited coverage",
+      "Outclassed by S-Tier pets",
+      "No seasonal bonus",
+    ],
+    imagePlaceholder: "/placeholder-pets-phoenix-hatchling.png",
+    tierRating: 7
+  },
+{
+    id: "forest-fox-kit",
+    name: "Forest Fox Kit",
+    aliases: ["Fox", "Common Fox"],
+    multiplier: 2.1,
+    tier: "B",
+    abilities: ["+15% chance for bonus seed drops on harvest"],
+    source: "Rare Egg",
+    description: "2.1x with a seed-drop passive that accelerates farm expansion. The bonus seeds provide long-term compounding value beyond the modest base multiplier.",
+    strengths: [
+      "Bonus seed drops accelerate farm expansion",
+      "Solid 2.1x B-Tier multiplier",
+      "Rare Egg accessibility",
+    ],
+    weaknesses: [
+      "Seed drops are RNG-dependent",
+      "Lower multiplier than top B-Tier pets",
+      "No seasonal bonus",
+    ],
+    imagePlaceholder: "/placeholder-pets-forest-fox-kit.png",
+    tierRating: 5
+  },
+{
+    id: "night-owl",
+    name: "Night Owl",
+    aliases: ["Owl", "Forest Owl"],
+    multiplier: 2.0,
+    seasonalBonus: { season: "Night", bonusMultiplier: 2.4 },
+    tier: "B",
+    abilities: ["+20% harvest speed during night hours"],
+    source: "Rare Egg",
+    description: "2.0x base with a night-time boost pushing it to 2.4x. A reliable night-farming companion that pairs well with night-active mutations like Phosphor Sporebloom.",
+    strengths: [
+      "2.4x effective during night hours",
+      "Pairs with night-time mutations (Phosphor Sporebloom)",
+      "Rare Egg accessibility",
+    ],
+    weaknesses: [
+      "Drops to 2.0x during daytime",
+      "Time-gated bonus",
+      "Outclassed by A-Tier pets",
+    ],
+    imagePlaceholder: "/placeholder-pets-night-owl.png",
+    tierRating: 5
+  },
+{
+    id: "garden-turtle",
+    name: "Garden Turtle",
+    aliases: ["Turtle"],
+    multiplier: 1.7,
+    tier: "B",
+    abilities: ["Crops grow 10% slower but yield 25% more coins"],
+    source: "Basic Egg",
+    description: "1.7x with a trade-off passive — slower growth but 25% higher yield per harvest. The effective value (~2.1x) is solid for patient farmers who don't mind longer cycles. Accessible from Basic Eggs.",
+    strengths: [
+      "Effective ~2.1x value with yield bonus",
+      "Basic Egg accessibility (500 Coins)",
+      "Excellent for slow-growing high-value crops",
+    ],
+    weaknesses: [
+      "10% slower growth delays harvest cycles",
+      "Lower base multiplier than Rare Egg B-Tier",
+      "Trade-off passive is suboptimal for fast crops",
+    ],
+    imagePlaceholder: "/placeholder-pets-garden-turtle.png",
+    tierRating: 5
+  },
+{
+    id: "common-bunny",
+    name: "Common Bunny",
+    aliases: ["Bunny", "Garden Bunny"],
+    multiplier: 1.3,
+    tier: "C",
+    abilities: ["+5% harvest animation speed"],
+    source: "Basic Egg",
+    description: "1.3x with a minor harvest-speed bonus. A basic C-Tier companion that provides small value. Note: not a rabbit-type pet — does not activate Leporine Bloom synergy.",
+    strengths: [
+      "Basic Egg accessibility (500 Coins)",
+      "Minor speed bonus for active players",
+      "Early-game companion",
+    ],
+    weaknesses: [
+      "1.3x is weak C-Tier multiplier",
+      "Not a rabbit-type — no Leporine Bloom synergy",
+      "Replace with B-Tier or above when possible",
+    ],
+    imagePlaceholder: "/placeholder-pets-common-bunny.png",
+    tierRating: 3
+  },
+{
+    id: "garden-caterpillar",
+    name: "Garden Caterpillar",
+    aliases: ["Caterpillar"],
+    multiplier: 1.1,
+    tier: "C",
+    abilities: ["+8% growth speed for adjacent crop plots"],
+    source: "Basic Egg",
+    description: "1.1x with an adjacency growth-speed bonus. Provides modest support value to neighboring plots but offers little direct farming benefit itself.",
+    strengths: [
+      "Adjacent-plot growth bonus supports neighboring crops",
+      "Basic Egg accessibility",
+      "Useful as a support pet on multi-plot farms",
+    ],
+    weaknesses: [
+      "1.1x multiplier is near-useless directly",
+      "Bonus only applies to adjacent plots",
+      "Replace with stronger support pets when available",
+    ],
+    imagePlaceholder: "/placeholder-pets-garden-caterpillar.png",
+    tierRating: 3
+  },
+{
+    id: "garden-snail",
+    name: "Garden Snail",
+    aliases: ["Snail"],
+    multiplier: 1.0,
+    tier: "C",
+    abilities: ["Leaves a slow trail — minor growth speed for trail tiles"],
+    source: "Basic Egg",
+    description: "1.0x with a near-negligible trail passive. Provides a tiny growth speed bonus to tiles it passes over. Functionally a collector's pet with minimal farming value.",
+    strengths: [
+      "Trail bonus stacks with other growth passives",
+      "Basic Egg accessibility",
+      "Unique slow-moving visual for collectors",
+    ],
+    weaknesses: [
+      "1.0x provides zero direct farming benefit",
+      "Trail bonus is marginal and tile-dependent",
+      "Replace immediately with stronger pets",
+    ],
+    imagePlaceholder: "/placeholder-pets-garden-snail.png",
     tierRating: 3
   }
 ];
