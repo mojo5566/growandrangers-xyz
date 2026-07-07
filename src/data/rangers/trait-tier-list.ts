@@ -1,7 +1,7 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Anime Rangers X Trait Tier List — Every Trait Ranked (July 2026)",
+  title: "Re:Rangers X Trait Tier List — Every Trait Ranked (July 2026)",
   description: "All traits ranked from Mythic to Common with detailed strengths, weaknesses, optimal unit pairings, and reroll strategy. Includes the Re:Rangers trait system rework changes.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
@@ -20,6 +20,8 @@ const data: TierListPageData = {
       { name: "God-Speed", tier: "Mythic", description: "+50% attack speed, stacking per kill" },
       { name: "Dual Wield", tier: "Mythic", description: "2026 SAO crossover — every attack hits twice at 75% ATK each, including ultimates" },
       { name: "Sharingan", tier: "Mythic", description: "2026 Naruto crossover — 25% chance to copy the next enemy ability; +20% crit rate" },
+      { name: "Domain Expansion", tier: "Mythic", description: "2026 JJK crossover — AoE stun + damage amplification, the strongest CC trait" },
+      { name: "Six Eyes", tier: "Mythic", description: "2026 JJK crossover — Reduces all cooldowns by 30% and increases crit damage" },
     ]},
     { name: "Legendary-Tier — Excellent Traits", description: "Powerful universal traits that work on nearly any unit. Much easier to roll than Mythic traits and provide consistent value.", entries: [
       { name: "Monarch", tier: "Legendary", description: "+30% all stats when HP above 80%" },
@@ -27,6 +29,7 @@ const data: TierListPageData = {
       { name: "Spirit Bomb", tier: "Legendary", description: "2026 DBZ crossover — -30% ultimate cooldown, +10% max HP true damage proc" },
       { name: "Rasengan", tier: "Legendary", description: "2026 Naruto crossover — +5% damage per shadow clone spawned, stacking" },
       { name: "Bankai", tier: "Legendary", description: "2026 Bleach crossover — +40% ATK below 50% HP, bloodlust inverse scaling" },
+      { name: "Cursed Energy", tier: "Legendary", description: "2026 JJK crossover — +40% damage to Cursed units, JJK team synergy" },
     ]},
     { name: "Epic-Tier — Solid Role Traits", description: "Viable traits that excel in specific roles — farming, support, or sustain. Keep these until you roll a Legendary or Mythic upgrade.", entries: [
       { name: "Drop Rate+", tier: "Epic", description: "+20% gem and stone drop rate" },
@@ -34,6 +37,7 @@ const data: TierListPageData = {
       { name: "Lifesteal", tier: "Epic", description: "Heal 10% of damage dealt" },
       { name: "Haki", tier: "Epic", description: "2026 One Piece crossover — 15% chance to stun on hit, ignores enemy shields" },
       { name: "Nen Boost", tier: "Epic", description: "2026 HxH crossover — +12% ATK, +12% DEF; doubles below 30% HP" },
+      { name: "Gachiakuta Recall", tier: "Epic", description: "2026 Gachiakuta crossover — +15% drop rate, excellent for farming" },
     ]},
     { name: "Rare & Common-Tier — Budget Traits", description: "Basic traits that serve as placeholders. Replace as soon as you roll anything Epic or higher.", entries: [
       { name: "Fortress", tier: "Rare", description: "+15% defense, taunt enemies on hit" },
@@ -52,6 +56,13 @@ const data: TierListPageData = {
     { name: "Cooldown-", rank: "Epic-Tier #6", desc: "Reduces all ability cooldowns by 15%. A reliable support trait that improves ability uptime across the board. Valuable on units with long base cooldowns.", strengths: ["Universal cooldown reduction for all abilities","Scales well with long-cooldown units","Improves team survivability through more frequent heals/CC","Epic rarity — accessible"], weaknesses: ["Only 15% reduction — modest impact","Less valuable on spammy units","No direct damage or stat increase","Outclassed by Time Rewind on kill-heavy units"], bestOn: "Frost Monarch and Tide Guardian (reduces critical support cooldowns). Also useful on Void Empress. Avoid on Chrono Slayer.", color: "#A020F0" },
     { name: "Fortress", rank: "Rare-Tier", desc: "+15% defense and taunts enemies on hit. A solid defensive trait that helps dedicated tanks hold aggro and survive longer.", strengths: ["Extra defense and built-in taunt utility","Helps tanks maintain aggro","Easy to roll (Rare tier)","Decent budget option for tank units"], weaknesses: ["Only 15% defense — modest mitigation","Taunt is weaker than Stone Colossus's ability","Outclassed by higher-tier traits","No offensive benefit"], bestOn: "Stone Colossus (stacks with his existing taunt). Budget option for any frontline unit. Replace with Monarch or Mythic trait.", color: "#3A86FF" },
     { name: "Scout", rank: "Rare-Tier", desc: "+10% movement speed and the ability to detect invisible enemies. A niche utility trait valuable in specific content with stealth enemies.", strengths: ["Movement speed helps with dodging","Detects invisible enemies (niche content)","Easy to roll (Rare tier)"], weaknesses: ["Only 10% speed — barely noticeable","Invisible detection useless in most content","No combat stat bonus","Outclassed by almost any other trait"], bestOn: "Wind Scout for thematic synergy. Budget placeholder. Not recommended for serious content.", color: "#3A86FF" },
+    { name: "Spirit Bomb", rank: "Legendary-Tier — 2026 DBZ Crossover", desc: "DBZ crossover trait. Charges energy over time, unleashing a massive AoE nuke. Pairs perfectly with Goku.", strengths: ["Massive AoE nuke damage","Charges passively — no active input needed","Perfect synergy with Goku's fire kit","Scales with energy generation buffs"], weaknesses: ["Charging time delays first nuke","Legendary rarity — moderately rare","Less effective on single-target bosses","Wasted on low-ATK units"], bestOn: "Goku, high-damage Mythic units", color: "#FF8C00" },
+    { name: "Rasengan", rank: "Legendary-Tier — 2026 Naruto Crossover", desc: "Naruto crossover trait. Adds a spinning energy burst to normal attacks, dealing bonus AoE damage.", strengths: ["Bonus AoE damage on every normal attack","No cooldown — passive proc","Excellent wave-clear value","Strong on hybrid DPS units"], weaknesses: ["Bonus damage is modest per hit","Only affects normal attacks — no ult synergy","Legendary rarity","Less value on ability-reliant units"], bestOn: "Naruto, hybrid DPS units", color: "#FF8C00" },
+    { name: "Bankai", rank: "Legendary-Tier — 2026 Bleach Crossover", desc: "Bleach crossover trait. Unlocks bankai form at low HP, dramatically increasing attack speed and damage.", strengths: ["Massive attack speed and damage boost","Inverse scaling — gets stronger when threatened","Perfect for burst DPS windows","Excellent on auto-battler pacing"], weaknesses: ["Requires low HP to activate — risky","No value at full HP","Hard to control activation timing","Legendary rarity"], bestOn: "Ichigo, burst DPS units", color: "#FF8C00" },
+    { name: "Haki", rank: "Epic-Tier — 2026 One Piece Crossover", desc: "One Piece crossover trait. Adds armor penetration to all attacks. Great against high-defense bosses.", strengths: ["Armor penetration on all attacks","Excellent vs high-defense bosses","Universal damage multiplier","Consistent value in endgame"], weaknesses: ["Epic tier — lower ceiling than Legendary/Mythic","Less effective vs low-armor enemies","No utility or defensive value","Outclassed by Void Touch at higher tier"], bestOn: "Luffy, Zoro, physical DPS units", color: "#A020F0" },
+    { name: "Nen Boost", rank: "Epic-Tier — 2026 HxH Crossover", desc: "Hunter x Hunter crossover trait. +15% overall stat boost to the unit. Simple but effective.", strengths: ["Universal +15% stat boost","Works on any unit role","Simple — no conditions or triggers","Strong budget pick"], weaknesses: ["Flat boost — lower ceiling than condition-based traits","Epic rarity","No specialized synergy","Outclassed by Monarch (+30% all stats)"], bestOn: "Gon, Killua, any unit", color: "#A020F0" },
+    { name: "Domain Expansion", rank: "Mythic-Tier — 2026 JJK Crossover", desc: "JJK crossover trait. Creates a domain that stuns all enemies and amplifies damage by 50%. The strongest CC trait in the game.", strengths: ["Full-screen AoE stun — unmatched CC","+50% damage amplification in domain","Best CC trait in the game","Scales with enemy density"], weaknesses: ["Mythic rarity — extremely rare","Likely has a cooldown","Wasted on non-CC units","Hard to roll specifically"], bestOn: "Gojo, Asto, CC-focused units", color: "#FF3D00" },
+    { name: "Six Eyes", rank: "Mythic-Tier — 2026 JJK Crossover", desc: "JJK crossover trait. Reduces all cooldowns by 30% and increases critical damage by 50%. Best trait for ability-heavy units.", strengths: ["30% cooldown reduction is best-in-class","+50% crit damage is a massive boost","Universal for ability-reliant units","Scales with ability count"], weaknesses: ["Mythic rarity — extremely rare","Less value on auto-attack units","No direct defensive benefit","Wasted on farming units"], bestOn: "Gojo, Chrono Slayer, ability-reliant units", color: "#FF3D00" },
   ],
   pairingTable: [
     { trait: "Time Rewind", unit: "Chrono Slayer", why: "Infinite ultimate chains at wave 80+" },
@@ -60,12 +71,22 @@ const data: TierListPageData = {
     { trait: "Monarch", unit: "Blaze Archon", why: "+30% all stats — best universal Legendary" },
     { trait: "Drop Rate+", unit: "Farm unit", why: "Best on dedicated gem-farming loadouts" },
     { trait: "Cooldown-", unit: "Frost Monarch", why: "More frequent freezes = safer high-wave pushes" },
+    { trait: "Dual Wield", unit: "Kirito", why: "Double sword attacks — massive single-target DPS" },
+    { trait: "Sharingan", unit: "Sasuke", why: "Copy ability + crit chance boost" },
+    { trait: "Spirit Bomb", unit: "Goku", why: "Charged nuke + Goku's fire synergy" },
+    { trait: "Rasengan", unit: "Naruto", why: "AoE burst on every attack" },
+    { trait: "Bankai", unit: "Ichigo", why: "Low-HP burst mode + attack speed" },
+    { trait: "Haki", unit: "Luffy/Zoro", why: "Armor pen for boss killing" },
+    { trait: "Nen Boost", unit: "Gon/Killua", why: "Universal stat boost" },
+    { trait: "Domain Expansion", unit: "Gojo", why: "Full-screen stun + damage amp" },
+    { trait: "Six Eyes", unit: "Gojo/Chrono Slayer", why: "Cooldown reduction for ability spam" },
   ],
   faq: [
     { question: "What is the best trait in Anime Rangers X?", answer: "Time Rewind (Mythic #1) is the best trait — it resets all cooldowns on kill, enabling infinite ultimate chains on Chrono Slayer. God-Speed (Mythic #2) is the best farming trait with its stacking +50% attack speed per kill." },
-    { question: "How do I get better traits?", answer: "Use Trait Rolls obtained from promo codes, events, and gem purchases. Save your rolls for Mythic and Legendary units. Stack multiple rolls for better odds during trait-boosted events." },
+    { question: "How do I get better traits?", answer: "Use Trait Rolls obtained from promo codes, events, and gem purchases. There are 48 active codes providing thousands of Trait Rerolls total. Save your rolls for Mythic and Legendary units. Stack multiple rolls for better odds during trait-boosted events." },
     { question: "Can I change a trait after applying it?", answer: "Yes, rerolling replaces the current trait permanently. There is no refund. The Re:Rangers update added a trait lock feature for 50 Gems that prevents accidental rerolls." },
     { question: "Which trait is best for beginners?", answer: "Monarch (Legendary) is the best beginner-friendly trait — +30% all stats with a simple HP condition. It is significantly easier to roll than Mythic traits and works on any unit. Pair with Tide Guardian to maintain the 80% HP threshold." },
+    { question: "How do I get JJK crossover traits?", answer: "JJK crossover traits like Domain Expansion and Six Eyes are obtainable through the Trait Reroll system. Use codes like JJKUPD2!, FREEREROLLS!, and CATCHINGUP to stockpile Trait Rerolls. The 1st Anniversary event also provides bonus rerolls." },
   ],
   relatedGuides: [
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units deserve your best traits" },

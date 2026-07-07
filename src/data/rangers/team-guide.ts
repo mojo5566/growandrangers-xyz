@@ -18,6 +18,7 @@ const data: EvolutionPageData = {
       "Positioning matters — tanks front, DPS middle, supports back",
       "The best Infinite Mode comp can push wave 100+ with proper evolution and traits",
       "Speed farming comps clear waves 40-60% faster than balanced teams",
+      "1st Anniversary codes provide free units and materials — build anniversary teams with code rewards",
     ],
   },
 
@@ -72,6 +73,27 @@ const data: EvolutionPageData = {
       sources: ["Optimal traits: Kirito (Time Rewind), Frost Monarch (Cooldown-), Tide Guardian (Monarch), Flex (Drop Rate+ or God-Speed)"],
       tip: "Position: Stone Colossus or tank flex front-left, Frost Monarch front-right, Kirito center, Tide Guardian back-center. Time Frost Monarch's freeze to land right before Kirito's burst window so enemies cannot move during the kill combo. This is the realistic Infinite Mode comp for players who pulled Kirito but not Chrono Slayer.",
     },
+    {
+      name: "JJK Crossover Team",
+      icon: "👁️",
+      desc: "Jujutsu Kaisen crossover team built around Domain Expansion CC. Gojo provides AoE stun, Yuji delivers single-target burst, Nobara adds debuff support. Excellent for Boss Raids.",
+      sources: ["Gojo (Mythic)", "Yuji (Legendary)", "Nobara (Epic)", "Flex Slot"],
+      tip: "A-Tier comp. Lead with Gojo's Domain Expansion to lock down groups, then unload Yuji's burst on priority targets. Fill the flex slot with a healer (Tide Guardian) or extra CC for sustained fights.",
+    },
+    {
+      name: "One Piece Pirate Team",
+      icon: "🏴‍☠️",
+      desc: "One Piece crossover team with Haki synergy. Luffy provides AoE knockback while Zoro delivers multi-hit DPS. Pairs well with Haki trait for bonus damage.",
+      sources: ["Luffy (Legendary)", "Zoro (Legendary)", "Flex Slot", "Flex Slot"],
+      tip: "A-Tier comp. Both flex slots should be filled with CC and support — Frost Monarch and Tide Guardian are strong picks. Apply the Haki trait to Luffy and Zoro for maximum damage output.",
+    },
+    {
+      name: "Anniversary Catch-Up Team",
+      icon: "🎉",
+      desc: "Budget-friendly team using Asto (Half) from the CATCHINGUP code alongside crossover DPS units. Perfect for new players who redeemed anniversary codes. The flex slot can be any CC or support unit.",
+      sources: ["Asto (Half) [Code Unit]", "Kirito (Mythic)", "Goku (Mythic)", "Flex Slot"],
+      tip: "B-Tier comp. Asto (Half) is a free code unit — evolve it to Asto (Full) using Anniversary Coins and Cursed Fingers as soon as possible. Fill the flex slot with Frost Monarch for essential CC.",
+    },
   ],
 
   bestUnitsSteps: [
@@ -91,6 +113,7 @@ const data: EvolutionPageData = {
     { tier: "A", unit: "Beginner: Blaze Archon + Frost Monarch + Tide Guardian + Any B-Tier", reason: "Accessible and effective for new players. Blaze Archon is obtainable from Legendary banners. Frost Monarch is the best CC and also accessible. This comp clears wave 40+ and farms resources while you save for Mythic summons." },
     { tier: "B", unit: "Defense: Stone Colossus + Frost Monarch + Tide Guardian + Chrono Slayer", reason: "Maximum survivability for fragile DPS units. Double tank with CC and healing. Slower clear speed but nearly unkillable. Use when pushing new wave records where survival matters more than speed." },
     { tier: "B", unit: "AOE Farm: Void Empress + Storm Ronin + Frost Monarch + Drop Rate+ Flex", reason: "Double AOE DPS for maximum wave-clear speed. Void Empress handles dense waves. Storm Ronin cleans up stragglers. Frost Monarch groups enemies for both AOE abilities. Excellent for quick daily mission clears." },
+    { tier: "B", unit: "Anniversary Catch-Up Team", reason: "Best budget option — uses free code units and anniversary rewards" },
     { tier: "C", unit: "Starter: Wind Scout + Flame Recruit + Aqua Squire + Any", reason: "Tutorial comp. Use only until you complete your first banner summons. Do not invest resources. Every unit in this comp is replaced within an hour of play. The comp exists to teach team dynamics, not to clear content." },
     { tier: "C", unit: "Mono-Element Teams (All Fire, All Ice, etc.)", reason: "Avoid stacking units of the same element. A full Ice team is hard-countered by a single Fire boss. Elemental diversity provides coverage. The only exception is if you are building a themed team for fun — do not expect it to perform competitively." },
   ],
@@ -113,6 +136,7 @@ const data: EvolutionPageData = {
     { question: "How important is unit positioning?", answer: "Critically important. Front-line units take 80% of enemy attacks. If your DPS is on the front line, it dies first and your damage output collapses. Always place tanks and CC in front, DPS in center, and supports in back. Upgrade priority during waves follows the same logic: DPS → CC → Support." },
     { question: "Should I swap units between modes?", answer: "Yes — and it costs nothing. Units are not locked to teams. Build a roster of 6-8 units and assemble mode-specific comps for each activity. The only cost is the Evolution Stones you invest in each unit. Having diverse options is always better than being locked into one composition." },
     { question: "How do I counter specific boss elements?", answer: "Check the boss's element on the mode select screen. Fire bosses are weak to Water/Ice (bring Tide Guardian, Frost Monarch). Ice bosses are weak to Fire (bring Blaze Archon). Dark bosses are weak to Light. Chrono Slayer (Time) is neutral against everything — deploy it regardless of boss element. If you lack the counter-element, use your strongest neutral unit instead of a disadvantaged one." },
+    { question: "What team should I build with anniversary code rewards?", answer: "Start with the Anniversary Catch-Up Team: use Asto (Half) from the CATCHINGUP code as your core, add Kirito or Goku if you pulled them from crossover banners, and fill remaining slots with CC units like Frost Monarch. Use anniversary coins to purchase trait rerolls and optimize your team." },
   ],
 
   relatedGuides: [

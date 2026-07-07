@@ -1,7 +1,7 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Anime Rangers X Tier List (July 2026) — Best Units Ranked",
+  title: "Re:Rangers X Tier List (July 2026) — Best Units Ranked",
   description:
     "Complete Anime Rangers X tier list ranking every unit from S-Tier to C-Tier. Includes detailed strengths, weaknesses, beginner recommendations, best team compositions, and progression advice for Infinite Mode and gem farming.",
   updatedAt: "July 7, 2026",
@@ -27,6 +27,7 @@ const data: TierListPageData = {
         { name: "Kirito (Dark)", tier: "S", description: "2026 Anime Crossover — SAO Dual Wield single-target burst, highest sustained DPS after Chrono Slayer" },
         { name: "Goku (Fire)", tier: "S", description: "2026 Anime Crossover — DBZ Spirit Bomb ultimate, stacking ATK buff passive for scaling damage" },
         { name: "Asuna (Lightning)", tier: "S", description: "2026 Anime Crossover — SAO speed-based rapier DPS, lightning-fast attack chains" },
+        { name: "Asto (Full)", tier: "S", description: "Anniversary Code Unit — evolution of Asto (Half) from CATCHINGUP code, S-Tier performance after evolution" },
       ],
     },
     {
@@ -42,6 +43,8 @@ const data: TierListPageData = {
         { name: "Luffy (Earth)", tier: "A", description: "2026 Anime Crossover — One Piece gear-shift tank, stretchy AOE melee" },
         { name: "Ichigo (Dark)", tier: "A", description: "2026 Anime Crossover — Bleach Bankai burst, hybrid AOE/single-target dark DPS" },
         { name: "Zoro (Air)", tier: "A", description: "2026 Anime Crossover — One Piece three-sword style, multi-hit air DPS" },
+        { name: "Gojo (Light)", tier: "A", description: "JJK Crossover — Domain Expansion full-screen AoE stun, premier crowd control" },
+        { name: "Yuji (Dark)", tier: "A", description: "JJK Crossover — Sukuna vessel hybrid DPS, balanced offense" },
       ],
     },
     {
@@ -52,7 +55,8 @@ const data: TierListPageData = {
         { name: "Tide Guardian (Water)", tier: "B", description: "Best team healer, 64% total HP heal-over-time" },
         { name: "Stone Colossus (Earth)", tier: "B", description: "Premier tank, taunt + 20% team damage reduction" },
         { name: "Gon (Earth)", tier: "B", description: "2026 Anime Crossover — HxH jajanken rock-paper-scissors flex burst, adaptive earth DPS" },
-        { name: "Killua (Lightning)", tier: "B", description: "2026 Anime Crossover — HxH lightning godspeed, rapid chain lightning DPS" },
+        { name: "Killua (Lightning)", tier: "B", description: "2026 HxH crossover — lightning godspeed, rapid chain lightning DPS" },
+        { name: "Asto (Half)", tier: "B", description: "Free Code Unit — obtained via CATCHINGUP code, balanced all-rounder that evolves into Asto (Full)" },
       ],
     },
     {
@@ -141,6 +145,15 @@ const data: TierListPageData = {
       bestUse: "Hybrid DPS/CC in any team needing both damage and crowd control. Pair with Goku (DPS) + Tide Guardian (sustain) for a balanced crossover team. Apply Rasengan trait for stacking clone damage. 2026 Naruto crossover — pairs thematically with Sasuke for Team 7 synergy.",
       color: "#FF8C00",
     },
+    {
+      name: "Gojo",
+      rank: "A-Tier — JJK Crossover",
+      desc: "Jujutsu Kaisen crossover unit with Domain Expansion AoE CC. Top-tier crowd control unit that stuns entire waves.",
+      strengths: ["Full-screen AoE stun", "Excellent in Infinite Mode", "Synergizes with JJK team"],
+      weaknesses: ["Long cooldown on Domain Expansion", "Requires JJK event materials to evolve"],
+      bestUse: "Crowd control specialist for Infinite Mode. Pair with Yuji for JJK team synergy. Apply Cooldown Reduction trait for more frequent Domain Expansion casts.",
+      color: "#FF8C00",
+    },
     // B-TIER
     {
       name: "Shadow Kunoichi (Dark)",
@@ -167,6 +180,15 @@ const data: TierListPageData = {
       strengths: ["Highest base HP in the game (22,000)", "5-second taunt redirects lethal damage", "20% team-wide damage reduction passive aura", "Fortress trait adds defense bonus and extended taunt radius"],
       weaknesses: ["Extremely low damage output", "Slowest movement speed (2.8)", "Taunt duration halved on bosses (2.5s)", "Earth element weak against Air enemies"],
       bestUse: "Frontline tank with Tide Guardian for maximum team survivability. Best in boss fights and Infinite Mode. Apply Fortress trait for enhanced taunt radius and defense.",
+      color: "#FFD700",
+    },
+    {
+      name: "Asto (Half)",
+      rank: "B-Tier — Free Code Unit",
+      desc: "Exclusive free unit from the CATCHINGUP code. Balanced stats make it a solid all-rounder. Evolves into Asto (Full) for S-Tier performance.",
+      strengths: ["Free from code — no gacha needed", "Balanced DPS and utility", "Evolves into S-Tier Asto (Full)"],
+      weaknesses: ["Base form is only B-Tier", "Evolution requires Cursed Fingers from JJK codes"],
+      bestUse: "Budget all-rounder for new players. Evolve into Asto (Full) using Cursed Fingers from JJK codes for S-Tier performance. Pair with Kirito + Goku for an Anniversary Catch-Up Team.",
       color: "#FFD700",
     },
     // C-TIER (combined)
@@ -255,6 +277,11 @@ const data: TierListPageData = {
       units: "Kirito + Goku + Asuna",
       desc: "Maximum DPS with no CC or sustain. Pure damage race team for event content. Kirito handles single-target burst, Goku stacks ATK over the run, Asuna covers spread targets. Bring your own dodge skills — there is no safety net.",
     },
+    {
+      name: "Anniversary Catch-Up Team",
+      units: "Asto (Half) + Kirito + Goku + Flex",
+      desc: "Budget team using free code units. Asto from CATCHINGUP code + crossover DPS units. Perfect for new players.",
+    },
   ],
 
   strategyTips: [
@@ -303,7 +330,12 @@ const data: TierListPageData = {
     {
       question: "What is the 2026 Anime Crossover update?",
       answer:
-        "The 2026 Anime Crossover update is a limited-time event that added 11 new crossover units from six iconic anime franchises — Sword Art Online (Kirito, Asuna), Dragon Ball Z (Goku, Vegeta), Naruto (Naruto, Sasuke), One Piece (Luffy, Zoro), Bleach (Ichigo), and Hunter x Hunter (Gon, Killua). It also introduced 7 new crossover traits including the Mythic-rarity Dual Wield and Sharingan. Crossover units and traits are only available from the limited-time Anime Crossover banner — pool your gems and prioritize the S-Tier Mythics (Kirito, Goku, Asuna) before the banner ends.",
+        "The 2026 Anime Crossover update is a limited-time event that added 13+ crossover units from 8 franchises including SAO, DBZ, Naruto, One Piece, Bleach, HxH, Jujutsu Kaisen, and Gachiakuta — featuring units like Kirito, Asuna, Goku, Vegeta, Naruto, Sasuke, Luffy, Zoro, Ichigo, Gon, Killua, Gojo, and Yuji. It also introduced 7 new crossover traits including the Mythic-rarity Dual Wield and Sharingan. Crossover units and traits are only available from the limited-time Anime Crossover banner — pool your gems and prioritize the S-Tier Mythics (Kirito, Goku, Asuna) before the banner ends.",
+    },
+    {
+      question: "How do I get Asto?",
+      answer:
+        "Asto (Half) is a free unit from the CATCHINGUP promo code. The code also gives 150 Trait Rerolls, 20,000 Gems, and 100,000 Gold. Evolve Asto (Half) into Asto (Full) for S-Tier performance using Cursed Fingers from JJK codes.",
     },
   ],
 

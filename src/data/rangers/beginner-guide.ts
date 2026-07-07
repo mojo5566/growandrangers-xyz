@@ -18,12 +18,14 @@ const data: EvolutionPageData = {
       "Evolve your main DPS to Rare within the first hour",
       "Understand the trait system and which traits matter for beginners",
       "Build a basic 4-unit team capable of reaching wave 40",
+      "48 active promo codes available — redeem CATCHINGUP for a free Asto (Half) unit + 150 Trait Rerolls + 20K Gems",
+      "1st Anniversary event ongoing — earn Anniversary Coins from codes and events",
     ],
   },
 
   stages: [
     { from: "Tutorial (0-5 min)", mats: "Free starter unit", stats: "Complete tutorial, claim free summon, get Wind Scout / Flame Recruit / Aqua Squire" },
-    { from: "First Hour (5-60 min)", mats: "~10,000 Gems + codes", stats: "Summon 3-5 units, evolve main DPS to Rare, equip first trait, reach wave 20" },
+    { from: "First Hour (5-60 min)", mats: "~10,000 Gems + 48 active codes", stats: "Summon 3-5 units, evolve main DPS to Rare, equip first trait, reach wave 20" },
     { from: "Mid Game (1-5 hrs)", mats: "~50,000 Gems + 200 Evolution Stones", stats: "Target A/S-Tier units, evolve main DPS to Epic/Legendary, unlock Trait Slot 2, reach wave 60" },
     { from: "Endgame (5+ hrs)", mats: "~100,000 Gems + 500 Stones + Awakening Core", stats: "Evolve Chrono Slayer or Void Empress to Mythic, unlock Trait Slot 3, push wave 100+" },
   ],
@@ -58,11 +60,18 @@ const data: EvolutionPageData = {
       sources: ["Legendary+ Boss Raid (~5% drop rate)", "Premium shop (100,000 Gems)", "Battle Pass tier 50 reward (one per season)"],
       tip: "This is an endgame resource — do not worry about it in your first hour. When you eventually get one, only use it on Chrono Slayer or Void Empress. A single Awakening Core represents weeks of farming.",
     },
+    {
+      name: "Anniversary Coins",
+      icon: "🪙",
+      desc: "Limited-time event currency from the 1st Anniversary celebration. Exchange in the anniversary shop for exclusive units, traits, and items. Obtainable from codes like SorryForAnniversary and AnimeMaintX.",
+      sources: ["SorryForAnniversary code (9,000 coins)", "AnimeMaintX code (6,000 coins)", "1STANNIVERSARY! code (1,500 coins)", "Anniversary events"],
+      tip: "Redeem all anniversary codes immediately — the coins expire when the event ends. Prioritize exclusive units and traits in the anniversary shop, as these will not return after the celebration. Stack with event rewards for maximum value.",
+    },
   ],
 
   bestUnitsSteps: [
     { step: "1", title: "Complete the Tutorial & Claim Your Free Summon", desc: "The tutorial takes about 3 minutes and teaches basic controls — placing units, starting waves, and upgrading. At the end, you will receive one free summon. You will get Wind Scout (Air), Flame Recruit (Fire), or Aqua Squire (Water). All three are C-Tier starter units. Do not invest resources in them." },
-    { step: "2", title: "Redeem All Active Promo Codes Immediately", desc: "Codes are your #1 early-game resource injection. Open Settings → Codes tab and redeem every active code. The ECLIPSE code alone gives 100 Trait Rerolls. SACRIFICE gives 100,000 Gold. This instant resource boost lets you skip the early grind entirely. Check our Codes page for the latest active codes." },
+    { step: "2", title: "Redeem All 48 Active Promo Codes Immediately", desc: "Start with CATCHINGUP (free Asto unit + 150 Trait Rerolls + 20K Gems), then FREEREROLLS! (10,000 Trait Rerolls), then SorryForAnniversary (9,000 Anniversary Coins). See our Codes page for the full list." },
     { step: "3", title: "Summon on the Current Mythic/Legendary Banner", desc: "With your starter Gems and code rewards (roughly 5,000-10,000 Gems), summon on the highest-tier banner available. Aim for at least one A-Tier or better unit. Blaze Archon (Fire, A-Tier) is the best non-Mythic pull for beginners — strong DPS with burn stacking. If you get Chrono Slayer or Void Empress, congratulations — build your entire team around them." },
     { step: "4", title: "Build Your First 4-Unit Team", desc: "A basic team needs: 1 Main DPS (Chrono Slayer > Void Empress > Blaze Archon > Storm Ronin), 1 CC/Control (Frost Monarch > any freeze unit), 1 Support/Healer (Tide Guardian > Aqua Squire), and 1 Flex slot (secondary DPS or tank like Stone Colossus). This composition handles waves 1-40 comfortably." },
     { step: "5", title: "Evolve Your Main DPS to Rare (and Beyond)", desc: "Your first evolution milestone. Spend 50 Evolution Stones + 5,000 Gems to evolve your main DPS from Common to Rare. This gives +50% base stats — a massive early power spike. Your main DPS should always be your highest-evolved unit. The priority order is: Main DPS → CC → Support → Flex." },
@@ -72,9 +81,9 @@ const data: EvolutionPageData = {
   ],
 
   priorityList: [
-    { tier: "S", unit: "Redeem All Promo Codes (First 5 Minutes)", reason: "Active codes (ECLIPSE, SACRIFICE, BUILTINMACRO) provide hundreds of Trait Rerolls, thousands of Gold, and other resources instantly. This completely transforms your early game. Do this before summoning anything." },
+    { tier: "S", unit: "Redeem All 48 Active Promo Codes (First 5 Minutes)", reason: "48 active codes (CATCHINGUP for free Asto unit, ECLIPSE, SACRIFICE, BUILTINMACRO) provide hundreds of Trait Rerolls, thousands of Gold, and other resources instantly. This completely transforms your early game. Do this before summoning anything." },
     { tier: "S", unit: "Main DPS Evolution (Rare → Epic → Legendary)", reason: "Your main DPS is your account's engine. Every evolution stage multiplies their stats. A Legendary main DPS with Ultimate unlocked can solo-carry through wave 60+. Resources spent on your main DPS are never wasted." },
-    { tier: "A", unit: "Summon for A/S-Tier Units", reason: "Chrono Slayer (Time, S-Tier) and Void Empress (Dark, S-Tier) define the meta. Blaze Archon (Fire, A-Tier) and Frost Monarch (Ice, A-Tier) are excellent accessible alternatives. One good summon changes your entire account trajectory." },
+    { tier: "A", unit: "Summon for A/S-Tier Units", reason: "Chrono Slayer (Time, S-Tier) and Void Empress (Dark, S-Tier) define the meta. Kirito and Goku (Anime Crossover S-Tier units) from crossover banners are also top summon targets. Blaze Archon (Fire, A-Tier) and Frost Monarch (Ice, A-Tier) are excellent accessible alternatives. One good summon changes your entire account trajectory." },
     { tier: "A", unit: "First Trait on Main DPS", reason: "Even an Epic trait (Cooldown- or Lifesteal) is a massive upgrade over an empty trait slot. Use the free Trait Rerolls from codes to find something useful. Do not chase Mythic traits until you have a permanent S-Tier unit." },
     { tier: "B", unit: "Support/CC Evolution (to Epic for Trait Slot 2)", reason: "Evolving Frost Monarch or Tide Guardian to Epic unlocks Trait Slot 2. A well-traited support dramatically improves team survivability. Lower priority than main DPS evolution." },
     { tier: "B", unit: "Infinite Mode Farming (Wave 40+)", reason: "Consistent Evolution Stone income is essential for mid-game progression. Push to wave 40 as soon as your team can handle it. Farm daily for steady stone accumulation." },
@@ -100,6 +109,7 @@ const data: EvolutionPageData = {
     { question: "Should I save Gems or spend them immediately?", answer: "Save for Mythic/Legendary banners and evolution costs. A single Mythic evolution costs 50,000 Gems. Every Gem spent on a Common banner pull is a Gem not going toward your main DPS's power spike. Patience with Gems is the #1 trait of successful players." },
     { question: "What changed in the Re:Rangers update?", answer: "The Re:Rangers update (which renamed the game from Anime Rangers X) overhauled the trait system, rebalanced units, added Awakening Cores for Mythic evolution, and introduced new summon banners. Old codes from the Anime Rangers X era are now expired. Make sure you are using current Re:Rangers X codes." },
     { question: "How long does it take to reach endgame?", answer: "With optimal play and active code redemption, you can reach mid-game (Legendary main DPS, wave 60+) in 5-10 hours. Endgame (Mythic evolution, wave 100+) typically takes 20+ hours due to the Awakening Core bottleneck. Promo codes accelerate this dramatically — always check our Codes page before playing." },
+    { question: "What is the 1st Anniversary event and how do I participate?", answer: "The 1st Anniversary celebration is a limited-time event featuring exclusive units, traits, and items. Participate by redeeming anniversary codes (SorryForAnniversary, AnimeMaintX, 1STANNIVERSARY!), earning Anniversary Coins from events, and visiting the anniversary shop. The event also introduced anime crossover units from Jujutsu Kaisen, One Piece, and Gachiakuta." },
   ],
 
   relatedGuides: [

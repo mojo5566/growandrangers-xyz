@@ -19,6 +19,7 @@ const data: EvolutionPageData = {
       "One hyper-evolved carry outperforms five evenly-leveled units every time",
       "Traits can double a unit's effectiveness — always fill trait slots on permanent units",
       "The 2026 anime crossover event is the biggest content drop of the year — Kirito (SAO) and Goku (Dragon Ball) are now S-Tier Mythics rivaling Chrono Slayer and Void Empress",
+      "1st Anniversary event brings 48 active codes — CATCHINGUP grants free Asto (Half) unit",
     ],
   },
 
@@ -73,10 +74,24 @@ const data: EvolutionPageData = {
       sources: ["Limited Dragon Ball crossover banner (time-gated)", "Crossover event shop (exchange tokens)"],
       tip: "If you pull Goku, build around him the same way you would Void Empress. Evolve to Mythic first for Trait Slot 3. His charge mechanic rewards long waves — pair with Frost Monarch (CC) to keep enemies grouped while he ramps up. Equip God-Speed trait to shorten his charge window. Rivals Void Empress for the #1 AOE DPS slot and is the clear pick against Ice-weak bosses.",
     },
+    {
+      name: "Naruto (Wind, A-Tier) — Naruto Crossover",
+      icon: "🍃",
+      desc: "Hybrid DPS/CC unit from the Naruto crossover. Rasengan ability deals AoE damage with a chance to stun. Excellent in modes requiring crowd control. Pairs well with Frost Monarch for chain CC. Best for Infinite Mode and Boss Raids.",
+      sources: ["Limited Naruto crossover banner (time-gated)", "Crossover event shop (exchange tokens)"],
+      tip: "Evolve to Legendary using 8,000 Gems. Pair with Sharingan trait for maximum CC uptime.",
+    },
+    {
+      name: "Asto (Half) (Dark, A-Tier)",
+      icon: "🌑",
+      desc: "Exclusive unit obtainable for free via the CATCHINGUP code. Solid all-rounder with balanced DPS and utility. Perfect for new players catching up to veterans. Best for all modes.",
+      sources: ["CATCHINGUP promo code (free)"],
+      tip: "Redeem code CATCHINGUP before it expires. Asto scales well into mid-game content.",
+    },
   ],
 
   bestUnitsSteps: [
-    { step: "1", title: "Redeem Codes & Summon on Mythic/Legendary Banners", desc: "Before anything else, redeem all active promo codes. ECLIPSE gives 100 Trait Rerolls. SACRIFICE gives 100,000 Gold. Then spend your Gems on the highest-tier banner available. Your first few summons determine your early game trajectory. If you get Chrono Slayer or Void Empress, stop summoning and invest everything in that unit." },
+    { step: "1", title: "Redeem Codes & Summon on Mythic/Legendary Banners", desc: "Before anything else, redeem all 48 active promo codes. CATCHINGUP gives a free Asto (Half) unit + 150 Trait Rerolls + 20K Gems. ECLIPSE gives 100 Trait Rerolls. SACRIFICE gives 100,000 Gold. Then spend your Gems on the highest-tier banner available. Your first few summons determine your early game trajectory. If you get Chrono Slayer or Void Empress, stop summoning and invest everything in that unit." },
     { step: "2", title: "Build Your Core 4-Unit Team", desc: "Every team needs four roles filled: Main DPS (Chrono Slayer > Void Empress > Blaze Archon > Storm Ronin), Crowd Control (Frost Monarch > any freeze unit), Support/Healer (Tide Guardian > Aqua Squire), and Flex (secondary DPS like Shadow Kunoichi or tank like Stone Colossus). This composition handles all content through wave 60." },
     { step: "3", title: "Hyper-Evolve Your Main DPS", desc: "Do not spread evolution resources. Pick your best DPS unit and push it as high as possible. Rare (+50% stats) is your first milestone. Epic (+75% stats, Trait Slot 2) is your mid-game goal. Legendary (+100% stats, Ultimate unlock) is where the unit truly comes online. One Legendary DPS outperforms four Rare units." },
     { step: "4", title: "Fill Trait Slots on Permanent Units", desc: "Every evolution stage unlocks or expands trait capability. Slot 1 at base, Slot 2 at Epic, Slot 3 at Mythic. For your main DPS, target Time Rewind or God-Speed (Mythic). For supports, target Monarch or Cooldown- (Legendary/Epic). Never leave a trait slot empty — even a Rare trait is infinitely better than nothing." },
@@ -93,6 +108,7 @@ const data: EvolutionPageData = {
     { tier: "A", unit: "Blaze Archon (Fire, A-Tier)", reason: "Best accessible DPS. Burn stacking melts bosses. Legendary summon rate means you will actually get this unit. Evolve to Legendary for Ultimate. The realistic main DPS for players who have not pulled a Mythic." },
     { tier: "A", unit: "Frost Monarch (Ice, A-Tier)", reason: "Essential crowd control. Freeze, ice wall, slow. Makes high-wave content possible. Every serious team needs CC, and Frost Monarch is the best in slot. Evolve to Epic for Trait Slot 2, equip Cooldown-." },
     { tier: "A", unit: "Storm Ronin (Lightning, A-Tier)", reason: "Speed farming specialist. Chain lightning attack hits multiple enemies. Best unit for fast Infinite Mode clears to farm Evolution Stones. Pair with Shadow Kunoichi for maximum speed." },
+    { tier: "A", unit: "Asto (Half) (Dark, A-Tier)", reason: "Free unit from CATCHINGUP code — excellent value for new players" },
     { tier: "B", unit: "Tide Guardian (Water, B-Tier)", reason: "Best accessible healer. Team shield and heal-over-time. Essential for sustained Infinite Mode runs. Outclassed by Void Empress self-heal but fills the support role for Chrono Slayer teams." },
     { tier: "B", unit: "Shadow Kunoichi (Dark, B-Tier)", reason: "Single-target burst DPS with stealth crit. Excellent secondary DPS for boss fights. Pairs with Storm Ronin for speed farming. Fragile — needs tank or CC support." },
     { tier: "B", unit: "Stone Colossus (Earth, B-Tier)", reason: "Best tank with damage reduction aura. Good flex slot for fragile DPS compositions. Protects Chrono Slayer and Shadow Kunoichi. Evolve to Epic, not higher — the stats are not worth the investment." },
@@ -117,6 +133,7 @@ const data: EvolutionPageData = {
     { question: "How do I get Mythic units like Chrono Slayer?", answer: "Mythic summon banners have the highest drop rates. Save all Gems for these banners. Limited event banners sometimes have boosted Mythic rates. There is no pity system — you could get Chrono Slayer on your first pull or your hundredth. Promo codes (check our Codes page) provide Gems to fund more summons." },
     { question: "When should I stop summoning and start evolving?", answer: "Once you have a solid main DPS (Blaze Archon or better) and a CC unit (Frost Monarch or equivalent), stop summoning. Redirect all Gems to evolution costs. A Legendary-evolved Blaze Archon outperforms a base-level Chrono Slayer. Evolution provides guaranteed power — summoning is RNG." },
     { question: "Should I keep duplicate units?", answer: "No. Duplicate units can be traded for Evolution Stones or Gems at the Exchange. There is no benefit to owning two of the same unit — you can only deploy one copy per team. Exchange duplicates immediately and reinvest the resources into evolving your main team." },
+    { question: "How do I get Asto (Half)?", answer: "Asto (Half) is an exclusive unit obtainable by redeeming the CATCHINGUP promo code. The code also grants 150 Trait Rerolls, 20,000 Gems, and 100,000 Gold. It is designed as a catch-up mechanic for newer players." },
   ],
 
   relatedGuides: [

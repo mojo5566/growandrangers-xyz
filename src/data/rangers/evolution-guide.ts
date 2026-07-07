@@ -1,7 +1,7 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Anime Rangers X Evolution Guide — Full Requirements & Strategy (July 2026)",
+  title: "Re:Rangers X Evolution Guide — Full Requirements & Strategy (July 2026)",
   description: "Step-by-step evolution guide covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, priority order, and common mistakes to avoid.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
@@ -25,12 +25,18 @@ const data: EvolutionPageData = {
     { from: "Kirito (SAO Crossover) → Mythic", mats: "x200 Evolution Stones + x15,000 Gems", stats: "Full Mythic evolution for the 2026 SAO crossover's top single-target DPS. Dark element, rivals Chrono Slayer." },
     { from: "Goku (Dragon Ball Crossover) → Mythic", mats: "x200 Evolution Stones + x15,000 Gems", stats: "Full Mythic evolution for the 2026 Dragon Ball crossover's best AOE fire DPS. Rivals Void Empress." },
     { from: "Naruto (Anime Crossover) → Legendary", mats: "x100 Evolution Stones + x8,000 Gems", stats: "Legendary evolution for the anime crossover's air-element CC unit. Unlock Ultimate and Trait Slot 2." },
+    { from: "Asto (Half) → Asto (Full)", mats: "10,000 Gems + 5 Cursed Finger + 25 Anniversary Coins", stats: "Evolves the free CATCHINGUP code unit Asto (Half) into its full form. Core JJK crossover progression for budget teams." },
+    { from: "Luffy → Gear 5 Luffy", mats: "15,000 Gems + 5 Haki Shards", stats: "Gear 5 transformation for the One Piece crossover's top DPS. Massive AoE damage upgrade with extended knockback." },
+    { from: "Gojo → Unlimited Gojo", mats: "20,000 Gems + 10 Cursed Energy", stats: "Pinnacle JJK crossover evolution. Domain Expansion gains extended duration and wider AoE — the strongest JJK unit form." },
   ],
   totalCost: "Total to Mythic from Common: 920 Evolution Stones + 92,000 Gems + 1 Awakening Core",
   materials: [
     { name: "Evolution Stones", icon: "⛏️", desc: "The primary evolution currency. Required at every evolution stage.", sources: ["Infinite Mode past wave 40 (5-10 per clear)", "Daily missions (15-20 stones)", "Weekly boss raids (50+ on first clear)", "Event shops during seasonal events"], tip: "Farm Infinite Mode with a speed team (Storm Ronin + Shadow Kunoichi) for maximum stones-per-hour. Daily missions are the most time-efficient source for casual players." },
     { name: "Gems", icon: "💎", desc: "Premium currency used alongside Evolution Stones at every stage.", sources: ["Active promo codes (check our Codes page)", "Daily achievements (100-200 Gems/day)", "Weekend events with bonus Gem drops", "Infinite Mode milestone rewards"], tip: "Never spend Gems on Common/Rare banners. Save exclusively for evolution costs and Mythic summon banners. A single Mythic evolution costs 50,000 Gems — plan accordingly." },
     { name: "Awakening Core", icon: "🔮", desc: "The rarest evolution material. Required only for Legendary → Mythic evolution.", sources: ["Legendary+ Boss Raid (5% drop rate)", "Premium shop (100,000 Gems)", "Battle Pass tier 50 reward (one per season)", "Extremely rare event drop"], tip: "Never use an Awakening Core on a non-S-Tier unit. The 5% boss raid drop rate means you will likely only obtain 1-2 cores per month. Each one is priceless." },
+    { name: "Anniversary Coins", icon: "🪙", desc: "Event currency from the 1st Anniversary. Used for purchasing exclusive evolution materials and units in the anniversary shop.", sources: ["SorryForAnniversary code", "AnimeMaintX code", "1STANNIVERSARY! code", "Anniversary events"], tip: "Spend Anniversary Coins on Cursed Fingers and Awakening Cores first — these are the highest-value purchases. Stockpile any excess for future anniversary shop refreshes." },
+    { name: "Cursed Finger", icon: "🌑", desc: "Jujutsu Kaisen crossover material. Required for evolving JJK crossover units like Asto and Yuji.", sources: ["JJKUPD! code", "JJKUPD2! code", "GHOULHUNT code", "RERELEASE!!! code", "JJK event stages"], tip: "Stockpile Cursed Fingers during JJK crossover events — they are the primary gate for evolving Asto and Yuji. Redeem all JJK-related codes immediately as they expire quickly." },
+    { name: "Cursed Scrolls", icon: "📜", desc: "Advanced JJK material for high-tier JJK unit evolutions.", sources: ["JJKUPD! code (75 scrolls)", "CALAMITY code (25 scrolls)", "JJK raid drops"], tip: "Cursed Scrolls are required for the highest-tier JJK evolutions like Unlimited Gojo. Prioritize the JJKUPD! code for 75 scrolls — it is the single largest free source." },
   ],
   bestUnitsSteps: [
     { step: "1", title: "Main DPS to Legendary", desc: "Push your primary damage dealer (Chrono Slayer, Void Empress, or Blaze Archon) to Legendary first. The Ultimate ability unlock at Legendary tier is the biggest single power spike in the game and enables wave 60+ content." },
@@ -38,12 +44,14 @@ const data: EvolutionPageData = {
     { step: "3", title: "Main DPS to Mythic", desc: "This is the long grind. Save 500 Evolution Stones, 50,000 Gems, and hunt for an Awakening Core. Only commit if you are certain this unit is a permanent member of your roster." },
     { step: "4", title: "Secondary DPS to Legendary", desc: "Once your main DPS is Mythic, bring your secondary DPS (Blaze Archon or Storm Ronin) to Legendary for their Ultimate. This gives you flexibility for different content types." },
     { step: "5", title: "Support to Legendary/Mythic", desc: "Last priority. A Mythic support is a luxury — the stats are nice but not game-changing. Only invest here once your DPS units are fully evolved." },
+    { step: "6", title: "Redeem Active Codes for Free Materials", desc: "Redeem all 48 active codes for free evolution materials — CATCHINGUP alone gives 20,000 Gems. Codes are the fastest source of free Gems, Evolution Stones, and crossover materials, so check the Active Codes page regularly and redeem new codes immediately as many expire within weeks." },
   ],
   priorityList: [
     { tier: "S", unit: "Chrono Slayer / Void Empress", reason: "Your main DPS. Mythic evolution unlocks Trait Slot 3 and +150% stats — the single biggest power spike in the game." },
     { tier: "S", unit: "Frost Monarch / Tide Guardian", reason: "Support units benefit massively from reduced cooldowns at higher evolution. Trait Slot 2 enables Cooldown- or Monarch." },
     { tier: "A", unit: "Blaze Archon / Storm Ronin", reason: "Strong Legendary DPS. Evolve to Legendary for Ultimate unlock, then park here while saving Awakening Cores for Mythic units." },
     { tier: "B", unit: "Stone Colossus / Shadow Kunoichi", reason: "Evolve to Epic for Trait Slot 2. Do not push past Epic — save resources for S/A-Tier units." },
+    { tier: "B", unit: "Asto (Half) → Asto (Full)", reason: "Asto is free from CATCHINGUP code — evolving it is excellent value" },
     { tier: "C", unit: "Wind Scout / Flame Recruit / Aqua Squire", reason: "Do not invest Evolution Stones. These starter units are replaced quickly. Any stones spent here are permanently lost." },
   ],
   mistakes: [
@@ -59,6 +67,7 @@ const data: EvolutionPageData = {
     { question: "Should I evolve Rare units to Epic or wait?", answer: "Wait. Only invest in Epic-tier units and above. Rare and Common units cannot reach Mythic tier and are permanently outclassed. If you have zero Epic+ units, evolve one Rare to Epic as a temporary carry, but stop there." },
     { question: "Do I lose my traits when I evolve a unit?", answer: "No. Traits are permanently attached to trait slots and persist through evolution. Evolving to Epic unlocks Trait Slot 2 and Mythic unlocks Trait Slot 3 — your existing trait in Slot 1 is unaffected." },
     { question: "Is it worth buying Evolution Stones with Gems?", answer: "Generally no. Gems are better spent on Mythic summon banners and evolution costs. If you are 10-20 stones away from a major milestone, a small purchase is acceptable. Never buy stones in bulk with Gems." },
+    { question: "How do I evolve JJK crossover units?", answer: "JJK crossover units like Asto and Gojo require Cursed Fingers and Cursed Scrolls as evolution materials. These drop from JJK event stages and are obtainable from codes like JJKUPD!, JJKUPD2!, and GHOULHUNT. Stockpile these materials as JJK units are top-tier investments." },
   ],
   relatedGuides: [
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Decide which units to evolve first" },

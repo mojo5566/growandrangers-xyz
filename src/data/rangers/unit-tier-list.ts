@@ -1,7 +1,7 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Anime Rangers X Unit Tier List — All Units Ranked (July 2026)",
+  title: "Re:Rangers X Unit Tier List — All Units Ranked (July 2026)",
   description: "Every Anime Rangers X unit ranked from S-Tier to C-Tier with detailed strengths, weaknesses, best use cases, optimal trait pairings, and recommended team compositions.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
@@ -21,6 +21,7 @@ const data: TierListPageData = {
       { name: "Kirito (Dark)", tier: "S", description: "2026 SAO crossover — Dual Wield single-target burst" },
       { name: "Goku (Fire)", tier: "S", description: "2026 DBZ crossover — Spirit Bomb ultimate, stacking ATK passive" },
       { name: "Asuna (Lightning)", tier: "S", description: "2026 SAO crossover — rapier speed DPS" },
+      { name: "Asto (Full)", tier: "S", description: "Anniversary Code Unit — evolution of Asto (Half) from CATCHINGUP code" },
     ]},
     { name: "A-Tier — Excellent Units", description: "Strong Legendary and Epic units that form the backbone of most competitive teams. Easier to summon than Mythics.", entries: [
       { name: "Blaze Archon (Fire)", tier: "A", description: "Burn stacking, wave clear" },
@@ -32,6 +33,8 @@ const data: TierListPageData = {
       { name: "Luffy (Earth)", tier: "A", description: "2026 One Piece crossover — gear-shift tank" },
       { name: "Ichigo (Dark)", tier: "A", description: "2026 Bleach crossover — Bankai hybrid DPS" },
       { name: "Zoro (Air)", tier: "A", description: "2026 One Piece crossover — three-sword multi-hit" },
+      { name: "Gojo (Light)", tier: "A", description: "JJK Crossover — Domain Expansion AoE stun CC" },
+      { name: "Yuji (Dark)", tier: "A", description: "JJK Crossover — Sukuna vessel hybrid DPS" },
     ]},
     { name: "B-Tier — Solid Mid-Game Units", description: "Viable units for mid-game progression. Useful while saving summons for higher tiers.", entries: [
       { name: "Shadow Kunoichi (Dark)", tier: "B", description: "Stealth crit, single-target burst" },
@@ -39,6 +42,7 @@ const data: TierListPageData = {
       { name: "Stone Colossus (Earth)", tier: "B", description: "Tank, damage reduction aura" },
       { name: "Gon (Earth)", tier: "B", description: "2026 HxH crossover — jajanken adaptive flex DPS" },
       { name: "Killua (Lightning)", tier: "B", description: "2026 HxH crossover — godspeed chain lightning" },
+      { name: "Asto (Half)", tier: "B", description: "Free Code Unit — from CATCHINGUP code, evolves into Asto (Full)" },
     ]},
     { name: "C-Tier — Starter Units", description: "Free starter units. Use them to learn the game, then replace immediately.", entries: [
       { name: "Wind Scout (Air)", tier: "C", description: "Budget speed unit, scouting" },
@@ -57,19 +61,22 @@ const data: TierListPageData = {
     { name: "Shadow Kunoichi (Dark)", rank: "B-Tier #6", desc: "High-risk, high-reward assassin. Enters stealth after 2s without taking damage. First attack from stealth deals 400% critical damage.", strengths: ["400% stealth crit one-shots most enemies","Highest single-target burst in B-Tier","Stealth provides brief invulnerability","Strong in boss fights"], weaknesses: ["Stealth breaks on any damage taken","No AOE damage","Low base HP (7,800)","Outclassed by Mythic DPS units"], bestUse: "Boss-killer for early/mid-game. Swap in for boss stages. Replace with Chrono Slayer or Void Empress once you pull a Mythic.", color: "#FFD700" },
     { name: "Tide Guardian (Water)", rank: "B-Tier #7", desc: "Most reliable healing support. Team-wide heal-over-time (8% max HP/sec for 8s = 64% total). Shield absorbs 5,000 damage.", strengths: ["Best sustained healing (64% total HP)","Shield prevents one-shot deaths","Team-wide healing supports full squad","Neutral elemental matchups"], weaknesses: ["Zero personal damage","Long cooldowns (heal 22s, shield 28s)","Heal-over-time cannot save from burst","Outshined by self-sustain units at high skill"], bestUse: "Sustain support for Infinite Mode. Pair with Chrono Slayer and Stone Colossus. Apply Cooldown- trait.", color: "#FFD700" },
     { name: "Stone Colossus (Earth)", rank: "B-Tier #8", desc: "Premier tank. Taunts all nearby enemies for 5s with 20% team damage reduction aura. Highest base HP (22,000).", strengths: ["Highest base HP (22,000)","Taunt redirects lethal attacks","20% damage reduction aura for team","Fortress trait adds defense and taunt radius"], weaknesses: ["Extremely low damage","Slow movement (2.8)","Taunt duration halved on bosses","Earth weak against Air enemies"], bestUse: "Frontline tank with Tide Guardian for unbreakable defense. Best in boss fights. Apply Fortress trait.", color: "#FFD700" },
+    { name: "Asto (Half)", rank: "B-Tier — Free Code Unit", desc: "Free unit from CATCHINGUP code. Evolves into S-Tier Asto (Full).", strengths: ["Free from code — no gacha needed","Evolves into S-Tier Asto (Full)","Balanced all-rounder"], weaknesses: ["Base form is only B-Tier","Evolution requires Cursed Fingers from JJK codes"], bestUse: "Budget all-rounder for new players. Evolve into Asto (Full) using Cursed Fingers from JJK codes.", color: "#FFD700" },
     { name: "Wind Scout / Flame Recruit / Aqua Squire", rank: "C-Tier — Starter Units", desc: "Free starter units available to all new players. Serve their purpose in tutorials and early game but should be replaced immediately upon summoning any B-Tier or higher unit.", strengths: ["Free — available from the start","Low evolution costs","Good for learning team composition"], weaknesses: ["Extremely low base stats","Cannot compete past wave 20","No unique abilities or passives","Not worth investing resources into"], bestUse: "Tutorial and early-game only. Replace immediately upon pulling your first Rare or higher unit.", color: "#3A86FF" },
   ],
   teamComps: [
     { name: "Meta Infinite Team", units: "Chrono Slayer + Frost Monarch + Tide Guardian", desc: "Balanced DPS, CC, and sustain. Pushes past wave 100." },
     { name: "Speed Farm Team", units: "Storm Ronin + Shadow Kunoichi + Wind Scout", desc: "Maximum clear speed for gem farming. Weaker survivability." },
     { name: "Boss Killer Team", units: "Void Empress + Blaze Archon + Stone Colossus", desc: "High burst with tank support. Burn stacking synergy." },
-    { name: "Budget Starter", units: "Blaze Archon + Tide Guardian + Ember Knight", desc: "Accessible team with no Mythic units. Solid through wave 60." },
+    { name: "Budget Starter", units: "Blaze Archon + Tide Guardian + Asto (Half)", desc: "Accessible team with no Mythic units. Solid through wave 60." },
+    { name: "Anime Crossover Team", units: "Kirito + Goku + Asuna + Flex", desc: "Pure anime crossover DPS. High damage but no sustain." },
   ],
   faq: [
     { question: "Which unit should I reroll for as a new player?", answer: "Chrono Slayer (S-Tier #1) is the best target — his time-freeze ultimate and high DPS carry all content. If you cannot pull a Mythic, Blaze Archon (A-Tier #3) is an excellent Legendary alternative with better summon rates." },
     { question: "Should I invest in B-Tier units or save?", answer: "Invest Evolution Stones in Epic-tier and above only. B-Tier units are useful mid-game but are eventually replaced. Save Awakening Cores and Legendary Trait Rolls exclusively for S/A-Tier units." },
     { question: "What is the best Infinite Mode team?", answer: "Chrono Slayer (DPS) + Frost Monarch (CC) + Tide Guardian (Sustain). Balanced damage, crowd control, and healing for consistent wave 100+ pushes. For speed farming: Storm Ronin + Shadow Kunoichi + Wind Scout." },
     { question: "How did Re:Rangers change unit rankings?", answer: "Mythic summon rates increased from 0.5% to 0.8%. Several Legendary/Epic units received stat buffs. Frost Monarch's freeze duration increased from 2.5s to 3s, solidifying her A-Tier position." },
+    { question: "How do I get Asto?", answer: "Asto (Half) is obtained for free via the CATCHINGUP code. Redeem it in-game by clicking the Code button on the left side of the screen." },
   ],
   relatedGuides: [
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits for each unit" },
