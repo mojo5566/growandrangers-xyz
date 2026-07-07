@@ -25,7 +25,7 @@ const defenseSetups = [
   { item: "Garden Gnome", cost: "100,000 Sheckles", rarity: "Epic", duration: "10 minutes", effect: "Automatically kicks any intruder on your plot. Best automated defense available.", priority: "Must-have for any plot with crops worth 50K+ Sheckles." },
   { item: "Shovel (Manual)", cost: "Free (starter item)", rarity: "Common", duration: "Permanent", effect: "Stand guard and whack intruders yourself. Effective but requires you to be online and attentive.", priority: "Fallback when you can't afford a gnome or it's on cooldown." },
   { item: "Traps", cost: "Varies by type", rarity: "Rare+", duration: "Single-use", effect: "Hidden traps that stun or slow intruders. Placement is key — put them near your most valuable plots.", priority: "Supplement gnomes, don't replace them. Best used on entrance paths." },
-  { item: "传送板 (Teleport Pad)", cost: "50,000,000 Sheckles", rarity: "Mythic", duration: "Permanent", effect: "Instantly teleport home if you're caught raiding. The ultimate escape tool for serious thieves.", priority: "Endgame luxury. Only worth it if you raid nightly and have spare Sheckles." },
+  { item: "Teleport Pad", cost: "50,000,000 Sheckles", rarity: "Mythic", duration: "Permanent", effect: "Instantly teleport home if you're caught raiding. The ultimate escape tool for serious thieves.", priority: "Endgame luxury. Only worth it if you raid nightly and have spare Sheckles." },
 ];
 
 const riskLevels = [

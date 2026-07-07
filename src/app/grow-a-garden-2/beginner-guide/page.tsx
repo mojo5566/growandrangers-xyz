@@ -17,7 +17,7 @@ const overviewPoints = [
   { icon: "🪙", title: "Earn Sheckles", text: "Harvest crops and sell them for Sheckles — the new currency. Reinvest immediately into more plots and seeds." },
   { icon: "🌙", title: "Survive the Night", text: "When night falls (2:30), other players can raid your farm. Deploy garden gnomes or stand guard with a shovel." },
   { icon: "🏰", title: "Join a Guild", text: "Guilds unlock weekly competitions with exclusive rewards. Join one as soon as possible — solo play misses major content." },
-  { icon: "🏪", title: "Visit the Item Shop", text: "The shop in the market area sells gnomes, ladders, and传送板. Start with cheap utility items before splurging on gnomes." },
+  { icon: "🏪", title: "Visit the Item Shop", text: "The shop in the market area sells gnomes, ladders, and teleport pads. Start with cheap utility items before splurging on gnomes." },
   { icon: "❄️", title: "Compete for the Ice Snake", text: "The Ice Snake pet is the top guild reward. It boosts crop growth speed — a game-changer for active farmers." },
 ];
 

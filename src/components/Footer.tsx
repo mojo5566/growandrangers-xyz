@@ -28,6 +28,11 @@ export default function Footer() {
                   Anime Rangers X
                 </Link>
               </li>
+              <li>
+                <Link href="/grow-a-garden-2/" className="text-sm text-[#BAC4D1] transition hover:text-[#00E676]">
+                  Grow a Garden 2
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -43,6 +48,16 @@ export default function Footer() {
               <li>
                 <Link href="/grow-a-garden/codes" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
                   Latest Codes
+                </Link>
+              </li>
+              <li>
+                <Link href="/anime-rangers-x/codes" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  Anime Rangers X Codes
+                </Link>
+              </li>
+              <li>
+                <Link href="/grow-a-garden-2/codes" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  Grow a Garden 2 Codes
                 </Link>
               </li>
             </ul>

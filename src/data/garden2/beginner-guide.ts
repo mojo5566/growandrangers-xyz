@@ -1,9 +1,9 @@
 import type { GuidePageData } from "../types";
 
 const data: GuidePageData = {
-  title: "Grow a Garden 2 Beginner Guide — How to Start (June 2026)",
+  title: "Grow a Garden 2 Beginner Guide — How to Start (July 2026)",
   description: "Complete beginner walkthrough for Grow a Garden 2 on Roblox. Learn the new day/night cycle, planting mechanics, guild system, item shop, and how to protect your farm from nighttime thieves.",
-  updatedAt: "June 14, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Grow a Garden 2 Beginner Guide", href: "/grow-a-garden-2/beginner-guide" },

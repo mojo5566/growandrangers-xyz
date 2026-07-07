@@ -13,9 +13,9 @@ const luckyBunny = pets.find((p) => p.id === "lucky-clover-bunny")!;
 
 function buildMoneyGuideData(): EvolutionPageData {
   return {
-    title: "Grow a Garden Money Making Guide — Max Coins Per Hour (June 2026)",
+    title: "Grow a Garden Money Making Guide — Max Coins Per Hour (July 2026)",
     description: "The ultimate coin farming guide for Grow a Garden. Learn early-game money strategies, mid-game scaling, endgame optimization, best crop and mutation combinations, AFK income methods, and how to reach 10,000+ coins per minute.",
-    updatedAt: "June 28, 2026",
+    updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Money Making Guide", href: "/grow-a-garden/money-making-guide" },

@@ -17,9 +17,9 @@ const bestCrops: GuidePageData & {
   }[];
   strategyTips: string[];
 } = {
-  title: "Best Crops Guide — Grow a Garden (June 2026)",
+  title: "Best Crops Guide — Grow a Garden (July 2026)",
   description: "Discover the absolute best crops in Grow a Garden ranked by coins-per-minute, seasonal value, and endgame profit potential. Updated for June 2026.",
-  updatedAt: "June 28, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Grow a Garden", href: "/grow-a-garden" },

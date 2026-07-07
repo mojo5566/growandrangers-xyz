@@ -1,9 +1,9 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Re:Rangers X Best Units Guide — Top DPS, Supports & Team Building (June 2026)",
+  title: "Re:Rangers X Best Units Guide — Top DPS, Supports & Team Building (July 2026)",
   description: "Complete guide to the best units in Re:Rangers X. Learn which units to summon for, how to build the optimal 4-unit team, elemental synergies, evolution priority, and which units are worth your Gems and Evolution Stones.",
-  updatedAt: "June 28, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Re:Rangers X Best Units Guide", href: "/anime-rangers-x/best-units" },

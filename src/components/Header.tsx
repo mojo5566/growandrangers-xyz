@@ -19,6 +19,7 @@ export default function Header() {
           <NavLink href="/grow-a-garden/" accent="garden">🌱 Grow a Garden</NavLink>
           <NavLink href="/grow-a-garden-2/" accent="garden">🌿 GaG 2 (NEW)</NavLink>
           <NavLink href="/anime-rangers-x/" accent="rangers">⚔️ Anime Rangers X</NavLink>
+          <NavLink href="/grow-a-garden/crops" accent="garden">📊 Databases</NavLink>
           <NavLink href="/grow-a-garden/codes" accent="garden">🎁 Codes</NavLink>
         </div>
 
@@ -46,6 +47,9 @@ export default function Header() {
             </MobileNavLink>
             <MobileNavLink href="/anime-rangers-x/" accent="rangers" onClick={() => setMobileOpen(false)}>
               ⚔️ Anime Rangers X
+            </MobileNavLink>
+            <MobileNavLink href="/grow-a-garden/crops" accent="garden" onClick={() => setMobileOpen(false)}>
+              📊 Databases
             </MobileNavLink>
             <MobileNavLink href="/grow-a-garden/codes" accent="garden" onClick={() => setMobileOpen(false)}>
               🎁 Codes

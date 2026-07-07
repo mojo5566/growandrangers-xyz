@@ -7,7 +7,7 @@ const beginnerFarming: GuidePageData & {
   firstDayGoals: string[];
   mistakes: { title: string; desc: string }[];
 } = {
-  title: "Beginner Farming Guide — Grow a Garden (June 2026)",
+  title: "Beginner Farming Guide — Grow a Garden (July 2026)",
   description: "New to Grow a Garden? This step-by-step beginner farming guide covers everything from your first plot to mid-game profitability. Start growing the right way.",
   updatedAt: "June 2026",
   breadcrumbs: [

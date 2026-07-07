@@ -9,13 +9,18 @@ import SectionDivider from "@/components/SectionDivider";
 import Link from "next/link";
 import gardenCodes from "@/data/garden/codes";
 import rangersCodes from "@/data/rangers/codes";
+import { crops } from "@/data/garden/database/crops";
+import { mutations } from "@/data/garden/database/mutations";
+import { pets } from "@/data/garden/database/pets";
+import { units } from "@/data/rangers/database/units";
+import { traits } from "@/data/rangers/database/traits";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "BloxPulse",
-    title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides (June 2026)",
+    title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides (July 2026)",
     description:
       "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
     url: "https://growandrangers.xyz",
@@ -30,7 +35,7 @@ const databaseCards = [
   {
     icon: "🌾",
     title: "Crops Database",
-    count: "11 crops",
+    count: `${crops.length} crops`,
     description: "Complete crop stats — coins, growth times, seasons, and tier rankings.",
     href: "/grow-a-garden/crops",
     accent: "garden" as const,
@@ -38,7 +43,7 @@ const databaseCards = [
   {
     icon: "🧬",
     title: "Mutations Database",
-    count: "14 mutations",
+    count: `${mutations.length} mutations`,
     description: "Every mutation with multipliers, roll rates, passives, and best use cases.",
     href: "/grow-a-garden/mutations",
     accent: "garden" as const,
@@ -46,7 +51,7 @@ const databaseCards = [
   {
     icon: "🐾",
     title: "Pets Database",
-    count: "12 pets",
+    count: `${pets.length} pets`,
     description: "All pets ranked — multipliers, abilities, egg sources, and seasonal bonuses.",
     href: "/grow-a-garden/pets",
     accent: "garden" as const,
@@ -54,7 +59,7 @@ const databaseCards = [
   {
     icon: "⚔️",
     title: "Units Database",
-    count: "20 units",
+    count: `${units.length} units`,
     description: "Full unit stats — ATK, HP, element, role, ultimates, and evolution costs.",
     href: "/anime-rangers-x/units",
     accent: "rangers" as const,
@@ -62,7 +67,7 @@ const databaseCards = [
   {
     icon: "💎",
     title: "Traits Database",
-    count: "25 traits",
+    count: `${traits.length} traits`,
     description: "Every trait with effects, roll rates, best units, and tier rankings.",
     href: "/anime-rangers-x/traits",
     accent: "rangers" as const,
@@ -271,7 +276,7 @@ export default function Home() {
             className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
           >
             🎁 Latest Active Promo Codes{" "}
-            <span className="text-sm font-normal text-[#768294]">(Updated June 2026)</span>
+            <span className="text-sm font-normal text-[#768294]">(Updated July 2026)</span>
           </h2>
           <p className="mb-8 text-sm text-[#768294]">
             One-click copy — paste these codes in-game for free rewards.

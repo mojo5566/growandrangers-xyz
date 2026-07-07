@@ -2,17 +2,19 @@ import type { EvolutionPageData } from "../types";
 import { pets } from "./database/pets";
 
 const goldenPhoenix = pets.find((p) => p.id === "golden-phoenix-chick")!;
+const goldenDragon = pets.find((p) => p.id === "golden-dragon")!;
 const crystalUnicorn = pets.find((p) => p.id === "crystal-unicorn-foal")!;
 const luckyBunny = pets.find((p) => p.id === "lucky-clover-bunny")!;
 const frostWolf = pets.find((p) => p.id === "frost-wolf-pup")!;
 const celestialFox = pets.find((p) => p.id === "celestial-fox-kit")!;
+const phoenixHatchling = pets.find((p) => p.id === "phoenix-hatchling")!;
 const commonCat = pets.find((p) => p.id === "common-garden-cat")!;
 
 function buildBestPetsData(): EvolutionPageData {
   return {
-    title: "Grow a Garden Best Pets Guide — Top Pets for Coin Farming (June 2026)",
+    title: "Grow a Garden Best Pets Guide — Top Pets for Coin Farming (July 2026)",
     description: "Complete guide to the best pets in Grow a Garden. Learn which pets to hatch first, how pet multipliers work, egg hatching strategy, mutation synergy combos, and how to maximize your coin income with the right pet selection.",
-    updatedAt: "June 28, 2026",
+    updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Best Pets Guide", href: "/grow-a-garden/best-pets" },
@@ -67,6 +69,20 @@ function buildBestPetsData(): EvolutionPageData {
         sources: ["Promo codes (most reliable source)", "Daily spin wheel (uncommon prize)", "Seasonal event shops", "Premium shop (200 Coins each)"],
         tip: "Never hatch a Legendary Egg without at least 3 Pet Growth Potions active. The difference between a ~5% S-Tier rate (unboosted) and a ~20% S-Tier rate (with 3 potions) is the difference between wasting 10,000 Coins and getting a Golden Phoenix Chick.",
       },
+      {
+        name: `${goldenDragon.name}`,
+        icon: "🐉",
+        desc: `${goldenDragon.description} At ${goldenDragon.multiplier.toFixed(1)}x, it is the second highest base pet multiplier in the game.`,
+        sources: ["Legendary Egg (10,000 Coins each)", "Seasonal event shops (discounted during events)", "Battle Pass premium tier reward"],
+        tip: `Synergy shines on golden-tier crops — the doubling passive stacks with ${goldenDragon.name}'s high base multiplier. Slightly lower base than ${goldenPhoenix.name} (${goldenDragon.multiplier.toFixed(1)}x vs ${goldenPhoenix.multiplier.toFixed(1)}x) but a higher ceiling on golden-crop farms.`,
+      },
+      {
+        name: `${phoenixHatchling.name}`,
+        icon: "🔥",
+        desc: `${phoenixHatchling.description} At ${phoenixHatchling.multiplier.toFixed(1)}x, it is a strong A-Tier pet accessible from Rare Eggs.`,
+        sources: ["Rare Egg (2,000 Coins each)", "Event rewards (seasonal events)", "Promo codes (occasional free eggs)"],
+        tip: `The daily revival passive rescues one wilted or spoiled crop per day — a safety net for high-value crops. At ${phoenixHatchling.multiplier.toFixed(1)}x from a Rare Egg, it is exceptional value for mid-game players.`,
+      },
     ],
 
     bestUnitsSteps: [
@@ -82,8 +98,9 @@ function buildBestPetsData(): EvolutionPageData {
       { tier: "S", unit: "First Pet (any tier, any egg)", reason: "Getting any pet multiplier online — even 1.1x — is the highest ROI purchase in the game. A 500-Coin Basic Egg pays for itself in 5 harvest cycles and then generates pure profit forever. Do not delay this purchase." },
       { tier: "S", unit: "Pet Growth Potions before Rare/Legendary Eggs", reason: "Potions increase your odds of getting a high-tier pet by 15% each. Hatching a Rare or Legendary Egg without potions is gambling. With 3-5 potions, it is a calculated investment. Never skip potions on eggs costing 2,000+ Coins." },
       { tier: "A", unit: `${goldenPhoenix.name} (S-Tier, ${goldenPhoenix.multiplier.toFixed(1)}x)`, reason: `The highest base pet multiplier in the game at ${goldenPhoenix.multiplier.toFixed(1)}x. No conditions, no seasonality — pure, unconditional power. Pairs best with Aurelian Crown mutation (4.0x) for a total 20.0x multiplier. The holy grail of pet hatching.` },
+      { tier: "A", unit: `${goldenDragon.name} (S-Tier, ${goldenDragon.multiplier.toFixed(1)}x)`, reason: `Second highest base pet multiplier at ${goldenDragon.multiplier.toFixed(1)}x. Doubles coin value of golden-tier crops for explosive synergy on golden-crop farms. A close rival to ${goldenPhoenix.name} with a higher ceiling on golden-tier setups.` },
       { tier: "A", unit: `${luckyBunny.name} (S-Tier, ${luckyBunny.multiplier.toFixed(1)}x base)`, reason: `Easter event exclusive with the unique rabbit-type synergy. Pairs with Leporine Bloom mutation for +18% bonus, pushing the effective multiplier higher. The highest effective pet multiplier in the game — but only obtainable during Easter events.` },
-      { tier: "A", unit: `${crystalUnicorn.name} (S-Tier, ${crystalUnicorn.multiplier.toFixed(1)}x)`, reason: `Second highest base multiplier. Unconditional, works on any crop, any season. Slightly easier to hatch than ${goldenPhoenix.name} due to a marginally higher Legendary Egg drop rate. The best non-seasonal alternative if you miss the Easter event.` },
+      { tier: "A", unit: `${crystalUnicorn.name} (S-Tier, ${crystalUnicorn.multiplier.toFixed(1)}x)`, reason: `Third highest base multiplier. Unconditional, works on any crop, any season. Slightly easier to hatch than ${goldenPhoenix.name} due to a marginally higher Legendary Egg drop rate. A reliable non-seasonal S-Tier, though ${goldenDragon.name} offers a higher base multiplier.` },
       { tier: "B", unit: `${frostWolf.name} (B-Tier, ${frostWolf.multiplier.toFixed(1)}x base, ${frostWolf.seasonalBonus?.bonusMultiplier.toFixed(1)}x ${frostWolf.seasonalBonus?.season})`, reason: `Strong mid-game pet with a seasonal bonus during ${frostWolf.seasonalBonus?.season}. Excellent for players who farm seasonally. Pairs well with Hoarfrost Corolla mutation which also benefits from Winter.` },
       { tier: "B", unit: `${celestialFox.name} (A-Tier, ${celestialFox.multiplier.toFixed(1)}x)`, reason: "Solid all-rounder. No seasonal restrictions. Provides a reliable multiplier that stacks cleanly with any mutation. A great placeholder pet while saving for Legendary Eggs." },
       { tier: "C", unit: `${commonCat.name} (C-Tier, ${commonCat.multiplier.toFixed(1)}x)`, reason: "Your likely first pet. Better than nothing, but replace as soon as you can afford a Rare Egg. The 1.0x multiplier provides no farming benefit — even a 1.5x Uncommon pet from a Basic Egg is a massive upgrade." },

@@ -1,4 +1,4 @@
-﻿import type { ValueListPageData } from "../types";
+import type { ValueListPageData } from "../types";
 import { crops, getCropsByTier } from "./database/crops";
 
 function buildValueListData(): ValueListPageData {
@@ -10,7 +10,7 @@ function buildValueListData(): ValueListPageData {
   const allCropsSorted = [...crops].sort((a, b) => b.coinsPerMinute - a.coinsPerMinute);
 
   return {
-    title: "Grow a Garden Value List (June 2026) — Best Crops Ranked",
+    title: "Grow a Garden Value List (July 2026) — Best Crops Ranked",
     description:
       "Complete Grow a Garden value list ranking all crops by coins, growth time, seasonal availability, and profit-per-minute. Includes beginner, mid-game, and endgame farming strategies with mutation and pet stacking calculations.",
     updatedAt: "June 9, 2026",

@@ -19,7 +19,7 @@ function buildCropValuesData(): CropValuesPageData {
   return {
     title: "Grow a Garden Crop Value List — Best Crops for Maximum Profit",
     description: "Every Grow a Garden crop ranked by base coin value, growth time, seasonal availability, and profit-per-minute. Includes mutation and pet multiplier stacking calculations for endgame farming optimization.",
-    updatedAt: "June 28, 2026",
+    updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Crop Value List", href: "/grow-a-garden/crop-value-list" },

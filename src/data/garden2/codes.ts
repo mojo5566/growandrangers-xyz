@@ -1,13 +1,13 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Grow a Garden 2 Codes — Active Promo Codes (June 2026)",
+  title: "Grow a Garden 2 Codes — Active Promo Codes (July 2026)",
   description: "All working Grow a Garden 2 promo codes for free seeds, Sheckles, and exclusive items. Verified daily against official sources — last checked June 28, 2026.",
-  updatedAt: "June 28, 2026",
-  lastChecked: "June 28, 2026",
+  updatedAt: "July 7, 2026",
+  lastChecked: "July 7, 2026",
   sources: [
-    { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "June 14, 2026" },
-    { name: "Official Discord", url: "https://discord.gg/growagarden", type: "Official", lastChecked: "June 14, 2026" },
+    { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "July 7, 2026" },
+    { name: "Official Discord", url: "https://discord.gg/growagarden", type: "Official", lastChecked: "July 7, 2026" },
   ],
   breadcrumbs: [
     { label: "Home", href: "/" },

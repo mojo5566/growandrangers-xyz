@@ -1,14 +1,14 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Grow a Garden Codes — Active & Expired Promo Codes (June 2026)",
+  title: "Grow a Garden Codes — Active & Expired Promo Codes (July 2026)",
   description: "Working Grow a Garden promo codes for free decorations, hats, and exclusive items. All codes verified against official sources — last checked June 28, 2026.",
-  updatedAt: "June 28, 2026",
-  lastChecked: "June 28, 2026",
+  updatedAt: "July 7, 2026",
+  lastChecked: "July 7, 2026",
   sources: [
-    { name: "Roonby", url: "https://roonby.com/2026/05/30/grow-a-garden-codes/", type: "Community", lastChecked: "June 28, 2026" },
-    { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "June 28, 2026" },
-    { name: "NetEase Gaming", url: "https://www.163.com/dy/article/L058JERK05561FY6.html", type: "Community", lastChecked: "June 28, 2026" },
+    { name: "Roonby", url: "https://roonby.com/2026/05/30/grow-a-garden-codes/", type: "Community", lastChecked: "July 7, 2026" },
+    { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "July 7, 2026" },
+    { name: "NetEase Gaming", url: "https://www.163.com/dy/article/L058JERK05561FY6.html", type: "Community", lastChecked: "July 7, 2026" },
   ],
   breadcrumbs: [
     { label: "Home", href: "/" },

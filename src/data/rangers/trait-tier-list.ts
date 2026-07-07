@@ -1,9 +1,9 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Anime Rangers X Trait Tier List — Every Trait Ranked (June 2026)",
+  title: "Anime Rangers X Trait Tier List — Every Trait Ranked (July 2026)",
   description: "All traits ranked from Mythic to Common with detailed strengths, weaknesses, optimal unit pairings, and reroll strategy. Includes the Re:Rangers trait system rework changes.",
-  updatedAt: "June 28, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Trait Tier List", href: "/anime-rangers-x/trait-tier-list" },

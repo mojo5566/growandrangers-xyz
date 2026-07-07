@@ -1,9 +1,9 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Anime Rangers X Evolution Guide — Full Requirements & Strategy (June 2026)",
+  title: "Anime Rangers X Evolution Guide — Full Requirements & Strategy (July 2026)",
   description: "Step-by-step evolution guide covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, priority order, and common mistakes to avoid.",
-  updatedAt: "June 28, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Evolution Guide", href: "/anime-rangers-x/evolution-guide" },

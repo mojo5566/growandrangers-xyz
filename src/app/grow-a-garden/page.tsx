@@ -101,12 +101,12 @@ const faqs = [
   {
     question: "What are the best pets for making money?",
     answer:
-      "Pets with high multiplier stats and farming abilities like the Golden Bee and Phoenix Egg dominate the current meta. Check our Pet Tier List for the full ranking.",
+      "Pets with high multiplier stats like the Golden Phoenix Chick (5.0x), Golden Dragon (4.8x), and Crystal Unicorn Foal (4.5x) dominate the current meta. Check our Pet Tier List for the full ranking.",
   },
   {
     question: "How do mutations affect crop values?",
     answer:
-      "Each mutation applies a value multiplier to the base crop price. Higher-tier mutations like Celestial and Bunny can multiply values by 10× or more. Stack mutations with pet bonuses for maximum profit.",
+      "Each mutation applies a value multiplier to the base crop price. Higher-tier mutations like Prismatic Rainbow (6.0x) and Midas Bloom (5.0x) can multiply values dramatically. Stack mutations with pet bonuses for maximum profit.",
   },
 ];
 
@@ -181,12 +181,11 @@ export default function GrowAGardenHubPage() {
           📅 Latest Patch Notes &amp; Game Updates
         </h2>
         <p className="mt-1 text-xs text-[#768294]">
-          April 2026 —{" "}
-          <strong className="text-[#BAC4D1]">Easter Event Update</strong>
+          July 2026 —{" "}
+          <strong className="text-[#BAC4D1]">Zen Update + Database Expansion</strong>
         </p>
         <p className="mt-2 text-sm leading-relaxed text-[#768294]">
-          Introduced the tier-5 Bunny Mutation, path fixes, and permanent trade
-          catalog codes.
+          Zen Update added new codes (RDCAward, BEANORLEAVE10, torigate). Database expanded with 19 new crops, 8 new mutations, and 8 new pets including Golden Dragon and Prismatic Rainbow.
         </p>
       </section>
 

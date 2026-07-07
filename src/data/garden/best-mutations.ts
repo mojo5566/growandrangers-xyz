@@ -2,6 +2,8 @@ import type { EvolutionPageData } from "../types";
 import { mutations } from "./database/mutations";
 
 const aurelianCrown = mutations.find((m) => m.id === "aurelian-crown")!;
+const prismaticRainbow = mutations.find((m) => m.id === "prismatic-rainbow")!;
+const midasBloom = mutations.find((m) => m.id === "midas-bloom")!;
 const crystallineMycelium = mutations.find((m) => m.id === "crystalline-mycelium")!;
 const leporineBloom = mutations.find((m) => m.id === "leporine-bloom")!;
 const phosphorSporebloom = mutations.find((m) => m.id === "phosphor-sporebloom")!;
@@ -10,9 +12,9 @@ const pyroclastHusk = mutations.find((m) => m.id === "pyroclast-husk")!;
 
 function buildBestMutationsData(): EvolutionPageData {
   return {
-    title: "Grow a Garden Best Mutations Guide — Top Mutations & Rolling Strategy (June 2026)",
+    title: "Grow a Garden Best Mutations Guide — Top Mutations & Rolling Strategy (July 2026)",
     description: "Master the mutation system in Grow a Garden. Learn how Mutation Shards work, which mutations to target at each stage, optimal rolling strategy during boosted events, and how to pair mutations with pets for maximum crop yields.",
-    updatedAt: "June 28, 2026",
+    updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Best Mutations Guide", href: "/grow-a-garden/best-mutations" },
@@ -22,11 +24,11 @@ function buildBestMutationsData(): EvolutionPageData {
       description: "Mutations are the most powerful progression system in Grow a Garden. Applied to individual crop plots, mutations multiply the base coin value of every harvest — and they stack multiplicatively with pet multipliers. A well-rolled S-Tier mutation on a high-value crop with a top-tier pet can turn a 480-coin Golden Wheat harvest into 9,600 coins. This guide covers everything from earning your first Mutation Shards to building an optimized endgame mutation setup across all your plots.",
       highlights: [
         "Mutations multiply crop value per plot — stack with pets for exponential gains",
-        "Four tiers: S (up to 4.0x), A (up to 3.0x), B (up to 2.2x), C (1.4x and below)",
+        "Four tiers: S (up to 6.0x), A (up to 3.2x), B (up to 2.3x), C (1.4x and below)",
         "Mutation Shards are the rolling currency — earn from codes, dailies, and events",
         "S-Tier roll rate is ~1.2% normally — boosted events push it higher",
         "Save 50+ shards and roll 10 at once during boosted events for best odds",
-        `Top mutation: ${aurelianCrown.name} at ${aurelianCrown.multiplier.toFixed(1)}x with connected-plot harvest`,
+        `Top mutation: ${prismaticRainbow.name} at ${prismaticRainbow.multiplier.toFixed(1)}x (trophy rarity); best farmable: ${aurelianCrown.name} at ${aurelianCrown.multiplier.toFixed(1)}x`,
       ],
     },
 
@@ -67,6 +69,20 @@ function buildBestMutationsData(): EvolutionPageData {
         sources: ["Farm Shop (incremental cost per tier)", "Promo codes (free seed packs)", "Trading (player-to-player)"],
         tip: "A 4.0x Aurelian Crown on Wheat (50 coins) yields 200 coins. The same mutation on Golden Wheat (480 coins) yields 1,920 coins. Always upgrade your seeds before investing heavily in mutations — the seed base value is the foundation everything multiplies from.",
       },
+      {
+        name: `${prismaticRainbow.name}`,
+        icon: "🌈",
+        desc: `${prismaticRainbow.description} At ${prismaticRainbow.multiplier.toFixed(1)}x with an ultra-low ${prismaticRainbow.rollRate} roll rate, it is the rarest mutation in existence and a true trophy item.`,
+        sources: [`Mutation Station rolls (${prismaticRainbow.rollRate} base rate)`, "Boosted seasonal events (marginally improved odds)", "Astronomical shard investment required"],
+        tip: "Do not target-roll for Prismatic Rainbow — the ~0.2% rate means an expected 500+ shards per hit. If you happen to roll one, place it on your highest-value crop and never move it.",
+      },
+      {
+        name: `${midasBloom.name}`,
+        icon: "💛",
+        desc: `${midasBloom.description} At ${midasBloom.multiplier.toFixed(1)}x base with a 25% chance to double coin payouts, the effective ceiling pushes above even Aurelian Crown.`,
+        sources: [`Mutation Station rolls (${midasBloom.rollRate} base rate)`, "Boosted seasonal events", "Requires dedicated shard farming"],
+        tip: "The most reliable high-tier mutation if you can land it. The 25% double-payout chance raises effective value to ~6.25x. Pair with Golden Phoenix Chick (5.0x) for 25.0x total yield.",
+      },
     ],
 
     bestUnitsSteps: [
@@ -82,7 +98,9 @@ function buildBestMutationsData(): EvolutionPageData {
     priorityList: [
       { tier: "S", unit: "Save Shards — Do Not Solo Roll", reason: "The single most impactful decision in the mutation system. Solo rolls waste shards at 1.2% S-Tier odds. 50 shards bulk-rolled during a +50% boosted event gives ~16% S-Tier cumulative. The expected value difference is staggering." },
       { tier: "S", unit: "Only Roll During Boosted Events", reason: "A +50% event boost turns ~1.2% into ~5.5% per roll. Across 10 rolls, that is the difference between ~11% cumulative (unboosted) and ~43% cumulative (boosted) for landing ANY S or A-Tier mutation. The event calendar dictates your rolling schedule." },
-      { tier: "A", unit: `${aurelianCrown.name} (${aurelianCrown.multiplier.toFixed(1)}x, S-Tier)`, reason: "The best mutation in the game. Connected-plot harvest passive is unique and game-changing. Target this for your main Golden Wheat or Crystal Berry plot. Stacks to 20.0x with Golden Phoenix Chick." },
+      { tier: "S", unit: `${prismaticRainbow.name} (${prismaticRainbow.multiplier.toFixed(1)}x, S-Tier)`, reason: "The rarest mutation in the game with the highest multiplier. Ultra-low roll rate makes it a trophy mutation." },
+      { tier: "S", unit: `${midasBloom.name} (${midasBloom.multiplier.toFixed(1)}x, S-Tier)`, reason: "Gold mutation with 25% chance to double payout. The most reliable high-tier mutation." },
+      { tier: "A", unit: `${aurelianCrown.name} (${aurelianCrown.multiplier.toFixed(1)}x, S-Tier)`, reason: "Consistent S-Tier with no conditions. The best farmable mutation. Connected-plot harvest passive is unique and game-changing. Target this for your main Golden Wheat or Crystal Berry plot. Stacks to 20.0x with Golden Phoenix Chick." },
       { tier: "A", unit: `${leporineBloom.name} (${leporineBloom.multiplier.toFixed(1)}x base, S-Tier)`, reason: "Seasonal exclusive with the highest effective multiplier (~4.48x) when paired with Lucky Clover Bunny. Unobtainable outside Easter events. If you have Lucky Clover Bunny, this is your #1 target during Easter." },
       { tier: "A", unit: `${crystallineMycelium.name} (${crystallineMycelium.multiplier.toFixed(1)}x, S-Tier)`, reason: "Auto-water passive is a massive quality-of-life improvement for farms with 6+ plots. Slightly lower multiplier than Aurelian Crown but the time savings are real. Best S-Tier for large-scale farmers." },
       { tier: "B", unit: `${phosphorSporebloom.name} (${phosphorSporebloom.multiplier.toFixed(1)}x, A-Tier)`, reason: "Best A-Tier for night-time players. 40% faster growth during night hours effectively pushes the multiplier higher. Much easier to roll than S-Tier (~5.8% base rate)." },
@@ -100,7 +118,7 @@ function buildBestMutationsData(): EvolutionPageData {
     ],
 
     faq: [
-      { question: "What is the best mutation in Grow a Garden?", answer: `${aurelianCrown.name} (S-Tier, ${aurelianCrown.multiplier.toFixed(1)}x) is the best overall mutation due to its unmatched multiplier and connected-plot harvest passive. ${crystallineMycelium.name} (${crystallineMycelium.multiplier.toFixed(1)}x) is the runner-up with its auto-water quality-of-life feature. ${leporineBloom.name} can situationally exceed both when paired with Lucky Clover Bunny.` },
+      { question: "What is the best mutation in Grow a Garden?", answer: `${prismaticRainbow.name} (S-Tier, ${prismaticRainbow.multiplier.toFixed(1)}x) is the highest-multiplier mutation in the game, but its ultra-low ${prismaticRainbow.rollRate} roll rate makes it a trophy item most players will never roll. ${midasBloom.name} (${midasBloom.multiplier.toFixed(1)}x) is the next highest, with a 25% chance to double coin payouts. For realistic farming, ${aurelianCrown.name} (${aurelianCrown.multiplier.toFixed(1)}x) is the best farmable mutation — the most reliable S-Tier with no conditions and a connected-plot harvest passive. ${crystallineMycelium.name} (${crystallineMycelium.multiplier.toFixed(1)}x) is the runner-up with its auto-water quality-of-life feature. Notable A-Tier options include Frozen Bloom (3.2x, preservation passive), Giant Bloom (3.0x, double-yield passive), and ${phosphorSporebloom.name} (${phosphorSporebloom.multiplier.toFixed(1)}x). ${leporineBloom.name} can situationally exceed Aurelian Crown when paired with Lucky Clover Bunny.` },
       { question: "How do I get more Mutation Shards?", answer: "The most reliable sources are daily login rewards (3-5 shards/day), promo codes (10-20 shards — check our Codes page regularly), and seasonal event rewards (20-50 shards per event). Save every shard. Do not buy shards with Coins until you are in the endgame with nothing else to spend on." },
       { question: "When should I roll for mutations?", answer: "Only during mutation-boosted seasonal events (+50% S/A-Tier rates). Save shards between events. Bulk roll 10 at once during the event window. The four major boosted events are Easter (March/April), Summer Festival (June/July), Halloween Harvest (October), and Winter Celebration (December)." },
       { question: "What are the S-Tier roll odds?", answer: "Base S-Tier rate is ~1.2% per roll. During a +50% boosted event, this rises to ~5.5% per roll. Bulk rolling 10 at once during a boosted event gives ~43% cumulative chance of landing at least one S or A-Tier mutation. Without the event boost, 10 rolls give only ~11% cumulative — a massive difference." },

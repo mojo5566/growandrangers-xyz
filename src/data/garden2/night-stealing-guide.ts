@@ -1,9 +1,9 @@
 import type { GuidePageData } from "../types";
 
 const data: GuidePageData = {
-  title: "Grow a Garden 2 Night Stealing Guide — Raid & Defense Tactics (June 2026)",
+  title: "Grow a Garden 2 Night Stealing Guide — Raid & Defense Tactics (July 2026)",
   description: "Master the nighttime stealing mechanic in Grow a Garden 2. Learn raid routes, defense setups, garden gnome placement, trap strategies, and how to maximize your loot while avoiding getting caught.",
-  updatedAt: "June 14, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "GaG2 Night Stealing Guide", href: "/grow-a-garden-2/night-stealing-guide" },

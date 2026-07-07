@@ -1,9 +1,9 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Re:Rangers X Team Guide — Best Compositions for Every Mode (June 2026)",
+  title: "Re:Rangers X Team Guide — Best Compositions for Every Mode (July 2026)",
   description: "Complete team composition guide for Re:Rangers X. Meta team builds for Infinite Mode, Boss Raids, Speed Farming, and PvP. Includes unit synergies, elemental pairings, positioning strategy, and how to adapt your team as you unlock new units.",
-  updatedAt: "June 28, 2026",
+  updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Re:Rangers X Team Guide", href: "/anime-rangers-x/team-guide" },

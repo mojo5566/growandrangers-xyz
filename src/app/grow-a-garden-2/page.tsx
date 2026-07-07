@@ -24,7 +24,7 @@ const guideLinks = [
 const newFeatures = [
   { icon: "🌙", title: "Day/Night Cycle & Stealing", description: "Night lasts ~2:30. Raid other farms or defend yours with gnomes and traps." },
   { icon: "🏰", title: "Guild System", description: "Join weekly competitions like 'Biggest Plant'. Win exclusive rewards like the Ice Snake pet." },
-  { icon: "🏪", title: "Item Shop", description: "Buy gnomes,传送板, ladders and more. Prices range from 30K to 50M Sheckles." },
+  { icon: "🏪", title: "Item Shop", description: "Buy gnomes, teleport pads, ladders and more. Prices range from 30K to 50M Sheckles." },
   { icon: "🪙", title: "Sheckles Currency", description: "New currency replacing Coins. Earn via farming, stealing, and guild activities." },
   { icon: "🧙", title: "Garden Gnomes", description: "Epic-rarity defenders. 100K Sheckles each, patrol for 10 min, kick intruders." },
   { icon: "❄️", title: "Ice Snake Pet", description: "Exclusive guild competition reward. Boosts crop growth speed." },

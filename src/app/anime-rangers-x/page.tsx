@@ -175,12 +175,11 @@ export default function AnimeRangersXHubPage() {
           📅 Latest Patch Notes &amp; Game Updates
         </h2>
         <p className="mt-1 text-xs text-[#768294]">
-          June 2026 —{" "}
-          <strong className="text-[#BAC4D1]">Re:Rangers Title Restructure</strong>
+          July 2026 —{" "}
+          <strong className="text-[#BAC4D1]">Anime Crossover + 48 Active Codes</strong>
         </p>
         <p className="mt-2 text-sm leading-relaxed text-[#768294]">
-          Complete progression overhaul balancing infinite wave drop rates and base
-          unit pools.
+          Massive code update: 48 active promo codes including CATCHINGUP (free Asto unit), JJK crossover codes, Anniversary codes, and more. Anime crossover units (Kirito, Goku, Naruto, Luffy) added to the database.
         </p>
       </section>
 
