@@ -18,16 +18,16 @@ const guideLinks = [
   { title: "Active Codes", description: "All working Grow a Garden 2 promo codes — updated daily.", href: "/grow-a-garden-2/codes" },
   { title: "Beginner Guide", description: "Complete walkthrough: day/night cycle, Sheckles, planting, and more.", href: "/grow-a-garden-2/beginner-guide" },
   { title: "Night Stealing Guide", description: "Master raid tactics, defense setups, and garden gnome placement.", href: "/grow-a-garden-2/night-stealing-guide" },
-  { title: "Guild Guide", description: "Create guilds, win weekly competitions, and earn the Ice Snake pet.", href: "/grow-a-garden-2/guild-guide" },
+  { title: "Guild Guide", description: "Create guilds, win weekly competitions, and earn the Black Dragon & Ice Snake pets.", href: "/grow-a-garden-2/guild-guide" },
 ];
 
 const newFeatures = [
   { icon: "🌙", title: "Day/Night Cycle & Stealing", description: "Night lasts ~2:30. Raid other farms or defend yours with gnomes and traps." },
-  { icon: "🏰", title: "Guild System", description: "Join weekly competitions like 'Biggest Plant'. Win exclusive rewards like the Ice Snake pet." },
+  { icon: "🏰", title: "Guild System", description: "Join weekly competitions like 'Biggest Plant'. Win the Black Dragon (top 25) or Ice Snake (top 100) pets." },
   { icon: "🏪", title: "Item Shop", description: "Buy gnomes, teleport pads, ladders and more. Prices range from 30K to 50M Sheckles." },
   { icon: "🪙", title: "Sheckles Currency", description: "New currency replacing Coins. Earn via farming, stealing, and guild activities." },
   { icon: "🧙", title: "Garden Gnomes", description: "Epic-rarity defenders. 100K Sheckles each, patrol for 10 min, kick intruders." },
-  { icon: "❄️", title: "Ice Snake Pet", description: "Exclusive guild competition reward. Boosts crop growth speed." },
+  { icon: "🐉", title: "Black Dragon Pet", description: "The rarest guild reward — top 25 only. Higher multiplier than Ice Snake." },
 ];
 
 const faqs = [

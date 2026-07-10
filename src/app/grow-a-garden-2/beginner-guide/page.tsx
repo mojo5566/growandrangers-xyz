@@ -18,7 +18,7 @@ const overviewPoints = [
   { icon: "🌙", title: "Survive the Night", text: "When night falls (2:30), other players can raid your farm. Deploy garden gnomes or stand guard with a shovel." },
   { icon: "🏰", title: "Join a Guild", text: "Guilds unlock weekly competitions with exclusive rewards. Join one as soon as possible — solo play misses major content." },
   { icon: "🏪", title: "Visit the Item Shop", text: "The shop in the market area sells gnomes, ladders, and teleport pads. Start with cheap utility items before splurging on gnomes." },
-  { icon: "❄️", title: "Compete for the Ice Snake", text: "The Ice Snake pet is the top guild reward. It boosts crop growth speed — a game-changer for active farmers." },
+  { icon: "🐉", title: "Compete for Guild Pets", text: "The Black Dragon (top 25) and Ice Snake (top 100) are exclusive guild rewards that boost crop growth speed — game-changers for active farmers." },
 ];
 
 const progression = [

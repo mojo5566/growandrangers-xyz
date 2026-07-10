@@ -7,18 +7,18 @@ import data from "@/data/garden2/guild-guide";
 export const metadata: Metadata = {
   title: `${data.title} | BloxPulse`,
   description: data.description,
-  keywords: ["Grow a Garden 2 guild", "GaG2 guild guide", "Grow a Garden 2 Ice Snake", "GaG2 guild competition", "Grow a Garden 2 clan"],
+  keywords: ["Grow a Garden 2 guild", "GaG2 guild guide", "Grow a Garden 2 Ice Snake", "Grow a Garden 2 Black Dragon", "GaG2 guild competition", "Grow a Garden 2 clan"],
   alternates: { canonical: "/grow-a-garden-2/guild-guide" },
   openGraph: { title: data.title, description: data.description, type: "website" },
 };
 
 const guildBenefits = [
-  { icon: "❄️", title: "Ice Snake Pet", text: "Exclusive guild competition reward. Boosts crop growth speed. Currently unobtainable through any other method." },
+  { icon: "🐉", title: "Black Dragon Pet", text: "The rarest guild reward. Top 25 only. Higher multiplier than Ice Snake — the ultimate status symbol." },
+  { icon: "❄️", title: "Ice Snake Pet", text: "Exclusive guild competition reward for top 100. Boosts crop growth speed. Unobtainable through any other method." },
   { icon: "🤝", title: "Mutual Farm Protection", text: "Guild members' farms are protected from each other. No friendly fire during night stealing — coordinate defense without worry." },
   { icon: "🏆", title: "Weekly Competitions", text: "Compete in events like 'Biggest Plant' for exclusive rewards and leaderboard ranking." },
   { icon: "🏪", title: "Guild-Only Shop Items", text: "Access exclusive items in the shop that are only available to guild members." },
   { icon: "💬", title: "Coordination & Strategy", text: "Plan night defense rotations, share farming tips, and coordinate raid parties against rival guilds." },
-  { icon: "📈", title: "Passive Income Boosts", text: "Active guild members contribute to guild-level bonuses that benefit all members' farming yields." },
 ];
 
 const competitions = [
@@ -31,7 +31,8 @@ const progressionTips = [
   { stage: "Join a Guild (Day 1)", action: "Search for open guilds in the guild menu. Join any active guild with 10+ members. Don't wait for the 'perfect' guild — you can switch later.", priority: "P0 — Do this immediately" },
   { stage: "Contribute Daily (Week 1)", action: "Harvest crops and participate in the current competition. Even small contributions help your guild's ranking.", priority: "P0 — Daily activity" },
   { stage: "Create Your Own Guild (Week 2+)", action: "If you have 500K+ Sheckles and 5+ active friends, consider creating your own guild for better coordination.", priority: "P1 — Optional but rewarding" },
-  { stage: "Compete for Ice Snake (Week 3+)", action: "Push your guild into the top tier of the weekly leaderboard. This requires coordinated effort from all members.", priority: "P1 — High-value reward" },
+  { stage: "Compete for Ice Snake (Week 3+)", action: "Push your guild into the top 100 of the weekly leaderboard for the Ice Snake pet. Requires coordinated effort from all members.", priority: "P1 — High-value reward" },
+  { stage: "Push for Black Dragon (Week 5+)", action: "Aim for the top 25 to earn the Black Dragon pet — the rarest guild reward with a higher multiplier than Ice Snake. Competition is extremely fierce.", priority: "P1 — Elite reward" },
   { stage: "Expand Guild Capacity", action: "Use Sheckles or competition milestones to increase member capacity beyond the default 20.", priority: "P2 — For competitive guilds" },
 ];
 
@@ -41,7 +42,7 @@ export default function GuildGuidePage() {
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
           The <strong className="text-white">guild system</strong> is one of Grow a Garden 2's biggest additions over the original.
-          Guilds let you team up for weekly competitions, earn exclusive rewards like the <strong className="text-[#00E676]">Ice Snake pet</strong>,
+          Guilds let you team up for weekly competitions, earn exclusive rewards like the <strong className="text-[#00E676]">Black Dragon</strong> and <strong className="text-[#00E676]">Ice Snake pets</strong>,
           and coordinate night defense with trusted allies. This guide covers everything from joining your first guild to competing for top-tier rewards.
         </p>
       </section>
