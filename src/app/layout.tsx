@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -69,6 +70,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "ca-pub-6239742227486965",
+  },
 };
 
 const jsonLd = {
@@ -99,6 +103,12 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6239742227486965"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body className="min-h-screen antialiased">{children}</body>
