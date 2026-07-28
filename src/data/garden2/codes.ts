@@ -1,8 +1,8 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Grow a Garden 2 Codes — Active Promo Codes (July 2026)",
-  description: "All working Grow a Garden 2 promo codes for free seeds, Sheckles, and exclusive items. Verified daily against official sources — last checked June 28, 2026.",
+  title: "Grow a Garden 2 Codes — Active",
+  description: "Working Grow a Garden 2 promo codes for free seeds, Sheckles, and exclusive items. Verified daily against official sources — updated regularly.",
   updatedAt: "July 7, 2026",
   lastChecked: "July 7, 2026",
   sources: [

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface BreadcrumbItem {
   label: string;
@@ -50,7 +51,7 @@ function ArticleJsonLd({
 }) {
   const dateModified = updatedAt
     ? new Date(updatedAt).toISOString().split("T")[0]
-    : "2026-06-12";
+    : new Date(CONTENT_UPDATED_AT).toISOString().split("T")[0];
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -106,7 +107,7 @@ export default function ContentLayout({
 }: ContentLayoutProps) {
   const accentColor = accent === "garden" ? "#00E676" : "#FF3D00";
   const accentBg = accent === "garden" ? "rgba(0,230,118,0.08)" : "rgba(255,61,0,0.08)";
-  const displayDate = updatedAt || "June 2026";
+  const displayDate = updatedAt || CONTENT_UPDATED_AT;
 
   return (
     <article className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6 lg:py-12">

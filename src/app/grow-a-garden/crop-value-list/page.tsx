@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/garden/crop-value-list";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: [
     "Grow a Garden crop values",

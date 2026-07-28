@@ -1,8 +1,8 @@
 import type { GuidePageData } from "../types";
 
 const data: GuidePageData = {
-  title: "Grow a Garden 2 Guild Guide — Compete, Earn & Defend Together (July 2026)",
-  description: "Complete guide to the guild system in Grow a Garden 2. Learn how to create and join guilds, participate in weekly competitions, earn exclusive rewards like the Black Dragon and Ice Snake pets, and coordinate farm defense with your teammates.",
+  title: "Grow a Garden 2 Guild Guide",
+  description: "Guide to the guild system in Grow a Garden 2. Learn how to join guilds, participate in weekly competitions, earn exclusive rewards like the Black Dragon and Ice Snake pets, and coordinate farm defense.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

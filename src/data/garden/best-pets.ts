@@ -12,8 +12,8 @@ const commonCat = pets.find((p) => p.id === "common-garden-cat")!;
 
 function buildBestPetsData(): EvolutionPageData {
   return {
-    title: "Grow a Garden Best Pets Guide — Top Pets for Coin Farming (July 2026)",
-    description: "Complete guide to the best pets in Grow a Garden. Learn which pets to hatch first, how pet multipliers work, egg hatching strategy, mutation synergy combos, and how to maximize your coin income with the right pet selection.",
+    title: "Best Pets in Grow a Garden — Top Picks",
+    description: "Guide to the best pets in Grow a Garden. Learn which pets to hatch first, how multipliers work, egg strategy, and mutation synergy combos for maximizing coin income.",
     updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },

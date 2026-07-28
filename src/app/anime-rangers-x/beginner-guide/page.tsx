@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/rangers/beginner-guide";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: ["Re:Rangers X beginner guide", "Anime Rangers X beginner guide", "how to start Re:Rangers X", "Re:Rangers X tutorial", "Re:Rangers X progression", "best starter units Re:Rangers X"],
   alternates: { canonical: "/anime-rangers-x/beginner-guide" },

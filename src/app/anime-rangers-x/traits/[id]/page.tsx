@@ -4,6 +4,7 @@ import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import { traits, getTraitById } from "@/data/rangers/database/traits";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export async function generateStaticParams() {
   return traits.map((trait) => ({ id: trait.id }));
@@ -16,10 +17,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const trait = getTraitById(id);
-  if (!trait) return { title: "Trait Not Found | BloxPulse" };
+  if (!trait) return { title: "Trait Not Found" };
 
   return {
-    title: `${trait.name} — Anime Rangers X Trait Guide (June 2026) | BloxPulse`,
+    title: `${trait.name} — Re:Rangers X Trait Guide`,
     description: `${trait.description}. ${trait.effect} View ${trait.name}'s full effect, strengths, weaknesses, and best unit pairings in the Anime Rangers X trait database.`,
     keywords: [
       `${trait.name} Anime Rangers X`,
@@ -30,7 +31,7 @@ export async function generateMetadata({
     ],
     alternates: { canonical: `/anime-rangers-x/traits/${id}` },
     openGraph: {
-      title: `${trait.name} — Anime Rangers X Trait Guide`,
+      title: `${trait.name} — Re:Rangers X Trait Guide`,
       description: `${trait.description}. ${trait.effect}`,
       type: "website",
     },
@@ -111,6 +112,7 @@ export default async function TraitDetailPage({
       ]}
       accent="rangers"
       canonicalPath={`/anime-rangers-x/traits/${trait.id}`}
+      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Info */}
       <section aria-labelledby="info-heading">

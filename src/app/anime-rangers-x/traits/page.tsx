@@ -5,7 +5,7 @@ import Link from "next/link";
 import { traits, getTraitsByTier } from "@/data/rangers/database/traits";
 
 export const metadata: Metadata = {
-  title: "Anime Rangers X Traits Database — All Traits Listed (June 2026) | BloxPulse",
+  title: "Re:Rangers X Traits List — All 32",
   description:
     "Complete Anime Rangers X traits database with effects, tiers, roll rates, and best units for every trait. Find the best traits for Chrono Slayer, Void Empress, and more.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/anime-rangers-x/traits" },
   openGraph: {
-    title: "Anime Rangers X Traits Database — All Traits Listed (June 2026)",
+    title: "Re:Rangers X Traits List — All 32",
     description:
       "Complete Anime Rangers X traits database with effects, tiers, roll rates, and best units for every trait.",
     type: "website",
@@ -108,6 +108,7 @@ export default function TraitsDatabasePage() {
       ]}
       accent="rangers"
       canonicalPath="/anime-rangers-x/traits"
+      updatedAt="July 19, 2026"
     >
       {/* Overview Stats */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Database overview">

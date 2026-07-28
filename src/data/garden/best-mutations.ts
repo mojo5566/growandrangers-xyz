@@ -12,8 +12,8 @@ const pyroclastHusk = mutations.find((m) => m.id === "pyroclast-husk")!;
 
 function buildBestMutationsData(): EvolutionPageData {
   return {
-    title: "Grow a Garden Best Mutations Guide — Top Mutations & Rolling Strategy (July 2026)",
-    description: "Master the mutation system in Grow a Garden. Learn how Mutation Shards work, which mutations to target at each stage, optimal rolling strategy during boosted events, and how to pair mutations with pets for maximum crop yields.",
+    title: "Best Mutations in Grow a Garden",
+    description: "Guide to the best mutations in Grow a Garden. Learn how Mutation Shards work, which mutations to target, rolling strategy during boosted events, and pet pairing for maximum yields.",
     updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },

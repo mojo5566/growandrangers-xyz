@@ -1,8 +1,8 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "庄稼与刀剑！《Grow a Garden + Anime Rangers X》花园植物 Buff 搭配与动漫战队完美开局流 | BloxPulse",
+  title: "Grow a Garden + Anime Rangers X 攻略指南",
   description:
     "深度解析花园产出如何直接影响动漫Rangers战力。烈焰向日葵+火属性战队暴击+35%，千手神木苗坦克回血5%/秒，闪电风铃草+御坂美琴全屏AOE超导过载——完整联动开局策略。",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/guides/summer-2026-tier-list-and-garden" },
   openGraph: {
-    title: "庄稼与刀剑！Grow a Garden + Anime Rangers X 植物Buff搭配与完美开局",
+    title: "Grow a Garden + Anime Rangers X 攻略指南",
     description:
       "深度联动攻略：烈焰向日葵暴击Buff、千手神木苗回血光环、闪电风铃草超导过载——种地决定战力上限！",
     type: "article",

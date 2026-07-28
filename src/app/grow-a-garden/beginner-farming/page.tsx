@@ -5,7 +5,7 @@ import RelatedContent from "@/components/RelatedContent";
 import beginnerFarming from "@/data/garden/beginner-farming";
 
 export const metadata: Metadata = {
-  title: "Beginner Farming Guide — Grow a Garden (June 2026) | BloxPulse",
+  title: "Beginner Farming — Grow a Garden",
   description: beginnerFarming.description,
   keywords: [
     "Grow a Garden beginner guide",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/grow-a-garden/beginner-farming/" },
   openGraph: {
-    title: "Beginner Farming Guide — Grow a Garden (June 2026) | BloxPulse",
+    title: "Beginner Farming — Grow a Garden",
     description: beginnerFarming.description,
     type: "website",
   },

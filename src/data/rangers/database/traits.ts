@@ -792,3 +792,18 @@ export function getTraitsByTier(tier: Trait["tier"]): Trait[] {
 export function getTraitById(id: string): Trait | undefined {
   return traits.find((t) => t.id === id);
 }
+
+/**
+ * Lookup a trait by display name (case-insensitive).
+ * Also checks aliases. Used to resolve Unit.bestTraits references
+ * which store trait display names (e.g. "Critical Strike+", "Cooldown-")
+ * that cannot be reliably slugified to trait IDs.
+ */
+export function getTraitByName(name: string): Trait | undefined {
+  const lower = name.toLowerCase().trim();
+  return traits.find(
+    (t) =>
+      t.name.toLowerCase() === lower ||
+      t.aliases.some((a) => a.toLowerCase() === lower)
+  );
+}

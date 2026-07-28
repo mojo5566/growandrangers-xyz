@@ -1,8 +1,8 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Re:Rangers X Beginner Guide — How to Start & Progress Fast (July 2026)",
-  description: "Complete beginner walkthrough for Re:Rangers X (formerly Anime Rangers X). Learn your first hour progression, best starter units, Gem farming, trait basics, team building, and how to evolve your first unit to Legendary.",
+  title: "Re:Rangers X Beginner Guide",
+  description: "Beginner walkthrough for Re:Rangers X. Learn first hour progression, best starter units, Gem farming, trait basics, team building, and how to evolve your first unit to Legendary.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

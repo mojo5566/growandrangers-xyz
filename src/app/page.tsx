@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "BloxPulse",
-    title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides (July 2026)",
+    title: "BloxPulse — Roblox Guides & Databases",
     description:
       "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
     url: "https://growandrangers.xyz",

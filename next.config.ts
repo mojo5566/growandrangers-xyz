@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       { source: "/rangers/unit-tier-list", destination: "/anime-rangers-x/unit-tier-list", permanent: true },
       { source: "/rangers/trait-tier-list", destination: "/anime-rangers-x/trait-tier-list", permanent: true },
       { source: "/rangers/evolution-guide", destination: "/anime-rangers-x/evolution-guide", permanent: true },
+      { source: "/grow-a-garden/value-list", destination: "/grow-a-garden/crop-value-list", permanent: true },
     ];
   },
 };

@@ -4,7 +4,8 @@ import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import { units, getUnitById } from "@/data/rangers/database/units";
-import { getTraitById } from "@/data/rangers/database/traits";
+import { getTraitByName } from "@/data/rangers/database/traits";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export async function generateStaticParams() {
   return units.map((unit) => ({ id: unit.id }));
@@ -17,10 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const unit = getUnitById(id);
-  if (!unit) return { title: "Unit Not Found | BloxPulse" };
+  if (!unit) return { title: "Unit Not Found" };
 
   return {
-    title: `${unit.name} — Anime Rangers X Unit Guide (June 2026) | BloxPulse`,
+    title: `${unit.name} — Re:Rangers X Unit Guide`,
     description: `${unit.description} View ${unit.name}'s stats, abilities, best traits, and evolution cost in the Anime Rangers X unit database.`,
     keywords: [
       `${unit.name} Anime Rangers X`,
@@ -32,7 +33,7 @@ export async function generateMetadata({
     ],
     alternates: { canonical: `/anime-rangers-x/units/${id}` },
     openGraph: {
-      title: `${unit.name} — Anime Rangers X Unit Guide`,
+      title: `${unit.name} — Re:Rangers X Unit Guide`,
       description: unit.description,
       type: "website",
     },
@@ -81,9 +82,7 @@ export default async function UnitDetailPage({
 
   const resolvedTraits = unit.bestTraits
     .map((name) => {
-      const trait = getTraitById(
-        name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
-      );
+      const trait = getTraitByName(name);
       return trait ? { name: trait.name, id: trait.id } : { name, id: null };
     });
 
@@ -129,6 +128,7 @@ export default async function UnitDetailPage({
       ]}
       accent="rangers"
       canonicalPath={`/anime-rangers-x/units/${unit.id}`}
+      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

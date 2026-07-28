@@ -1,8 +1,8 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Re:Rangers X Trait Tier List — Every Trait Ranked (July 2026)",
-  description: "All traits ranked from Mythic to Common with detailed strengths, weaknesses, optimal unit pairings, and reroll strategy. Includes the Re:Rangers trait system rework changes.",
+  title: "Re:Rangers X Trait Tier List",
+  description: "Complete trait tier list ranking every Re:Rangers X trait from Mythic to Common with strengths, weaknesses, unit pairings, and reroll strategy.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

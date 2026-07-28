@@ -6,7 +6,7 @@ import Link from "next/link";
 import data from "@/data/garden/mutation-tier-list";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: [
     "Grow a Garden mutation tier list",

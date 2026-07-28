@@ -4,11 +4,11 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden 2 — Codes, Guides & New Features | BloxPulse",
+  title: "Grow a Garden 2 — Codes & Guides",
   description: "Complete Grow a Garden 2 hub: active promo codes, beginner guide, night stealing tactics, guild system guide, and all new features. Updated daily for the Roblox sequel.",
   alternates: { canonical: "/grow-a-garden-2/" },
   openGraph: {
-    title: "Grow a Garden 2 — Codes, Guides & New Features | BloxPulse",
+    title: "Grow a Garden 2 — Codes & Guides",
     description: "Complete Grow a Garden 2 hub with codes, guides, and feature breakdowns.",
     type: "website",
   },

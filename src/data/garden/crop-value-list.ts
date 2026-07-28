@@ -17,8 +17,8 @@ function buildCropValuesData(): CropValuesPageData {
   const allCropsSorted = [...crops].sort((a, b) => b.coins - a.coins);
 
   return {
-    title: "Grow a Garden Crop Value List — Best Crops for Maximum Profit",
-    description: "Every Grow a Garden crop ranked by base coin value, growth time, seasonal availability, and profit-per-minute. Includes mutation and pet multiplier stacking calculations for endgame farming optimization.",
+    title: "Grow a Garden Crop Values — Price Sheet",
+    description: "Complete crop value sheet with base coin prices, growth times, seasonal availability, and profit-per-minute for every Grow a Garden crop. Includes multiplier stacking calculations.",
     updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },

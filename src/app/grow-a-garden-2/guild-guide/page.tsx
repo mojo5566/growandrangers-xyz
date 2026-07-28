@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/garden2/guild-guide";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: ["Grow a Garden 2 guild", "GaG2 guild guide", "Grow a Garden 2 Ice Snake", "Grow a Garden 2 Black Dragon", "GaG2 guild competition", "Grow a Garden 2 clan"],
   alternates: { canonical: "/grow-a-garden-2/guild-guide" },

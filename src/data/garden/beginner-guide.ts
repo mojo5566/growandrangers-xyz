@@ -1,8 +1,8 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Grow a Garden Beginner Guide — How to Start Farming (July 2026)",
-  description: "The complete beginner walkthrough for Grow a Garden on Roblox. Learn how to plant your first crop, earn Coins, unlock mutations, hatch pets, and build a profitable farm from scratch in under 30 minutes.",
+  title: "Grow a Garden Beginner Guide",
+  description: "Beginner walkthrough for Grow a Garden on Roblox. Learn how to plant your first crop, earn Coins, unlock mutations, hatch pets, and build a profitable farm in under 30 minutes.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

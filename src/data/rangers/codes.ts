@@ -1,8 +1,8 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Anime Rangers X (Re:Rangers X) Codes — 48 Active Promo Codes (July 2026)",
-  description: "All 48 working Re:Rangers X promo codes for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Anniversary Coins, Dr. Megga Punk, and exclusive units. Verified July 7, 2026.",
+  title: "Re:Rangers X Codes — 48 Active",
+  description: "All 48 working Re:Rangers X promo codes for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Anniversary Coins, and exclusive units. Verified and updated daily.",
   updatedAt: "July 7, 2026",
   lastChecked: "July 7, 2026",
   sources: [

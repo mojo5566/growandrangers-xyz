@@ -5,6 +5,7 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { pets, getPetById } from "@/data/garden/database/pets";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -17,10 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const pet = getPetById(id);
-  if (!pet) return { title: "Pet Not Found | BloxPulse" };
+  if (!pet) return { title: "Pet Not Found" };
 
   return {
-    title: `${pet.name} — Grow a Garden Pet Guide (June 2026) | BloxPulse`,
+    title: `${pet.name} — Grow a Garden Pet Guide`,
     description: pet.description,
     keywords: [
       pet.name,
@@ -105,6 +106,7 @@ export default async function PetDetailPage({ params }: PageProps) {
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/pets/${pet.id}`}
+      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

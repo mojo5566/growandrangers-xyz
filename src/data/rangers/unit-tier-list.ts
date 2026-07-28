@@ -1,8 +1,8 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Re:Rangers X Unit Tier List — All Units Ranked (July 2026)",
-  description: "Every Anime Rangers X unit ranked from S-Tier to C-Tier with detailed strengths, weaknesses, best use cases, optimal trait pairings, and recommended team compositions.",
+  title: "Re:Rangers X Unit Tier List — S to C",
+  description: "Complete unit tier list ranking every Re:Rangers X unit from S-Tier to C-Tier with strengths, weaknesses, best traits, and team compositions. See where each unit ranks.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

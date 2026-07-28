@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/rangers/evolution-guide";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: [
     "Anime Rangers X evolution guide",

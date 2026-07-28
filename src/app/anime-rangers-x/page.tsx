@@ -7,12 +7,12 @@ import { traits } from "@/data/rangers/database/traits";
 
 export const metadata: Metadata = {
   title:
-    "Anime Rangers X (Re:Rangers X) — Codes, Tier Lists & Guides | BloxPulse",
+    "Anime Rangers X — Codes & Guides",
   description:
     "Complete Anime Rangers X hub: working promo codes, unit tier list, trait rankings, evolution guide, and team compositions. Updated daily for Re:Rangers X.",
   alternates: { canonical: "/anime-rangers-x/" },
   openGraph: {
-    title: "Anime Rangers X — Codes, Tier Lists & Guides | BloxPulse",
+    title: "Anime Rangers X — Codes & Guides",
     description: "Complete Anime Rangers X hub with codes, tier lists, and guides.",
     type: "website",
   },

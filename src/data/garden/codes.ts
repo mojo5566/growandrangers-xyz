@@ -1,8 +1,8 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Grow a Garden Codes — Active & Expired Promo Codes (July 2026)",
-  description: "Working Grow a Garden promo codes for free decorations, hats, and exclusive items. All codes verified against official sources — last checked June 28, 2026.",
+  title: "Grow a Garden Codes — Active List",
+  description: "Working Grow a Garden promo codes for free decorations, hats, and exclusive items. All codes verified against official sources — updated daily.",
   updatedAt: "July 7, 2026",
   lastChecked: "July 7, 2026",
   sources: [

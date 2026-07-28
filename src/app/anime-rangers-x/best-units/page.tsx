@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/rangers/best-units";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: ["Re:Rangers X best units", "best units Re:Rangers X", "Re:Rangers X team building", "Chrono Slayer build", "Void Empress build", "best DPS Re:Rangers X"],
   alternates: { canonical: "/anime-rangers-x/best-units" },

@@ -5,21 +5,20 @@ import ContentFAQ from "@/components/ContentFAQ";
 import { mutations, getMutationsByTier } from "@/data/garden/database/mutations";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Mutations Database — All Mutations Listed (June 2026) | BloxPulse",
+  title: "Grow a Garden Mutations List — All 22",
   description:
     "Complete Grow a Garden mutations database with multiplier, tier, roll rate, and passives for every mutation. Find the best mutation for your farm.",
   keywords: [
     "Grow a Garden mutations",
     "Grow a Garden mutation database",
     "all mutations Grow a Garden",
-    "best mutations Grow a Garden 2026",
     "mutation list Grow a Garden",
     "Aurelian Crown",
     "mutation multiplier",
   ],
   alternates: { canonical: "/grow-a-garden/mutations" },
   openGraph: {
-    title: "Grow a Garden Mutations Database — All Mutations Listed (June 2026)",
+    title: "Grow a Garden Mutations List — All 22",
     description:
       "Complete Grow a Garden mutations database with multiplier, tier, roll rate, and passives for every mutation.",
     type: "website",
@@ -100,6 +99,7 @@ export default function MutationsDatabasePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/mutations"
+      updatedAt="July 19, 2026"
     >
       {/* Mutation Tables by Tier */}
       <section aria-labelledby="mutations-heading">

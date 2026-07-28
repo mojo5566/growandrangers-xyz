@@ -31,8 +31,8 @@ function buildTierListData(): TierListPageData {
   const tierOrder = ["S", "A", "B", "C"] as const;
 
   return {
-    title: "Grow a Garden Mutation Tier List (V2.1) — All Mutations Ranked",
-    description: "Every Grow a Garden mutation ranked from S-Tier to C-Tier based on crop value multiplier, seasonal bonuses, passive abilities, and pet synergy. Find the best mutation for your farming strategy.",
+    title: "Grow a Garden Mutation Tier List — Ranked",
+    description: "Complete mutation tier list ranking every Grow a Garden mutation from S-Tier to C-Tier by multiplier, passives, and pet synergy. See where each mutation ranks.",
     updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },

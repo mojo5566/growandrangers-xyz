@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/garden2/night-stealing-guide";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: ["Grow a Garden 2 stealing", "GaG2 night raid", "Grow a Garden 2 garden gnome", "GaG2 defense", "how to steal in Grow a Garden 2"],
   alternates: { canonical: "/grow-a-garden-2/night-stealing-guide" },

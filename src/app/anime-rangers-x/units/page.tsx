@@ -5,7 +5,7 @@ import Link from "next/link";
 import { units, getUnitsByTier } from "@/data/rangers/database/units";
 
 export const metadata: Metadata = {
-  title: "Anime Rangers X Units Database — All Units Listed (June 2026) | BloxPulse",
+  title: "Re:Rangers X Units List — All 31 Units",
   description:
     "Complete Anime Rangers X units database with stats, elements, tiers, and roles for every unit. Find ATK, HP, and tier rankings for all units including Chrono Slayer, Void Empress, and more.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/anime-rangers-x/units" },
   openGraph: {
-    title: "Anime Rangers X Units Database — All Units Listed (June 2026)",
+    title: "Re:Rangers X Units List — All 31 Units",
     description:
       "Complete Anime Rangers X units database with stats, elements, tiers, and roles for every unit.",
     type: "website",
@@ -100,6 +100,7 @@ export default function UnitsDatabasePage() {
       ]}
       accent="rangers"
       canonicalPath="/anime-rangers-x/units"
+      updatedAt="July 19, 2026"
     >
       {/* Overview Stats */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Database overview">

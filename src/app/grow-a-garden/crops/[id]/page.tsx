@@ -5,6 +5,7 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { crops, getCropById } from "@/data/garden/database/crops";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -17,10 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const crop = getCropById(id);
-  if (!crop) return { title: "Crop Not Found | BloxPulse" };
+  if (!crop) return { title: "Crop Not Found" };
 
   return {
-    title: `${crop.name} — Grow a Garden Crop Guide (June 2026) | BloxPulse`,
+    title: `${crop.name} — Grow a Garden Crop Guide`,
     description: crop.description,
     keywords: [
       crop.name,
@@ -105,6 +106,7 @@ export default async function CropDetailPage({ params }: PageProps) {
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/crops/${crop.id}`}
+      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

@@ -5,14 +5,13 @@ import ContentFAQ from "@/components/ContentFAQ";
 import { crops, getCropsByTier } from "@/data/garden/database/crops";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Crops Database — All Crops Listed (June 2026) | BloxPulse",
+  title: "Grow a Garden Crops List — All 30 Crops",
   description:
     "Complete Grow a Garden crops database with coins, growth time, season, tier, and CPM for every crop. Find the best crop for your farm.",
   keywords: [
     "Grow a Garden crops",
     "Grow a Garden crop database",
     "all crops Grow a Garden",
-    "best crops Grow a Garden 2026",
     "crop list Grow a Garden",
     "Golden Wheat",
     "Crystal Berry",
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/grow-a-garden/crops" },
   openGraph: {
-    title: "Grow a Garden Crops Database — All Crops Listed (June 2026)",
+    title: "Grow a Garden Crops List — All 30 Crops",
     description:
       "Complete Grow a Garden crops database with coins, growth time, season, tier, and CPM for every crop.",
     type: "website",
@@ -101,6 +100,7 @@ export default function CropsDatabasePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/crops"
+      updatedAt="July 19, 2026"
     >
       {/* Crop Tables by Tier */}
       <section aria-labelledby="crops-heading">

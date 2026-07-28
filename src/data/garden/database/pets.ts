@@ -462,6 +462,52 @@ export const pets: Pet[] = [
     ],
     imagePlaceholder: "/placeholder-pets-garden-snail.png",
     tierRating: 3
+  },
+{
+    id: "shadow-cat",
+    name: "Shadow Cat",
+    aliases: ["Shadow Feline"],
+    multiplier: 2.8,
+    tier: "A",
+    abilities: ["+15% mutation roll rate during night hours", "Chance to find Inferno Shards on harvest"],
+    source: "Seasonal Event",
+    description: "Campfire Event Part 3 pet. 2.8x base multiplier with night-time mutation boost and Inferno Shard drop chance. Pairs naturally with the Campfire Ritual system — the more shards you collect, the more rituals you can perform for Inferno pet mutations.",
+    strengths: [
+      "Night-time mutation boost accelerates mutation farming",
+      "Inferno Shard drop chance fuels Campfire Rituals",
+      "Strong A-Tier base multiplier (2.8x)",
+      "Campfire Event exclusive — collectible value",
+    ],
+    weaknesses: [
+      "Mutation boost is night-gated",
+      "Inferno Shard drops are RNG-dependent",
+      "Seasonal event exclusive — limited availability window",
+    ],
+    imagePlaceholder: "/placeholder-pets-shadow-cat.png",
+    tierRating: 7,
+  },
+  {
+    id: "flame-bear",
+    name: "Flame Bear",
+    aliases: ["Inferno Bear"],
+    multiplier: 3.0,
+    tier: "A",
+    abilities: ["+20% coin value on fire-type crops", "Immune to crop spoilage during Summer"],
+    source: "Seasonal Event",
+    description: "Campfire Event Part 3 pet. 3.0x base multiplier with fire-crop synergy and Summer spoilage immunity. A versatile A-Tier pet that excels during Summer farming rotations and pairs well with fire-adjacent mutations like Pyroclast Husk.",
+    strengths: [
+      "Strong 3.0x A-Tier base multiplier",
+      "Fire-crop coin bonus stacks with Summer event bonus",
+      "Summer spoilage immunity protects high-value investments",
+      "Campfire Event exclusive — collectible value",
+    ],
+    weaknesses: [
+      "Fire-crop bonus is situational",
+      "Spoilage immunity only relevant during Summer",
+      "Seasonal event exclusive — limited availability window",
+    ],
+    imagePlaceholder: "/placeholder-pets-flame-bear.png",
+    tierRating: 7,
   }
 ];
 

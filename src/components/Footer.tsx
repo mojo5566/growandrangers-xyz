@@ -63,9 +63,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Disclaimer */}
+          {/* Company / Disclaimer */}
           <div>
-            <h4 className="code-text mb-3 text-[#768294] uppercase tracking-wider">Disclaimer</h4>
+            <h4 className="code-text mb-3 text-[#768294] uppercase tracking-wider">Company</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-sm text-[#BAC4D1] transition hover:text-[#3A86FF]">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+            <h4 className="code-text mb-2 mt-5 text-[#768294] uppercase tracking-wider">Disclaimer</h4>
             <p className="text-xs leading-relaxed text-[#768294]">
               BloxPulse is a fan-made resource and is not affiliated with Roblox Corporation.
               All game names and assets belong to their respective developers.

@@ -5,23 +5,23 @@ import ContentFAQ from "@/components/ContentFAQ";
 import { pets, getPetsByTier } from "@/data/garden/database/pets";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Pets Database — All Pets Listed (June 2026) | BloxPulse",
+  title: "Grow a Garden Pets List — All 20 Pets",
   description:
-    "Complete Grow a Garden pets database with multiplier, tier, source, and abilities for every pet. Find the best pet for your farm.",
+    "Complete Grow a Garden pets list with multiplier, tier, source, and abilities for every pet. Browse all pets in the database.",
   keywords: [
     "Grow a Garden pets",
+    "Grow a Garden pets list",
+    "all Grow a Garden pets",
     "Grow a Garden pet database",
-    "all pets Grow a Garden",
-    "best pets Grow a Garden 2026",
     "pet list Grow a Garden",
     "Golden Phoenix Chick",
     "pet multiplier",
   ],
   alternates: { canonical: "/grow-a-garden/pets" },
   openGraph: {
-    title: "Grow a Garden Pets Database — All Pets Listed (June 2026)",
+    title: "Grow a Garden Pets List — All 20 Pets",
     description:
-      "Complete Grow a Garden pets database with multiplier, tier, source, and abilities for every pet.",
+      "Complete Grow a Garden pets list with multiplier, tier, source, and abilities for every pet.",
     type: "website",
   },
 };
@@ -91,8 +91,8 @@ const faqs = [
 export default function PetsDatabasePage() {
   return (
     <ContentLayout
-      title="Grow a Garden Pets Database"
-      description="Complete database of every pet in Grow a Garden — multiplier, tier, source, and abilities at a glance. Click any pet for the full breakdown."
+      title="Grow a Garden Pets List"
+      description="Complete list of every pet in Grow a Garden — multiplier, tier, source, and abilities at a glance. Click any pet for the full breakdown."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -100,6 +100,7 @@ export default function PetsDatabasePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/pets"
+      updatedAt="July 19, 2026"
     >
       {/* Pet Tables by Tier */}
       <section aria-labelledby="pets-heading">

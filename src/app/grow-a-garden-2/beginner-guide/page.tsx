@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "@/data/garden2/beginner-guide";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
+  title: `${data.title}`,
   description: data.description,
   keywords: ["Grow a Garden 2 beginner guide", "GaG2 tutorial", "how to start Grow a Garden 2", "Grow a Garden 2 walkthrough", "GaG2 Sheckles"],
   alternates: { canonical: "/grow-a-garden-2/beginner-guide" },

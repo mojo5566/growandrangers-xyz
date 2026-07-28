@@ -17,8 +17,8 @@ const bestCrops: GuidePageData & {
   }[];
   strategyTips: string[];
 } = {
-  title: "Best Crops Guide — Grow a Garden (July 2026)",
-  description: "Discover the absolute best crops in Grow a Garden ranked by coins-per-minute, seasonal value, and endgame profit potential. Updated for June 2026.",
+  title: "Best Crops in Grow a Garden — Top Picks",
+  description: "Guide to the best crops in Grow a Garden ranked by coins-per-minute, seasonal value, and endgame profit potential. Find the most profitable crops for your farm.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

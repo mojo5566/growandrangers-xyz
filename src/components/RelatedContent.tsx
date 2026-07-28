@@ -3,7 +3,7 @@ import { getRelatedLinks } from "@/lib/related-content";
 import type { RelatedLink } from "@/data/types";
 
 interface RelatedContentProps {
-  category: "crops" | "mutations" | "pets" | "units" | "traits" | "guide";
+  category: "crops" | "mutations" | "pets" | "eggs" | "seeds" | "updates" | "trading" | "events" | "units" | "traits" | "guide";
   game: "garden" | "rangers";
   currentPath?: string;
   limit?: number;

@@ -5,6 +5,7 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { mutations, getMutationById } from "@/data/garden/database/mutations";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -17,10 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const mutation = getMutationById(id);
-  if (!mutation) return { title: "Mutation Not Found | BloxPulse" };
+  if (!mutation) return { title: "Mutation Not Found" };
 
   return {
-    title: `${mutation.name} — Grow a Garden Mutation Guide (June 2026) | BloxPulse`,
+    title: `${mutation.name} — Grow a Garden Mutation Guide`,
     description: mutation.description,
     keywords: [
       mutation.name,
@@ -105,6 +106,7 @@ export default async function MutationDetailPage({ params }: PageProps) {
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/mutations/${mutation.id}`}
+      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

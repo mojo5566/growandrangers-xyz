@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
+import RelatedContent from "@/components/RelatedContent";
 import Link from "next/link";
 import data from "@/data/garden/beginner-guide";
+import { pets } from "@/data/garden/database/pets";
+import { seeds } from "@/data/garden/database/seeds";
+import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: `${data.title} | BloxPulse`,
-  description: data.description,
-  keywords: ["Grow a Garden beginner guide", "how to start Grow a Garden", "Grow a Garden tutorial", "Grow a Garden farming guide", "Grow a Garden progression"],
+  title: "Grow a Garden Beginner Guide — Start Your Farm",
+  description:
+    "Beginner walkthrough for Grow a Garden on Roblox. Learn early game progression, first pets, first seeds, farming loop, and mistakes to avoid.",
+  keywords: [
+    "Grow a Garden beginner guide",
+    "how to start Grow a Garden",
+    "Grow a Garden tutorial",
+    "Grow a Garden farming guide",
+    "Grow a Garden progression",
+    "Grow a Garden first pet",
+    "Grow a Garden first seed",
+  ],
   alternates: { canonical: "/grow-a-garden/beginner-guide" },
-  openGraph: { title: data.title, description: data.description, type: "website" },
+  openGraph: {
+    title: "Grow a Garden Beginner Guide — Start Your Farm",
+    description:
+      "Beginner walkthrough — early game progression, first pets, first seeds, farming loop, and mistakes to avoid.",
+    type: "website",
+  },
 };
 
 const tierBadge: Record<string, string> = {
@@ -19,16 +37,43 @@ const tierBadge: Record<string, string> = {
   "C": "bg-[#3A86FF]/20 text-[#3A86FF]",
 };
 
+// First pets recommendation — C-Tier and B-Tier pets (early-game accessible)
+const firstPets = pets
+  .filter((p) => p.tier === "C" || p.tier === "B")
+  .sort((a, b) => {
+    // Sort by tier (C first as most accessible, then B), then by multiplier
+    const tierOrder = { C: 0, B: 1 } as const;
+    if (tierOrder[a.tier as "C" | "B"] !== tierOrder[b.tier as "C" | "B"]) {
+      return tierOrder[a.tier as "C" | "B"] - tierOrder[b.tier as "C" | "B"];
+    }
+    return b.multiplier - a.multiplier;
+  });
+
+// First seeds recommendation — Common and Uncommon rarity (cheapest entry)
+const firstSeeds = seeds
+  .filter((s) => s.rarity === "Common" || s.rarity === "Uncommon")
+  .sort((a, b) => a.price - b.price);
+
 export default function BeginnerGuidePage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/beginner-guide" accent="garden" updatedAt={data.updatedAt}>
-
+    <ContentLayout
+      title="Grow a Garden Beginner Guide"
+      description="Beginner walkthrough for Grow a Garden on Roblox — early game progression, first pets, first seeds, farming loop, and mistakes to avoid. Sourced from canonical pets and seeds databases."
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Grow a Garden", href: "/grow-a-garden" },
+        { label: "Beginner Guide", href: "/grow-a-garden/beginner-guide" },
+      ]}
+      accent="garden"
+      canonicalPath="/grow-a-garden/beginner-guide"
+      updatedAt={CONTENT_UPDATED_AT}
+    >
       {/* Last Updated */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">
         <div className="flex items-center gap-2">
           <span className="text-sm">🕒</span>
           <p className="text-sm text-[#BAC4D1]">
-            <strong className="text-white">Last Updated:</strong> {data.updatedAt}
+            <strong className="text-white">Last Updated:</strong> {CONTENT_UPDATED_AT}
           </p>
         </div>
       </section>
@@ -49,9 +94,9 @@ export default function BeginnerGuidePage() {
         </div>
       </section>
 
-      {/* Progression Stages */}
+      {/* Early Game Progression */}
       <section aria-labelledby="stages-heading">
-        <h2 id="stages-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">📈 Progression Roadmap</h2>
+        <h2 id="stages-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">📈 Early Game Progression</h2>
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[1.2fr_1.2fr_1.5fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">STAGE</span>
@@ -87,6 +132,179 @@ export default function BeginnerGuidePage() {
         </div>
       </section>
 
+      {/* First Pets Recommendation — NEW SECTION */}
+      <section aria-labelledby="first-pets-heading">
+        <h2 id="first-pets-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">🐾 First Pets Recommendation</h2>
+        <p className="text-xs text-[#768294] mb-4">
+          Start with affordable pets from Basic Eggs (500 Coins) and Rare Eggs (2,000 Coins). These C-Tier and
+          B-Tier pets provide solid multipliers while you save for higher tiers. All data is sourced from our
+          canonical{" "}
+          <Link href="/grow-a-garden/pets" className="text-[#00E676] hover:underline">
+            Pets Database
+          </Link>
+          .
+        </p>
+        <div className="overflow-hidden rounded-xl border border-[#252936]">
+          <div className="grid grid-cols-[1.5fr_60px_1fr_2fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
+            <span className="text-xs font-semibold text-[#768294]">PET</span>
+            <span className="text-xs font-semibold text-[#768294]">TIER</span>
+            <span className="text-xs font-semibold text-[#768294]">MULTIPLIER</span>
+            <span className="text-xs font-semibold text-[#768294]">WHY START HERE</span>
+          </div>
+          {firstPets.map((pet) => (
+            <div
+              key={pet.id}
+              className="grid grid-cols-[1.5fr_60px_1fr_2fr] gap-2 border-t border-[#252936] px-4 py-3 items-center hover:bg-[#1E212B] transition"
+            >
+              <Link
+                href={`/grow-a-garden/pets/${pet.id}`}
+                className="text-sm font-semibold text-[#BAC4D1] hover:text-[#00E676] transition"
+              >
+                {pet.name}
+              </Link>
+              <span className={`rounded px-1.5 py-0.5 text-xs text-center font-semibold ${tierBadge[pet.tier]}`}>
+                {pet.tier}
+              </span>
+              <span className="text-sm font-bold text-[#00E676]">{pet.multiplier.toFixed(1)}x</span>
+              <span className="text-xs text-[#768294]">{pet.abilities[0]}</span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-xs text-[#768294]">
+          💡 <strong className="text-[#BAC4D1]">Tip:</strong> Equip Bamboo Panda Cub (1.5x) from a Basic Egg as
+          your first pet. Its stacking growth-speed bonus scales well even into mid-game. Once you have 4 plots
+          running, switch to a Rare Egg pet like Frost Wolf Pup (2.2x → 3.3x Winter) for seasonal specialization.
+        </p>
+      </section>
+
+      {/* First Seeds Recommendation — NEW SECTION */}
+      <section aria-labelledby="first-seeds-heading">
+        <h2 id="first-seeds-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">🌱 First Seeds Recommendation</h2>
+        <p className="text-xs text-[#768294] mb-4">
+          Common and Uncommon seeds are the cheapest entry point. All of these are Sheckle-purchased (no Robux)
+          and grow into crops that pay back the seed cost within 1-3 harvest cycles. Data sourced from our
+          canonical{" "}
+          <Link href="/grow-a-garden/seeds" className="text-[#00E676] hover:underline">
+            Seeds Database
+          </Link>
+          .
+        </p>
+        <div className="overflow-hidden rounded-xl border border-[#252936]">
+          <div className="grid grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
+            <span className="text-xs font-semibold text-[#768294]">SEED</span>
+            <span className="text-xs font-semibold text-[#768294]">RARITY</span>
+            <span className="text-xs font-semibold text-[#768294]">PRICE</span>
+            <span className="text-xs font-semibold text-[#768294]">GROWTH</span>
+            <span className="text-xs font-semibold text-[#768294]">SEASON</span>
+          </div>
+          {firstSeeds.map((seed) => (
+            <div
+              key={seed.id}
+              className="grid grid-cols-[1.5fr_1fr_1fr_1fr_1.5fr] gap-2 border-t border-[#252936] px-4 py-3 items-center hover:bg-[#1E212B] transition"
+            >
+              <Link
+                href={`/grow-a-garden/seeds/${seed.id}`}
+                className="text-sm font-semibold text-[#BAC4D1] hover:text-[#00E676] transition"
+              >
+                {seed.name}
+              </Link>
+              <span className="text-xs text-[#BAC4D1]">{seed.rarity}</span>
+              <span className="text-xs text-[#BAC4D1]">{seed.price} 🪙</span>
+              <span className="text-xs text-[#BAC4D1]">{seed.growthTime}</span>
+              <span className="text-xs text-[#BAC4D1]">{seed.season}</span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-xs text-[#768294]">
+          💡 <strong className="text-[#BAC4D1]">Tip:</strong> Start with Wild Grass Seeds (free with tutorial)
+          and switch to Basic Potato Seeds (100 Coins) as soon as you can afford them. The 30-second cycle is
+          excellent for learning the farming loop. Once you have 4 plots, upgrade to Bean or Sunflower seeds for
+          a comfortable all-season rotation.
+        </p>
+      </section>
+
+      {/* Farming Loop — NEW SECTION */}
+      <section aria-labelledby="farming-loop-heading">
+        <h2 id="farming-loop-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">🔄 The Farming Loop</h2>
+        <p className="text-xs text-[#768294] mb-4">
+          The core Grow a Garden gameplay loop. Master this cycle and your farm will scale itself.
+        </p>
+        <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
+          <ol className="space-y-4">
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">1</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Plant Seeds</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Open your seed inventory (B key), select a seed, click on an empty plot. Each plot grows one
+                  crop at a time. Prioritize all-season seeds (Wild Grass, Basic Potato, Bean) for early-game
+                  stability.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">2</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Wait for Growth</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Crops take 15 seconds to 10 minutes to mature depending on the seed tier. Use this window to
+                  redeem codes, check daily quests, or hatch pets. Crops do not die from neglect — they just sit
+                  there until harvested.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">3</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Harvest for Coins</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Click mature crops (golden glow) to harvest. Coins are credited instantly, multiplied by your
+                  active pet and any mutation on the plot. Always harvest before logging off — unharvested crops
+                  earn nothing.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">4</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Reinvest Coins</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Buy more plots (400 → 800 → 1,200 Coins), upgrade to higher-tier seeds, or save for a Rare Egg.
+                  Never sit on idle coins — every Coin reinvested compounds your income. See the Spending
+                  Priority Tier List below for the optimal order.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">5</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Roll Mutations (when shards available)</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Save 50+ Mutation Shards, then bulk-roll at the Mutation Station during a boosted event. Apply
+                  S-Tier and A-Tier mutations to your highest-CPM plot. Mutations stack multiplicatively with
+                  pet multipliers — this is where your income explodes.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="code-text rounded bg-[#00E676]/20 px-2 py-0.5 text-xs font-semibold text-[#00E676] shrink-0">6</span>
+              <div>
+                <h4 className="text-sm font-semibold text-white">Hatch Better Pets (when affordable)</h4>
+                <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
+                  Once 4 plots are running with B-Tier mutations, start buying Rare Eggs (2,000 Coins) for
+                  A-Tier pets. Only buy Legendary Eggs (10,000 Coins) in endgame when Coins are abundant. See
+                  the{" "}
+                  <Link href="/grow-a-garden/pet-guide" className="text-[#00E676] hover:underline">
+                    Pet Guide
+                  </Link>{" "}
+                  for the full pet system.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
       {/* Key Resources */}
       <section aria-labelledby="resources-heading">
         <h2 id="resources-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">💰 Key Resources & Currencies</h2>
@@ -116,7 +334,7 @@ export default function BeginnerGuidePage() {
         </div>
       </section>
 
-      {/* Priority Tier List */}
+      {/* Spending Priority Tier List */}
       <section aria-labelledby="priority-heading">
         <h2 id="priority-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">⭐ Spending Priority Tier List</h2>
         <div className="overflow-hidden rounded-xl border border-[#252936]">
@@ -135,9 +353,9 @@ export default function BeginnerGuidePage() {
         </div>
       </section>
 
-      {/* Common Mistakes */}
+      {/* Mistakes to Avoid */}
       <section aria-labelledby="mistakes-heading">
-        <h2 id="mistakes-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">⚠️ Common Beginner Mistakes</h2>
+        <h2 id="mistakes-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">⚠️ Mistakes to Avoid</h2>
         <div className="space-y-3">
           {data.mistakes.map((m, i) => (
             <div key={i} className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
@@ -153,18 +371,11 @@ export default function BeginnerGuidePage() {
         </div>
       </section>
 
-      {/* Related Guides */}
-      <section aria-labelledby="related-heading">
-        <h2 id="related-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">🔗 Related Guides</h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {data.relatedGuides.map((g, i) => (
-            <Link key={i} href={g.href} className="rounded-lg border border-[#252936] bg-[#14161D] p-4 transition hover:border-[#00E676] group">
-              <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">{g.label} →</span>
-              <p className="mt-1 text-xs text-[#768294]">{g.description}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <RelatedContent
+        category="guide"
+        game="garden"
+        currentPath="/grow-a-garden/beginner-guide"
+      />
 
       {/* FAQ */}
       <ContentFAQ faqs={data.faq} />

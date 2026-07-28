@@ -1,8 +1,8 @@
 import type { EvolutionPageData } from "../types";
 
 const data: EvolutionPageData = {
-  title: "Re:Rangers X Evolution Guide — Full Requirements & Strategy (July 2026)",
-  description: "Step-by-step evolution guide covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, priority order, and common mistakes to avoid.",
+  title: "Re:Rangers X Evolution Guide",
+  description: "Step-by-step evolution guide for Re:Rangers X covering all stages from Common to Mythic. Includes material costs, gem requirements, farming strategies, and priority order.",
   updatedAt: "July 7, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },

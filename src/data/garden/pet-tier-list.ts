@@ -31,8 +31,8 @@ function buildPetTierListData(): TierListPageData {
   const tierOrder = ["S", "A", "B", "C"] as const;
 
   return {
-    title: "Grow a Garden Pet Tier List — All Hatchable Pets Ranked (2026)",
-    description: "Every Grow a Garden pet ranked from S-Tier to C-Tier based on crop value multiplier, special abilities, seasonal bonuses, hatching odds, and mutation synergy. Build your perfect farm team.",
+    title: "Grow a Garden Pet Tier List — S to C Ranking",
+    description: "Complete pet tier list ranking every Grow a Garden pet from S-Tier to C-Tier by multiplier, abilities, and mutation synergy. Find which tier your pet sits in.",
     updatedAt: "July 7, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
