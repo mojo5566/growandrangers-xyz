@@ -14,6 +14,8 @@ interface ContentLayoutProps {
   accent: "garden" | "rangers";
   canonicalPath: string;
   updatedAt?: string;
+  publishedAt?: string;
+  imageUrl?: string;
   itemList?: { name: string; position: number; url: string }[];
   children: ReactNode;
 }
@@ -43,24 +45,50 @@ function ArticleJsonLd({
   description,
   canonicalPath,
   updatedAt,
+  publishedAt,
+  imageUrl,
 }: {
   title: string;
   description: string;
   canonicalPath: string;
   updatedAt?: string;
+  publishedAt?: string;
+  imageUrl?: string;
 }) {
   const dateModified = updatedAt
     ? new Date(updatedAt).toISOString().split("T")[0]
     : new Date(CONTENT_UPDATED_AT).toISOString().split("T")[0];
+  // Prefer explicit publishedAt; otherwise fall back to dateModified (most
+  // recent known publish date) so we never emit a fabricated/hardcoded date.
+  const datePublished = publishedAt
+    ? new Date(publishedAt).toISOString().split("T")[0]
+    : dateModified;
+  const fallbackImageUrl = `https://growandrangers.xyz/images/default-guide.webp`;
+  const resolvedImageUrl = imageUrl
+    ? (imageUrl.startsWith("http") ? imageUrl : `https://growandrangers.xyz${imageUrl}`)
+    : fallbackImageUrl;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
-    datePublished: "2026-06-01",
+    datePublished,
     dateModified,
+    image: {
+      "@type": "ImageObject",
+      url: resolvedImageUrl,
+      width: 1200,
+      height: 675,
+    },
     author: { "@type": "Organization", name: "BloxPulse" },
-    publisher: { "@type": "Organization", name: "BloxPulse" },
+    publisher: {
+      "@type": "Organization",
+      name: "BloxPulse",
+      logo: {
+        "@type": "ImageObject",
+        url: `https://growandrangers.xyz/og-image.png`,
+      },
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://growandrangers.xyz${canonicalPath}`,
@@ -102,6 +130,8 @@ export default function ContentLayout({
   accent,
   canonicalPath,
   updatedAt,
+  publishedAt,
+  imageUrl,
   itemList,
   children,
 }: ContentLayoutProps) {
@@ -117,6 +147,8 @@ export default function ContentLayout({
         description={description}
         canonicalPath={canonicalPath}
         updatedAt={updatedAt}
+        publishedAt={publishedAt}
+        imageUrl={imageUrl}
       />
       {itemList && <ItemListSchema items={itemList} />}
 

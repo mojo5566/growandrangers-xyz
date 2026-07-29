@@ -10,7 +10,7 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Best Dragon Pets in Grow a Garden",
   description:
-    "Ranked comparison of every dragon pet in Grow a Garden: Golden Dragon, Neon Dragon Hatchling, and Baby Dragon. Multipliers, abilities, trade values, and which to chase first.",
+    "Every Grow a Garden dragon pet ranked: Golden Dragon, Neon Dragon Hatchling, and Baby Dragon by multiplier, ability, trade value, and which to chase first.",
   keywords: [
     "best dragon pet Grow a Garden",
     "Grow a Garden Golden Dragon",

@@ -78,19 +78,40 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "BloxPulse",
-  url: BASE_URL,
-  description:
-    "Your daily source for working Roblox promo codes, meta tier lists, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${BASE_URL}/?search={search_term_string}`,
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "BloxPulse",
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+      },
+      description:
+        "Your daily source for working Roblox promo codes, meta tier lists, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+      sameAs: [],
     },
-    "query-input": "required name=search_term_string",
-  },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      name: "BloxPulse",
+      url: BASE_URL,
+      description:
+        "Your daily source for working Roblox promo codes, meta tier lists, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${BASE_URL}/?search={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({

@@ -10,7 +10,7 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Best Mythical Pets in Grow a Garden",
   description:
-    "Guide to the best and strongest mythical pets in Grow a Garden. Compare multipliers, trading values, and cultivation value to decide which mythical pet is worth chasing for your farm.",
+    "Best mythical pets in Grow a Garden ranked by multiplier, trading value, and cultivation cost. Find which S-tier pet is worth chasing for your farm.",
   keywords: [
     "best mythical pets Grow a Garden",
     "strongest mythical pets Grow a Garden",

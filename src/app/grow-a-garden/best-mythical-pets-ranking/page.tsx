@@ -10,7 +10,7 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Mythical Pets Tier List & Ranking",
   description:
-    "Tier list and ranking of every mythical-tier pet in Grow a Garden. Compare S-Tier pets side-by-side by multiplier, passive ability, trade value, and demand to see how they stack up.",
+    "Tier list of every mythical pet in Grow a Garden. Compare S-Tier pets by multiplier, passive ability, trade value, and demand to see how they rank.",
   keywords: [
     "mythical pets tier list Grow a Garden",
     "Grow a Garden mythical pet ranking",
