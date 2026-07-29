@@ -97,7 +97,7 @@ const faqs = [
   {
     question: "Is trading a good way to make coins?",
     answer:
-      "Yes — trading can outpace farming for endgame players. High-demand pets like Golden Phoenix Chick (5M Sheckles) and Golden Dragon (2.8M Sheckles) command premium prices. Rising-trend items appreciate over time, making them good hold-and-flip candidates. Always check our Trading Values database for current prices and trends before trading.",
+      "Yes — trading can outpace farming for endgame players with capital to invest. High-demand pets like Golden Phoenix Chick (5M Sheckles) and Golden Dragon (2.8M Sheckles) command premium prices and sell quickly to active buyers. Rising-trend items appreciate over time, making them strong hold-and-flip candidates for patient players. Always check our Trading Values database for current prices, demand, and trends before executing any trade.",
   },
   {
     question: "What should I invest in first?",
@@ -119,7 +119,31 @@ export default function MoneyMakingGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/money-making-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Money Making"
+      keywords={[
+        "Grow a Garden money making",
+        "Grow a Garden coin farming",
+        "Grow a Garden max coins",
+        "Grow a Garden profit guide",
+        "best crops for coins Grow a Garden",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Stack three multipliers: plant Golden Wheat (160 CPM all-season), equip an S-Tier pet like
+          Golden Phoenix Chick (5.0×), and apply an S-Tier mutation like Aurelian Crown (4.0×) —
+          yielding up to 3,200 coins per minute on a single plot. For endgame wealth, flip
+          high-demand items at the Trade Hub, where S-Tier pets like Golden Phoenix Chick sell for
+          5M Sheckles. The four pillars — crops, pets, mutations, and trading — multiply rather than
+          compete.
+        </p>
+      </section>
+
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">

@@ -82,7 +82,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: "BloxPulse",
+      name: "GrowAndRangers",
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
@@ -91,16 +91,16 @@ const jsonLd = {
         height: 630,
       },
       description:
-        "Your daily source for working Roblox promo codes, meta tier lists, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading values and updates.",
       sameAs: [],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      name: "BloxPulse",
+      name: "GrowAndRangers",
       url: BASE_URL,
       description:
-        "Your daily source for working Roblox promo codes, meta tier lists, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading values and updates.",
       publisher: { "@id": `${BASE_URL}/#organization` },
       potentialAction: {
         "@type": "SearchAction",

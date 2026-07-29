@@ -32,29 +32,6 @@ const tierColors: Record<string, string> = {
   C: "#3A86FF",
 };
 
-function ArticleJsonLd() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: data.title,
-    description: data.description,
-    datePublished: "2026-06-09",
-    dateModified: "2026-06-12",
-    author: { "@type": "Organization", name: "BloxPulse" },
-    publisher: { "@type": "Organization", name: "BloxPulse" },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://growandrangers.xyz/anime-rangers-x/tier-list",
-    },
-  };
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
 function TierCard({ card }: { card: typeof data.detailCards[number] }) {
   return (
     <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
@@ -102,9 +79,7 @@ function TierCard({ card }: { card: typeof data.detailCards[number] }) {
 
 export default function TierListPage() {
   return (
-    <>
-      <ArticleJsonLd />
-      <ContentLayout
+    <ContentLayout
         title={data.title}
         description={data.description}
         breadcrumbs={data.breadcrumbs}
@@ -307,7 +282,6 @@ export default function TierListPage() {
         </section>
 
         <ContentFAQ faqs={data.faq} />
-      </ContentLayout>
-    </>
+    </ContentLayout>
   );
 }

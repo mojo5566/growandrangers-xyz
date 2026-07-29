@@ -120,7 +120,36 @@ export default function PetRankingGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/pet-ranking-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "Grow a Garden pet ranking",
+        "Grow a Garden pet tier list",
+        "Grow a Garden S A B C tier",
+        "Grow a Garden pet tiers explained",
+        "Grow a Garden best pets",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Pets are ranked into four tiers by coin multiplier: S-Tier (4.5×-5.0× from Legendary
+          Eggs), A-Tier (3.0×-4.0× from Rare Eggs), B-Tier (2.0×-2.9×, the mid-game workhorse), and
+          C-Tier (1.5×-1.9× from Basic Eggs). Multiplier is the primary metric; passive abilities,
+          source egg rarity, and seasonal synergy break ties. A 5.0× Golden Phoenix Chick can trade
+          for items worth 500K+ coins.
+        </p>
+      </section>
+
       {/* Hero */}
       <section className="rounded-xl border border-[#FF3D00]/30 bg-[#FF3D00]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

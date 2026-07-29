@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
@@ -11,7 +11,7 @@ import { getActiveEvents } from "@/data/garden/database/events";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Best Summer Pets — Grow a Garden Summer Event Pet Guide",
+  title: "Best Summer Pets — Grow a Garden Guide",
   description:
     "Best pets for Summer in Grow a Garden: top Summer pets ranked by multiplier, seasonal bonus stacking, Summer crop and mutation synergy, acquisition guide, and trading values. Sourced from canonical databases.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/grow-a-garden/best-summer-pets" },
   openGraph: {
-    title: "Best Summer Pets — Grow a Garden Summer Event Pet Guide",
+    title: "Best Summer Pets — Grow a Garden Summer Guide",
     description:
       "Top Summer pets ranked, seasonal bonus stacking, Summer crop and mutation synergy, acquisition guide, and trading values.",
     type: "website",
@@ -174,7 +174,26 @@ export default function BestSummerPetsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-summer-pets"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best summer pets grow a garden",
+        "grow a garden summer pets",
+        "summer event pets",
+        "magma lizard hatchling",
+        "flame bear pet",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best Summer pet in Grow a Garden is the <strong className="text-white">Magma Lizard Hatchling</strong> — its 2.0× base jumps to 3.0× during Summer, and it hatches from Rare Eggs at 2,000 coins each. For premium players, the <strong className="text-white">Flame Bear</strong> (3.0× base, +20% coin value on fire crops) is the Campfire Event exclusive. Stack a Summer pet with Phoenix Bloom crop, Emberglow mutation, and the +20% Summer Event bonus for a 10.08× effective multiplier per harvest.
+        </p>
+      </section>
+
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">

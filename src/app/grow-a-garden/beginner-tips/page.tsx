@@ -98,7 +98,7 @@ const faqs = [
   {
     question: "What is the most important beginner tip in Grow a Garden?",
     answer:
-      "Expand plots before anything else. Going from 1 to 4 plots quadruples your earning potential and is the single highest-ROI investment in the entire game. Cosmetic items, premium eggs, and even mutation shards should all wait until you have 4 plots running.",
+      "Expand plots before anything else. Going from 1 to 4 plots quadruples your earning potential and is the single highest-ROI investment in the entire game. Plot #2 costs 400 coins, Plot #3 costs 800, and Plot #4 costs 1,200 — together less than one Legendary Egg. Cosmetic items, premium eggs, and even mutation shards should all wait until you have 4 plots running with B-Tier mutations.",
   },
   {
     question: "How can I improve my farming efficiency in Grow a Garden?",
@@ -118,12 +118,12 @@ const faqs = [
   {
     question: "How do I know which mutations are worth keeping?",
     answer:
-      "B-Tier mutations (1.7x-2.2x) are the sweet spot of affordability and power. S-Tier (3.5x-6.0x) are extremely rare and should always be kept. C-Tier (1.0x-1.4x) are placeholders — replace when you roll a B-Tier or better. Never overwrite a B-Tier+ mutation without saving shards for a guaranteed improvement.",
+      "B-Tier mutations (1.7x-2.2x) are the sweet spot of affordability and power — Pyroclast Husk and Hoarfrost Corolla are reliable targets with a ~10-12% roll rate. S-Tier (3.5x-6.0x) are extremely rare and should always be kept. C-Tier (1.0x-1.4x) are placeholders — replace when you roll a B-Tier or better. Never overwrite a B-Tier+ mutation without saving shards for a guaranteed improvement.",
   },
   {
     question: "Where can I find more Grow a Garden tips and guides?",
     answer:
-      "Start with our Beginner Guide for the full walkthrough, then explore the Money Making Guide for advanced coin strategies and the Pet Guide for the pet system deep dive. All guides are linked from the Grow a Garden hub page.",
+      "Start with our Beginner Guide for the full walkthrough, then explore the Money Making Guide for advanced coin strategies and the Pet Guide for the pet system deep dive. For specialized topics, browse the Crops Database for per-crop profit data, the Mutations Database for the full tier list, and the Codes page for free daily shards and eggs. All guides are linked from the Grow a Garden hub page.",
   },
 ];
 
@@ -140,7 +140,30 @@ export default function BeginnerTipsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/beginner-tips"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Beginner Guide"
+      keywords={[
+        "Grow a Garden beginner tips",
+        "Grow a Garden tips and tricks",
+        "Grow a Garden farming efficiency",
+        "Grow a Garden resource management",
+        "Grow a Garden pet tips",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Expand to 4 plots before anything else — going from 1 to 4 plots (400 → 800 → 1,200 coins)
+          quadruples your earning potential and is the highest-ROI investment in the game. Always
+          harvest before logging off, since unharvested crops earn zero passive income. Hatch a
+          500-coin Basic Egg on day one (pays back in 5-6 cycles), save 50+ Mutation Shards for
+          bulk-rolling, and never buy Legendary Eggs until endgame.
+        </p>
+      </section>
+
       {/* Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

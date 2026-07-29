@@ -96,7 +96,37 @@ export default function PetGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/pet-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "Grow a Garden pet guide",
+        "Grow a Garden pet system",
+        "pet passive abilities Grow a Garden",
+        "pet multipliers Grow a Garden",
+        "pet leveling Grow a Garden",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Pets are permanent companions that apply a coin multiplier (1.5× to 5.0×) to every
+          harvest farm-wide, stacking multiplicatively with mutation multipliers. Each pet has a
+          tier (C to S), passive abilities like auto-collect or double-harvest, and optional
+          seasonal bonuses. Hatch eggs (Basic 500, Rare 2,000, Legendary 10,000 coins) to obtain
+          pets — the 5.0× Golden Phoenix Chick on a 4.0× Aurelian Crown plot yields the 20.0×
+          theoretical maximum.
+        </p>
+      </section>
+
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">

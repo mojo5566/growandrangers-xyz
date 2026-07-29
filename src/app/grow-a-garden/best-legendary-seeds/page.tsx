@@ -101,12 +101,12 @@ const faqs = [
   {
     question: "Are Legendary seeds worth the price?",
     answer:
-      "Yes, once your farm generates enough income to afford them. Legendary seeds cost significantly more than Rare or Uncommon seeds, but the crops they produce have much higher base coin values, which compounds with mutation and pet multipliers. Always invest in Legendary seeds for your main plot before spending on cosmetics.",
+      "Yes, once your farm generates enough income to afford them. Legendary seeds cost significantly more than Rare or Uncommon seeds, but the crops they produce have much higher base coin values, which compounds with mutation and pet multipliers. Always invest in Legendary seeds for your main plot before spending on cosmetics — a 5.0× mutation on a high-value Legendary crop earns back the seed price in a fraction of the time a Rare crop would.",
   },
   {
     question: "Can I trade Legendary seeds?",
     answer:
-      "Yes. Legendary seeds are tradeable and hold their value well. Event-exclusive Legendary seeds (such as Phoenix Bloom during Summer) often appreciate after the event ends because no new supply enters the market. Check our Trading Database for current verified values.",
+      "Yes. Legendary seeds are tradeable and hold their value well. Event-exclusive Legendary seeds (such as Phoenix Bloom during Summer) often appreciate after the event ends because no new supply enters the market. Check our Trading Database for current verified values, and stockpile two seeds when possible — one to plant and one to trade after prices rise.",
   },
   {
     question: "Which Legendary seed should I buy first?",
@@ -116,7 +116,7 @@ const faqs = [
   {
     question: "Do Legendary seeds work with mutations and pets?",
     answer:
-      "Yes. The crop that grows from a Legendary seed benefits from mutation and pet multipliers just like any other crop. Because Legendary seeds grow into high-base-coin crops, the multiplier effect is amplified — a 6.0× mutation on a 480-coin Legendary crop produces 2,880 coins per harvest.",
+      "Yes. The crop that grows from a Legendary seed benefits from mutation and pet multipliers just like any other crop. Because Legendary seeds grow into high-base-coin crops, the multiplier effect is amplified — a 6.0× Prismatic Rainbow mutation on a 480-coin Legendary crop produces 2,880 coins per harvest, and pairing that plot with a 5.0× pet pushes it to 14,400 coins per harvest.",
   },
 ];
 
@@ -133,7 +133,26 @@ export default function BestLegendarySeedsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-legendary-seeds"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Seeds"
+      keywords={[
+        "best legendary seeds Grow a Garden",
+        "Grow a Garden Mythstar Seed",
+        "Grow a Garden Phoenix Bloom Seed",
+        "Grow a Garden Star Melon Seed",
+        "Grow a Garden Golden Wheat Seed",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best Legendary seeds in Grow a Garden are the Mythstar Seed and Phoenix Bloom Seed — both S-Tier and the top profit-per-harvest contenders. For a first purchase, the Golden Wheat Seed is the strongest entry point because it is S-Tier, available year-round, and grows into one of the highest-value crops. Phoenix Bloom Seed commands premium trade demand because it is Summer-event-exclusive; buy it during the event window, as it appreciates sharply once supply dries up.
+        </p>
+      </section>
+
       {/* Opening — reframed as investment payback analysis */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

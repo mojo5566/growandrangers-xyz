@@ -5,7 +5,7 @@ import RelatedContent from "@/components/RelatedContent";
 import ValueCalculator from "@/components/ValueCalculator";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Value Calculator — Crop Coin Value Estimator (June 2026)",
+  title: "Grow a Garden Value Calculator",
   description:
     "Free Grow a Garden value calculator. Select a crop, enter its weight, and choose a mutation to instantly estimate the sell value, multiplier, crop tier, and value ranking.",
   keywords: [

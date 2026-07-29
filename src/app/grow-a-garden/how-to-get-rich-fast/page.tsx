@@ -100,7 +100,35 @@ export default function HowToGetRichFastPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/how-to-get-rich-fast"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Money Making"
+      keywords={[
+        "how to get rich fast Grow a Garden",
+        "Grow a Garden quick coins",
+        "Grow a Garden fast money",
+        "Grow a Garden code redemption",
+        "Grow a Garden event flipping",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          A new account can hit 50,000 coins in 10 minutes by redeeming active codes, 500,000 coins
+          in 4 hours with Golden Wheat farming plus a 2.0× pet, and 2,000,000+ coins in 7 days by
+          layering rising-trend flips on top. Prioritize codes first, then a Rare Egg (2,000 coins)
+          for a B-Tier pet, then bulk-roll 10 Mutation Shards at once for an ~11% S-Tier chance.
+        </p>
+      </section>
+
       {/* Opening — concrete number rather than generic intro */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

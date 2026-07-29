@@ -106,7 +106,35 @@ export default function HowToGetRichPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/how-to-get-rich"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Money Making"
+      keywords={[
+        "how to get rich Grow a Garden",
+        "Grow a Garden fast coins",
+        "Grow a Garden million coins",
+        "Grow a Garden money strategy",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Stack three multipliers — Golden Wheat (480 coins, 160 CPM), a 6.0× Prismatic Rainbow
+          mutation, and a 5.0× Golden Phoenix Chick — to push a single harvest to 14,400 coins, or
+          57,600 coins across 4 plots per 3-minute cycle. Active farming at this tier yields over
+          1,000,000 coins per hour. Save 50+ Mutation Shards for bulk rolls during boosted events
+          to land S-Tier mutations reliably.
+        </p>
+      </section>
+
       {/* Hero */}
       <section className="rounded-xl border border-[#FFD700]/30 bg-[#FFD700]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

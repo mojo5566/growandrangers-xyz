@@ -92,6 +92,16 @@ const faqs = [
     answer:
       "Use our Trading Values database to check current market prices before trading. Always use a trusted middleman for high-value trades (anything above 1M Sheckles), screenshot the agreement, and never trade with unverified accounts. The official Discord trading channel is the safest venue.",
   },
+  {
+    question: "Which pet should beginners get first?",
+    answer:
+      "Beginners should not chase mythical pets at all. Start with a B-Tier pet from a Rare Egg (2,000 coins) such as the Neon Dragon Hatchling or Phoenix Hatchling, both offering 3.0×–3.5× multipliers. These are 5× cheaper per attempt than Legendary Eggs and reliably double or triple your farming income within the first week. Only pivot to Legendary Egg bulk-hatching once you sustain 50,000+ coins per hour and can absorb a 300,000-coin loss without stalling your farm.",
+  },
+  {
+    question: "Are mythical pets worth trading for?",
+    answer:
+      "Trading for a mythical pet is worth it only if you already hold duplicate Legendary or S-Tier pets to use as currency. A direct coin-for-pet trade at 5M Sheckles is rarely efficient because that same coin volume funds 500 Legendary Eggs — statistically enough to hatch several S-Tier pets. The optimal path is to trade 2–3 duplicate A-Tier pets plus a small coin balance for the Golden Phoenix Chick, preserving your active farming income while converting unused inventory into the mythical you want.",
+  },
 ];
 
 export default function BestMythicalPetsPage() {
@@ -107,7 +117,26 @@ export default function BestMythicalPetsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-mythical-pets"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best mythical pets Grow a Garden",
+        "strongest mythical pets Grow a Garden",
+        "Grow a Garden legendary pets guide",
+        "Golden Phoenix Chick value",
+        "Golden Dragon vs Crystal Unicorn Foal",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The only true Mythical pet in Grow a Garden is the <strong className="text-white">Golden Phoenix Chick</strong> at 5.0× multiplier, valued at roughly 5 million Sheckles. Below it, Legendary pets like the <strong className="text-white">Golden Dragon</strong> (4.8×, ~2.8M Sheckles) and <strong className="text-white">Crystal Unicorn Foal</strong> (4.5×, ~2.4M Sheckles) are far more accessible. Chase a Mythical only after building a full Legendary team — the jump from Epic to Legendary outweighs the marginal gain from Legendary to Mythical.
+        </p>
+      </section>
+
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">

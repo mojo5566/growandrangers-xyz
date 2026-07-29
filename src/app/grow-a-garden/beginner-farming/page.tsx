@@ -31,7 +31,31 @@ export default function BeginnerFarmingPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/beginner-farming/"
       updatedAt={beginnerFarming.updatedAt}
+      articleSection="Beginner Guide"
+      keywords={[
+        "Grow a Garden beginner guide",
+        "farming guide June 2026",
+        "how to start Grow a Garden",
+        "beginner tips",
+        "first day farming",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Farming follows a plant → wait → harvest → reinvest loop. Start with free Wild Grass
+          (15-second growth, 50 coins), upgrade to Basic Potato (100 coins, 30-second cycle) for 200
+          CPM, then Lucky Carrot (140 CPM) and finally Golden Wheat (2,000 coins, 160 CPM
+          all-season). Golden Wheat pays for itself in 5 harvests and is the only crop you need on
+          your main plot. Each plot is a permanent income generator that compounds with every
+          multiplier.
+        </p>
+      </section>
+
       {/* Introduction */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">{beginnerFarming.intro}</p>

@@ -66,7 +66,7 @@ const faqs = [
   {
     question: "What's the biggest mistake new Grow a Garden players make?",
     answer:
-      "Spending coins on cosmetics before expanding plots. The Farm Shop sells decorative fences and themed plot skins — none generate income. Every coin spent on cosmetics before reaching 4 plots with B-Tier mutations is a coin that could have compounded through plot expansion. Decorate later; optimize first.",
+      "Spending coins on cosmetics before expanding plots. The Farm Shop sells decorative fences, scarecrows, and themed plot skins — none generate a single coin of income. Every coin spent on cosmetics before reaching 4 plots with B-Tier mutations is a coin that could have compounded through plot expansion and multiplier stacking. Decorate later; optimize first.",
   },
   {
     question: "How long does it take to get a profitable farm running?",
@@ -76,7 +76,7 @@ const faqs = [
   {
     question: "Should I follow the Beginner Guide or this How to Start page?",
     answer:
-      "This page is a quick-start overview; the Beginner Guide goes deeper with step-by-step walkthroughs, resource management tips, and a full spending priority tier list. Read this page first to understand the game's flow, then follow the Beginner Guide for the detailed optimization path.",
+      "This page is a quick-start overview covering the first 5 minutes, the farming loop, and a progression roadmap. The Beginner Guide goes deeper with step-by-step walkthroughs, resource management tips, a full spending priority tier list, and detailed sections on first pets and first seeds. Read this page first to understand the game's flow, then follow the Beginner Guide for the detailed optimization path.",
   },
 ];
 
@@ -93,7 +93,30 @@ export default function HowToStartPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/how-to-start"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Beginner Guide"
+      keywords={[
+        "how to start Grow a Garden",
+        "Grow a Garden beginner walkthrough",
+        "Grow a Garden first steps",
+        "Grow a Garden starter guide",
+        "Grow a Garden first crop",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Search &quot;Grow a Garden&quot; on Roblox, join the official server, and plant the free
+          Wheat Seeds on your starter plot. Harvest mature crops (2-3 minute growth) for ~50 coins
+          each, save 400 coins for a second plot, then upgrade to Carrot Seeds at 100 coins each for
+          60% higher per-harvest profit. Within 30-45 minutes you can unlock the Mutation Station,
+          hatch a 500-coin Basic Egg, and reach 4 plots.
+        </p>
+      </section>
+
       {/* Game Overview */}
       <section aria-labelledby="overview-heading">
         <h2

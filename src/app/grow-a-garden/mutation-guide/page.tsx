@@ -108,7 +108,36 @@ export default function MutationGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/mutation-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={[
+        "Grow a Garden mutation guide",
+        "Grow a Garden mutations explained",
+        "Grow a Garden mutation multiplier",
+        "how to get mutations Grow a Garden",
+        "Grow a Garden mutation combinations",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Mutations are permanent plot-level multipliers (0.8× to 6.0×) that stack multiplicatively
+          with pet multipliers — total harvest = crop base × mutation × pet. Roll them at the
+          Mutation Station (unlocks at 1,500 coins) using Mutation Shards: single-roll costs 1
+          shard (~1.2% S-Tier), bulk-roll 10 costs 10 shards (~11%). Prismatic Rainbow (6.0×) is
+          the strongest, turning 480-coin Golden Wheat into 2,880 coins before pet stacking.
+        </p>
+      </section>
+
       {/* What are mutations */}
       <section aria-labelledby="what-heading">
         <h2

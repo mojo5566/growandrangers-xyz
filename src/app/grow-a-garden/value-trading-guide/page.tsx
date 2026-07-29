@@ -102,7 +102,7 @@ const faqs = [
   {
     question: "What is the difference between rarity and value?",
     answer:
-      "Rarity is the item's intrinsic drop rate (Mythical = rarest). Value is the current market price. A Mythical item with Low demand may have lower market value than a Legendary item with High demand. Rarity is fixed; value fluctuates with demand and trend.",
+      "Rarity is the item's intrinsic drop rate (Mythical = rarest, Common = most frequent) and never changes for an existing item. Value is the current market price in coins, which shifts with demand and trend. A Mythical item with Low demand may have lower market value than a Legendary item with High demand because buyers are not competing for it. Use rarity for long-term hold decisions and value for day-to-day trading decisions.",
   },
   {
     question: "How do I know if a trade is fair?",
@@ -122,7 +122,7 @@ const faqs = [
   {
     question: "Where can I see all current trade values?",
     answer:
-      "Browse the Trading Database for every item's current value, rarity, demand, and trend. For highest-value items, see the Top Trading Items page. Both update regularly to reflect market shifts.",
+      "Browse the Trading Database at /grow-a-garden/trading for every item's current value, rarity, demand, and trend. For highest-value items, see the Top Trading Items page, which ranks the top 10 by Sheckle value alongside high-demand and rising-trend lists. Both update regularly to reflect market shifts after patches and events, so always re-check before confirming a trade.",
   },
 ];
 
@@ -139,7 +139,20 @@ export default function ValueTradingGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/value-trading-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Trading"
+      keywords={["Grow a Garden value trading", "Grow a Garden item value", "Grow a Garden rarity demand trend", "Grow a Garden fair trade examples", "Grow a Garden trade evaluation"]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Item value comes from four metrics: rarity (fixed drop tier), demand (active buyer interest), trend (Rising, Stable, or Falling), and utility (functional items like S-Tier pets command premiums). A fair trade keeps both sides within 10-15% of total market value. S-Tier pets such as the Golden Phoenix Chick with a 5.0x multiplier justify massive premiums because they permanently multiply every harvest. Always weigh trend alongside listed value — Rising items are worth more than their price today.
+        </p>
+      </section>
+
       {/* Hero */}
       <section className="rounded-xl border border-[#A855F7]/30 bg-[#A855F7]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

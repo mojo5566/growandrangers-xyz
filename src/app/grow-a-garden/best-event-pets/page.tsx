@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "Which event pet should I prioritize?",
     answer:
-      "Prioritize event pets with multipliers of 3.5× or higher and high trade demand. These pets provide both immediate farm value and long-term trade value. Always check the Trading Database for current demand trends before committing event currency or Robux to a specific pet.",
+      "Prioritize event pets with multipliers of 3.5× or higher and high trade demand, such as the Frost Wolf Pup (3.8×, ~850K coins value). These pets provide both immediate farm value and long-term trade value — their scarcity means values typically rise 30% within six months of the event ending. Always check the Trading Database for current demand trends before committing event currency or Robux to a specific pet, and never spend Robux on event pets below 3.0× multiplier.",
   },
   {
     question: "Do event pets come back in future events?",
@@ -117,7 +117,26 @@ export default function BestEventPetsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-event-pets"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best event pets Grow a Garden",
+        "Grow a Garden event pet ranking",
+        "Frost Wolf Pup Grow a Garden",
+        "Verdant Sprite Grow a Garden",
+        "limited time pet Grow a Garden",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best event pets in Grow a Garden reach 3.5×–4.0× multipliers and appreciate in trade value once their event ends. The <strong className="text-white">Frost Wolf Pup</strong> (3.8×) trades at roughly 850,000 coins and is projected to reach 1.1M within six months as supply dries up. Always acquire at least one event pet per active event window — the scarcity premium often exceeds the multiplier gap versus always-available Legendary pets.
+        </p>
+      </section>
+
       {/* Opening — opportunity-cost framing */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

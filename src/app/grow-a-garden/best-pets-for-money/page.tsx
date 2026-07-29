@@ -92,7 +92,7 @@ const faqs = [
   {
     question: "What is the best budget pet for money?",
     answer:
-      "The best budget pets are B-Tier pets hatched from Rare Eggs. They provide a solid 2.5×-3.5× multiplier at a fraction of the Legendary Egg cost. They are the recommended stepping stone for players who cannot yet afford to bulk-hatch Legendary Eggs.",
+      "The best budget pets are B-Tier pets hatched from Rare Eggs (2,000 coins each). They provide a solid 2.5×–3.5× multiplier at a fraction of the Legendary Egg cost (10,000 coins each), giving you 5× more attempts per coin spent. Specific picks include the Neon Dragon Hatchling (3.5×) and Phoenix Hatchling (3.5×), both reliable Rare Egg hatches. They are the recommended stepping stone for players who cannot yet afford to bulk-hatch Legendary Eggs — even a single 3.0× pet triples your Day 1 income.",
   },
   {
     question: "Does pet multiplier stack with mutation multiplier?",
@@ -119,7 +119,26 @@ export default function BestPetsForMoneyPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-pets-for-money"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best pets for money Grow a Garden",
+        "most profitable pet Grow a Garden",
+        "Grow a Garden pet money making",
+        "highest multiplier pet Grow a Garden",
+        "Grow a Garden coins per hour pet",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The <strong className="text-white">Golden Phoenix Chick</strong> makes the most money in Grow a Garden — its 5.0× multiplier plus auto-collect passive produces over 14,000 coins per harvest on the best crop with the best mutation. For budget players, B-Tier pets from Rare Eggs (2.0×–3.5×) double or triple income instantly at a fraction of the Legendary Egg cost. Pet multipliers stack multiplicatively with mutations, so always pair your strongest pet with your highest-tier mutation.
+        </p>
+      </section>
+
       {/* Opening hook — replaces templated intro */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

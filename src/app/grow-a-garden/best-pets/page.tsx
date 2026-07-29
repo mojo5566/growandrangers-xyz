@@ -21,7 +21,17 @@ const tierBadge: Record<string, string> = {
 
 export default function BestPetsPage() {
   return (
-    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/best-pets" accent="garden" updatedAt={data.updatedAt}>
+    <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden/best-pets" accent="garden" updatedAt={data.updatedAt} articleSection="Pets" keywords={["Grow a Garden best pets", "best pets Grow a Garden", "Grow a Garden pet guide", "pet hatching guide", "pet egg strategy"]} about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}>
+
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best pet is Golden Phoenix Chick at 5.0× multiplier, hatched from Legendary Eggs (10,000 coins, ~5% drop rate) — it pairs with Aurelian Crown (4.0×) for a 20.0× maximum yield. Close alternatives are Golden Dragon (4.8×) and Crystal Unicorn Foal (4.5×). For mid-game, target A-Tier pets like Neon Dragon Hatchling (3.5×) from Rare Eggs, and always use Pet Growth Potions before hatching eggs over 2,000 coins.
+        </p>
+      </section>
 
       {/* Last Updated */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">

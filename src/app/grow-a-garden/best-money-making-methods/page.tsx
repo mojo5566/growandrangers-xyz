@@ -135,27 +135,27 @@ const faqs = [
   {
     question: "Which money making method is best for beginners?",
     answer:
-      "Crop farming is the foundation — start there. Add a Basic Egg pet (500 coins) within the first 30 minutes, then apply your first mutation (even C-Tier) once the Mutation Station unlocks. Save Trade Hub engagement for after you understand item values — usually 5+ hours of progression.",
+      "Crop farming is the foundation — start there with Wheat or Basic Potato to build capital. Add a Basic Egg pet (500 coins) within the first 30 minutes for a permanent multiplier, then apply your first mutation (even C-Tier at 1.2×) once the Mutation Station unlocks at 1,500 coins. Save Trade Hub engagement for after you understand item values — usually 5+ hours of progression, since new players routinely get scammed into trading S-Tier items for C-Tier cosmetics.",
   },
   {
     question: "How much can I make per hour with each method?",
     answer:
-      "Per-hour ceilings (with optimal gear): Farming alone — 10-100K. + Mutations — 50-200K. + Pet multipliers — 100-300K. + Trading on top — 200K-1M+. The multipliers compound, so adding each layer multiplies your total income rather than adding to it.",
+      "Per-hour ceilings with optimal gear stack like this: Farming alone produces 10-100K coins/hour. Adding mutations raises it to 50-200K. Adding pet multipliers on top reaches 100-300K. Layering Trade Hub flipping pushes total income to 200K-1M+ coins/hour. The multipliers compound, so adding each layer multiplies your total income rather than simply adding to it — that's why the optimal strategy stacks all four methods.",
   },
   {
     question: "Is trading worth the risk?",
     answer:
-      "Yes, if you have 50K+ coins to invest and have studied the Trading Database. S-Tier items often command 5-10× premium over their base value, and rising-trend items gain value while held. New players should avoid trading until they can confidently identify underpriced items — usually after 5+ hours of progression.",
+      "Yes, if you have 50K+ coins to invest and have studied the Trading Database first. S-Tier items often command a 5-10× premium over their base value, and rising-trend items gain value while held — making them strong hold-and-flip candidates. New players should avoid trading until they can confidently identify underpriced items, usually after 5+ hours of progression and familiarity with the Trading Values database.",
   },
   {
     question: "Should I prioritize mutations or pets first?",
     answer:
-      "Get one pet online first (500-coin Basic Egg), then save shards for mutations. Reason: a pet multiplier applies to your entire farm permanently, while a mutation only boosts one plot. Once you have 2-3 pets, then funnel shards into mutations on your main plot.",
+      "Get one pet online first (500-coin Basic Egg), then save shards for mutations. The reason is simple: a pet multiplier applies to your entire farm permanently and stacks with every harvest, while a mutation only boosts one plot. Once you have 2-3 pets equippable, funnel shards into mutations on your main plot — apply the first B-Tier (2.0×) roll to your highest-CPM crop for an instant income doubling.",
   },
   {
     question: "How do I scale past 100K coins per hour?",
     answer:
-      "Three steps: (1) Get 4 plots running Golden Wheat or better. (2) Apply B-Tier or higher mutations to all 4 plots. (3) Hatch a 3.0× or better pet. At that point your base income is 100-200K/hour. Adding Trade Hub flipping on top pushes past 500K/hour during active play.",
+      "Three steps: (1) Get 4 plots running Golden Wheat or better, synchronized for batch harvesting. (2) Apply B-Tier or higher mutations to all 4 plots for a 2.0× multiplier on each. (3) Hatch a 3.0× or better pet to multiply every harvest permanently. At that point your base income is 100-200K/hour. Adding Trade Hub flipping on top pushes past 500K/hour during active play.",
   },
 ];
 
@@ -172,7 +172,31 @@ export default function BestMoneyMakingMethodsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-money-making-methods"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Money Making"
+      keywords={[
+        "best money making Grow a Garden",
+        "Grow a Garden money methods compared",
+        "Grow a Garden farming vs trading",
+        "Grow a Garden mutations vs pets",
+        "Grow a Garden coins per hour",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          There is no single best method — the optimal strategy stacks all four: crop farming
+          (10-100K/hour), mutation farming (50K-1M/hour), pet multipliers (20-200K/hour), and Trade
+          Hub flipping (50-500K+/hour). A 4-plot farm running Golden Wheat with B-Tier mutations and
+          a mid-tier pet reliably produces 100-200K coins per hour. Add Trade Hub flipping once you
+          have 50K+ coins bankrolled, and your income can push past 500K per hour during active
+          play.
+        </p>
+      </section>
+
       {/* Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

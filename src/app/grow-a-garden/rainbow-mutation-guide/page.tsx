@@ -74,12 +74,12 @@ const faqs = [
   {
     question: "Should I overwrite a lower mutation with Prismatic Rainbow?",
     answer:
-      "Always yes. Prismatic Rainbow at 6.0× is strictly better than every other mutation in the game. If you roll it, apply it to your highest-value crop plot immediately. There is no scenario where keeping a lower-tier mutation over Prismatic Rainbow is correct.",
+      "Always yes. Prismatic Rainbow at 6.0× is strictly better than every other mutation in the game — the next-strongest is Midas Bloom at 5.0×. If you roll it, apply it to your highest-value crop plot immediately and move your best pet there to stack the multiplier. There is no scenario where keeping a lower-tier mutation over Prismatic Rainbow is correct, even if that mutation has a useful passive.",
   },
   {
     question: "Can I trade for a Prismatic Rainbow mutation?",
     answer:
-      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. You can trade with other players for shards and then bulk-roll during a boosted event to maximize your Prismatic Rainbow odds. Check our Trading Database for current shard values.",
+      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. You can trade with other players for shards and then bulk-roll 10 at once during a boosted event to maximize your Prismatic Rainbow odds — single-rolling gives only ~0.4% per shard, the worst value in the game. Check our Trading Database for current shard values before making any trade.",
   },
   {
     question: "Does Prismatic Rainbow stack with pet multipliers?",
@@ -101,7 +101,26 @@ export default function RainbowMutationGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/rainbow-mutation-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={[
+        "Prismatic Rainbow mutation Grow a Garden",
+        "rainbow mutation guide Grow a Garden",
+        "Grow a Garden 6.0x mutation",
+        "best mutation Grow a Garden",
+        "how to get rainbow mutation",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          To get the Prismatic Rainbow (rainbow) mutation in Grow a Garden, roll Mutation Shards at the Mutation Station during a boosted event. A single roll has roughly a 0.4–1.2% chance, but bulk-rolling 10 shards during a 2× boosted event raises your odds to ~7.3% (and ~11% during a 3× event). The mutation applies a 6.0× harvest multiplier — pair it with your highest-base-coin crop and best pet for a 30× effective multiplier.
+        </p>
+      </section>
+
       {/* Opening — concrete probability number rather than templated intro */}
       <section className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Do pet multipliers stack with each other?",
     answer:
-      "No, only one pet multiplier applies at a time — the highest equipped pet's multiplier. However, pet multipliers DO stack multiplicatively with mutation multipliers. So a 2.5× pet on a 4.0× mutation plot yields 10× total value per harvest.",
+      "No, only one pet multiplier applies at a time — the highest equipped pet's multiplier is what counts. However, pet multipliers DO stack multiplicatively with mutation multipliers, which is the key mechanic for endgame income. A 2.5× B-Tier pet on a 4.0× Aurelian Crown mutation plot yields 10× total value per harvest, and stacking both systems is more impactful than chasing a single high-tier pet. See our Pet Guide for the full breakdown.",
   },
   {
     question: "What abilities do starter pets have?",
@@ -99,7 +99,36 @@ export default function BestStarterPetsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-starter-pets"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best starter pets Grow a Garden",
+        "Grow a Garden beginner pets",
+        "Grow a Garden first pet",
+        "Grow a Garden Basic Egg pets",
+        "Grow a Garden early game pets",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section
+        aria-labelledby="quick-answer-heading"
+        className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5"
+      >
+        <h2
+          id="quick-answer-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3"
+        >
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best starter pets come from 500-coin Basic Eggs: target the highest-multiplier C-Tier
+          (1.5×-2.0×) or B-Tier (2.0×-2.5×) drops like Bamboo Panda Cub or Ember Fox Kit. Even the
+          worst C-Tier pet pays for itself in 5-6 harvest cycles. Hatch 2-3 Basic Eggs within your
+          first 30 minutes, then switch to 2,000-coin Rare Eggs once you have 4 plots running with
+          B-Tier mutations.
+        </p>
+      </section>
+
       {/* Hero */}
       <section className="rounded-xl border border-[#3A86FF]/30 bg-[#3A86FF]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

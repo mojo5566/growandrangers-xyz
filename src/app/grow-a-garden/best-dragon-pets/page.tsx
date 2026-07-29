@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "Should I keep duplicate dragon pets?",
     answer:
-      "Keep one dragon pet for active farming and trade any duplicates. Duplicate Legendary-tier dragons hold significant trade value and are excellent currency for acquiring S-Tier mutations or event-exclusive items you may have missed.",
+      "Keep one dragon pet for active farming and trade any duplicates. Duplicate Legendary-tier dragons hold significant trade value — a second Golden Dragon trades for roughly 2.8M Sheckles, enough to acquire S-Tier mutation shards or event-exclusive items you may have missed. Running two identical dragons on separate plots does not stack their multipliers, so the duplicate generates zero extra income while held. List it in the Trading Database once you have a stable A-Tier backup pet on your secondary plot.",
   },
 ];
 
@@ -111,7 +111,26 @@ export default function BestDragonPetsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-dragon-pets"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "best dragon pet Grow a Garden",
+        "Grow a Garden Golden Dragon",
+        "Grow a Garden Neon Dragon Hatchling",
+        "Grow a Garden Baby Dragon",
+        "dragon pet tier list Grow a Garden",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best dragon pet in Grow a Garden is the <strong className="text-white">Golden Dragon</strong> at 4.8× multiplier from Legendary Eggs, followed by the <strong className="text-white">Neon Dragon Hatchling</strong> at 4.2× from Rare Eggs. Players earning under 50,000 coins per hour should target the Neon Dragon Hatchling — Rare Eggs cost 2,000 coins versus 10,000 for Legendary, making it 5× cheaper per attempt. Bulk-hatch 30 Legendary Eggs during a boosted event for a realistic shot at the Golden Dragon.
+        </p>
+      </section>
+
       {/* Opening — concrete failure case rather than generic intro */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

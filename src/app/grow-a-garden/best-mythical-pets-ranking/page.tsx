@@ -99,7 +99,26 @@ export default function BestMythicalPetsRankingPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-mythical-pets-ranking"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Pets"
+      keywords={[
+        "mythical pets tier list Grow a Garden",
+        "Grow a Garden mythical pet ranking",
+        "S-tier pet tier list Grow a Garden",
+        "legendary pet comparison Grow a Garden",
+        "mythical pet multiplier ranking",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Mythical (S-Tier) pets in Grow a Garden rank by multiplier as follows: the <strong className="text-white">Golden Phoenix Chick</strong> leads at 5.0× with an auto-collect passive, the <strong className="text-white">Golden Dragon</strong> sits at 4.8× with gold-crop synergy, and the <strong className="text-white">Crystal Unicorn Foal</strong> reaches 4.5× with a double-harvest proc. Expect to spend roughly 300,000 coins on 30 Legendary Eggs for one mythical hatch, and trade duplicates for the specific S-Tier you want rather than re-rolling.
+        </p>
+      </section>
+
       {/* Opening — concrete number rather than templated intro */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

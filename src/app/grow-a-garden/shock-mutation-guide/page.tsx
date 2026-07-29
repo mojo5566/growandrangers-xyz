@@ -87,12 +87,12 @@ const faqs = [
   {
     question: "Do shock mutations stack with pet multipliers?",
     answer:
-      "Yes. All mutation multipliers stack multiplicatively with pet multipliers, including shock mutations. A 2.0× shock mutation paired with a 3.5× pet produces a 7.0× effective multiplier — competitive with an unboosted A-Tier mutation plot.",
+      "Yes. All mutation multipliers stack multiplicatively with pet multipliers, including shock mutations. A 2.0× shock mutation paired with a 3.5× pet produces a 7.0× effective multiplier — competitive with an unboosted A-Tier mutation plot. This is why a mid-tier shock mutation on your best-pet plot can outearn a stronger mutation sitting on a plot with no pet assigned. Always pair your strongest pet with whichever plot holds your highest-multiplier mutation.",
   },
   {
     question: "Where can I see all shock mutations in the database?",
     answer:
-      "Browse the complete Mutations Database at /grow-a-garden/mutations for every mutation in the game, including all shock-themed bloom mutations with their multipliers, tiers, and descriptions.",
+      "Browse the complete Mutations Database at /grow-a-garden/mutations for every mutation in the game, including all shock-themed bloom mutations with their multipliers, tiers, conditional bonuses, and descriptions. Each entry also links to a dedicated detail page with profit examples on every top crop, so you can compare which shock mutation belongs on which plot before you spend shards at the Mutation Station.",
   },
 ];
 
@@ -109,7 +109,26 @@ export default function ShockMutationGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/shock-mutation-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={[
+        "shock mutation Grow a Garden",
+        "Frozen Bloom mutation",
+        "Wet Bloom mutation",
+        "Glowing Bloom mutation",
+        "Toxic Bloom mutation",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Shock mutations in Grow a Garden are the weather- and element-themed bloom rolls — Frozen Bloom, Wet Bloom, Glowing Bloom, Toxic Bloom, Giant Bloom, and Rotten Bloom — that you land at the Mutation Station while chasing S-Tier mutations. They are common early-game rolls (~30% combined per single roll) and serve as bridge income on secondary plots. Frozen Bloom is the strongest at 3.2× (peaking higher in Winter), while Rotten Bloom (below 1.0×) should be overwritten immediately.
+        </p>
+      </section>
+
       {/* Opening — reframed as filler-mutation strategy, not a generic intro */}
       <section className="rounded-xl border border-[#3A86FF]/30 bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

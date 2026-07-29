@@ -67,7 +67,30 @@ export default function BeginnerGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/beginner-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Beginner Guide"
+      keywords={[
+        "Grow a Garden beginner guide",
+        "how to start Grow a Garden",
+        "Grow a Garden tutorial",
+        "Grow a Garden farming guide",
+        "Grow a Garden progression",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Grow a Garden is a Roblox farming simulator where you plant crops, harvest them for coins,
+          and stack multipliers through mutations and pets. You can earn your first 1,000 coins in
+          under 15 minutes with Wheat and Carrot Seeds, unlock the Mutation Station at 1,500 coins,
+          and hatch a 500-coin Basic Egg for a permanent passive multiplier. The core rule: reinvest
+          every coin into plot expansion (up to 4 plots) before cosmetics or premium eggs.
+        </p>
+      </section>
+
       {/* Last Updated */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">
         <div className="flex items-center gap-2">

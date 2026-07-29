@@ -23,7 +23,7 @@ const path = require("path");
 // ============================================================
 
 const BASE_URL = "https://growandrangers.xyz";
-const INDEXNOW_KEY = "a1b2c3d4e5f60718293a4b5c6d7e8f90";
+const INDEXNOW_KEY = "a7d8af18bc874bada160af81f32b830f";
 const INDEXNOW_KEY_LOCATION = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
 const INDEXNOW_ENDPOINT = "api.indexnow.org";
 const INDEXNOW_PATH = "/IndexNow";

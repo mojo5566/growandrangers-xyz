@@ -18,19 +18,27 @@ const beginnerFarming: GuidePageData & {
   faq: [
     {
       question: "What's the first thing I should do in Grow a Garden?",
-      answer: "Start with Wild Grass (free starter seed), harvest it a few times to earn your first coins, then immediately buy Basic Potato seeds. Once you have 500 Coins, buy a Basic Egg for your first pet. The goal is to reach Golden Wheat seeds as quickly as possible.",
+      answer: "Start with Wild Grass (free starter seed), harvest it a few times to earn your first 100-200 coins, then immediately buy Basic Potato seeds. Once you have 500 Coins, buy a Basic Egg from the Pet Shop for your first pet multiplier. The goal is to reach Golden Wheat seeds (2,000 Coins) as quickly as possible — that's the crop that carries you into mid-game.",
     },
     {
       question: "How do I get Golden Wheat seeds?",
-      answer: "Golden Wheat seeds are purchased from the Seed Shop for 2,000 Coins. It's the best investment in the game — Golden Wheat pays for itself in just 5 harvests and then generates pure profit forever.",
+      answer: "Golden Wheat seeds are purchased from the Seed Shop for 2,000 Coins. It's the best investment in the game — at 160 CPM with all-season availability, Golden Wheat pays for itself in just 5 harvests and then generates pure profit forever. You never need to rotate it out, which makes it the ideal main-plot crop.",
     },
     {
       question: "How do I get my first mutation?",
-      answer: "Mutations are rolled using Mutation Shards in the Gene Lab. You earn Mutation Shards from daily quests, harvesting crops, and promo codes. Roll as soon as you have enough shards — even a C-Tier mutation is better than no mutation.",
+      answer: "Mutations are rolled using Mutation Shards in the Gene Lab. You earn Mutation Shards from daily quests (3-5 per day), harvesting crops, and promo codes (10-20 per drop). Roll as soon as you have enough shards — even a C-Tier mutation like Verdant Runner (1.2×) is a 20% income boost on that plot. For serious rolling, save 50+ shards and bulk-roll during boosted events.",
     },
     {
       question: "What should I spend my first Coins on?",
-      answer: "Priority order: (1) Better seeds (Basic Potato → Lucky Carrot → Golden Wheat), (2) Basic Egg for first pet, (3) Rare Egg for better pet odds, (4) Mutation Shards for Gene Lab, (5) Save for Legendary Egg (10,000 Coins).",
+      answer: "Priority order: (1) Better seeds (Basic Potato → Lucky Carrot → Golden Wheat) for higher CPM, (2) Basic Egg for your first pet multiplier, (3) plot expansion to 3-4 plots, (4) Mutation Shards for the Gene Lab, (5) Save for a Rare Egg (2,000 Coins). Avoid Legendary Eggs (10,000 Coins) until endgame when coins are abundant.",
+    },
+    {
+      question: "How many plots should a beginner have?",
+      answer: "Aim for 3-4 plots as a beginner. Three plots let you run one main Golden Wheat plot plus two seasonal rotation plots, while four plots quadruple your income compared to a single starter plot. Each plot costs progressively more (400 → 800 → 1,200 Coins), so expand one at a time and make sure each plot is fully set up with a seed and mutation before buying the next.",
+    },
+    {
+      question: "What's the fastest way to earn my first 2,000 Coins?",
+      answer: "Plant Basic Potato seeds (100 Coins per seed, 30-second growth, 100 Coins per harvest) for a sustained 200 CPM. Harvest consistently for about 10 minutes to bank 2,000 Coins, then immediately buy Golden Wheat seeds. Skip Wild Grass after the first few harvests — its 15-second cycle looks fast but burns you out with constant clicking for the same 200 CPM result.",
     },
   ],
   relatedGuides: [

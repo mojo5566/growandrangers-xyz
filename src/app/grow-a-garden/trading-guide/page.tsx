@@ -79,7 +79,7 @@ const faqs = [
   {
     question: "How does trading work in Grow a Garden?",
     answer:
-      "Visit the Trade Hub to engage in player-to-player trades. Both players offer items, and the trade executes when both confirm. There's no central auction house — every trade is a negotiated exchange. Use the Trading Database to check item values before confirming any trade to avoid getting scammed.",
+      "Visit the Trade Hub to engage in player-to-player trades. Both players offer items, and the trade executes when both confirm. There's no central auction house — every trade is a negotiated exchange. Tradeable items include pets, seeds, crops, mutations, and select consumables, but coins cannot be traded directly. Use the Trading Database to check item values, rarity, demand, and trend before confirming any trade to avoid getting scammed, since confirmed trades are final with no refunds.",
   },
   {
     question: "How do I evaluate if a trade is fair?",
@@ -121,7 +121,20 @@ export default function TradingGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/trading-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Trading"
+      keywords={["Grow a Garden trading guide", "Grow a Garden how to trade", "Grow a Garden trade value", "Grow a Garden demand trend", "Grow a Garden trade mistakes"]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Trading happens at the Trade Hub through player-to-player negotiation — there is no central auction house. Both players place items in the trade window and must confirm, with a 5-second cooldown after any change to block last-minute swap scams. Tradeable items include pets, seeds, crops, and mutations, but coins cannot be traded directly. Always check the Trading Database for value, rarity, demand, and trend before confirming, since trades are final with no refunds.
+        </p>
+      </section>
+
       {/* Hero */}
       <section className="rounded-xl border border-[#FFD700]/30 bg-[#FFD700]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

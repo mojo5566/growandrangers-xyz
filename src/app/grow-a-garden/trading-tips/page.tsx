@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "Where can I check current trade values?",
     answer:
-      "Check our Trading Database at /grow-a-garden/trading for current verified values of every tradeable item. Values are reviewed weekly and updated to reflect market conditions. Always cross-reference both items in the database before confirming any trade.",
+      "Check our Trading Database at /grow-a-garden/trading for current verified values of every tradeable item. Values are reviewed weekly and updated to reflect market conditions after each major patch. Always cross-reference both items in the database before confirming any trade, and re-check the trend column — a Rising item is worth more than its listed price today, while a Falling item is worth less. For high-value trades, take a screenshot of the database entry so you have proof of the agreed value.",
   },
 ];
 
@@ -82,7 +82,20 @@ export default function TradingTipsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/trading-tips"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Trading"
+      keywords={["Grow a Garden trading tips", "Grow a Garden trading strategy", "Grow a Garden scam prevention", "Grow a Garden fair trade", "Grow a Garden trading guide"]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Always verify both items in the Trading Database before confirming — a Golden Phoenix Chick (5,000,000 coins) traded for a Dust Bunny plus 50,000 coins is a 4,949,500-coin loss that happens daily. A trade is fair when the value gap stays under 15%. Walk away from time-pressure offers, re-check items after any trade-window reopen, and hold Rising-trend items rather than flipping them early.
+        </p>
+      </section>
+
       {/* Opening — concrete loss number rather than generic intro */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

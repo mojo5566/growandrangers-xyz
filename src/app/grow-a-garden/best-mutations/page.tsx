@@ -116,7 +116,20 @@ export default function BestMutationsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-mutations"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={["best mutations Grow a Garden", "Grow a Garden mutation ranking", "Aurelian Crown multiplier", "Prismatic Rainbow mutation", "Grow a Garden mutation combinations"]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          Prismatic Rainbow is the highest-multiplier mutation at 6.0x, followed by Midas Bloom at 5.0x and Aurelian Crown at 4.0x. Aurelian Crown is considered the best overall because its connected-plot passive quadruples harvesting speed on large farms. Mutations stack multiplicatively with pets — Aurelian Crown plus a Golden Phoenix Chick (5.0x) reaches 20.0x total yield, while the theoretical max is 30.0x. S-Tier mutations roll at roughly 1.2-1.4% from standard shards, so Premium Event Seeds speed up acquisition.
+        </p>
+      </section>
+
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">

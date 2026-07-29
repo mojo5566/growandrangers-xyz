@@ -85,17 +85,17 @@ const faqs = [
   {
     question: "What is the best crop for mutation stacking?",
     answer:
-      "The best crop is the one with the highest base coin value, because mutation and pet multipliers amplify the base. Check our Crops Database for the current highest-value crop. Always apply your strongest mutation to your highest-base-coin plot for maximum profit.",
+      "The best crop is the one with the highest base coin value, because mutation and pet multipliers amplify the base rather than add to it. A 6.0× mutation on a 60-coin Carrot yields 360 coins, but the same mutation on a 480-coin crop yields 2,880 coins — an 8× difference. Check our Crops Database for the current highest-value crop, and always apply your strongest mutation to your highest-base-coin plot for maximum profit.",
   },
   {
     question: "Can I have multiple mutations on the same plot?",
     answer:
-      "No. Each plot can only have one mutation at a time. Applying a new mutation overwrites the previous one with no refund. This is why you should never apply a lower-tier mutation to a plot that already has a higher-tier mutation.",
+      "No. Each plot can only have one mutation at a time. Applying a new mutation overwrites the previous one with no refund, so the destroyed mutation is gone permanently. This is why you should never apply a lower-tier mutation to a plot that already has a higher-tier mutation — the loss is irreversible, even if the new mutation has a tempting passive.",
   },
   {
     question: "How do I calculate my farm's total income?",
     answer:
-      "Use our Value Calculator at /grow-a-garden/value-calculator to estimate your farm's coins-per-harvest. Enter your crop, mutation, and pet to get the exact total. For a full farm overview, sum the per-plot values across all your active plots.",
+      "Use our Value Calculator at /grow-a-garden/value-calculator to estimate your farm's coins-per-harvest. Enter your crop, mutation, and pet to get the exact total for a single plot. For a full farm overview, sum the per-plot values across all your active plots — this lets you spot which plot is underperforming and whether a mutation or pet should be moved to a higher-base-coin crop.",
   },
 ];
 
@@ -112,7 +112,26 @@ export default function BestMutationCombinationsPage() {
       accent="garden"
       canonicalPath="/grow-a-garden/best-mutation-combinations"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={[
+        "best mutation combinations Grow a Garden",
+        "Grow a Garden mutation stacking",
+        "Grow a Garden crop mutation pet combo",
+        "highest profit mutation Grow a Garden",
+        "Grow a Garden best mutation crop pair",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The best mutation combination in Grow a Garden is Prismatic Rainbow (6.0×) on your highest-base-coin crop paired with the Golden Phoenix Chick (5.0×) pet, producing a 30× effective multiplier — 14,400 coins per harvest on a 480-coin crop. Multipliers stack multiplicatively (crop base × mutation × pet), and because each plot holds only one mutation and one pet, the optimal farm layout spreads your strongest mutations and pets across your highest-base-coin crops rather than concentrating them.
+        </p>
+      </section>
+
       {/* Opening — reframed as a layout problem, not a ranking problem */}
       <section className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">

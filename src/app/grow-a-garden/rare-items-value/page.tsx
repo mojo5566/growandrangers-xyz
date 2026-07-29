@@ -95,7 +95,7 @@ const faqs = [
   {
     question: "Where can I see all tradeable items in Grow a Garden?",
     answer:
-      "Browse the complete Trading Database at /grow-a-garden/trading for every tradeable item with verified values, demand levels, and trend indicators. The database covers pets, seeds, crops, and mutations.",
+      "Browse the complete Trading Database at /grow-a-garden/trading for every tradeable item with verified values, demand levels, and trend indicators. The database covers pets, seeds, crops, and mutations across all rarity tiers from Common to Mythical. Each item page shows its current trade value, demand rating, and price trend so you can evaluate offers on the spot. Values are reviewed weekly and adjusted after every major game update.",
   },
 ];
 
@@ -112,7 +112,20 @@ export default function RareItemsValuePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/rare-items-value"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Trading"
+      keywords={["rare items value Grow a Garden", "Grow a Garden item value guide", "Grow a Garden trade values", "rarest items Grow a Garden", "Grow a Garden price guide"]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The Golden Phoenix Chick and Golden Dragon top the rare-items value list, both classified as Mythical with High demand and multi-million-coin trade values. The Golden Phoenix Chick alone sits near 5,000,000 coins and is currently Rising. Use the Hold vs Sell decision tree — Rising items should be held, Falling items sold within 7 days. All 20 top items are ranked with live trend data from the Trading Database.
+        </p>
+      </section>
+
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
           The single hardest decision in the rare-items market is not{" "}

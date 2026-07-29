@@ -16,6 +16,9 @@ interface ContentLayoutProps {
   updatedAt?: string;
   publishedAt?: string;
   imageUrl?: string;
+  articleSection?: string;
+  keywords?: string[];
+  about?: { name: string }[];
   itemList?: { name: string; position: number; url: string }[];
   children: ReactNode;
 }
@@ -47,6 +50,9 @@ function ArticleJsonLd({
   updatedAt,
   publishedAt,
   imageUrl,
+  articleSection,
+  keywords,
+  about,
 }: {
   title: string;
   description: string;
@@ -54,6 +60,9 @@ function ArticleJsonLd({
   updatedAt?: string;
   publishedAt?: string;
   imageUrl?: string;
+  articleSection?: string;
+  keywords?: string[];
+  about?: { name: string }[];
 }) {
   const dateModified = updatedAt
     ? new Date(updatedAt).toISOString().split("T")[0]
@@ -67,7 +76,7 @@ function ArticleJsonLd({
   const resolvedImageUrl = imageUrl
     ? (imageUrl.startsWith("http") ? imageUrl : `https://growandrangers.xyz${imageUrl}`)
     : fallbackImageUrl;
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
@@ -80,10 +89,10 @@ function ArticleJsonLd({
       width: 1200,
       height: 675,
     },
-    author: { "@type": "Organization", name: "BloxPulse" },
+    author: { "@type": "Organization", name: "GrowAndRangers Team" },
     publisher: {
       "@type": "Organization",
-      name: "BloxPulse",
+      name: "GrowAndRangers",
       logo: {
         "@type": "ImageObject",
         url: `https://growandrangers.xyz/og-image.png`,
@@ -94,6 +103,13 @@ function ArticleJsonLd({
       "@id": `https://growandrangers.xyz${canonicalPath}`,
     },
   };
+  // GEO enhancements — only include fields when provided so empty values
+  // don't pollute the schema for database/list pages.
+  if (articleSection) schema.articleSection = articleSection;
+  if (keywords && keywords.length > 0) schema.keywords = keywords.join(", ");
+  if (about && about.length > 0) {
+    schema.about = about.map((a) => ({ "@type": "Thing", name: a.name }));
+  }
 
   return (
     <script
@@ -132,6 +148,9 @@ export default function ContentLayout({
   updatedAt,
   publishedAt,
   imageUrl,
+  articleSection,
+  keywords,
+  about,
   itemList,
   children,
 }: ContentLayoutProps) {
@@ -149,6 +168,9 @@ export default function ContentLayout({
         updatedAt={updatedAt}
         publishedAt={publishedAt}
         imageUrl={imageUrl}
+        articleSection={articleSection}
+        keywords={keywords}
+        about={about}
       />
       {itemList && <ItemListSchema items={itemList} />}
 
@@ -191,10 +213,16 @@ export default function ContentLayout({
       {/* Content */}
       <div className="space-y-8">{children}</div>
 
-      {/* Updated date */}
+      {/* Author & trust signals */}
       <footer className="mt-12 border-t border-[#252936] pt-6">
-        <p className="text-xs text-[#768294]">
-          Last updated: {displayDate} • Content verified by the BloxPulse editorial team
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#768294]">
+          <span>
+            Written by: <strong className="text-[#BAC4D1]">GrowAndRangers Team</strong>
+          </span>
+          <span>Updated: <strong className="text-[#BAC4D1]">{displayDate}</strong></span>
+        </div>
+        <p className="text-xs text-[#768294] mt-2">
+          Content verified by the GrowAndRangers editorial team • Data sourced from canonical game databases
         </p>
       </footer>
     </article>

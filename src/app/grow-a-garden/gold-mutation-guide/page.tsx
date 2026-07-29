@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "Is Midas Bloom worth keeping?",
     answer:
-      "Absolutely. Midas Bloom at 5.0× is a top-tier mutation that should be kept and applied to your highest-value crop plot. The only mutation worth replacing it with is Prismatic Rainbow (6.0×). Never overwrite Midas Bloom with a lower-tier mutation.",
+      "Absolutely. Midas Bloom at 5.0× is a top-tier mutation that should be kept and applied to your highest-value crop plot. The only mutation worth replacing it with is Prismatic Rainbow (6.0×), which is ~17% stronger but far rarer. Never overwrite Midas Bloom with a lower-tier mutation — mutations do not refund, so overwriting a 5.0× with a 4.0× Aurelian Crown permanently destroys a top-tier roll.",
   },
   {
     question: "How much profit does Midas Bloom generate?",
@@ -65,12 +65,12 @@ const faqs = [
   {
     question: "Can I trade for Midas Bloom?",
     answer:
-      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. Trade with other players for shards and bulk-roll during boosted events to maximize your Midas Bloom odds. Check our Trading Database for current shard values.",
+      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. Trade with other players for shards and bulk-roll 10 at once during a 2× or 3× boosted event to maximize your Midas Bloom odds — single-rolling gives only ~0.8% per shard. Check our Trading Database for current shard values before trading, and prioritize saving shards for the next boosted event window.",
   },
   {
     question: "Should I apply Midas Bloom immediately or save it?",
     answer:
-      "Apply Midas Bloom immediately to your highest-value crop plot. There is no benefit to holding an unused mutation — it generates no income while sitting in your inventory. The only reason to delay is if you are waiting to unlock a higher-base-coin crop to apply it to.",
+      "Apply Midas Bloom immediately to your highest-value crop plot. There is no benefit to holding an unused mutation — it generates no income while sitting in your inventory. The only reason to delay is if you are waiting to unlock a higher-base-coin crop to apply it to, but even then, apply it to your current best plot and move it later. Once applied, pair the plot with your strongest pet to maximize the effective multiplier.",
   },
 ];
 
@@ -87,7 +87,26 @@ export default function GoldMutationGuidePage() {
       accent="garden"
       canonicalPath="/grow-a-garden/gold-mutation-guide"
       updatedAt={CONTENT_UPDATED_AT}
+      articleSection="Mutations"
+      keywords={[
+        "Midas Bloom mutation Grow a Garden",
+        "gold mutation guide Grow a Garden",
+        "Grow a Garden 5.0x mutation",
+        "Midas Bloom profit",
+        "how to get gold mutation",
+      ]}
+      about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
+      {/* Quick Answer - AI search summary */}
+      <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Quick Answer
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed">
+          The gold mutation in Grow a Garden is officially named Midas Bloom, and it provides a 5.0× harvest multiplier with a ~0.8% roll rate at the Mutation Station — roughly 4× more common than Prismatic Rainbow. To get it, bulk-roll 10 Mutation Shards during a 2× boosted event for ~6% odds per batch. Apply Midas Bloom immediately to your highest-base-coin crop; on a 480-coin crop it produces 2,400 coins per harvest, and it stacks multiplicatively with pet multipliers.
+        </p>
+      </section>
+
       {/* Opening — reframed as a stop/chase decision, not a generic intro */}
       <section className="rounded-xl border border-[#FFD700]/30 bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
