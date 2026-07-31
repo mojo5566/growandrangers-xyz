@@ -137,6 +137,7 @@ const data: EvolutionPageData = {
   ],
 
   relatedGuides: [
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Prioritize and budget Trait Rerolls for top units" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Every unit ranked from S-Tier to C-Tier with stats" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Full evolution costs, materials, and priority order" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits for every unit and role" },

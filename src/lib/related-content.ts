@@ -101,6 +101,7 @@ const rangersLinks: Record<string, LinkEntry[]> = {
   units: [
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Full tier rankings with detailed analysis", category: "guide" },
     { label: "Best Units", href: "/anime-rangers-x/best-units", description: "Top picks for every game mode", category: "guide" },
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Choose which units deserve Trait Rerolls", category: "guide" },
     { label: "All Units Database", href: "/anime-rangers-x/units", description: "Browse every unit in the Anime Rangers X database", category: "database" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits to pair with your units", category: "guide" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "How to evolve and awaken your units", category: "guide" },
@@ -108,6 +109,7 @@ const rangersLinks: Record<string, LinkEntry[]> = {
   ],
   traits: [
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Full trait rankings with detailed analysis", category: "guide" },
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Know when to keep a trait or reroll it", category: "guide" },
     { label: "All Traits Database", href: "/anime-rangers-x/traits", description: "Browse every trait in the Anime Rangers X database", category: "database" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units benefit most from each trait", category: "guide" },
     { label: "Best Units", href: "/anime-rangers-x/best-units", description: "Top-performing units and their ideal traits", category: "guide" },
@@ -116,6 +118,7 @@ const rangersLinks: Record<string, LinkEntry[]> = {
   ],
   guide: [
     { label: "Active Codes", href: "/anime-rangers-x/codes", description: "All working promo codes — updated daily", category: "guide" },
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Use Trait Rerolls efficiently at every stage", category: "guide" },
     { label: "Beginner Guide", href: "/anime-rangers-x/beginner-guide", description: "Everything new players need to know", category: "guide" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Every unit ranked by power and utility", category: "guide" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "All traits ranked by modifier strength", category: "guide" },

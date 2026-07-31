@@ -22,11 +22,12 @@ import rangersTierList from "@/data/rangers/tier-list";
 import rangersUnitTierList from "@/data/rangers/unit-tier-list";
 import rangersTraitTierList from "@/data/rangers/trait-tier-list";
 import rangersBestUnits from "@/data/rangers/best-units";
+import rangersTraitReroll from "@/data/rangers/trait-reroll";
 import garden2Codes from "@/data/garden2/codes";
 import garden2BeginnerGuide from "@/data/garden2/beginner-guide";
 import garden2GuildGuide from "@/data/garden2/guild-guide";
 import garden2NightStealingGuide from "@/data/garden2/night-stealing-guide";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
+import { CONTENT_UPDATED_AT, normalizeContentDate } from "@/lib/content-dates";
 
 const BASE_URL = "https://growandrangers.xyz";
 
@@ -112,6 +113,7 @@ const staticPages = [
   { path: "/anime-rangers-x/tier-list", priority: 0.8, changefreq: "weekly" as const, lastModified: rangersTierList.updatedAt },
   { path: "/anime-rangers-x/unit-tier-list", priority: 0.8, changefreq: "weekly" as const, lastModified: rangersUnitTierList.updatedAt },
   { path: "/anime-rangers-x/trait-tier-list", priority: 0.8, changefreq: "weekly" as const, lastModified: rangersTraitTierList.updatedAt },
+  { path: "/anime-rangers-x/trait-reroll", priority: 0.8, changefreq: "weekly" as const, lastModified: rangersTraitReroll.updatedAt },
   { path: "/anime-rangers-x/evolution-guide", priority: 0.8, changefreq: "weekly" as const, lastModified: rangersEvolutionGuide.updatedAt },
   { path: "/anime-rangers-x/units", priority: 0.8, changefreq: "weekly" as const, lastModified: DB_UPDATED },
   { path: "/anime-rangers-x/traits", priority: 0.8, changefreq: "weekly" as const, lastModified: DB_UPDATED },
@@ -192,7 +194,7 @@ const allPages = [...staticPages, ...dynamicGarden, ...dynamicRangers];
 export default function sitemap(): MetadataRoute.Sitemap {
   return allPages.map((page) => ({
     url: `${BASE_URL}${page.path}`,
-    lastModified: new Date(page.lastModified).toISOString().split("T")[0],
+    lastModified: normalizeContentDate(page.lastModified),
     changeFrequency: page.changefreq,
     priority: page.priority,
   }));

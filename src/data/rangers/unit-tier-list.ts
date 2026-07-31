@@ -79,6 +79,7 @@ const data: TierListPageData = {
     { question: "How do I get Asto?", answer: "Asto (Half) is obtained for free via the CATCHINGUP code. Redeem it in-game by clicking the Code button on the left side of the screen." },
   ],
   relatedGuides: [
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Spend rerolls on units you plan to keep" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits for each unit" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Evolve your units efficiently" },
     { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Get free Gems for summoning" },

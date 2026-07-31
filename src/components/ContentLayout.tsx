@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
+import { CONTENT_UPDATED_AT, normalizeContentDate } from "@/lib/content-dates";
 
 interface BreadcrumbItem {
   label: string;
@@ -65,12 +65,12 @@ function ArticleJsonLd({
   about?: { name: string }[];
 }) {
   const dateModified = updatedAt
-    ? new Date(updatedAt).toISOString().split("T")[0]
-    : new Date(CONTENT_UPDATED_AT).toISOString().split("T")[0];
+    ? normalizeContentDate(updatedAt)
+    : normalizeContentDate(CONTENT_UPDATED_AT);
   // Prefer explicit publishedAt; otherwise fall back to dateModified (most
   // recent known publish date) so we never emit a fabricated/hardcoded date.
   const datePublished = publishedAt
-    ? new Date(publishedAt).toISOString().split("T")[0]
+    ? normalizeContentDate(publishedAt)
     : dateModified;
   const fallbackImageUrl = `https://growandrangers.xyz/images/default-guide.webp`;
   const resolvedImageUrl = imageUrl

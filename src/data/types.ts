@@ -106,6 +106,15 @@ export interface EvolutionPageData extends GuidePageData {
   mistakes: { title: string; desc: string }[];
 }
 
+export interface TraitRerollPageData extends GuidePageData {
+  quickAnswer: string;
+  process: { step: string; title: string; description: string }[];
+  unitPriorities: { priority: string; units: string; guidance: string }[];
+  keepRules: { decision: string; when: string; reason: string }[];
+  resourceStrategy: { stage: string; approach: string; target: string }[];
+  mistakes: { title: string; description: string }[];
+}
+
 export interface TierCropDetail {
   name: string;
   coins: number;

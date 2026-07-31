@@ -89,6 +89,7 @@ const data: TierListPageData = {
     { question: "How do I get JJK crossover traits?", answer: "JJK crossover traits like Domain Expansion and Six Eyes are obtainable through the Trait Reroll system. Use codes like JJKUPD2!, FREEREROLLS!, and CATCHINGUP to stockpile Trait Rerolls. The 1st Anniversary event also provides bonus rerolls." },
   ],
   relatedGuides: [
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Decide what to keep and how to budget your rerolls" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units deserve your best traits" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Evolve units to unlock more trait slots" },
     { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Get free Trait Rolls from promo codes" },

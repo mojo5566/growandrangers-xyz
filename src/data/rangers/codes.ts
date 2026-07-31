@@ -128,6 +128,7 @@ const data: CodesPageData = {
     { question: "What is the CATCHINGUP code?", answer: "CATCHINGUP is a catch-up code that gives 1x Asto (Half) unit, 150 Trait Rerolls, 20,000 Gems, and 100,000 Gold. It is designed to help newer players catch up to veterans. It is one of the most valuable codes currently available." },
   ],
   relatedGuides: [
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Learn which units to reroll and when to stop" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units to invest your resources in" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits to use your Trait Rerolls on" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Spend your Gold and Soul Fragments efficiently" },
