@@ -6,7 +6,6 @@ import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { seeds, getSeedById } from "@/data/garden/database/seeds";
 import { getCropById } from "@/data/garden/database/crops";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -121,7 +120,7 @@ export default async function SeedDetailPage({ params }: PageProps) {
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/seeds/${seed.id}`}
-      updatedAt={CONTENT_UPDATED_AT}
+      updatedAt={seed.updatedAt}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

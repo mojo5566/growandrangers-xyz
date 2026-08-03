@@ -6,7 +6,6 @@ import Link from "next/link";
 import data from "@/data/garden/beginner-guide";
 import { pets } from "@/data/garden/database/pets";
 import { seeds } from "@/data/garden/database/seeds";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
   title: "Grow a Garden Beginner Guide — Start Your Farm",
@@ -66,7 +65,7 @@ export default function BeginnerGuidePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/beginner-guide"
-      updatedAt={CONTENT_UPDATED_AT}
+      updatedAt={data.updatedAt}
       articleSection="Beginner Guide"
       keywords={[
         "Grow a Garden beginner guide",
@@ -96,7 +95,7 @@ export default function BeginnerGuidePage() {
         <div className="flex items-center gap-2">
           <span className="text-sm">🕒</span>
           <p className="text-sm text-[#BAC4D1]">
-            <strong className="text-white">Last Updated:</strong> {CONTENT_UPDATED_AT}
+            <strong className="text-white">Last Updated:</strong> {data.updatedAt}
           </p>
         </div>
       </section>

@@ -4,7 +4,6 @@ import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import { traits, getTraitById } from "@/data/rangers/database/traits";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export async function generateStaticParams() {
   return traits.map((trait) => ({ id: trait.id }));
@@ -112,7 +111,6 @@ export default async function TraitDetailPage({
       ]}
       accent="rangers"
       canonicalPath={`/anime-rangers-x/traits/${trait.id}`}
-      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Info */}
       <section aria-labelledby="info-heading">

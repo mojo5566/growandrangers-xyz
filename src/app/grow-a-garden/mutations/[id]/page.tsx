@@ -5,7 +5,6 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { mutations, getMutationById } from "@/data/garden/database/mutations";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -106,7 +105,6 @@ export default async function MutationDetailPage({ params }: PageProps) {
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/mutations/${mutation.id}`}
-      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

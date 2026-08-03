@@ -1,6 +1,5 @@
-// Centralized content update date for pages without a data-file-driven updatedAt.
-// Used as fallback by ContentLayout and as explicit prop by dynamic [id] detail pages.
-// Update this constant when database entities are reviewed/refreshed.
+// Shared review date for pages that explicitly opt in to this editorial checkpoint.
+// Do not use it as an automatic ContentLayout or sitemap fallback.
 export const CONTENT_UPDATED_AT = "July 27, 2026";
 
 const MONTH_NUMBERS: Record<string, string> = {

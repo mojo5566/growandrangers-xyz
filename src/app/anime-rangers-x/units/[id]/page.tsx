@@ -5,7 +5,6 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import { units, getUnitById } from "@/data/rangers/database/units";
 import { getTraitByName } from "@/data/rangers/database/traits";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export async function generateStaticParams() {
   return units.map((unit) => ({ id: unit.id }));
@@ -128,7 +127,6 @@ export default async function UnitDetailPage({
       ]}
       accent="rangers"
       canonicalPath={`/anime-rangers-x/units/${unit.id}`}
-      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Core Stats */}
       <section aria-labelledby="stats-heading">

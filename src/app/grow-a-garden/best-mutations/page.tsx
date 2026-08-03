@@ -5,7 +5,7 @@ import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { mutations, getMutationsByTier } from "@/data/garden/database/mutations";
 import { trading } from "@/data/garden/database/trading";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
+import guideData from "@/data/garden/best-mutations";
 
 export const metadata: Metadata = {
   title: "Best Mutations in Grow a Garden — Ranked",
@@ -115,7 +115,7 @@ export default function BestMutationsPage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/best-mutations"
-      updatedAt={CONTENT_UPDATED_AT}
+      updatedAt={guideData.updatedAt}
       articleSection="Mutations"
       keywords={["best mutations Grow a Garden", "Grow a Garden mutation ranking", "Aurelian Crown multiplier", "Prismatic Rainbow mutation", "Grow a Garden mutation combinations"]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}

@@ -6,7 +6,7 @@ import RelatedContent from "@/components/RelatedContent";
 import { crops } from "@/data/garden/database/crops";
 import { mutations } from "@/data/garden/database/mutations";
 import { trading } from "@/data/garden/database/trading";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
+import guideData from "@/data/garden/best-crops";
 
 export const metadata: Metadata = {
   title: "Best Crops in Grow a Garden — Ranked by CPM",
@@ -107,7 +107,7 @@ export default function BestCropsPage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/best-crops"
-      updatedAt={CONTENT_UPDATED_AT}
+      updatedAt={guideData.updatedAt}
       articleSection="Crops"
       keywords={[
         "best crops Grow a Garden",

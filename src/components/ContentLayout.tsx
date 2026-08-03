@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { CONTENT_UPDATED_AT, normalizeContentDate } from "@/lib/content-dates";
+import { normalizeContentDate } from "@/lib/content-dates";
 
 interface BreadcrumbItem {
   label: string;
@@ -64,11 +64,7 @@ function ArticleJsonLd({
   keywords?: string[];
   about?: { name: string }[];
 }) {
-  const dateModified = updatedAt
-    ? normalizeContentDate(updatedAt)
-    : normalizeContentDate(CONTENT_UPDATED_AT);
-  // Prefer explicit publishedAt; otherwise fall back to dateModified (most
-  // recent known publish date) so we never emit a fabricated/hardcoded date.
+  const dateModified = updatedAt ? normalizeContentDate(updatedAt) : undefined;
   const datePublished = publishedAt
     ? normalizeContentDate(publishedAt)
     : dateModified;
@@ -81,8 +77,6 @@ function ArticleJsonLd({
     "@type": "Article",
     headline: title,
     description,
-    datePublished,
-    dateModified,
     image: {
       "@type": "ImageObject",
       url: resolvedImageUrl,
@@ -105,6 +99,8 @@ function ArticleJsonLd({
   };
   // GEO enhancements — only include fields when provided so empty values
   // don't pollute the schema for database/list pages.
+  if (datePublished) schema.datePublished = datePublished;
+  if (dateModified) schema.dateModified = dateModified;
   if (articleSection) schema.articleSection = articleSection;
   if (keywords && keywords.length > 0) schema.keywords = keywords.join(", ");
   if (about && about.length > 0) {
@@ -156,7 +152,7 @@ export default function ContentLayout({
 }: ContentLayoutProps) {
   const accentColor = accent === "garden" ? "#00E676" : "#FF3D00";
   const accentBg = accent === "garden" ? "rgba(0,230,118,0.08)" : "rgba(255,61,0,0.08)";
-  const displayDate = updatedAt || CONTENT_UPDATED_AT;
+  const displayDate = updatedAt ?? publishedAt;
 
   return (
     <article className="mx-auto max-w-[1200px] px-4 py-8 lg:px-6 lg:py-12">
@@ -219,7 +215,9 @@ export default function ContentLayout({
           <span>
             Written by: <strong className="text-[#BAC4D1]">GrowAndRangers Team</strong>
           </span>
-          <span>Updated: <strong className="text-[#BAC4D1]">{displayDate}</strong></span>
+          {displayDate && (
+            <span>Updated: <strong className="text-[#BAC4D1]">{displayDate}</strong></span>
+          )}
         </div>
         <p className="text-xs text-[#768294] mt-2">
           Content verified by the GrowAndRangers editorial team • Data sourced from canonical game databases

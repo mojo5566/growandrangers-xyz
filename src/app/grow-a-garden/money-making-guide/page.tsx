@@ -7,7 +7,7 @@ import { crops } from "@/data/garden/database/crops";
 import { pets } from "@/data/garden/database/pets";
 import { mutations, getMutationsByTier } from "@/data/garden/database/mutations";
 import { trading, getHighDemandItems, getTradingByTrend } from "@/data/garden/database/trading";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
+import guideData from "@/data/garden/money-making-guide";
 
 export const metadata: Metadata = {
   title: "Money Making Guide — Grow a Garden Coins",
@@ -118,7 +118,7 @@ export default function MoneyMakingGuidePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/money-making-guide"
-      updatedAt={CONTENT_UPDATED_AT}
+      updatedAt={guideData.updatedAt}
       articleSection="Money Making"
       keywords={[
         "Grow a Garden money making",

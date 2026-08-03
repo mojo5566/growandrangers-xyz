@@ -5,7 +5,6 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { eggs, getEggById, getPetsFromEgg, getEggRarityDistribution } from "@/data/garden/database/eggs";
-import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 const tierBadge: Record<string, string> = {
   S: "bg-[#FF3D00]/20 text-[#FF3D00]",
@@ -103,7 +102,6 @@ export default async function EggDetailPage({ params }: { params: Promise<{ id: 
       ]}
       accent="garden"
       canonicalPath={`/grow-a-garden/eggs/${egg.id}`}
-      updatedAt={CONTENT_UPDATED_AT}
     >
       {/* Overview / Core Stats */}
       <section aria-labelledby="overview-heading">
