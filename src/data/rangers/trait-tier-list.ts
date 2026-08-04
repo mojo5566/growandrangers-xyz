@@ -1,9 +1,9 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Re:Rangers X Trait Tier List",
-  description: "Complete trait tier list ranking every Re:Rangers X trait from Mythic to Common with strengths, weaknesses, unit pairings, and reroll strategy.",
-  updatedAt: "July 7, 2026",
+  title: "Anime Rangers X Trait Tier List - All 32 Traits",
+  description: "Compare all 32 traits in the Anime Rangers X database by stored tier, effect, limitation, and recorded unit fit. Roll rates and unverified mechanics are excluded.",
+  updatedAt: "August 4, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Trait Tier List", href: "/anime-rangers-x/trait-tier-list" },
@@ -82,17 +82,19 @@ const data: TierListPageData = {
     { trait: "Six Eyes", unit: "Gojo/Chrono Slayer", why: "Cooldown reduction for ability spam" },
   ],
   faq: [
-    { question: "What is the best trait in Anime Rangers X?", answer: "Time Rewind (Mythic #1) is the best trait — it resets all cooldowns on kill, enabling infinite ultimate chains on Chrono Slayer. God-Speed (Mythic #2) is the best farming trait with its stacking +50% attack speed per kill." },
-    { question: "How do I get better traits?", answer: "Use Trait Rolls obtained from promo codes, events, and gem purchases. There are 48 active codes providing thousands of Trait Rerolls total. Save your rolls for Mythic and Legendary units. Stack multiple rolls for better odds during trait-boosted events." },
-    { question: "Can I change a trait after applying it?", answer: "Yes, rerolling replaces the current trait permanently. There is no refund. The Re:Rangers update added a trait lock feature for 50 Gems that prevents accidental rerolls." },
-    { question: "Which trait is best for beginners?", answer: "Monarch (Legendary) is the best beginner-friendly trait — +30% all stats with a simple HP condition. It is significantly easier to roll than Mythic traits and works on any unit. Pair with Tide Guardian to maintain the 80% HP threshold." },
-    { question: "How do I get JJK crossover traits?", answer: "JJK crossover traits like Domain Expansion and Six Eyes are obtainable through the Trait Reroll system. Use codes like JJKUPD2!, FREEREROLLS!, and CATCHINGUP to stockpile Trait Rerolls. The 1st Anniversary event also provides bonus rerolls." },
+    { question: "What are the highest-tier traits in this Anime Rangers X database?", answer: "Time Rewind, God-Speed, Dual Wield, and Sharingan are the four records stored as Mythic tier. This is the site's canonical database grouping, not an official live-game ranking." },
+    { question: "How many traits are included in this tier list?", answer: "The page includes all 32 canonical trait records: 4 Mythic, 7 Legendary, 9 Epic, 7 Rare, and 5 Common." },
+    { question: "Which trait is best for a unit?", answer: "Match the recorded effect to the unit's role, ultimate, passive, and limitations. Each card lists the unit names stored in the trait record and links to canonical unit pages when available." },
+    { question: "Which traits are useful for farming?", answer: "Use effects that explicitly mention resource or item drops, such as Drop Rate+ or Luck+. The page does not infer a farming bonus when the canonical effect does not record one." },
+    { question: "Are exact trait roll rates included?", answer: "No. This tier list deliberately omits probability fields and does not claim a pity system, boosted event rate, or reroll cost." },
+    { question: "When should I stop rerolling a trait?", answer: "Stop when the effect is useful for the unit's role or when you reach the budget chosen before rolling. Use the separate Trait Reroll Guide for the actual process, replacement risk, and resource strategy." },
+    { question: "Does this list include every live-game trait?", answer: "It includes every record currently present in the site's canonical Trait database. It does not claim that the database matches every live update without an external verification source." },
   ],
   relatedGuides: [
-    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Decide what to keep and how to budget your rerolls" },
-    { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units deserve your best traits" },
-    { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Evolve units to unlock more trait slots" },
-    { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Get free Trait Rolls from promo codes" },
+    { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Use the reroll process, stopping rules, and resource strategy" },
+    { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Compare all recorded units before assigning a valuable trait" },
+    { label: "Traits Database", href: "/anime-rangers-x/traits", description: "Browse canonical trait records and individual detail pages" },
+    { label: "Best Units", href: "/anime-rangers-x/best-units", description: "Choose long-term units before spending reroll resources" },
   ],
 };
 
