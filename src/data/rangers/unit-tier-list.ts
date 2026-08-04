@@ -1,9 +1,9 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Re:Rangers X Unit Tier List — S to C",
-  description: "Complete unit tier list ranking every Re:Rangers X unit from S-Tier to C-Tier with strengths, weaknesses, best traits, and team compositions. See where each unit ranks.",
-  updatedAt: "July 7, 2026",
+  title: "Anime Rangers X Unit Tier List - S to C Ranking",
+  description: "Compare every unit currently recorded for Anime Rangers X by tier, role, rarity, trait direction, source, and evolution field. This database snapshot excludes unverified roster claims.",
+  updatedAt: "August 4, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Anime Rangers X Unit Tier List", href: "/anime-rangers-x/unit-tier-list" },
@@ -72,13 +72,14 @@ const data: TierListPageData = {
     { name: "Anime Crossover Team", units: "Kirito + Goku + Asuna + Flex", desc: "Pure anime crossover DPS. High damage but no sustain." },
   ],
   faq: [
-    { question: "Which unit should I reroll for as a new player?", answer: "Chrono Slayer (S-Tier #1) is the best target — his time-freeze ultimate and high DPS carry all content. If you cannot pull a Mythic, Blaze Archon (A-Tier #3) is an excellent Legendary alternative with better summon rates." },
-    { question: "Should I invest in B-Tier units or save?", answer: "Invest Evolution Stones in Epic-tier and above only. B-Tier units are useful mid-game but are eventually replaced. Save Awakening Cores and Legendary Trait Rolls exclusively for S/A-Tier units." },
-    { question: "What is the best Infinite Mode team?", answer: "Chrono Slayer (DPS) + Frost Monarch (CC) + Tide Guardian (Sustain). Balanced damage, crowd control, and healing for consistent wave 100+ pushes. For speed farming: Storm Ronin + Shadow Kunoichi + Wind Scout." },
-    { question: "How did Re:Rangers change unit rankings?", answer: "Mythic summon rates increased from 0.5% to 0.8%. Several Legendary/Epic units received stat buffs. Frost Monarch's freeze duration increased from 2.5s to 3s, solidifying her A-Tier position." },
-    { question: "How do I get Asto?", answer: "Asto (Half) is obtained for free via the CATCHINGUP code. Redeem it in-game by clicking the Code button on the left side of the screen." },
+    { question: "What does S-Tier mean on this Anime Rangers X unit tier list?", answer: "S-Tier is the highest tier stored in this site's canonical unit database. The page treats it as a database ranking, not as an official live patch verdict." },
+    { question: "Should I use the Unit Tier List or the Best Units guide?", answer: "Use the Unit Tier List to compare the full recorded roster by tier, role, rarity, traits, source, and evolution field. Use Best Units when you want recommendations organized around a player goal or progression stage." },
+    { question: "Where can I check a unit's traits and evolution information?", answer: "Open the linked unit detail page. It shows the best trait names, recorded sources, and evolution cost currently present in the canonical unit record." },
+    { question: "Does this page include every live Anime Rangers X unit?", answer: "No. It covers the 31 unit records currently stored in the site's canonical database. Missing live-game units or changes are not added without a reliable source." },
+    { question: "How should beginners use this ranking?", answer: "Compare role coverage before investing: a higher tier does not replace the need for damage, control, support, or tank roles. The page does not claim unrecorded summon odds or guarantee access to a particular unit." },
   ],
   relatedGuides: [
+    { label: "Best Units Guide", href: "/anime-rangers-x/best-units", description: "Choose units by beginner, farming, boss, or progression goal" },
     { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Spend rerolls on units you plan to keep" },
     { label: "Trait Tier List", href: "/anime-rangers-x/trait-tier-list", description: "Best traits for each unit" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Evolve your units efficiently" },

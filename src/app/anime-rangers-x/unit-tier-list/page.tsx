@@ -4,18 +4,16 @@ import ContentFAQ from "@/components/ContentFAQ";
 import TierTable from "@/components/TierTable";
 import Link from "next/link";
 import data from "@/data/rangers/unit-tier-list";
+import { units } from "@/data/rangers/database/units";
 
 export const metadata: Metadata = {
-  title: `${data.title}`,
+  title: data.title,
   description: data.description,
   keywords: [
     "Anime Rangers X unit tier list",
-    "Re:Rangers X best units",
-    "Chrono Slayer",
-    "Void Empress",
-    "unit ranking 2026",
-    "best DPS units",
-    "Anime Rangers X meta",
+    "Anime Rangers X unit rankings",
+    "Anime Rangers X S tier units",
+    "Re:Rangers X unit tier list",
   ],
   alternates: { canonical: "/anime-rangers-x/unit-tier-list" },
   openGraph: {
@@ -32,51 +30,6 @@ const tierColors: Record<string, string> = {
   C: "#3A86FF",
 };
 
-function UnitCard({ card, color }: { card: (typeof data.detailCards)[number]; color: string }) {
-  return (
-    <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-      <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-        <h3 className="text-base font-semibold text-white">{card.name}</h3>
-        <span
-          className="code-text inline-block rounded px-2 py-0.5 text-xs font-semibold"
-          style={{ color: card.color, backgroundColor: card.color + "1a" }}
-        >
-          {card.rank}
-        </span>
-      </div>
-      <p className="text-sm text-[#BAC4D1] leading-relaxed mb-4">{card.desc}</p>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <h4 className="text-xs font-semibold text-[#00E676] mb-2">✅ Strengths</h4>
-          <ul className="space-y-1">
-            {card.strengths.map((s, i) => (
-              <li key={i} className="flex gap-2 text-xs text-[#BAC4D1]">
-                <span className="text-[#00E676] shrink-0">+</span> {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-xs font-semibold text-[#FF3D00] mb-2">⚠️ Weaknesses</h4>
-          <ul className="space-y-1">
-            {card.weaknesses.map((w, i) => (
-              <li key={i} className="flex gap-2 text-xs text-[#BAC4D1]">
-                <span className="text-[#FF3D00] shrink-0">-</span> {w}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {card.bestUse && (
-        <div className="mt-4 rounded-lg bg-[#1E212B] p-3 border border-[#252936]">
-          <h4 className="text-xs font-semibold text-[#3A86FF] mb-1">🎯 Best Use Case</h4>
-          <p className="text-xs text-[#BAC4D1] leading-relaxed">{card.bestUse}</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function UnitTierListPage() {
   return (
     <ContentLayout
@@ -86,7 +39,32 @@ export default function UnitTierListPage() {
       canonicalPath="/anime-rangers-x/unit-tier-list"
       accent="rangers"
       updatedAt={data.updatedAt}
+      articleSection="Anime Rangers X Units"
+      keywords={["Anime Rangers X unit tier list", "Anime Rangers X unit rankings", "Re:Rangers X unit tier list"]}
+      about={[{ name: "Anime Rangers X" }, { name: "Re:Rangers X" }, { name: "Roblox game guides" }]}
     >
+      <section className="rounded-xl border border-[#FF3D00]/30 bg-[#1A1210] p-5" aria-labelledby="scope-heading">
+        <h2 id="scope-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
+          Scope and Version Note
+        </h2>
+        <p className="text-sm leading-relaxed text-[#BAC4D1]">
+          This page is the complete ranking view for the units currently recorded in the project&apos;s Anime Rangers X database. It is a snapshot of the source data, not a verified official patch list. Units, traits, sources, and evolution requirements that are not present in that database are intentionally not added.
+        </p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-lg border border-[#252936] bg-[#14161D] p-4">
+            <h3 className="text-sm font-semibold text-white">How the tier is assigned</h3>
+            <p className="mt-1 text-xs leading-relaxed text-[#768294]">
+              Tier combines the recorded role, rarity, ability profile, and the tier value in the canonical unit record. It is not based on an invented summon rate, damage test, or live market value.
+            </p>
+          </div>
+          <div className="rounded-lg border border-[#252936] bg-[#14161D] p-4">
+            <h3 className="text-sm font-semibold text-white">How to use this page</h3>
+            <p className="mt-1 text-xs leading-relaxed text-[#768294]">
+              Use this page to compare the full roster and then open a unit detail page for its recorded traits, source, and evolution fields. For recommendations by beginner, boss, or farming goal, use the <Link href="/anime-rangers-x/best-units" className="ml-1 text-[#FF3D00] hover:underline">Best Units guide</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* Tier Explanation */}
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">
@@ -106,55 +84,47 @@ export default function UnitTierListPage() {
       </section>
 
       {/* Per-Tier Sections */}
-      {data.tiers.map((tierGroup) => {
-        const tierKey = tierGroup.name.charAt(0);
-        const tierColor = tierColors[tierKey] || "#3A86FF";
+      {(["S", "A", "B", "C"] as const).map((tier) => {
+        const tierUnits = units.filter((unit) => unit.tier === tier);
+        const explanation = data.tierExplanation.find((item) => item.tier === tier);
         return (
-          <section key={tierGroup.name} aria-labelledby={`tier-${tierKey}`}>
-            <h2
-              id={`tier-${tierKey}`}
-              className="font-heading text-[22px] font-semibold text-white lg:text-[26px] mb-2"
-              style={{ color: tierColor }}
-            >
-              {tierGroup.name}
+          <section key={tier} aria-labelledby={`tier-${tier}`}>
+            <h2 id={`tier-${tier}`} className="font-heading text-[22px] font-semibold lg:text-[26px] mb-2" style={{ color: tierColors[tier] }}>
+              {tier}-Tier Units
             </h2>
-            <p className="text-sm text-[#768294] mb-4">{tierGroup.description}</p>
-            <TierTable rows={tierGroup.entries} colHeaders={["UNIT", "TIER", "ROLE"]} />
+            <p className="text-sm text-[#768294] mb-4">{explanation?.desc}</p>
+            <TierTable rows={tierUnits.map((unit) => ({ name: unit.name, tier: unit.tier, description: `${unit.rarity} ${unit.role} / ${unit.element}` }))} colHeaders={["UNIT", "TIER", "ROLE"]} />
           </section>
         );
       })}
 
-      {/* Detailed Cards */}
-      <section aria-labelledby="details-heading">
-        <h2 id="details-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">
-          🔍 Detailed Unit Analysis
+      <section aria-labelledby="record-fields-heading">
+        <h2 id="record-fields-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">
+          Why Each Unit Ranks Here
         </h2>
-        <div className="space-y-4">
-          {data.detailCards.map((card) => (
-            <UnitCard key={card.name} card={card} color={card.color} />
+        <p className="mb-4 text-sm leading-relaxed text-[#768294]">
+          Every card below is generated from the canonical unit record. The placement follows the stored tier; role, traits, source, and evolution fields are shown without adding unrecorded rates or mode bonuses.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {units.map((unit) => (
+            <article key={unit.id} className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div><h3 className="text-sm font-semibold text-white">{unit.name}</h3><p className="mt-1 text-xs text-[#768294]">{unit.rarity} / {unit.element} / {unit.role}</p></div>
+                <span className="code-text rounded px-2 py-0.5 text-xs font-semibold" style={{ color: tierColors[unit.tier], backgroundColor: tierColors[unit.tier] + "1a" }}>{unit.tier}-Tier</span>
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-[#BAC4D1]">{unit.description}</p>
+              <dl className="mt-3 grid gap-2 text-xs">
+                <div><dt className="text-[#768294]">Why it ranks here</dt><dd className="text-[#BAC4D1]">{unit.strengths[0]} Limitation: {unit.weaknesses[0]}</dd></div>
+                <div><dt className="text-[#768294]">Mode fit</dt><dd className="text-[#BAC4D1]">No separate mode field is recorded; evaluate this {unit.role} from its ultimate, passive, and limitations.</dd></div>
+                <div><dt className="text-[#768294]">Best trait direction</dt><dd className="text-[#BAC4D1]">{unit.bestTraits.join(", ") || "Not recorded"}</dd></div>
+                <div><dt className="text-[#768294]">Recorded source</dt><dd className="text-[#BAC4D1]">{unit.sources.join(", ") || "Not recorded"}</dd></div>
+                <div><dt className="text-[#768294]">Evolution field</dt><dd className="text-[#BAC4D1]">{unit.evolutionCost || "Not recorded"}</dd></div>
+              </dl>
+              <Link href={`/anime-rangers-x/units/${unit.id}`} className="mt-3 inline-block text-xs font-semibold text-[#FF3D00] hover:underline">Open {unit.name} detail -&gt;</Link>
+            </article>
           ))}
         </div>
       </section>
-
-      {/* Recommended Team Compositions */}
-      {data.teamComps && data.teamComps.length > 0 && (
-        <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-          <h2 className="font-heading text-[20px] font-semibold text-white mb-3">
-            ⚔️ Recommended Team Compositions
-          </h2>
-          <div className="space-y-3">
-            {data.teamComps.map((t, i) => (
-              <div key={i} className="border-l-2 border-[#FF3D00] bg-[#1E212B] p-3">
-                <h4 className="text-sm font-semibold text-white">{t.name}</h4>
-                <p className="mt-1 text-xs text-[#768294]">
-                  <strong className="text-[#BAC4D1]">Units:</strong> {t.units}
-                </p>
-                <p className="mt-0.5 text-xs text-[#768294]">{t.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Related Guides */}
       <section aria-labelledby="related">
