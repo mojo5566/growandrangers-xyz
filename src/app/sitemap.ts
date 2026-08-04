@@ -64,6 +64,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/grow-a-garden/updates", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/trading", priority: 0.8, changefreq: "daily" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/events", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
+  { path: "/grow-a-garden/harvest-moon", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/beginner-farming", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBeginnerFarming.updatedAt },
   { path: "/grow-a-garden/best-crops", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBestCrops.updatedAt },
   { path: "/grow-a-garden/best-pets", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBestPets.updatedAt },

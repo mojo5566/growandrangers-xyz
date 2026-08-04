@@ -160,6 +160,18 @@ export default function EventsDatabasePage() {
         </div>
       </section>
 
+      <section aria-labelledby="harvest-moon-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
+        <h2 id="harvest-moon-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px]">
+          Harvest Moon Event Guide
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-[#BAC4D1]">
+          Read the separate Harvest Moon guide for the confirmed event flow, Moonbeam mutation, Moon Coins, seven milestones, Lunar Lantern Seed, and official reward details.
+        </p>
+        <Link href="/grow-a-garden/harvest-moon" className="mt-3 inline-block text-sm font-semibold text-[#00E676] hover:underline">
+          Open the Harvest Moon Guide →
+        </Link>
+      </section>
+
       {/* Upcoming Events */}
       <section aria-labelledby="upcoming-heading">
         <h2
