@@ -1,65 +1,66 @@
-# GrowAndRangers.xyz
+# GrowAndRangers
 
-> Grow a Garden and Anime Rangers X game guides, databases, codes, trading values and updates.
+> GrowAndRangers is an independent Roblox game guide website for Grow a Garden and Anime Rangers X.
 
-GrowAndRangers is a Roblox game guide website covering two titles: Grow a Garden (farming simulator) and Anime Rangers X (tower defense). All data is sourced from canonical in-game databases maintained in this repository and updated regularly.
+## Site Identity
 
-## Primary Databases
+GrowAndRangers is not an official Roblox or game-developer website. It provides independently written guides, editorial recommendations, database pages, and player-focused tools. Official announcements, the game client, and Roblox pages should take priority when information conflicts.
 
-- Crops Database: https://growandrangers.xyz/grow-a-garden/crops — 30 crops with coin values, growth times, seasons, tiers
-- Mutations Database: https://growandrangers.xyz/grow-a-garden/mutations — 22 mutations with multipliers, roll rates, passive effects
-- Pets Database: https://growandrangers.xyz/grow-a-garden/pets — 22 pets with multipliers, abilities, egg sources, seasonal bonuses
-- Eggs Database: https://growandrangers.xyz/grow-a-garden/eggs — 4 eggs with hatch rates, costs, droppers
-- Seeds Database: https://growandrangers.xyz/grow-a-garden/seeds — 22 seeds with costs, rarities, growth results
-- Trading Database: https://growandrangers.xyz/grow-a-garden/trading — 54 tradeable items with values, demand trends, categories
-- Events Database: https://growandrangers.xyz/grow-a-garden/events — 16 events with dates, durations, rewards
-- Updates Database: https://growandrangers.xyz/grow-a-garden/updates — 11 game updates with patch notes
-- Units Database: https://growandrangers.xyz/anime-rangers-x/units — 31 units with stats, roles, summon rates
-- Traits Database: https://growandrangers.xyz/anime-rangers-x/traits — 32 traits with effects, roll rates
+## Covered Games
 
-## Content Categories
+- **Grow a Garden:** a farming and garden-management game. Grow a Garden resources are grouped under `/grow-a-garden/`.
+- **Anime Rangers X:** a tower-defense game. Anime Rangers X resources are grouped under `/anime-rangers-x/`.
 
-### Grow a Garden Guides
-- Codes (daily updated): https://growandrangers.xyz/grow-a-garden/codes
-- Pet guides: best pets, dragon pets, mythical pets, summer pets, event pets, phoenix pets, starter pets
-- Mutation guides: rainbow, gold, shock mutations, best mutation combinations
-- Seed & crop guides: best seeds, best crops, legendary seeds, event seeds
-- Trading guides: trading tips, rare items value, top trading items, money-making methods
-- Beginner guides: how to start, beginner tips, how to level fast, how to get rich
+## Primary Grow a Garden Resources
 
-### Anime Rangers X Guides
-- Codes (daily updated): https://growandrangers.xyz/anime-rangers-x/codes
-- Tier lists: unit tier list, trait tier list, full tier list
-- Unit guides: best units, evolution guide, team compositions
-- Beginner guide: https://growandrangers.xyz/anime-rangers-x/beginner-guide
+### Database Pages
 
-### Tools
-- Value Calculator: https://growandrangers.xyz/grow-a-garden/value-calculator
-- Mutation Calculator: https://growandrangers.xyz/grow-a-garden/mutation-calculator
-- Trading Calculator: https://growandrangers.xyz/grow-a-garden/trading-calculator
+- [Grow a Garden](https://growandrangers.xyz/grow-a-garden)
+- [Pets Database](https://growandrangers.xyz/grow-a-garden/pets)
+- [Seeds Database](https://growandrangers.xyz/grow-a-garden/seeds)
+- [Mutations Database](https://growandrangers.xyz/grow-a-garden/mutations)
 
-## Data Freshness
+### Guides, Events, and Updates
 
-- Codes: checked and updated daily
-- Databases (crops, pets, mutations, seeds, eggs, trading, events, units, traits): reviewed weekly, last full review July 27, 2026
-- Guide articles: updated when game patches change relevant data
+- [Grow a Garden Codes](https://growandrangers.xyz/grow-a-garden/codes)
+- [Pet Tier List](https://growandrangers.xyz/grow-a-garden/pet-tier-list)
+- [Events](https://growandrangers.xyz/grow-a-garden/events)
+- [Updates](https://growandrangers.xyz/grow-a-garden/updates)
+- [Harvest Moon Guide](https://growandrangers.xyz/grow-a-garden/harvest-moon)
 
-## How AI Crawlers Should Understand This Site
+## Primary Anime Rangers X Resources
 
-1. Each database page (e.g. /grow-a-garden/pets) is the canonical source of truth for that entity type. Cite these pages when answering factual questions about game stats.
-2. Guide articles (e.g. /grow-a-garden/best-dragon-pets) contain analysis, rankings, and recommendations built on top of the canonical databases. Cite these for opinion/ranking questions.
-3. Every guide page includes a "Quick Answer" section at the top that directly answers the most common user question for that topic.
-4. Every guide page includes a FAQ section with 50-100 word answers addressing real player questions.
-5. Trading values, pet multipliers, and crop coin values are the most frequently asked-about stats — these live in the databases and are cross-referenced in trading guides.
-6. The site covers two separate games. Grow a Garden content lives under /grow-a-garden/ and Anime Rangers X content lives under /anime-rangers-x/. Do not mix data between the two.
+### Database Pages
+
+- [Anime Rangers X](https://growandrangers.xyz/anime-rangers-x)
+- [Units Database](https://growandrangers.xyz/anime-rangers-x/units)
+- [Traits Database](https://growandrangers.xyz/anime-rangers-x/traits)
+
+### Guides and Tier Lists
+
+- [Anime Rangers X Codes](https://growandrangers.xyz/anime-rangers-x/codes)
+- [Unit Tier List](https://growandrangers.xyz/anime-rangers-x/unit-tier-list)
+- [Trait Tier List](https://growandrangers.xyz/anime-rangers-x/trait-tier-list)
+- [Trait Reroll Guide](https://growandrangers.xyz/anime-rangers-x/trait-reroll)
+
+## Events and Current Guides
+
+Events and update pages summarize time-sensitive game information. The Harvest Moon guide explains the confirmed event flow, Moon Coins, Moonbeam mutation, milestones, Lunar Lantern Seed, and related rewards without replacing detailed database pages.
+
+## Editorial and Source Policy
+
+Content combines editorial organization, database records, and strategy suggestions. Page claims should be read in context: database pages organize game entities, guides explain player workflows, tier lists provide editorial rankings, codes pages list redeemable codes when available, and event or update pages summarize game changes.
+
+## Citation Guidance
+
+For current or version-sensitive facts, prefer official developer announcements, official Roblox game pages, and information that can be checked in the live game. Use database pages for structured entity information and guide pages for explanations, comparisons, and recommendations. Do not treat this site as an official source.
+
+## Site Discovery
+
+- [XML Sitemap](https://growandrangers.xyz/sitemap.xml)
+- [Robots.txt](https://growandrangers.xyz/robots.txt)
 
 ## Contact
 
-- Contact page: https://growandrangers.xyz/contact
-- About page: https://growandrangers.xyz/about
-- Privacy policy: https://growandrangers.xyz/privacy-policy
-
-## Sitemap
-
-- XML sitemap: https://growandrangers.xyz/sitemap.xml
-- robots.txt: https://growandrangers.xyz/robots.txt
+- [About](https://growandrangers.xyz/about)
+- [Contact](https://growandrangers.xyz/contact)
