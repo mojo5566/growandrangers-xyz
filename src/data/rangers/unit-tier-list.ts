@@ -72,10 +72,10 @@ const data: TierListPageData = {
     { name: "Anime Crossover Team", units: "Kirito + Goku + Asuna + Flex", desc: "Pure anime crossover DPS. High damage but no sustain." },
   ],
   faq: [
-    { question: "What does S-Tier mean on this Anime Rangers X unit tier list?", answer: "S-Tier is the highest tier stored in this site's canonical unit database. The page treats it as a database ranking, not as an official live patch verdict." },
-    { question: "Should I use the Unit Tier List or the Best Units guide?", answer: "Use the Unit Tier List to compare the full recorded roster by tier, role, rarity, traits, source, and evolution field. Use Best Units when you want recommendations organized around a player goal or progression stage." },
-    { question: "Where can I check a unit's traits and evolution information?", answer: "Open the linked unit detail page. It shows the best trait names, recorded sources, and evolution cost currently present in the canonical unit record." },
-    { question: "Does this page include every live Anime Rangers X unit?", answer: "No. It covers the 31 unit records currently stored in the site's canonical database. Missing live-game units or changes are not added without a reliable source." },
+    { question: "What does S-Tier mean on this Anime Rangers X unit tier list?", answer: "S-Tier is the highest editorial tier on this page. It indicates a high-priority fit within the recorded roster, not an official live-patch verdict or a guarantee that the unit is best for every team." },
+    { question: "Should I use the Unit Tier List or the Best Units guide?", answer: "Use the Unit Tier List to compare the recorded roster by tier, role, rarity, and element. Use Best Units when you want recommendations organized around a player goal or progression stage." },
+    { question: "Where can I check a unit's traits and evolution information?", answer: "Open the linked unit detail page for the project's recorded trait and evolution fields. Treat those details as a reference snapshot and verify current values in the game before investing resources." },
+    { question: "Does this page include every live Anime Rangers X unit?", answer: "Not necessarily. It covers the roster currently recorded by GrowAndRangers. Missing live-game units or changes are not added without a reliable source, so check the current game and developer announcements for the latest roster." },
     { question: "How should beginners use this ranking?", answer: "Compare role coverage before investing: a higher tier does not replace the need for damage, control, support, or tank roles. The page does not claim unrecorded summon odds or guarantee access to a particular unit." },
   ],
   relatedGuides: [
