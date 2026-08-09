@@ -1,417 +1,284 @@
-import type { TierListPageData } from "../types";
-import { pets, getPetsByTier } from "./database/pets";
+import { getPetsByTier } from "./database/pets";
+
+export type PetEditorialTier = "S" | "A" | "B" | "C";
 
 export interface PetTierTableRow {
+  id: string;
   name: string;
-  tier: string;
-  ability: string;
-  bestUse: string;
-  source: string;
-  mutationCompatibility: string;
-  why: string;
-}
-
-export interface PetComparisonPick {
-  name: string;
-  href: string;
-  rationale: string;
-}
-
-export interface PetComparisonSection {
-  title: string;
-  summary: string;
-  picks: PetComparisonPick[];
-}
-
-type PetDetailCard = TierListPageData["detailCards"][number] & {
-  bestUse: string;
+  tier: PetEditorialTier;
+  planningUse: string;
+  teamFit: string;
   decision: string;
-  evidence: string[];
+}
+
+interface PetEditorialProfile {
+  planningUse: string;
+  teamFit: string;
+  decision: string;
+}
+
+const tierOrder = ["S", "A", "B", "C"] as const;
+
+const tierColors: Record<PetEditorialTier, string> = {
+  S: "#FF3D00",
+  A: "#FF8C00",
+  B: "#FFD700",
+  C: "#3A86FF",
 };
 
-type PetTierListData = Omit<TierListPageData, "detailCards"> & {
-  detailCards: PetDetailCard[];
-  tierRows: Record<"S" | "A" | "B" | "C", PetTierTableRow[]>;
-  dataScope: string[];
-  rankingMethod: string[];
-  comparisonSections: PetComparisonSection[];
-  beginnerPath: { step: string; title: string; guidance: string; href: string; linkLabel: string }[];
+const tierLabels: Record<PetEditorialTier, string> = {
+  S: "Broad editorial priority",
+  A: "High-value team options",
+  B: "Progression and situational options",
+  C: "Starter, collection, or narrow options",
 };
 
-const petUseNotes: Record<string, { bestUse: string; mutationCompatibility: string; limitation: string }> = {
+const tierDescriptions: Record<PetEditorialTier, string> = {
+  S: "Editorially grouped for broad utility, flexible team fit, and lasting progression value. Confirm each live effect before investing.",
+  A: "Editorially grouped as useful alternatives for defined team needs, with more context required than the S-Tier group.",
+  B: "Editorially grouped for progression, utility, or situational roles that can be valuable when they solve a current farm need.",
+  C: "Editorially grouped as starter, collection, or narrow-use choices. Their value depends heavily on the player's current options and goals.",
+};
+
+const editorialProfiles: Record<string, PetEditorialProfile> = {
   "golden-phoenix-chick": {
-    bestUse: "All-season harvesting when you want the highest recorded general multiplier and automatic collection.",
-    mutationCompatibility: "Works with any mutation in this database; no named conditional synergy is recorded.",
-    limitation: "The database records no source odds, so treat it as a target pet rather than a planned short-term purchase.",
+    planningUse: "Flexible general farming",
+    teamFit: "Farms that need a broadly useful generalist",
+    decision: "Compare it with a specialist when one specific farm bottleneck matters more than flexibility.",
   },
   "crystal-unicorn-foal": {
-    bestUse: "Short-cycle crops where a double-harvest proc can increase the ceiling of each run.",
-    mutationCompatibility: "No named conditional pairing is recorded; compare the base multiplier with your crop plan.",
-    limitation: "The double-harvest effect is chance-based in the recorded ability, so income can vary between harvests.",
-  },
-  "neon-dragon-hatchling": {
-    bestUse: "Farms where fire protection and a strong general multiplier solve a real crop-loss risk.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "Fire protection only matters when that threat is relevant to your current crop route.",
-  },
-  "celestial-fox-kit": {
-    bestUse: "Night-focused farming that can consistently use its time-gated bonus.",
-    mutationCompatibility: "The database records a night-time pairing with night-active mutations; verify current rules in game.",
-    limitation: "Its recorded bonus is tied to night play, so it is less compelling for daytime-only sessions.",
-  },
-  "lucky-clover-bunny": {
-    bestUse: "Players who already use Leporine Bloom and want a rabbit-type synergy.",
-    mutationCompatibility: "Named pairing: Leporine Bloom; the database records an additional 18% bonus for that combination.",
-    limitation: "The recorded value depends on owning the matching mutation and on seasonal availability.",
-  },
-  "frost-wolf-pup": {
-    bestUse: "Winter-focused farming where its seasonal multiplier and Winter mutation pairing are active.",
-    mutationCompatibility: "Named pairing: Hoarfrost Corolla and other Winter-focused entries in the database.",
-    limitation: "Its best recorded value is seasonal, so compare its normal state before using it year-round.",
-  },
-  "magma-lizard-hatchling": {
-    bestUse: "Summer rotations that can use its seasonal multiplier and fire-adjacent mutation pairing.",
-    mutationCompatibility: "Named pairing: Igneous Spore and other Summer/fire-focused entries in the database.",
-    limitation: "Its strongest recorded use is Summer-specific rather than a permanent all-purpose upgrade.",
-  },
-  "aqua-otter-kit": {
-    bestUse: "Large farms where automatic watering removes repeated manual work.",
-    mutationCompatibility: "The database notes overlap with Crystalline Mycelium's watering utility; compare before investing.",
-    limitation: "Automatic watering loses value when another equipped effect already covers watering.",
-  },
-  "thunder-hawk-chick": {
-    bestUse: "Early active play when a Basic Egg pet and faster harvest actions matter more than peak multiplier.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "Its recorded multiplier is lower than Rare Egg and Legendary Egg options, so it is mainly an early stepping stone.",
-  },
-  "bamboo-panda-cub": {
-    bestUse: "Consistent players who can maintain consecutive harvest cycles while building a first upgrade path.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "The stacking effect depends on repeated harvests, so missed cycles reduce its practical value.",
-  },
-  "common-garden-cat": {
-    bestUse: "Learning the pet system before a player has a meaningful farming passive.",
-    mutationCompatibility: "No gameplay mutation compatibility is recorded.",
-    limitation: "A 1.0x recorded multiplier means it does not improve harvest value.",
-  },
-  "dust-bunny": {
-    bestUse: "Cosmetic collecting rather than crop progression.",
-    mutationCompatibility: "No gameplay mutation compatibility is recorded.",
-    limitation: "A 1.0x recorded multiplier and cosmetic-only ability make it a collection pick, not a farming pick.",
+    planningUse: "Active farming flexibility",
+    teamFit: "Established farms that can benefit from an active-play option",
+    decision: "Confirm the current effect and decide whether its play pattern fits your normal harvest routine.",
   },
   "golden-dragon": {
-    bestUse: "Golden-tier crop farms that can consistently use its crop-specific value effect.",
-    mutationCompatibility: "The database describes synergy with gold-focused crop and mutation entries; it is not universal.",
-    limitation: "Its recorded passive is crop-specific, so it is less universal than an all-crop multiplier pet.",
+    planningUse: "Specialized crop planning",
+    teamFit: "Teams built around a defined crop or farming focus",
+    decision: "Use it only when the live description supports the crop plan you are actually running.",
+  },
+  "neon-dragon-hatchling": {
+    planningUse: "General utility with a defensive angle",
+    teamFit: "Balanced teams that value both farming and protection",
+    decision: "Check whether its current utility solves a real problem instead of duplicating another team member.",
+  },
+  "celestial-fox-kit": {
+    planningUse: "Conditional farming setup",
+    teamFit: "Teams organized around a specific play window",
+    decision: "Verify the live condition and choose it only when that condition matches your usual schedule.",
+  },
+  "lucky-clover-bunny": {
+    planningUse: "Synergy-focused planning",
+    teamFit: "Theme-specific teams that already support its role",
+    decision: "Confirm the current pairing in the game before building a team around it.",
   },
   "phoenix-hatchling": {
-    bestUse: "Protecting an important crop from a single wilt or spoil event while retaining a strong multiplier.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "The recorded revival effect is limited, so it should protect priority crops rather than replace good routing.",
-  },
-  "forest-fox-kit": {
-    bestUse: "Expansion phases where bonus seed drops help grow the farm over several harvests.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "Seed drops are chance-based in the recorded ability, so its payoff is less direct than a higher multiplier.",
-  },
-  "night-owl": {
-    bestUse: "Night-hour farming where harvest speed is more valuable than an all-day bonus.",
-    mutationCompatibility: "Named pairing: Phosphor Sporebloom and other night-active entries in the database.",
-    limitation: "Its recorded bonus is tied to night hours, so it needs the right play schedule.",
-  },
-  "garden-turtle": {
-    bestUse: "Patient players farming slower, higher-value crops and accepting longer growth cycles.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "The recorded trade-off slows growth, which can hurt active short-cycle farming.",
-  },
-  "common-bunny": {
-    bestUse: "Early active play when a small harvest-speed improvement is available from a Basic Egg.",
-    mutationCompatibility: "The database explicitly records no Leporine Bloom synergy.",
-    limitation: "Its recorded multiplier and speed bonus are both modest compared with B-Tier options.",
-  },
-  "garden-caterpillar": {
-    bestUse: "Multi-plot farms where adjacent-plot growth support is more useful than personal multiplier.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "The recorded benefit is adjacency-based, so layout matters more than raw pet strength.",
-  },
-  "garden-snail": {
-    bestUse: "Collection or experimentation with its tile-based trail effect.",
-    mutationCompatibility: "No named conditional mutation pairing is recorded.",
-    limitation: "Its recorded direct multiplier is 1.0x and the trail effect is narrow.",
+    planningUse: "Farm stability",
+    teamFit: "Teams that value protection alongside progression",
+    decision: "Compare its current protection role with the utility already supplied by the rest of the team.",
   },
   "shadow-cat": {
-    bestUse: "Night-time mutation farming and Campfire Ritual progression when those systems are active.",
-    mutationCompatibility: "The database records night mutation and Inferno Shard interactions; verify event availability first.",
-    limitation: "Its recorded shard and mutation value depends on night timing and event-system availability.",
+    planningUse: "Event or condition-focused utility",
+    teamFit: "Teams pursuing a specific event or timed objective",
+    decision: "Treat it as situational until the current game confirms that the relevant system is active.",
   },
   "flame-bear": {
-    bestUse: "Summer or fire-crop rotations that can use its coin bonus and spoilage protection.",
-    mutationCompatibility: "Named pairing: Pyroclast Husk and other fire-adjacent entries in the database.",
-    limitation: "Its recorded best case requires fire crops or Summer conditions rather than general farming.",
+    planningUse: "Seasonal or theme-focused farming",
+    teamFit: "Teams built around a matching seasonal plan",
+    decision: "Confirm the current condition and compare its off-condition value before committing resources.",
+  },
+  "frost-wolf-pup": {
+    planningUse: "Seasonal progression",
+    teamFit: "Teams with a matching seasonal objective",
+    decision: "Use it when the relevant season or theme is part of the current plan, not as an assumed all-purpose choice.",
+  },
+  "magma-lizard-hatchling": {
+    planningUse: "Theme-specific farming",
+    teamFit: "Teams focused on a matching crop or seasonal theme",
+    decision: "Check the live effect and keep it only while the matching farm plan remains useful.",
+  },
+  "aqua-otter-kit": {
+    planningUse: "Routine farm utility",
+    teamFit: "Farms trying to reduce repeated manual chores",
+    decision: "Avoid duplicating utility that another equipped option already provides.",
+  },
+  "thunder-hawk-chick": {
+    planningUse: "Early active progression",
+    teamFit: "Developing farms that favor an active routine",
+    decision: "Use it as a progression option and reassess when the team's needs become more specialized.",
+  },
+  "forest-fox-kit": {
+    planningUse: "Farm expansion support",
+    teamFit: "Developing teams focused on expanding their farming loop",
+    decision: "Choose it when expansion support matters more than another immediate team role.",
+  },
+  "night-owl": {
+    planningUse: "Time-specific utility",
+    teamFit: "Teams whose normal play schedule matches its role",
+    decision: "Confirm the current timing requirement before treating it as a regular team option.",
+  },
+  "garden-turtle": {
+    planningUse: "Patient progression",
+    teamFit: "Teams using a slower, deliberate farming routine",
+    decision: "Compare its pace with your normal crop cycle before keeping it in an active team.",
+  },
+  "bamboo-panda-cub": {
+    planningUse: "Developing farm consistency",
+    teamFit: "Early teams that value a repeatable farming routine",
+    decision: "Keep it while it supports steady progression, then reassess when a clearer role becomes available.",
+  },
+  "common-garden-cat": {
+    planningUse: "Starter system learning",
+    teamFit: "New teams learning how pet roles affect farm planning",
+    decision: "Use it as a temporary learning option rather than an assumed long-term requirement.",
+  },
+  "dust-bunny": {
+    planningUse: "Collection-focused use",
+    teamFit: "Collections or casual teams without a specific farming need",
+    decision: "Choose it for collection value only when progression utility is not the priority.",
+  },
+  "common-bunny": {
+    planningUse: "Early active farming",
+    teamFit: "Starter teams that need a simple active-play option",
+    decision: "Reassess it once another pet better matches the team's main farming goal.",
+  },
+  "garden-caterpillar": {
+    planningUse: "Layout-aware support",
+    teamFit: "Teams whose farm layout can use localized utility",
+    decision: "Confirm that the current layout and live effect make the role useful before equipping it.",
+  },
+  "garden-snail": {
+    planningUse: "Narrow utility or collection",
+    teamFit: "Experimental teams testing a specialized role",
+    decision: "Use it only when its live behavior solves a specific need or supports a collection goal.",
   },
 };
 
-function noteFor(pet: (typeof pets)[number]) {
-  const note = petUseNotes[pet.id];
-  return {
-    bestUse: note?.bestUse ?? pet.abilities[0],
-    mutationCompatibility: note?.mutationCompatibility ?? "No named conditional mutation pairing is recorded.",
-    decision: note?.limitation ?? "Use it only while its recorded ability fits your current farm plan.",
-  };
-}
-
-function buildPetTierListData(): PetTierListData {
-  const tierColors: Record<string, string> = {
-    S: "#FF3D00",
-    A: "#FF8C00",
-    B: "#FFD700",
-    C: "#3A86FF",
-  };
-  const tierLabels: Record<string, string> = {
-    S: "Best-in-slot",
-    A: "Excellent",
-    B: "Solid",
-    C: "Budget",
-  };
-  const tierDescs: Record<string, string> = {
-    S: "The highest-ranked records in this database for broad farming value. Their abilities still need to match your crops and play time.",
-    A: "Strong alternatives that either give up some general power or become better in a specific situation.",
-    B: "Useful seasonal, utility, or budget choices that can remain practical while your farm is developing.",
-    C: "Starter or narrow-use records. They can be useful temporarily, but their limitations should guide your next upgrade.",
-  };
-  const tierOrder = ["S", "A", "B", "C"] as const;
-  const tierPets = {
-    S: getPetsByTier("S"),
-    A: getPetsByTier("A"),
-    B: getPetsByTier("B"),
-    C: getPetsByTier("C"),
-  };
-
+function buildPetTierListData() {
   const tierRows = Object.fromEntries(
     tierOrder.map((tier) => [
       tier,
-      tierPets[tier].map((pet) => {
-        const note = noteFor(pet);
+      getPetsByTier(tier).map((pet) => {
+        const profile = editorialProfiles[pet.id] ?? {
+          planningUse: "Flexible roster option",
+          teamFit: "Teams comparing options for an open role",
+          decision: "Confirm the current in-game description before using resources on this pet.",
+        };
+
         return {
+          id: pet.id,
           name: pet.name,
-          tier: pet.tier,
-          ability: pet.abilities.join("; "),
-          bestUse: note.bestUse,
-          source: pet.source,
-          mutationCompatibility: note.mutationCompatibility,
-          why: pet.multiplier.toFixed(1) + "x recorded multiplier; " + note.bestUse,
+          tier,
+          ...profile,
         };
       }),
     ]),
-  ) as Record<"S" | "A" | "B" | "C", PetTierTableRow[]>;
+  ) as Record<PetEditorialTier, PetTierTableRow[]>;
+
+  const petOrder = tierOrder.flatMap((tier) => tierRows[tier]);
 
   return {
-    title: "Grow a Garden Pet Tier List - S to C Ranking",
+    title: "Grow a Garden Pet Tier List - Editorial S to C Ranking",
     description:
-      "Compare the 22 pets in the current Grow a Garden database by tier, ability, source, money-making value, and mutation fit. Unverified roster data is intentionally excluded.",
+      "Compare GrowAndRangers' editorial S to C grouping for 22 pet names, with qualitative planning uses, team fit, and player decision guidance.",
     updatedAt: "August 3, 2026",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Grow a Garden Pet Tier List", href: "/grow-a-garden/pet-tier-list" },
     ],
+    tierRows,
+    petOrder,
     tierExplanation: tierOrder.map((tier) => ({
       tier,
       color: tierColors[tier],
       label: tierLabels[tier],
-      desc:
-        tier === "S"
-          ? "Highest recorded general value"
-          : tier === "A"
-            ? "Strong alternatives and synergies"
-            : tier === "B"
-              ? "Seasonal, utility, or budget picks"
-              : "Starter and narrow-use options",
+      desc: tierDescriptions[tier],
     })),
-    tiers: tierOrder.map((tier) => ({
-      name: tier + "-Tier - " + tierLabels[tier] + " Pets",
-      description: tierDescs[tier],
-      entries: tierPets[tier].map((pet) => ({
-        name: pet.name,
-        tier: pet.tier,
-        description: pet.multiplier.toFixed(1) + "x recorded multiplier, " + pet.abilities[0].toLowerCase(),
-      })),
-    })),
-    tierRows,
     dataScope: [
-      "This page ranks the 22 pet records currently present in the canonical pets database.",
-      "Multiplier, ability, tier, source, seasonal notes, and named synergies are shown only when recorded in that database.",
-      "The list does not claim to be the complete live-game roster. Unverified pets, drop rates, prices, and version changes are intentionally excluded.",
-      "Check the current game client and official channels before spending Coins or relying on a seasonal interaction.",
+      "This is GrowAndRangers' editorial Pet Tier List for the 22 pet names in its current project record. It is not an official ranking or patch note.",
+      "The page provides a complete editorial S to C grouping, qualitative use cases, and player decision guidance.",
+      "It does not present exact multipliers, egg sources, drop rates, probabilities, income values, cooldowns, or hidden mechanics as live-game facts.",
+      "Confirm current effects, availability, values, and restrictions in the game interface or developer announcements before spending resources.",
     ],
     rankingMethod: [
-      "The editorial tier combines the recorded multiplier, ability usefulness, source accessibility, and fit for common farming goals.",
-      "S-Tier favors broad value; A, B, and C include increasingly conditional, budget, starter, or collection-focused choices.",
-      "Seasonal and time-gated bonuses are treated as conditional rather than permanent upgrades.",
-      "No live market value, unsourced drop rate, or assumed pity system is used to create a rank.",
+      "General utility: how often a pet can help across ordinary farming plans.",
+      "Team fit: how clearly a pet can fill a useful role without duplicating the rest of the team.",
+      "Progression value: whether the pet can support a player's current stage and next practical decision.",
+      "Flexibility: how easily the pet can move between different farm goals or team setups.",
+      "Situational usefulness: whether a narrower role becomes valuable under the right condition, season, event, or layout.",
     ],
-    comparisonSections: [
-      {
-        title: "Best Overall Pets",
-        summary: "Use these when you want broad farming value rather than a narrow seasonal effect.",
-        picks: [
-          { name: "Golden Phoenix Chick", href: "/grow-a-garden/pets/golden-phoenix-chick", rationale: "Highest recorded multiplier in this database with automatic collection." },
-          { name: "Crystal Unicorn Foal", href: "/grow-a-garden/pets/crystal-unicorn-foal", rationale: "Strong multiplier with a double-harvest proc for short-cycle crops." },
-          { name: "Golden Dragon", href: "/grow-a-garden/pets/golden-dragon", rationale: "Near-top multiplier when your farm actually uses golden-tier crops." },
-        ],
-      },
-      {
-        title: "Best Beginner Pets",
-        summary: "Prioritize useful, accessible effects before chasing a premium or seasonal record.",
-        picks: [
-          { name: "Thunder Hawk Chick", href: "/grow-a-garden/pets/thunder-hawk-chick", rationale: "Basic Egg access and faster harvest actions support active early play." },
-          { name: "Garden Turtle", href: "/grow-a-garden/pets/garden-turtle", rationale: "Basic Egg option for patient players using longer crop cycles." },
-          { name: "Forest Fox Kit", href: "/grow-a-garden/pets/forest-fox-kit", rationale: "Bonus seed drops can help while expanding a new farm." },
-        ],
-      },
-      {
-        title: "Best Money-Making Pets",
-        summary: "These picks are based on recorded multiplier or crop-value effects, not a live market price.",
-        picks: [
-          { name: "Golden Phoenix Chick", href: "/grow-a-garden/pets/golden-phoenix-chick", rationale: "Broad multiplier and automatic collection suit general harvest income." },
-          { name: "Golden Dragon", href: "/grow-a-garden/pets/golden-dragon", rationale: "Its recorded effect is strongest on golden-tier crops." },
-          { name: "Crystal Unicorn Foal", href: "/grow-a-garden/pets/crystal-unicorn-foal", rationale: "Double-harvest upside can help short-cycle farming runs." },
-        ],
-      },
-      {
-        title: "Best Mutation Pets",
-        summary: "Choose a pet only when the named mutation or event condition is part of your plan.",
-        picks: [
-          { name: "Lucky Clover Bunny", href: "/grow-a-garden/pets/lucky-clover-bunny", rationale: "Recorded Leporine Bloom synergy makes it a focused rabbit-type choice." },
-          { name: "Shadow Cat", href: "/grow-a-garden/pets/shadow-cat", rationale: "Recorded night mutation and Inferno Shard interactions support a Campfire-focused build." },
-          { name: "Night Owl", href: "/grow-a-garden/pets/night-owl", rationale: "Recorded night-hour pairing favors mutation sessions on that schedule." },
-        ],
-      },
-      {
-        title: "Best Easily Obtainable Pets",
-        summary: "These records come from Basic Eggs and are useful before a player has premium options.",
-        picks: [
-          { name: "Thunder Hawk Chick", href: "/grow-a-garden/pets/thunder-hawk-chick", rationale: "Practical early harvest utility from a Basic Egg." },
-          { name: "Garden Turtle", href: "/grow-a-garden/pets/garden-turtle", rationale: "A budget option for slower, higher-value crop cycles." },
-          { name: "Common Bunny", href: "/grow-a-garden/pets/common-bunny", rationale: "Small active-play improvement while saving for a stronger pet." },
-        ],
-      },
-      {
-        title: "Conditional or Overrated Picks",
-        summary: "These pets are not automatically bad; their value drops when the recorded condition is not part of your play.",
-        picks: [
-          { name: "Frost Wolf Pup", href: "/grow-a-garden/pets/frost-wolf-pup", rationale: "Its peak value is seasonal, so all-season players may prefer a generalist." },
-          { name: "Aqua Otter Kit", href: "/grow-a-garden/pets/aqua-otter-kit", rationale: "Automatic watering is less valuable when another effect already covers that task." },
-          { name: "Golden Dragon", href: "/grow-a-garden/pets/golden-dragon", rationale: "Its crop-specific effect is harder to justify on a non-golden farm." },
-        ],
-      },
+    decisionTips: [
+      "Start with the role your current team is missing, then compare pets within that role.",
+      "Treat the letter tier as an editorial shortcut, not a substitute for the live pet description.",
+      "Prefer team fit over a higher letter when the higher group does not support your current farm plan.",
+      "Recheck the game interface after updates because effects, availability, and restrictions can change.",
     ],
-    beginnerPath: [
+    pageRoles: [
       {
-        step: "1",
-        title: "Start with a recorded Basic Egg option",
-        guidance:
-          "For a new farm, use Basic Egg records such as Thunder Hawk Chick, Garden Turtle, Common Bunny, or Bamboo Panda Cub as temporary tools. The goal is to get a usable pet effect without treating the first hatch as a final build.",
-        href: "/grow-a-garden/beginner-guide",
-        linkLabel: "Beginner Guide",
+        label: "Pet Tier List",
+        href: "/grow-a-garden/pet-tier-list",
+        description: "The complete GrowAndRangers editorial S to C grouping.",
       },
       {
-        step: "2",
-        title: "Switch from starter value to farming value",
-        guidance:
-          "Once your crop route is stable, prioritize a pet that improves normal harvest income or removes a real bottleneck. Golden Phoenix Chick, Golden Dragon, and Crystal Unicorn Foal are the strongest money-focused records on this page, but their sources are not presented as guaranteed outcomes.",
-        href: "/grow-a-garden/money-making-guide",
-        linkLabel: "Money Making Guide",
+        label: "Goal-Based Pet Guide",
+        href: "/grow-a-garden/best-pets",
+        description: "Recommendations organized around specific player goals.",
       },
       {
-        step: "3",
-        title: "Use mutation pets only when the condition is active",
-        guidance:
-          "Lucky Clover Bunny, Night Owl, Shadow Cat, Frost Wolf Pup, Magma Lizard Hatchling, and Flame Bear are best judged by their recorded condition. Do not rank a conditional bonus as permanent unless your farm actually uses that mutation, season, time window, or event system.",
-        href: "/grow-a-garden/mutation-tier-list",
-        linkLabel: "Mutation Tier List",
+        label: "Pets Database",
+        href: "/grow-a-garden/pets",
+        description: "Individual pet records and entity-level browsing.",
       },
-    ],
-    detailCards: pets.map((pet) => {
-      const note = noteFor(pet);
-      return {
-        name: pet.name,
-        rank: "Why " + pet.tier + "-Tier",
-        desc:
-          pet.name +
-          " is ranked from the recorded " +
-          pet.multiplier.toFixed(1) +
-          "x multiplier, " +
-          pet.source +
-          " source, and ability: " +
-          pet.abilities.join("; ") +
-          ".",
-        strengths: pet.strengths,
-        weaknesses: pet.weaknesses,
-        bestUse: note.bestUse,
-        decision: note.decision,
-        bestOn: pet.source,
-        evidence: [
-          pet.multiplier.toFixed(1) + "x recorded multiplier",
-          pet.source + " source",
-          pet.abilities.join("; "),
-        ],
-        color: tierColors[pet.tier],
-      };
-    }),
-    strategyTips: [
-      "Match the pet to the job: general multiplier for regular harvests, utility for a real farm bottleneck, and seasonal or mutation pets only when their condition is active.",
-      "Compare your current pet with the table before spending on another egg. This guide does not assume an exact drop rate or guarantee a particular result.",
-      "Use the Grow a Garden Codes page for rewards currently listed there, then verify the code and reward in the game client because codes and requirements can change.",
-      "When a pet's value is conditional, compare its base effect with an all-season alternative instead of treating the peak bonus as permanent.",
-    ],
-    pairingTable: [
-      { trait: "Golden Phoenix Chick (5.0x)", unit: "Aurelian Crown context (4.0x)", why: "20.0x recorded example" },
-      { trait: "Crystal Unicorn Foal (4.5x)", unit: "Aurelian Crown context (4.0x)", why: "18.0x recorded example" },
-      { trait: "Lucky Clover Bunny (3.2x)", unit: "Leporine Bloom (+18%)", why: "14.0x recorded example" },
-      { trait: "Neon Dragon Hatchling (3.5x)", unit: "Crystalline Mycelium context (3.5x)", why: "12.3x recorded example" },
-      { trait: "Celestial Fox Kit (3.0x)", unit: "Phosphor Sporebloom context (3.0x)", why: "9.0x recorded example" },
     ],
     faq: [
       {
-        question: "What is the best pet in Grow a Garden?",
-        answer: "Within the 22 records in this site's canonical database, Golden Phoenix Chick has the highest recorded multiplier and automatic collection. That is a database comparison, not an official live-game guarantee; verify the current client before spending for it.",
+        question: "What is this Grow a Garden Pet Tier List?",
+        answer: "It is GrowAndRangers' editorial S to C grouping for the 22 pet names in its current project record. It helps players compare broad uses and team fit, but it is not an official ranking, patch note, or live pet data table.",
       },
       {
-        question: "Which pet is best for beginners?",
-        answer: "Thunder Hawk Chick is the clearest early option in this database because it is listed as a Basic Egg pet with a faster harvest action. Garden Turtle and Common Bunny are other budget records, but each has a narrower trade-off.",
+        question: "How are pets assigned to editorial tiers?",
+        answer: "The grouping uses qualitative judgments about general utility, team fit, progression value, flexibility, and situational usefulness. A letter tier is a planning shortcut, not a statement of live power.",
       },
       {
-        question: "Which pets are best for mutations?",
-        answer: "Use Lucky Clover Bunny for the recorded Leporine Bloom pairing, Shadow Cat for the recorded night mutation and Campfire interactions, or Night Owl for a night-focused setup. These are conditional recommendations, not universal rankings.",
+        question: "Does a higher tier mean a pet is always the right choice?",
+        answer: "No. A lower editorial tier can be a better fit when it fills the role your team needs. Confirm the current pet description and compare it with your active farm plan before investing resources.",
       },
       {
-        question: "Which pet is best for making money?",
-        answer: "Golden Phoenix Chick is the broadest multiplier choice in this database. Golden Dragon is more specialized for golden-tier crops, while Crystal Unicorn Foal trades consistency for double-harvest upside. No live market or coins-per-hour claim is made here.",
+        question: "Why are exact pet multipliers and drop rates not shown?",
+        answer: "This page does not have a reliable per-pet developer source for every version-sensitive field. Exact values, sources, probabilities, cooldowns, and hidden mechanics should therefore be checked in the current game interface or developer announcements.",
       },
       {
-        question: "How do I get each pet?",
-        answer: "Use the Source field in the tier cards or open a pet detail page for the recorded source: Basic Egg, Rare Egg, Legendary Egg, or Seasonal Event. Exact odds and current event availability are not claimed unless the database records them.",
+        question: "How should I use the planning guidance?",
+        answer: "Identify the missing role in your team, compare the qualitative use and team-fit notes, and then verify the live effect. Recheck after game updates because availability and behavior can change.",
       },
       {
-        question: "Are lower-tier pets still worth using?",
-        answer: "Yes, when they are accessible or solve a specific early-game problem. B-Tier and C-Tier pets can be useful as temporary, seasonal, utility, or collection choices; replace them when a higher-value pet improves your normal farming loop.",
+        question: "Where should I look for recommendations by player goal?",
+        answer: "Use the separate goal-based pet guide for recommendations organized around particular objectives. This page remains focused on the complete editorial tier grouping.",
       },
       {
-        question: "Is this a complete live-game pet list?",
-        answer: "No. It ranks the 22 pet records currently present in the site's canonical database. Pets or mechanics that cannot be verified from the current data are intentionally not added just to match a larger third-party roster.",
+        question: "Is this a complete official live-game pet list?",
+        answer: "No. It covers 22 pet names in the current GrowAndRangers project record and does not guarantee a complete live roster. Use the Pets Database for entity records and the game interface for current availability.",
       },
     ],
     relatedGuides: [
-      { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Compare mutations before choosing a pet pairing" },
-      { label: "Money Making Guide", href: "/grow-a-garden/money-making-guide", description: "Choose a pet for your farming route and income goal" },
-      { label: "Beginner Guide", href: "/grow-a-garden/beginner-guide", description: "Follow an early-game route before investing in premium eggs" },
-      { label: "Pets Database", href: "/grow-a-garden/pets", description: "Browse every pet record and open individual detail pages" },
-      { label: "Crops Database", href: "/grow-a-garden/crops", description: "Match pet effects to the crops you actually grow" },
-      { label: "Seeds Database", href: "/grow-a-garden/seeds", description: "Check seed cost, growth, and seasonal records" },
-      { label: "Active Codes", href: "/grow-a-garden/codes", description: "Check currently listed rewards before hatching" },
+      {
+        label: "Goal-Based Pet Guide",
+        href: "/grow-a-garden/best-pets",
+        description: "Choose recommendations by a specific player objective",
+      },
+      {
+        label: "Pets Database",
+        href: "/grow-a-garden/pets",
+        description: "Browse individual pet records separately from editorial ranking",
+      },
+      {
+        label: "Pet Ranking Guide",
+        href: "/grow-a-garden/pet-ranking-guide",
+        description: "Understand how to interpret tier groupings and trade-offs",
+      },
     ],
   };
 }
 
 const data = buildPetTierListData();
+
 export default data;
