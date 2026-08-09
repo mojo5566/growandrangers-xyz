@@ -1,8 +1,8 @@
 import type { TierListPageData } from "../types";
 
 const data: TierListPageData = {
-  title: "Anime Rangers X Trait Tier List - All 32 Traits",
-  description: "Compare all 32 traits in the Anime Rangers X database by stored tier, effect, limitation, and recorded unit fit. Roll rates and unverified mechanics are excluded.",
+  title: "Anime Rangers X Trait Tier List - Editorial Guide",
+  description: "Compare the Trait names currently recorded by GrowAndRangers using editorial tiers and qualitative role guidance. Confirm live effects, values, and rates in the current game.",
   updatedAt: "August 4, 2026",
   breadcrumbs: [
     { label: "Home", href: "/" },
@@ -82,19 +82,18 @@ const data: TierListPageData = {
     { trait: "Six Eyes", unit: "Gojo/Chrono Slayer", why: "Cooldown reduction for ability spam" },
   ],
   faq: [
-    { question: "What are the highest-tier traits in this Anime Rangers X database?", answer: "Time Rewind, God-Speed, Dual Wield, and Sharingan are the four records stored as Mythic tier. This is the site's canonical database grouping, not an official live-game ranking." },
-    { question: "How many traits are included in this tier list?", answer: "The page includes all 32 canonical trait records: 4 Mythic, 7 Legendary, 9 Epic, 7 Rare, and 5 Common." },
-    { question: "Which trait is best for a unit?", answer: "Match the recorded effect to the unit's role, ultimate, passive, and limitations. Each card lists the unit names stored in the trait record and links to canonical unit pages when available." },
-    { question: "Which traits are useful for farming?", answer: "Use effects that explicitly mention resource or item drops, such as Drop Rate+ or Luck+. The page does not infer a farming bonus when the canonical effect does not record one." },
-    { question: "Are exact trait roll rates included?", answer: "No. This tier list deliberately omits probability fields and does not claim a pity system, boosted event rate, or reroll cost." },
-    { question: "When should I stop rerolling a trait?", answer: "Stop when the effect is useful for the unit's role or when you reach the budget chosen before rolling. Use the separate Trait Reroll Guide for the actual process, replacement risk, and resource strategy." },
-    { question: "Does this list include every live-game trait?", answer: "It includes every record currently present in the site's canonical Trait database. It does not claim that the database matches every live update without an external verification source." },
+    { question: "What is this Anime Rangers X Trait Tier List?", answer: "It is GrowAndRangers' editorial grouping of the Trait names in its current project record. It is a planning guide, not an official ranking, patch note, or Trait data table." },
+    { question: "How many Trait names are covered?", answer: "The page covers 32 names in the current GrowAndRangers project record. That count does not guarantee that the list matches every Trait available in the live game." },
+    { question: "How are the editorial tiers assigned?", answer: "The tiers organize the current project record into broad planning groups. Placement is editorial and should be checked against the live Trait description before a player spends resources." },
+    { question: "Which Trait should I use on a unit?", answer: "Start with the unit's job, such as damage, control, defense, support, or farming. Compare the qualitative guidance here, then confirm the current effect and restrictions in the game client." },
+    { question: "Why are exact Trait effects not shown?", answer: "This page does not have a reliable official source for every Trait field. Exact percentages, durations, triggers, and other version-sensitive values are therefore left for the current game interface or official announcements." },
+    { question: "Are Trait roll rates or pity rules included?", answer: "No. The page does not state roll probabilities, hidden weights, boosted rates, or pity rules. Only rely on those details when they are shown in the current game or an official announcement." },
+    { question: "When should I stop rerolling a Trait?", answer: "Stop when the result supports the unit's role or when you reach the budget chosen before rolling. Use the separate Trait Reroll Guide for replacement risk, stopping rules, and resource planning." },
   ],
   relatedGuides: [
     { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Use the reroll process, stopping rules, and resource strategy" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Compare all recorded units before assigning a valuable trait" },
-    { label: "Traits Database", href: "/anime-rangers-x/traits", description: "Browse canonical trait records and individual detail pages" },
-    { label: "Best Units", href: "/anime-rangers-x/best-units", description: "Choose long-term units before spending reroll resources" },
+    { label: "Units Directory", href: "/anime-rangers-x/units", description: "Review the project's current unit records before choosing a Trait direction" },
   ],
 };
 

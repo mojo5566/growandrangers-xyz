@@ -220,7 +220,7 @@ export default function ContentLayout({
           )}
         </div>
         <p className="text-xs text-[#768294] mt-2">
-          Content verified by the GrowAndRangers editorial team • Data sourced from canonical game databases
+          Independent editorial content • Check official announcements and the current game for version-sensitive details
         </p>
       </footer>
     </article>
