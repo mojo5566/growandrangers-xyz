@@ -10,7 +10,7 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Mythical Pets Tier List & Ranking",
   description:
-    "Tier list of every mythical pet in Grow a Garden. Compare S-Tier pets by multiplier, passive ability, trade value, and demand to see how they rank.",
+    "Editorial comparison of project records marked S-Tier, ordered by recorded multiplier. Ability, rarity, value, demand, and trend are internal or unverified fields, not independently verified official facts or live-market data.",
   keywords: [
     "mythical pets tier list Grow a Garden",
     "Grow a Garden mythical pet ranking",
@@ -23,12 +23,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mythical Pets Tier List & Ranking",
     description:
-      "Side-by-side tier list of every mythical-tier pet in Grow a Garden — multipliers, passives, trade values, and demand.",
+      "Editorial comparison of project records marked S-Tier, ordered by recorded multiplier. Ability, rarity, value, demand, and trend are internal or unverified fields, not independently verified official facts or live-market data.",
     type: "website",
   },
 };
 
-// S-Tier pets are the "mythical" tier in Grow a Garden
+// This page compares records marked S-Tier in the project database; S-Tier is
+// not treated as a verified rarity classification.
 const mythicalPets = pets
   .filter((p) => p.tier === "S")
   .sort((a, b) => b.multiplier - a.multiplier);
@@ -57,32 +58,32 @@ const faqs = [
   {
     question: "What counts as a mythical pet in Grow a Garden?",
     answer:
-      "In Grow a Garden's tier system, S-Tier pets are the mythical rarity. These pets have the highest multipliers in the game, ranging from 4.0× to 5.0×, and are hatched almost exclusively from Legendary Eggs or acquired through limited-time events. They represent the end-game pet collection goal.",
+      "This page uses the project's internal S-Tier tag to select records for an editorial comparison. That tag is not treated as proof that every listed pet has the same official rarity: the related internal trading records use their own rarity labels. Multiplier, ability, source, and acquisition details have not been independently verified on this page.",
   },
   {
     question: "Which mythical pet has the highest multiplier?",
     answer:
-      "The Golden Phoenix Chick has the highest multiplier at 5.0×, and it also comes with an auto-collect passive that makes it the strongest pet overall. The Crystal Unicorn Foal is close behind at 4.5× with a double-harvest proc ability that can situationally outperform the Phoenix on fast-growing crops.",
+      "In the current project data, Golden Phoenix Chick appears first because its recorded multiplier is 5.0×, followed by Golden Dragon at 4.8× and Crystal Unicorn Foal at 4.5×. This is an editorial ordering of internal records, not an official strength ranking or a guarantee of in-game results; the listed abilities also need to be checked against current game information.",
   },
   {
     question: "How rare are mythical pets in Grow a Garden?",
     answer:
-      "Mythical (S-Tier) pets are the rarest hatches in the game. From a Legendary Egg, the combined S-Tier drop rate is approximately 5-8%, and individual mythical pets within that pool are even rarer. Most players need to open 20-40 Legendary Eggs to hatch a specific mythical pet.",
+      "This page does not provide hatch probabilities or expected-count estimates because it currently has no official drop-rate table that can be cited here. Actual drop results should be checked against current in-game information or an accessible official announcement.",
   },
   {
     question: "Should I trade for a mythical pet or hatch one?",
     answer:
-      "Trading is usually more efficient if you already have high-value assets (S-Tier mutations, event-exclusive items, or duplicate Legendary pets). Hatching is a pure RNG grind that can consume 200,000+ coins. Always check the verified trade value in our Trading Database before committing to either path.",
+      "This page does not recommend trading or hatching as the more efficient route. Its comparison uses project records only; the linked Trading Database contains internal editorial value, demand, and trend fields, not official prices or independently verified transaction data. Check current game information before making a decision.",
   },
   {
     question: "Do mythical pets retain their value after updates?",
     answer:
-      "Generally yes. Mythical pets are rarely power-crept because new updates tend to add new mythical pets rather than nerf existing ones. The Golden Phoenix Chick in particular has held its top-tier status across multiple major updates and remains the highest-demand tradeable pet in the game.",
+      "This page does not make a retention, appreciation, or post-update market prediction. The internal value and trend fields are snapshots without a cited market sample or a defined forecasting method, so they should not be treated as evidence of future value.",
   },
   {
-    question: "Can I run multiple mythical pets at once?",
+    question: "Does this page confirm pet slot limits or multiplier stacking?",
     answer:
-      "No. Each plot can only have one active pet at a time, and pet multipliers do not stack with each other. The optimal setup is one mythical pet per plot, paired with the best mutation you can roll for that plot's crop. Focus your collection on one S-Tier pet before chasing duplicates.",
+      "No. This page does not independently verify pet slot limits, multiplier stacking behavior, or an optimal setup. Treat the comparison as an editorial view of project records and check the current in-game information or an accessible official announcement before relying on any mechanic or setup claim.",
   },
 ];
 
@@ -90,7 +91,7 @@ export default function BestMythicalPetsRankingPage() {
   return (
     <ContentLayout
       title="Mythical Pets Tier List & Ranking"
-      description="Side-by-side tier list of every mythical-tier pet in Grow a Garden — multipliers, passives, trade values, and demand."
+      description="Editorial comparison of project pet records marked S-Tier, ordered by recorded multiplier. This is not an official or complete Mythical-pet list. Ability, rarity, value, demand, and trend are internal records or unverified fields; trading fields are not official prices, live market quotes, or independently verified transaction data. Check current in-game information or accessible official announcements for facts that depend on game rules, availability, or version."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -109,20 +110,20 @@ export default function BestMythicalPetsRankingPage() {
       ]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
-      {/* Quick Answer - AI search summary */}
+      {/* Quick Answer - scope and method summary */}
       <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          Mythical (S-Tier) pets in Grow a Garden rank by multiplier as follows: the <strong className="text-white">Golden Phoenix Chick</strong> leads at 5.0× with an auto-collect passive, the <strong className="text-white">Golden Dragon</strong> sits at 4.8× with gold-crop synergy, and the <strong className="text-white">Crystal Unicorn Foal</strong> reaches 4.5× with a double-harvest proc. Expect to spend roughly 300,000 coins on 30 Legendary Eggs for one mythical hatch, and trade duplicates for the specific S-Tier you want rather than re-rolling.
+          This page is an editorial comparison of the three records currently marked <strong className="text-white">S-Tier</strong> in the project database. The displayed order is produced by filtering that internal tag and sorting the recorded multiplier: <strong className="text-white">Golden Phoenix Chick</strong> (5.0×), <strong className="text-white">Golden Dragon</strong> (4.8×), then <strong className="text-white">Crystal Unicorn Foal</strong> (4.5×). These records, including their abilities and use-case notes, have not been independently verified here and do not represent an official strength list or guaranteed earnings. This page does not estimate hatch odds, costs, or expected results.
         </p>
       </section>
 
-      {/* Opening — concrete number rather than templated intro */}
+      {/* Opening — source and scope boundary */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          Opening 30 Legendary Eggs at 10,000 coins each costs <strong className="text-white">300,000 coins</strong>. Statistically, that yields roughly 1.5–2.4 S-Tier pets — meaning most players will land <strong className="text-white">one</strong> mythical pet per 300k coin investment. The question is not &quot;which mythical is best&quot; — every S-Tier pet is strong. The real question is: <em className="text-white">which one should you trade duplicates for, and which one fits your farm style?</em> This page answers that using data from the canonical{" "}
+          This page does not provide hatch probabilities or expected-count estimates because there is currently no official drop-rate table that can be cited here. Actual drop results should be checked against current in-game information or an accessible official announcement. The comparison below uses the project&apos;s internal pet records and is intended to help readers inspect the recorded differences between these entries, not to establish an official best pet or a guaranteed result. It links to the canonical{" "}
           <Link href="/grow-a-garden/pets" className="text-[#00E676] hover:underline">Pets Database</Link>{" "}
           and{" "}
           <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link>.
@@ -137,17 +138,20 @@ export default function BestMythicalPetsRankingPage() {
         >
           ⚔️ Head-to-Head Comparison Matrix
         </h2>
+        <p className="mb-4 text-xs leading-relaxed text-[#768294]">
+          The value and demand columns reproduce fields from the project&apos;s internal trading records. They are not official prices, live market quotes, or independently verified transaction data, and should not be used as the sole basis for a trade or investment decision.
+        </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-[#252936] text-left text-xs uppercase tracking-wider text-[#768294]">
                 <th className="py-2 pr-3">Pet</th>
-                <th className="py-2 pr-3">Multiplier</th>
-                <th className="py-2 pr-3">Passive Ability</th>
-                <th className="py-2 pr-3">Best Use Case</th>
-                <th className="py-2 pr-3">Worst Case</th>
-                <th className="py-2 pr-3">Trade Value</th>
-                <th className="py-2 pr-3">Demand</th>
+                <th className="py-2 pr-3">Recorded Multiplier</th>
+                <th className="py-2 pr-3">Ability (Internal Record)</th>
+                <th className="py-2 pr-3">Possible Fit (Editorial)</th>
+                <th className="py-2 pr-3">Limitation to Verify</th>
+                <th className="py-2 pr-3">Internal Value Record</th>
+                <th className="py-2 pr-3">Internal Demand Label</th>
               </tr>
             </thead>
             <tbody>
@@ -166,14 +170,14 @@ export default function BestMythicalPetsRankingPage() {
                   <td className="py-3 pr-3 font-semibold text-white">{row.multiplier}×</td>
                   <td className="py-3 pr-3 text-xs text-[#BAC4D1]">{row.ability}</td>
                   <td className="py-3 pr-3 text-xs text-[#00E676]">
-                    {row.id === "golden-phoenix-chick" && "AFK farming, large farms (4+ plots)"}
-                    {row.id === "crystal-unicorn-foal" && "Fast crops (1–2 min growth), active play"}
-                    {row.id === "golden-dragon" && "Gold mutation farms (Midas Bloom stack)"}
+                    {row.id === "golden-phoenix-chick" && "Collection-oriented comparison; verify auto-collect behavior"}
+                    {row.id === "crystal-unicorn-foal" && "Active-harvest comparison; verify proc behavior"}
+                    {row.id === "golden-dragon" && "Gold-mutation comparison; verify the recorded synergy"}
                   </td>
                   <td className="py-3 pr-3 text-xs text-[#FF3D00]">
-                    {row.id === "golden-phoenix-chick" && "Lowest ceiling on very fast crops"}
-                    {row.id === "crystal-unicorn-foal" && "Inconsistent — RNG procs"}
-                    {row.id === "golden-dragon" && "Underperforms without gold mutation"}
+                    {row.id === "golden-phoenix-chick" && "No independently verified fast-crop comparison"}
+                    {row.id === "crystal-unicorn-foal" && "Recorded proc outcome requires verification"}
+                    {row.id === "golden-dragon" && "Recorded gold-mutation interaction requires verification"}
                   </td>
                   <td className="py-3 pr-3 text-xs text-[#00E676]">
                     {row.tradeValue ? row.tradeValue.toLocaleString() : "—"}
@@ -186,165 +190,69 @@ export default function BestMythicalPetsRankingPage() {
         </div>
       </section>
 
-      {/* Real hatching log — NEW section, replaces templated "Tiers Explained" */}
+      {/* Hatching information boundary */}
       <section aria-labelledby="hatching-log-heading">
         <h2
           id="hatching-log-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📊 What 30 Legendary Eggs Actually Looks Like
+          📊 Hatching Information Boundary
         </h2>
         <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-          <p className="text-sm leading-relaxed text-[#BAC4D1] mb-3">
-            Statistical expectation from a 30-egg bulk hatch (based on the canonical ~5–8% combined S-Tier drop rate). Individual results vary — some players land 3 S-Tier in 20 eggs; others need 50. Plan for the average, not the lucky outlier.
-          </p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-sm">
-              <thead className="bg-[#1E212B] text-[#768294]">
-                <tr>
-                  <th className="px-4 py-2 text-left font-semibold">Outcome</th>
-                  <th className="px-4 py-2 text-left font-semibold">Expected Count</th>
-                  <th className="px-4 py-2 text-left font-semibold">Estimated Coins Spent</th>
-                  <th className="px-4 py-2 text-left font-semibold">What to Do</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#252936]">
-                <tr>
-                  <td className="px-4 py-3 text-[#BAC4D1]">C-Tier pets (1.0×–1.5×)</td>
-                  <td className="px-4 py-3 text-[#BAC4D1]">~9–12</td>
-                  <td className="px-4 py-3 text-[#768294]">90,000–120,000 🪙</td>
-                  <td className="px-4 py-3 text-xs text-[#768294]">Use as trade filler for new players, or discard. No farming value.</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 text-[#BAC4D1]">B-Tier pets (2.0×–2.5×)</td>
-                  <td className="px-4 py-3 text-[#BAC4D1]">~10–14</td>
-                  <td className="px-4 py-3 text-[#768294]">100,000–140,000 🪙</td>
-                  <td className="px-4 py-3 text-xs text-[#768294]">Equip on secondary plots if better than current. Otherwise trade.</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 text-[#BAC4D1]">A-Tier pets (3.0×–3.5×)</td>
-                  <td className="px-4 py-3 text-[#BAC4D1]">~5–7</td>
-                  <td className="px-4 py-3 text-[#768294]">50,000–70,000 🪙</td>
-                  <td className="px-4 py-3 text-xs text-[#768294]">Strong plot fillers. Trade duplicates for shards or event items.</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 text-[#00E676] font-semibold">S-Tier pets (4.0×–5.0×)</td>
-                  <td className="px-4 py-3 text-[#00E676] font-semibold">~1.5–2.4</td>
-                  <td className="px-4 py-3 text-[#00E676]">300,000 🪙 (full bulk cost)</td>
-                  <td className="px-4 py-3 text-xs text-[#768294]">Keep the first. Trade duplicates for a different S-Tier or S-Tier mutation shards.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-3 text-xs text-[#768294]">
-            Bottom line: expect to spend ~300,000 coins per mythical pet. If your bankroll cannot absorb that without stalling your farm, stay in A-Tier.
+          <p className="text-sm leading-relaxed text-[#BAC4D1]">
+            This page does not provide hatch probabilities or expected-count estimates because it currently has no official drop-rate table that can be cited here. Actual drop results should be checked against current in-game information or an accessible official announcement. No acquisition cost, expected yield, or guarantee is inferred from the internal multiplier records.
           </p>
         </div>
       </section>
 
-      {/* Worked Example — NEW section */}
+      {/* Trading and acquisition decision boundary */}
       <section aria-labelledby="example-heading">
         <h2
           id="example-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📋 Worked Example: Trading Up to a Specific Mythical
+          📋 Why This Page Does Not Recommend a Trade Route
         </h2>
         <div className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-5">
-          <div className="grid gap-3 sm:grid-cols-2 mb-4">
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Player resources</div>
-              <ul className="mt-1 text-xs text-[#BAC4D1] space-y-1">
-                <li>• 4 plots, Golden Wheat, A-Tier mutation (3.0×)</li>
-                <li>• A-Tier pet (Neon Dragon Hatchling 3.5×) equipped</li>
-                <li>• 3 duplicate A-Tier pets in inventory</li>
-                <li>• 50,000 coins banked</li>
-                <li>• Target: Golden Phoenix Chick (5.0×)</li>
-              </ul>
-            </div>
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Goal</div>
-              <ul className="mt-1 text-xs text-[#BAC4D1] space-y-1">
-                <li>• Acquire Golden Phoenix Chick without stalling farm</li>
-                <li>• Avoid spending 300,000 coins on bulk Legendary Eggs</li>
-                <li>• Preserve current farming income throughout</li>
-              </ul>
-            </div>
-          </div>
           <div className="text-sm leading-relaxed text-[#BAC4D1] space-y-2">
-            <p><strong className="text-white">Path A — Bulk hatch (high cost, high variance):</strong> Spend 300,000 coins on 30 Legendary Eggs. Expected yield: 1.5–2.4 S-Tier pets, with ~30–40% chance one is the Golden Phoenix Chick specifically. Risk: you may spend 300k and get a different S-Tier. Time cost: ~2 weeks of farm income at 200k/hour.</p>
-            <p><strong className="text-white">Path B — Trade duplicates (recommended):</strong> List the 3 duplicate A-Tier pets in the{" "}
-              <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link>. Each A-Tier pet trades for ~1.3–1.8M coins value. Bundle 2 duplicates + 50,000 coins for a Golden Phoenix Chick (current verified value: 5M coins). Net cost: 2 duplicates you weren&apos;t using anyway.</p>
-            <p><strong className="text-white">Path C — Hybrid (patience route):</strong> Trade 1 duplicate A-Tier for Mutation Shards. Bulk-roll during the next boosted event for a Prismatic Rainbow. A Prismatic Rainbow + your existing 3.5× A-Tier pet produces a 21× multiplier — only 1.4× weaker than the Golden Phoenix Chick path (30×), at zero coin cost.</p>
-            <p className="text-xs text-[#00E676] mt-3">
-              Result: Path B is the recommended route — it preserves your farming income and converts unused duplicates into the target S-Tier pet. Path A is only worth it if you have zero tradeable assets and 300k+ surplus coins.
-            </p>
+            <p>A worked trade or hatching example would require independently sourced drop rates, transaction samples, and definitions for value and demand. Those inputs are not established on this page, so it does not recommend a specific trade bundle, purchase budget, holding period, investment, or route as more efficient.</p>
+            <p>The linked <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link> is useful for locating the project&apos;s internal records, but its value, demand, and trend fields are not official prices, live market quotes, or independently verified transaction data. They should not be the sole basis for a trade decision.</p>
           </div>
         </div>
       </section>
 
-      {/* When NOT to chase mythical — NEW section, replaces generic Tips */}
+      {/* Verification checklist without unsupported economic advice */}
       <section aria-labelledby="when-not-heading">
         <h2
           id="when-not-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🛑 When You Should NOT Chase a Mythical Pet
+          🛑 What to Verify Before Choosing a Pet
         </h2>
         <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-5">
           <ul className="space-y-3 text-sm text-[#BAC4D1]">
-            <li>
-              <strong className="text-white">Your farm earns under 10,000 coins/hour.</strong> At that income, 300,000 coins represents 30+ hours of farming — better spent on plot expansion and Rare Eggs.
-            </li>
-            <li>
-              <strong className="text-white">You have no mutation on your main plot.</strong> A 5.0× pet with no mutation (5.0× total) is weaker than a 3.0× pet with a 3.0× mutation (9.0× total). Always roll mutations first.
-            </li>
-            <li>
-              <strong className="text-white">You only own one pet total.</strong> Trading your only A-Tier pet for a mythical leaves you with one pet — and the mythical is on one plot, leaving your other 3 plots pet-less. Get 4 pets first.
-            </li>
-            <li>
-              <strong className="text-white">A new major update is announced.</strong> Updates often introduce new S-Tier pets that shift the meta. Wait 1–2 weeks post-update to see if the new pet changes the ranking before committing 300k coins.
-            </li>
-            <li>
-              <strong className="text-white">You plan to trade your mythical away within a week.</strong> Mythical pets appreciate — holding them 30+ days typically adds 10–20% to trade value. Flipping them quickly wastes the appreciation window.
-            </li>
+            <li><strong className="text-white">Ability behavior:</strong> compare the internal description with current in-game information before relying on an auto-collect, harvest, or mutation interaction.</li>
+            <li><strong className="text-white">Current classification:</strong> the page selects internal S-Tier records; do not assume that this editorial tier is the same as an official rarity label.</li>
+            <li><strong className="text-white">Current acquisition information:</strong> use the game and accessible official announcements for available eggs, events, and drop information.</li>
+            <li><strong className="text-white">Trading context:</strong> treat the value, demand, and trend fields as internal editorial records, not as a live quote, verified sale, or forecast.</li>
+            <li><strong className="text-white">Version scope:</strong> re-check the underlying facts after updates because this page does not independently establish a version-specific evidence record.</li>
           </ul>
         </div>
       </section>
 
-      {/* Acquisition routes — replaces templated "Acquisition Strategy" ol-list */}
+      {/* Acquisition information boundary */}
       <section aria-labelledby="routes-heading">
         <h2
           id="routes-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🎯 Three Routes to a Mythical Pet
+          🎯 Acquisition Information Boundary
         </h2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Route 1: Bulk Hatch</h3>
-            <p className="text-xs text-[#768294] mb-2">Cost: ~300,000 coins</p>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Buy 30 Legendary Eggs during a boosted event (check the{" "}
-              <Link href="/grow-a-garden/events" className="text-[#00E676] hover:underline">Events Tracker</Link>). Best for players with surplus coins and no tradeable assets. Expect 1–2 S-Tier pets.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Route 2: Trade Duplicates</h3>
-            <p className="text-xs text-[#768294] mb-2">Cost: 2–3 duplicate A/S-Tier pets</p>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Best for players who already have 4+ pets. Trade unused duplicates (verified value in the{" "}
-              <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link>) for the specific mythical you want. Zero coin cost.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Route 3: Event Exclusives</h3>
-            <p className="text-xs text-[#768294] mb-2">Cost: Event grind time</p>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Some seasonal events introduce S-Tier pets (Shadow Cat, Flame Bear from the Campfire Event). These cost event currency, not coins. Watch the{" "}
-              <Link href="/grow-a-garden/events" className="text-[#00E676] hover:underline">Events Database</Link> for the next drop.
-            </p>
-          </div>
+        <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
+          <p className="text-sm leading-relaxed text-[#BAC4D1]">
+            This page does not infer an acquisition route, cost, probability, expected yield, or trade outcome from the internal pet records. For current egg and event availability, consult in-game information or an accessible official announcement. For trading context, use the{" "}
+            <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link> as an internal reference only; its records are not official or independently verified market data.
+          </p>
         </div>
       </section>
 

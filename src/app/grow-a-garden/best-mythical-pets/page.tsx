@@ -10,20 +10,20 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Best Mythical Pets in Grow a Garden",
   description:
-    "Best mythical pets in Grow a Garden ranked by multiplier, trading value, and cultivation cost. Find which S-tier pet is worth chasing for your farm.",
+    "Editorial comparison of S-Tier pet records in Grow a Garden, including internal multiplier, ability, and trading fields with source limitations.",
   keywords: [
     "best mythical pets Grow a Garden",
-    "strongest mythical pets Grow a Garden",
+    "S-Tier pet comparison Grow a Garden",
     "Grow a Garden legendary pets guide",
     "Golden Phoenix Chick value",
     "Golden Dragon vs Crystal Unicorn Foal",
-    "mythical pet cultivation value",
+    "Grow a Garden pet comparison",
   ],
   alternates: { canonical: "/grow-a-garden/best-mythical-pets" },
   openGraph: {
     title: "Best Mythical Pets in Grow a Garden",
     description:
-      "Guide to the best and strongest mythical pets — multipliers, trading values, and cultivation value.",
+      "Editorial comparison of S-Tier pet records — internal multipliers, abilities, and trading fields with source limitations.",
     type: "website",
   },
 };
@@ -53,7 +53,7 @@ function formatValue(value: number): string {
   return value.toString();
 }
 
-// Get S-Tier pets (mythical-tier equivalent in this game) sorted by multiplier desc
+// Compare project records marked S-Tier, sorted by the internal multiplier field.
 const topPets = pets
   .filter((p) => p.tier === "S")
   .sort((a, b) => b.multiplier - a.multiplier);
@@ -66,41 +66,44 @@ const petsWithTrading = topPets.map((pet) => {
   return { pet, trading: tradingEntry };
 });
 
+const internalDescriptionNotice =
+  "The database description is not rendered here. Verify any ability or use-case claim against current in-game information or an accessible official source.";
+
 const faqs = [
   {
     question: "What is the best mythical pet in Grow a Garden?",
     answer:
-      "The Golden Phoenix Chick is the best pet in the game with a 5.0x multiplier and auto-collect passive. It's the only true Mythical-rarity pet in the trading market, valued at approximately 5 million Sheckles. The auto-collect ability eliminates harvesting downtime, effectively multiplying coins-per-hour well beyond the raw multiplier.",
+      "This page does not establish an official best pet. In the project data, Golden Phoenix Chick appears first in the editorial comparison because its recorded multiplier is 5.0x. The multiplier and auto-collect description are internal records that have not been independently verified here, and they do not guarantee in-game performance or earnings.",
   },
   {
     question: "How do legendary pets compare to mythical pets?",
     answer:
-      "Mythical pets (only Golden Phoenix Chick currently) sit at 5.0x multiplier with a 5M Sheckle trade value. Legendary pets range from 4.2x to 4.8x multiplier with trade values from 1.5M to 2.8M Sheckles. The gap is significant but Legendary pets are far more accessible — most end-game players will run a Legendary team before earning a Mythical.",
+      "The page compares project records marked S-Tier and also displays the separate rarity labels found in the internal trading records. S-Tier is not treated as equivalent to an official Mythical rarity. The recorded multipliers, abilities, accessibility, and trading fields require verification against current game information and are not presented as official facts.",
   },
   {
     question: "Which legendary pet has the highest trading value?",
     answer:
-      "The Golden Dragon has the highest trading value among Legendary pets at approximately 2.8M Sheckles, with High demand and a Rising trend. It was added in the Zen Update (June 2026) and demand currently outstrips supply. The Crystal Unicorn Foal is second at 2.4M with Stable demand.",
+      "The internal trading records currently show Golden Dragon with a higher recorded value than Crystal Unicorn Foal among the entries displayed on this page. These values, demand labels, and trend labels are project records—not official prices, live market quotes, or independently verified transaction data.",
   },
   {
     question: "Are mythical pets worth the investment?",
     answer:
-      "Yes — if you can afford one. Mythical pets hold their value extremely well due to rarity, and the multiplier difference compounds over thousands of harvests. However, only pursue a Mythical if you have a fully-built Legendary team first — the marginal gain from Legendary to Mythical is smaller than the jump from Epic to Legendary.",
+      "This page does not provide investment advice or a value-retention forecast. Whether a pet is useful depends on verified game mechanics, the player's goals, and current trading conditions; the internal multiplier and trading fields should not be used as the sole basis for a purchase or trade.",
   },
   {
     question: "Where can I trade for mythical and legendary pets?",
     answer:
-      "Use our Trading Values database to check current market prices before trading. Always use a trusted middleman for high-value trades (anything above 1M Sheckles), screenshot the agreement, and never trade with unverified accounts. The official Discord trading channel is the safest venue.",
+      "The linked Trading Database can be used to inspect the project's internal records. It does not provide official pricing, live market quotes, or independently verified transaction data, and this page does not designate a venue as safest. Confirm current trading rules and conditions through the game or an accessible official source.",
   },
   {
     question: "Which pet should beginners get first?",
     answer:
-      "Beginners should not chase mythical pets at all. Start with a B-Tier pet from a Rare Egg (2,000 coins) such as the Neon Dragon Hatchling or Phoenix Hatchling, both offering 3.0×–3.5× multipliers. These are 5× cheaper per attempt than Legendary Eggs and reliably double or triple your farming income within the first week. Only pivot to Legendary Egg bulk-hatching once you sustain 50,000+ coins per hour and can absorb a 300,000-coin loss without stalling your farm.",
+      "This page does not prescribe a beginner purchase or income threshold. Beginners can compare their current goals and available in-game information with the internal pet records, while treating the recorded tiers, multipliers, abilities, and acquisition details as unverified until checked against a reliable current source.",
   },
   {
     question: "Are mythical pets worth trading for?",
     answer:
-      "Trading for a mythical pet is worth it only if you already hold duplicate Legendary or S-Tier pets to use as currency. A direct coin-for-pet trade at 5M Sheckles is rarely efficient because that same coin volume funds 500 Legendary Eggs — statistically enough to hatch several S-Tier pets. The optimal path is to trade 2–3 duplicate A-Tier pets plus a small coin balance for the Golden Phoenix Chick, preserving your active farming income while converting unused inventory into the mythical you want.",
+      "This page does not recommend a specific trade, bundle, coin amount, hatching budget, or route as more efficient. A trade decision would require current, independently sourced market evidence and verified game information; the linked Trading Database is an internal reference only.",
   },
 ];
 
@@ -108,7 +111,7 @@ export default function BestMythicalPetsPage() {
   return (
     <ContentLayout
       title="Best Mythical Pets in Grow a Garden"
-      description="Guide to the best and strongest mythical pets in Grow a Garden — multipliers, trading values, and cultivation value to help you decide which mythical pet to chase."
+      description="Editorial comparison of project records marked S-Tier in Grow a Garden, with internal multiplier, ability, source, and trading fields. Rarity and market information require independent verification."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -120,7 +123,7 @@ export default function BestMythicalPetsPage() {
       articleSection="Pets"
       keywords={[
         "best mythical pets Grow a Garden",
-        "strongest mythical pets Grow a Garden",
+        "S-Tier pet comparison Grow a Garden",
         "Grow a Garden legendary pets guide",
         "Golden Phoenix Chick value",
         "Golden Dragon vs Crystal Unicorn Foal",
@@ -133,18 +136,19 @@ export default function BestMythicalPetsPage() {
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The only true Mythical pet in Grow a Garden is the <strong className="text-white">Golden Phoenix Chick</strong> at 5.0× multiplier, valued at roughly 5 million Sheckles. Below it, Legendary pets like the <strong className="text-white">Golden Dragon</strong> (4.8×, ~2.8M Sheckles) and <strong className="text-white">Crystal Unicorn Foal</strong> (4.5×, ~2.4M Sheckles) are far more accessible. Chase a Mythical only after building a full Legendary team — the jump from Epic to Legendary outweighs the marginal gain from Legendary to Mythical.
+          This page compares three project records currently marked <strong className="text-white">S-Tier</strong> and orders them by their recorded internal multiplier: <strong className="text-white">Golden Phoenix Chick</strong> (5.0×), <strong className="text-white">Golden Dragon</strong> (4.8×), then <strong className="text-white">Crystal Unicorn Foal</strong> (4.5×). These tier, multiplier, ability, source, rarity, and trading fields are internal records or otherwise unverified here; S-Tier does not establish official Mythical rarity, official strength, live market value, or guaranteed earnings. This page does not provide hatch odds, acquisition costs, trade recommendations, or guaranteed outcomes.
         </p>
       </section>
 
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The top of Grow a Garden&apos;s pet meta is dominated by <strong className="text-white">Mythical</strong> and{" "}
-          <strong className="text-white">Legendary</strong> pets — the rarest and most powerful companions in the game.
-          This comparison ranks all {topPets.length} top-tier pets by multiplier, then cross-references each one with the
-          live trading market to show you current value, demand, and trend. Use this data to decide which egg to hatch
-          next, which pet to chase in trades, and which one will give you the biggest coins-per-hour boost.
+          This editorial comparison covers the {topPets.length} records selected by the project&apos;s internal{" "}
+          <strong className="text-white">S-Tier</strong> tag. It shows each record&apos;s multiplier, source, ability
+          description, and separate trading fields so readers can inspect how the entries differ. These fields and
+          descriptions have not been independently verified on this page; they do not establish official rarity,
+          current market conditions, or a coins-per-hour result. Check current in-game information or an accessible
+          official source before relying on them.
         </p>
       </section>
 
@@ -154,7 +158,7 @@ export default function BestMythicalPetsPage() {
           id="ranking-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          🏆 Ranked Comparison — Multiplier & Stats
+          🏆 Editorial S-Tier Comparison — Internal Fields
         </h2>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[760px] w-full text-sm border-collapse">
@@ -163,9 +167,9 @@ export default function BestMythicalPetsPage() {
                 <th className="py-3 px-3 font-semibold">#</th>
                 <th className="py-3 px-3 font-semibold">Pet</th>
                 <th className="py-3 px-3 font-semibold">Tier</th>
-                <th className="py-3 px-3 font-semibold">Multiplier</th>
-                <th className="py-3 px-3 font-semibold">Source</th>
-                <th className="py-3 px-3 font-semibold">Key Ability</th>
+                <th className="py-3 px-3 font-semibold">Recorded Multiplier</th>
+                <th className="py-3 px-3 font-semibold">Source Record</th>
+                <th className="py-3 px-3 font-semibold">Ability (Internal Record)</th>
               </tr>
             </thead>
             <tbody>
@@ -204,17 +208,23 @@ export default function BestMythicalPetsPage() {
           id="value-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          💰 Trading Value & Demand Comparison
+          💰 Internal Trading Record Comparison
         </h2>
+        <p className="mb-4 text-xs leading-relaxed text-[#768294]">
+          The value, demand, and trend fields below come from the project&apos;s internal <code>trading.ts</code> records.
+          They are not official pricing, live market quotes, or independently verified transaction data, and should not
+          be used as the sole basis for a trade or investment decision. The rarity labels are also displayed as recorded
+          internal fields and are not used to equate S-Tier with an official Mythical rarity.
+        </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[760px] w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-[#252936] text-left text-xs text-[#768294] uppercase tracking-wider">
                 <th className="py-3 px-3 font-semibold">Pet</th>
-                <th className="py-3 px-3 font-semibold">Rarity</th>
-                <th className="py-3 px-3 font-semibold">Value</th>
-                <th className="py-3 px-3 font-semibold">Demand</th>
-                <th className="py-3 px-3 font-semibold">Trend</th>
+                <th className="py-3 px-3 font-semibold">Recorded Rarity</th>
+                <th className="py-3 px-3 font-semibold">Internal Value Record</th>
+                <th className="py-3 px-3 font-semibold">Internal Demand Label</th>
+                <th className="py-3 px-3 font-semibold">Internal Trend Label</th>
                 <th className="py-3 px-3 font-semibold">Trade Link</th>
               </tr>
             </thead>
@@ -269,7 +279,7 @@ export default function BestMythicalPetsPage() {
           id="verdicts-heading"
           className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4"
         >
-          ⚖️ Quick Verdicts
+          ⚖️ Quick Editorial Comparisons
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {petsWithTrading.map(({ pet, trading: t }) => (
@@ -281,14 +291,16 @@ export default function BestMythicalPetsPage() {
                 >
                   {pet.name}
                 </Link>
-                <span className="text-base font-bold text-[#00E676]">{pet.multiplier.toFixed(1)}x</span>
+                <span className="text-xs font-semibold text-[#00E676]">Recorded multiplier: {pet.multiplier.toFixed(1)}x</span>
               </div>
-              <p className="text-xs text-[#768294] leading-relaxed">{pet.description}</p>
+              <p className="text-xs text-[#768294] leading-relaxed">
+                <strong className="text-[#BAC4D1]">Description boundary:</strong> {internalDescriptionNotice}
+              </p>
               {t && (
                 <p className="mt-3 text-xs text-[#BAC4D1]">
-                  <strong className="text-[#00E676]">Trade value:</strong> {formatValue(t.value)} •{" "}
-                  <strong className="text-[#00E676]">Demand:</strong> {t.demand} •{" "}
-                  <strong className="text-[#00E676]">Trend:</strong> {t.trend}
+                  <strong className="text-[#00E676]">Internal value record:</strong> {formatValue(t.value)} •{" "}
+                  <strong className="text-[#00E676]">Internal demand label:</strong> {t.demand} •{" "}
+                  <strong className="text-[#00E676]">Internal trend label:</strong> {t.trend}
                 </p>
               )}
             </div>
