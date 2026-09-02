@@ -9,9 +9,9 @@ import {
 } from "@/data/garden/database/trading";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Trading Values — Price Guide",
+  title: "Grow a Garden Trading Values — Internal Reference",
   description:
-    "Complete Grow a Garden trading value list for pets, seeds, crops, and mutations. Browse by category, demand, and trend. Updated daily with verified market prices.",
+    "Browse internal editorial records for Grow a Garden pets, seeds, crops, and mutations. The listed value, demand, and trend fields are project reference values, not official prices or live market quotes.",
   keywords: [
     "Grow a Garden trading values",
     "Grow a Garden trade prices",
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "Grow a Garden seed values",
     "Grow a Garden crop values",
     "Grow a Garden mutation values",
-    "Grow a Garden price guide",
+    "Grow a Garden trading reference",
   ],
   alternates: { canonical: "/grow-a-garden/trading" },
   openGraph: {
-    title: "Grow a Garden Trading Values — Price Guide",
+    title: "Grow a Garden Trading Values — Internal Reference",
     description:
-      "Complete Grow a Garden trading value list for pets, seeds, crops, and mutations. Updated daily.",
+      "Internal editorial records for Grow a Garden trading categories. Values and labels are project reference fields, not official prices or live market quotes.",
     type: "website",
   },
 };
@@ -54,10 +54,10 @@ const categoryMeta: Record<
   string,
   { label: string; icon: string; heading: string }
 > = {
-  Pet: { label: "Pets", icon: "🐾", heading: "Pet Trading Values" },
-  Seed: { label: "Seeds", icon: "🌰", heading: "Seed Trading Values" },
-  Crop: { label: "Crops", icon: "🌱", heading: "Crop Trading Values" },
-  Mutation: { label: "Mutations", icon: "✨", heading: "Mutation Trading Values" },
+  Pet: { label: "Pets", icon: "🐾", heading: "Pet Internal Records" },
+  Seed: { label: "Seeds", icon: "🌰", heading: "Seed Internal Records" },
+  Crop: { label: "Crops", icon: "🌱", heading: "Crop Internal Records" },
+  Mutation: { label: "Mutations", icon: "✨", heading: "Mutation Internal Records" },
 };
 
 const categoryOrder: Array<"Pet" | "Seed" | "Crop" | "Mutation"> = [
@@ -75,29 +75,29 @@ function formatValue(value: number): string {
 
 const faqs = [
   {
-    question: "How are Grow a Garden trading values calculated?",
+    question: "What does this Grow a Garden trading list show?",
     answer:
-      "Our trading values are aggregated from verified in-game trades, community marketplaces, and active Discord trading channels. We weight recent trades more heavily and exclude outliers. Values are updated daily to reflect the live market — but always use your own judgment when trading.",
+      "This page shows internal editorial records for trade-related categories. The value, demand, trend, rarity, and category fields are project reference fields, not official prices, live market quotes, or independently verified transaction data.",
   },
   {
-    question: "What is the most valuable pet in Grow a Garden?",
+    question: "Are these official Grow a Garden prices?",
     answer:
-      "The Golden Phoenix Chick is currently the most valuable pet at approximately 5,000,000 Sheckles equivalent. It's followed by the Golden Dragon (2.8M) and Crystal Unicorn Foal (2.4M). All three are in High demand and Rising or Stable in trend.",
+      "No. The numbers and labels are internal editorial records maintained as a project reference. They are not official prices or live market quotes, and this page does not independently verify transactions.",
   },
   {
-    question: "Should I trade my Mythstar Seed now or hold it?",
+    question: "How should I read the value, demand, and trend fields?",
     answer:
-      "Mythstar Seed is currently Rising in value with High demand. Unless you need the immediate liquidity for a higher-value trade (like a Mythical pet), holding is generally recommended — Mythstar is the only seed that can spawn S-Tier mutations, so its value is unlikely to drop soon.",
+      "Treat value as an internal reference number, and demand and trend as internal labels attached to the record. These fields are descriptive project data only; they are not a trade recommendation, prediction, or guarantee of a particular outcome.",
   },
   {
-    question: "Why do mutation values change so frequently?",
+    question: "What date applies to these trading records?",
     answer:
-      "Mutations are the highest-volatility category because their value depends on the current meta. When new content updates rebalance mutation roll rates or add new mutations, the entire tier list can shift. We update mutation values within 24 hours of any major update.",
+      "The date shown on this page is an editorial record date for this project view. It is not a transaction collection date, market sampling date, or promise of a particular update schedule.",
   },
   {
-    question: "Is the BloxPulse trading value list official?",
+    question: "Can this list replace in-game trade verification?",
     answer:
-      "No — this is a community-curated price guide based on observed trades. Grow a Garden does not have an official trading value list. Always cross-reference multiple sources before committing to high-value trades, and never trade items you cannot afford to lose.",
+      "No. Use this page only as an internal project reference and verify the terms of any trade independently. It does not confirm a transaction or establish an official price.",
   },
 ];
 
@@ -106,17 +106,21 @@ export default function TradingDatabasePage() {
 
   return (
     <ContentLayout
-      title="Grow a Garden Trading Values"
-      description="Complete trading value list for every tradeable item in Grow a Garden — pets, seeds, crops, and mutations. Browse by category, demand, and trend. Updated daily with verified market prices."
+      title="Grow a Garden Trading Reference"
+      description="Internal editorial records for trade-related Grow a Garden pets, seeds, crops, and mutations. Value, demand, and trend are project reference fields, not official prices or live market quotes."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
-        { label: "Trading Values", href: "/grow-a-garden/trading" },
+        { label: "Trading Reference", href: "/grow-a-garden/trading" },
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/trading"
       updatedAt="July 19, 2026"
     >
+      <p className="rounded-xl border border-[#252936] bg-[#14161D] p-4 text-sm leading-relaxed text-[#BAC4D1]">
+        This page contains internal editorial records and project reference values. The listed fields are not official prices, live market quotes, or independently verified transaction data. The displayed date is an editorial record date, not a market sampling date.
+      </p>
+
       {/* Category Filter Tabs (anchor links) */}
       <section aria-labelledby="filters-heading">
         <h2 id="filters-heading" className="sr-only">
@@ -127,7 +131,7 @@ export default function TradingDatabasePage() {
             href="#high-demand"
             className="rounded-lg border border-[#00E676]/30 bg-[#00E676]/10 px-4 py-2 text-sm font-semibold text-[#00E676] transition hover:bg-[#00E676]/20"
           >
-            🔥 High Demand ({highDemand.length})
+            🔥 High Internal Demand Labels ({highDemand.length})
           </a>
           {categoryOrder.map((cat) => {
             const items = getTradingByCategory(cat);
@@ -145,21 +149,21 @@ export default function TradingDatabasePage() {
         </div>
       </section>
 
-      {/* High Demand Section */}
+      {/* High Internal Demand Label Section */}
       <section aria-labelledby="high-demand-heading" id="high-demand" className="scroll-mt-8">
         <h2
           id="high-demand-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-6"
         >
-          🔥 High Demand Items
+          🔥 High Internal Demand Label Items
         </h2>
         <div className="overflow-hidden rounded-xl border border-[#00E676]/30">
           <div className="grid grid-cols-[1fr_100px_90px_90px_90px] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">NAME</span>
-            <span className="text-xs font-semibold text-[#768294]">CATEGORY</span>
-            <span className="text-xs font-semibold text-[#768294]">RARITY</span>
-            <span className="text-xs font-semibold text-[#768294]">VALUE</span>
-            <span className="text-xs font-semibold text-[#768294]">TREND</span>
+            <span className="text-xs font-semibold text-[#768294]">RECORDED CATEGORY</span>
+            <span className="text-xs font-semibold text-[#768294]">RECORDED RARITY</span>
+            <span className="text-xs font-semibold text-[#768294]">INTERNAL VALUE RECORD</span>
+            <span className="text-xs font-semibold text-[#768294]">INTERNAL TREND LABEL</span>
           </div>
           {highDemand.map((item) => (
             <div
@@ -203,18 +207,17 @@ export default function TradingDatabasePage() {
               {meta.icon} {meta.heading}
             </h2>
             <div className="overflow-hidden rounded-xl border border-[#252936]">
-              <div className="grid grid-cols-[1fr_90px_90px_100px_90px_90px] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
+              <div className="grid grid-cols-[1fr_90px_90px_100px_90px] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
                 <span className="text-xs font-semibold text-[#768294]">NAME</span>
-                <span className="text-xs font-semibold text-[#768294]">RARITY</span>
-                <span className="text-xs font-semibold text-[#768294]">DEMAND</span>
-                <span className="text-xs font-semibold text-[#768294]">VALUE</span>
-                <span className="text-xs font-semibold text-[#768294]">TREND</span>
-                <span className="text-xs font-semibold text-[#768294]">NOTES</span>
+                <span className="text-xs font-semibold text-[#768294]">RECORDED RARITY</span>
+                <span className="text-xs font-semibold text-[#768294]">INTERNAL DEMAND LABEL</span>
+                <span className="text-xs font-semibold text-[#768294]">INTERNAL VALUE RECORD</span>
+                <span className="text-xs font-semibold text-[#768294]">INTERNAL TREND LABEL</span>
               </div>
               {items.map((item) => (
                 <div
                   key={item.id}
-                  className="grid grid-cols-[1fr_90px_90px_100px_90px_90px] gap-2 border-t border-[#252936] px-4 py-3 items-center hover:bg-[#1E212B] transition"
+                  className="grid grid-cols-[1fr_90px_90px_100px_90px] gap-2 border-t border-[#252936] px-4 py-3 items-center hover:bg-[#1E212B] transition"
                 >
                   <Link
                     href={`/grow-a-garden/trading/${item.id}`}
@@ -232,9 +235,6 @@ export default function TradingDatabasePage() {
                   <span className={`rounded px-1.5 py-0.5 text-xs font-semibold w-fit ${trendBadge[item.trend]}`}>
                     {item.trend}
                   </span>
-                  <span className="text-xs text-[#768294] truncate" title={item.notes}>
-                    {item.notes ?? "—"}
-                  </span>
                 </div>
               ))}
             </div>
@@ -248,7 +248,7 @@ export default function TradingDatabasePage() {
           id="stats-heading"
           className="font-heading text-[20px] font-semibold text-white mb-4"
         >
-          📊 Market at a Glance
+          📊 Internal Records at a Glance
         </h2>
         <div className="grid gap-3 sm:grid-cols-4">
           <div className="rounded-lg border border-[#252936] bg-[#1E212B] p-3">
@@ -256,17 +256,17 @@ export default function TradingDatabasePage() {
             <p className="mt-1 text-lg font-bold text-[#BAC4D1]">{trading.length}</p>
           </div>
           <div className="rounded-lg border border-[#252936] bg-[#1E212B] p-3">
-            <span className="text-xs text-[#768294]">High Demand</span>
+            <span className="text-xs text-[#768294]">High Internal Demand Labels</span>
             <p className="mt-1 text-lg font-bold text-[#00E676]">{highDemand.length}</p>
           </div>
           <div className="rounded-lg border border-[#252936] bg-[#1E212B] p-3">
-            <span className="text-xs text-[#768294]">Rising</span>
+            <span className="text-xs text-[#768294]">Rising Internal Trend Labels</span>
             <p className="mt-1 text-lg font-bold text-[#00E676]">
               {trading.filter((t) => t.trend === "Rising").length}
             </p>
           </div>
           <div className="rounded-lg border border-[#252936] bg-[#1E212B] p-3">
-            <span className="text-xs text-[#768294]">Falling</span>
+            <span className="text-xs text-[#768294]">Falling Internal Trend Labels</span>
             <p className="mt-1 text-lg font-bold text-[#FF3D00]">
               {trading.filter((t) => t.trend === "Falling").length}
             </p>
