@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "Can I trade for Midas Bloom?",
     answer:
-      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. Trade with other players for shards and bulk-roll 10 at once during a 2× or 3× boosted event to maximize your Midas Bloom odds — single-rolling gives only ~0.8% per shard. Check our Trading Database for current shard values before trading, and prioritize saving shards for the next boosted event window.",
+      "Mutations themselves are not tradeable, but the Mutation Shards used to roll them are. The Trading Database contains internal project-recorded fields for reference only; it does not provide current shard prices or a trading recommendation. Verify any in-game terms independently, and use the roll probabilities and event rules in this guide when planning shard usage.",
   },
   {
     question: "Should I apply Midas Bloom immediately or save it?",
@@ -308,7 +308,7 @@ export default function GoldMutationGuidePage() {
           <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
             <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 1: Single-rolling shards out of curiosity</h3>
             <p className="text-xs leading-relaxed text-[#768294]">
-              A new player unlocks the Mutation Station, gets 3 shards from a code, and single-rolls immediately. Each single roll has ~0.8% Midas odds. Three single rolls = ~2.4% chance. If they had saved those 3 shards and combined with 7 more from daily login to bulk-roll 10, the odds would be ~6% — 2.5× better. <strong className="text-white">Cost: 60% of your shard value wasted.</strong>
+              A new player unlocks the Mutation Station, gets 3 shards from a code, and single-rolls immediately. Each single roll has ~0.8% Midas odds. Three single rolls = ~2.4% chance. If they had saved those 3 shards and combined with 7 more from daily login to bulk-roll 10, the odds would be ~6% — 2.5× better. <strong className="text-white">Cost: 60% of the available roll opportunity used inefficiently.</strong>
             </p>
           </div>
           <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
@@ -332,7 +332,7 @@ export default function GoldMutationGuidePage() {
           <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
             <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 5: Rolling during a non-boosted window out of impatience</h3>
             <p className="text-xs leading-relaxed text-[#768294]">
-              Player has 20 shards, no event is active, and they roll &quot;just to see&quot;. Bulk-roll odds without event: ~6%. Same 20 shards during a 2× event: ~12%. Player effectively threw away half their expected value. <strong className="text-white">Cost: 50% of shard value — always check the Events Tracker first.</strong>
+              Player has 20 shards, no event is active, and they roll &quot;just to see&quot;. Bulk-roll odds without event: ~6%. Same 20 shards during a 2× event: ~12%. The player used the same resources under a lower probability. <strong className="text-white">Cost: a lower expected roll probability — always check the Events Tracker first.</strong>
             </p>
           </div>
         </div>
@@ -348,13 +348,13 @@ export default function GoldMutationGuidePage() {
         </h2>
         <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
           <p className="text-sm leading-relaxed text-[#BAC4D1] mb-3">
-            Landing Midas Bloom is not the end — it is the gateway to the late-game optimization loop. Once your main plot is at 5.0×, shift your attention to these higher-ROI targets before chasing Prismatic Rainbow:
+            Landing Midas Bloom is not the end — it is the gateway to the late-game optimization loop. Once your main plot is at 5.0×, shift your attention to these higher-multiplier targets before chasing Prismatic Rainbow:
           </p>
           <ol className="space-y-2 text-sm text-[#BAC4D1] list-decimal pl-5">
             <li><strong className="text-white">Move your <Link href="/grow-a-garden/pets" className="text-[#00E676] hover:underline">strongest pet</Link> to the Midas plot.</strong> This single action can triple your main-plot income. A 5.0× Midas plot with no pet = 5.0×. With a 3.4× Phoenix Hatchling = 17.0×. With a 5.0× Golden Phoenix Chick = 25.0×. Free income — no shards required.</li>
             <li><strong className="text-white">Roll a second S-Tier for plot #2.</strong> Your secondary plots are still running B-Tier mutations. Bank 10+ shards and roll during the next boosted event for plot #2. Two 5.0× plots generate more than one 5.0× + one 2.0× plot. Check the{" "}
               <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link>{" "}
-              for current shard values before trading spares.</li>
+              for internal project-recorded fields only; verify any in-game shard terms independently.</li>
             <li><strong className="text-white">Upgrade your pet before chasing Prismatic Rainbow.</strong> A 4.8× Golden Dragon costs ~10 Legendary Eggs (100,000 coins). The pet upgrade from 3.4× → 4.8× on a Midas plot adds ~5.6× effective multiplier (from 17.0× to 24.0×) — a larger gain than Midas → Rainbow (5.0× → 6.0×, only +1.0× base).</li>
             <li><strong className="text-white">Only chase Prismatic Rainbow with 50+ spare shards</strong> during a 3× boosted event. The 0.2% base rate means ~1.1% per bulk-roll even at 3×. With 50 shards (5 bulk rolls), cumulative odds are ~5.4%. Patience is the strategy — see the{" "}
               <Link href="/grow-a-garden/rainbow-mutation-guide" className="text-[#00E676] hover:underline">Prismatic Rainbow guide</Link>{" "}

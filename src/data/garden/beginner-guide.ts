@@ -34,21 +34,21 @@ const data: EvolutionPageData = {
       name: "Coins",
       icon: "🪙",
       desc: "The primary currency. Earned by harvesting crops. Used to buy plots, seeds, pets, and upgrades.",
-      sources: ["Harvesting crops (primary source)", "Redeeming promo codes (check our Codes page)", "Completing daily quests", "Selling unwanted mutations at the Trade Hub"],
+      sources: ["Harvesting crops (primary source)", "Redeeming promo codes (check our Codes page)", "Completing daily quests", "Completing seasonal and event activities"],
       tip: "Never sit on idle coins. Always reinvest — buy another plot, upgrade your seeds, or hatch an egg. Coins sitting in your balance earn nothing. Compound growth through reinvestment is the key to scaling your farm.",
     },
     {
       name: "Mutation Shards",
       icon: "🔮",
       desc: "Special currency used exclusively at the Mutation Station to roll for crop mutations, which multiply your harvest value.",
-      sources: ["Daily login rewards (3-5 shards per day)", "Promo codes (10-20 shards per drop)", "Seasonal events (20-50 shards per event)", "Trading with other players"],
+      sources: ["Daily login rewards (3-5 shards per day)", "Promo codes (10-20 shards per drop)", "Seasonal events (20-50 shards per event)", "Starter and progression quests"],
       tip: "Save at least 50 Mutation Shards before rolling seriously. Single rolls have abysmal S-Tier odds (~1.2%). Bulk rolling 10 at once during a boosted event raises your effective S-Tier chance to roughly 11%. Never spend event-boosted shards on single yolo rolls.",
     },
     {
       name: "Pet Eggs",
       icon: "🥚",
       desc: "Hatchable eggs that produce pets with passive coin multipliers and special abilities. Higher-tier eggs have better odds for rare pets.",
-      sources: ["Pet Shop (Basic Egg: 500 Coins, Rare Egg: 2,000 Coins, Legendary Egg: 10,000 Coins)", "Event rewards (seasonal exclusive eggs)", "Promo codes (occasional free egg drops)", "Trading (player-to-player)"],
+      sources: ["Pet Shop (Basic Egg: 500 Coins, Rare Egg: 2,000 Coins, Legendary Egg: 10,000 Coins)", "Event rewards (seasonal exclusive eggs)", "Promo codes (occasional free egg drops)", "Starter and progression quests"],
       tip: "Start with 2-3 Basic Eggs to get your first pet multiplier online. Do not buy Legendary Eggs until you have at least a B-Tier mutation on your main plot — the 10,000 Coin cost is better spent on plot expansion early game.",
     },
     {
@@ -72,7 +72,7 @@ const data: EvolutionPageData = {
   ],
 
   priorityList: [
-    { tier: "S", unit: "Expand Plots (up to 4)", reason: "Each plot is a permanent income multiplier. Going from 1 to 4 plots quadruples your earning potential. This is the single highest ROI investment in the entire game — no mutation, pet, or consumable comes close." },
+    { tier: "S", unit: "Expand Plots (up to 4)", reason: "Each plot is a permanent income multiplier. Going from 1 to 4 plots quadruples your earning potential. This is the highest-value permanent upgrade for early-game coins — no mutation, pet, or consumable comes close." },
     { tier: "S", unit: "First Mutation (any tier)", reason: "Even a C-Tier mutation at 1.2x is a 20% income boost on that plot. Your free starter shards make this essentially free. Do not leave your plot un-mutated." },
     { tier: "A", unit: "First Pet (Basic Egg)", reason: "A permanent passive multiplier that stacks with everything. 500 Coins for a 1.1x-1.3x permanent boost is incredible value. Hatch this immediately after unlocking the Mutation Station." },
     { tier: "A", unit: "Seed Upgrades (Wheat to Carrot to Berry)", reason: "Better seeds sell for more coins per harvest. Upgrade your seed tier whenever the cost is less than 5x the per-harvest profit increase. Carrot seeds pay for themselves in 2 harvest cycles." },
@@ -96,7 +96,7 @@ const data: EvolutionPageData = {
     { question: "What is the best crop for beginners to plant?", answer: "Start with Wheat (free seeds) to learn the planting and harvesting cycle. After 2-3 harvests, upgrade to Carrot Seeds — they cost 100 Coins per seed but sell for 80 Coins (compared to Wheat's 50 Coins), giving you a 60% higher profit per harvest. Once you have 4 plots and a B-Tier mutation, transition to Berry Seeds (sell for 120 Coins) for maximum early-game profit." },
     { question: "Should I buy plots or mutations first?", answer: "Plots first, always. Your first two additional plots cost 400 and 800 Coins — together less than one Rare Egg. Each plot is a permanent income generator. Get to 4 plots before spending Mutation Shards seriously. Use your free starter shards on your best plot, but do not spend Coins on shards until you have at least 4 plots running." },
     { question: "How do I get Mutation Shards as a beginner?", answer: "Your primary early-game shard sources are: daily login rewards (3-5 shards per day), promo codes (10-20 shards — check our Codes page regularly), and the starter quest chain (10 free shards after completing the tutorial). Save every shard until you have 50+. Do not buy shards with Coins from the premium shop — that is a late-game efficiency optimization." },
-    { question: "When should I start trading with other players?", answer: "Wait until you have a solid understanding of item values and at least one B-Tier mutation. The Trade Hub can be lucrative but is also where new players get scammed into trading S-Tier items for C-Tier cosmetics. Check our Crop Value List and Mutation Tier List to understand fair market values before making any trades." },
+    { question: "How should I use the project's trading records?", answer: "Treat the Trading Database as an internal editorial reference only. Its value, demand, and trend fields are recorded project labels rather than official game outcomes, transaction amounts, or live market quotes. Verify current in-game information independently." },
     { question: "Is Grow a Garden pay-to-win?", answer: "No. Every item, mutation, pet, and plot can be earned through gameplay without spending Robux. Premium currency purchases (extra shards, premium eggs) provide convenience but no exclusive power. A free-to-play player with optimal strategy will outperform a paying player with poor resource management every time. The game rewards knowledge and patience over wallet size." },
     { question: "What should I do if my crops keep dying?", answer: "Crops die from two causes: pest invasions (random event) and blight weather (seasonal). For pests, buy the Basic Scarecrow (200 Coins) which reduces pest chance by 50% on adjacent plots. For blight, the Basalt Carapace mutation (A-Tier) provides complete immunity. If neither is affordable yet, simply replant — early-game crops are cheap and the occasional loss is normal." },
     { question: "How often should I check my farm?", answer: "Early-game crops like Wheat and Carrots mature in 2-4 minutes, so active play is rewarded. Mid-game Berry crops take 5-6 minutes, giving you short windows to check other game systems. Endgame Golden Wheat takes 8 minutes. The game is designed for casual check-ins — there is no penalty for being away, but your crops stop earning until harvested. Use faster-growing crops if you plan to play actively." },
@@ -105,7 +105,7 @@ const data: EvolutionPageData = {
   relatedGuides: [
     { label: "Active Codes", href: "/grow-a-garden/codes", description: "Get free Coins, Mutation Shards, and pet eggs from promo codes" },
     { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Every mutation ranked from S-Tier to C-Tier with detailed analysis" },
-    { label: "Crop Value List", href: "/grow-a-garden/crop-value-list", description: "Most profitable crops ranked by coin yield and growth time" },
+    { label: "Crop Value List", href: "/grow-a-garden/crop-value-list", description: "Recorded crop coin-yield and growth-time fields for comparison" },
     { label: "Pet Tier List", href: "/grow-a-garden/pet-tier-list", description: "Best pets for coin multipliers and mutation synergy" },
   ],
 };

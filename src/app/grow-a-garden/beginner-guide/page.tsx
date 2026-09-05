@@ -362,7 +362,7 @@ export default function BeginnerGuidePage() {
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[60px_1fr_2fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">PRIORITY</span>
-            <span className="text-xs font-semibold text-[#768294]">INVESTMENT</span>
+            <span className="text-xs font-semibold text-[#768294]">PROJECT DATA</span>
             <span className="text-xs font-semibold text-[#768294]">REASON</span>
           </div>
           {data.priorityList.map((p, i) => (

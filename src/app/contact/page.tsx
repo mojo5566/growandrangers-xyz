@@ -42,7 +42,7 @@ export default function ContactPage() {
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
           We welcome feedback, corrections, and questions from the Roblox
-          community. Whether you spotted a stale trading value, found a typo in a
+          community. Whether you spotted an outdated trading record field, found a typo in a
           guide, or want to collaborate, this page tells you exactly how to reach
           us and what to expect.
         </p>
@@ -195,7 +195,7 @@ export default function ContactPage() {
             </li>
             <li className="flex items-start gap-2 text-sm text-[#BAC4D1]">
               <span className="text-[#00E676] shrink-0 mt-0.5">•</span>
-              <strong>Trading values</strong> — e.g., a trade value has shifted
+              <strong>Trading records</strong> — e.g., an internal record field has changed
               significantly. See our{" "}
               <Link
                 href="/grow-a-garden/trading"
@@ -248,7 +248,7 @@ export default function ContactPage() {
           </ul>
           <p className="mt-3 text-xs leading-relaxed text-[#768294]">
             Please note: we do not accept paid placements in our tier lists,
-            trading values, or guide content. Any sponsored content (if accepted)
+            trading records, or guide content. Any sponsored content (if accepted)
             will be clearly disclosed.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[#BAC4D1]">

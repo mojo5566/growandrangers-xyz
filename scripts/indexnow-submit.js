@@ -14,9 +14,7 @@
  * No external dependencies — pure Node.js (https module).
  */
 
-const https = require("https");
-const fs = require("fs");
-const path = require("path");
+let https;
 
 // ============================================================
 // Configuration
@@ -225,6 +223,7 @@ function verifyKeyFile() {
 // ============================================================
 
 async function main() {
+  https = await import("node:https");
   const args = process.argv.slice(2);
 
   // Parse flags

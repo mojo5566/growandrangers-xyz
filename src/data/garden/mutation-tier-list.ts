@@ -69,7 +69,7 @@ function buildTierListData(): TierListPageData {
       "Save at least <strong>50 Mutation Shards</strong> before rolling — single rolls have a ~1.2% S-Tier rate. Bulk rolling 10 at once during a boosted event raises your cumulative S-Tier odds to roughly 11%.",
       "Time your rolls during <strong>mutation-boosted events</strong> (seasonal events typically feature +50% S/A-Tier odds). Check our Codes page for event-related shard drops and timing announcements.",
       "Always apply your <strong>best mutation last</strong> — overwriting is permanent with no refund or shard recovery. Lock in a B-Tier placeholder while saving for S/A-Tier rolls, then overwrite.",
-      "Pair S-Tier mutations with <strong>high-tier pets</strong> for multiplicative stacking. Aurelian Crown (4.0x) + Golden Phoenix Chick (5.0x) = 20x total yield per harvest — the theoretical maximum in the current meta.",
+      "Pair S-Tier mutations with <strong>high-tier pets</strong> for multiplicative stacking. Aurelian Crown (4.0x) + Golden Phoenix Chick (5.0x) = 20x total yield per harvest — the theoretical maximum in this recorded-field stacking example.",
     ],
     faq: [
       {

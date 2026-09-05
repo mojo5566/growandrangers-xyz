@@ -47,7 +47,7 @@ export default function TeamGuidePage() {
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[1.2fr_1.2fr_1.5fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">STAGE</span>
-            <span className="text-xs font-semibold text-[#768294]">INVESTMENT</span>
+            <span className="text-xs font-semibold text-[#768294]">PROJECT DATA</span>
             <span className="text-xs font-semibold text-[#768294]">TEAM</span>
           </div>
           {data.stages.map((s, i) => (

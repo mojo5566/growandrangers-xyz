@@ -156,7 +156,7 @@ export default function HowToLevelFastPage() {
               multiplied XP. A 6.0× Prismatic Rainbow crop awards 6× the base XP.
             </li>
             <li>
-              <strong className="text-white">Pet multiplier</strong> — your equipped pet's
+              <strong className="text-white">Pet multiplier</strong> — your equipped pet&apos;s
               multiplier applies to XP. A 5.0× pet multiplies XP by 5×.
             </li>
           </ul>

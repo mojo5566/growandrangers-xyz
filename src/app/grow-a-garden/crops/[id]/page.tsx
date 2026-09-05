@@ -47,24 +47,6 @@ const tierBadge: Record<string, string> = {
   C: "bg-[#3A86FF]/20 text-[#3A86FF]",
 };
 
-const relatedGuides = [
-  {
-    href: "/grow-a-garden/crop-value-list",
-    label: "Crop Value List",
-    description: "Detailed crop profit rankings and value comparisons",
-  },
-  {
-    href: "/grow-a-garden/crops",
-    label: "All Crops Database",
-    description: "Browse every crop in the Grow a Garden database",
-  },
-  {
-    href: "/grow-a-garden/beginner-guide",
-    label: "Beginner Guide",
-    description: "Everything new players need to know to get started",
-  },
-];
-
 export default async function CropDetailPage({ params }: PageProps) {
   const { id } = await params;
   const crop = getCropById(id);

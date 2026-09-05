@@ -6,28 +6,26 @@ import RelatedContent from "@/components/RelatedContent";
 import {
   trading,
   getHighDemandItems,
-  getTradingByTrend,
-  getTradingByRarity,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
 } from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Trading Guide",
+  title: "Grow a Garden Trading Reference Guide",
   description:
-    "Complete Grow a Garden trading guide: trading basics, value evaluation, demand and trend explanation, and common mistakes to avoid. Sourced from canonical trading database.",
+    "Reference guide to the internal value, demand, trend, rarity, and category fields used by the Grow a Garden Trading pages. These are editorial project records, not official prices, live market quotes, or independently verified transaction data.",
   keywords: [
     "Grow a Garden trading guide",
-    "Grow a Garden how to trade",
-    "Grow a Garden trade value",
-    "Grow a Garden demand trend",
-    "Grow a Garden trade mistakes",
-    "Grow a Garden fair trade",
+    "Grow a Garden trading reference",
+    "Grow a Garden trading fields",
+    "Grow a Garden item records",
   ],
   alternates: { canonical: "/grow-a-garden/trading-guide" },
   openGraph: {
-    title: "Grow a Garden Trading Guide",
+    title: "Grow a Garden Trading Reference Guide",
     description:
-      "Trading basics, value evaluation, demand/trend explanation, and common mistakes to avoid.",
+      "Reference guide to the internal value, demand, trend, rarity, and category fields used by the Grow a Garden Trading pages. These are editorial project records, not official prices, live market quotes, or independently verified transaction data.",
     type: "website",
   },
 };
@@ -52,67 +50,50 @@ const trendColors: Record<string, string> = {
   Falling: "#FF3D00",
 };
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
-// High-demand items for value evaluation section
+// Internal records grouped for neutral comparison.
 const highDemandItems = getHighDemandItems().sort((a, b) => b.value - a.value).slice(0, 5);
-
-// Trend examples
-const risingItems = getTradingByTrend("Rising").sort((a, b) => b.value - a.value).slice(0, 3);
-const fallingItems = getTradingByTrend("Falling").sort((a, b) => b.value - a.value).slice(0, 3);
-
-// Rarity distribution
-const rarityDistribution = [
-  { rarity: "Mythical", items: getTradingByRarity("Mythical"), color: rarityColors.Mythical },
-  { rarity: "Legendary", items: getTradingByRarity("Legendary"), color: rarityColors.Legendary },
-  { rarity: "Epic", items: getTradingByRarity("Epic"), color: rarityColors.Epic },
-];
 
 // Top value items
 const topValueItems = [...trading].sort((a, b) => b.value - a.value).slice(0, 5);
 
 const faqs = [
   {
-    question: "How does trading work in Grow a Garden?",
+    question: "What is this Grow a Garden trading guide?",
     answer:
-      "Visit the Trade Hub to engage in player-to-player trades. Both players offer items, and the trade executes when both confirm. There's no central auction house — every trade is a negotiated exchange. Tradeable items include pets, seeds, crops, mutations, and select consumables, but coins cannot be traded directly. Use the Trading Database to check item values, rarity, demand, and trend before confirming any trade to avoid getting scammed, since confirmed trades are final with no refunds.",
+      "This page explains the internal editorial fields used by the Grow a Garden Trading pages. It presents project records for reference and does not confirm game mechanics, transactions, market prices, or trade outcomes.",
   },
   {
-    question: "How do I evaluate if a trade is fair?",
+    question: "What does the value field mean?",
     answer:
-      "Compare the total market value of items on both sides of the trade. A fair trade has roughly equal total value (within 10-15%). Check the Trading Database for each item's value, rarity, demand, and trend. Be especially cautious when trading S-Tier items — they command massive premiums and are common scam targets.",
+      "Value is an internal recorded field used for project organization and neutral comparison. It is not an official price, live market quote, or independently verified transaction record, and it does not determine whether a trade is fair.",
   },
   {
-    question: "What does demand mean in Grow a Garden trading?",
+    question: "What do demand and trend mean?",
     answer:
-      "Demand indicates how many players are actively seeking to buy an item. High-demand items sell quickly at full market value. Low-demand items may sit unsold for long periods, even at a discount. Demand is independent of rarity — a Common item with High demand can be more liquid than a Mythical with Low demand.",
+      "Demand and trend are recorded project labels. They do not establish live buyer activity, transaction speed, market movement, a forecast, or a recommendation to buy, sell, or hold an item.",
   },
   {
-    question: "What does trend mean and how do I use it?",
+    question: "What do rarity and category mean?",
     answer:
-      "Trend indicates the price direction: Rising (gaining value — hold for profit), Stable (holding value — safe to trade anytime), or Falling (losing value — sell quickly). Buy Rising items early, hold them, sell at peak. Sell Falling items immediately before they drop further. Stable items are reliable for fair trades.",
+      "Rarity and category are recorded labels used to organize the project reference. They do not establish drop rates, item mechanics, availability, market value, or transaction guidance.",
   },
   {
-    question: "What are the most common trading mistakes?",
+    question: "Can this guide determine whether a trade is fair?",
     answer:
-      "Top mistakes: (1) Trading without checking current market values. (2) Accepting Falling-trend items in exchange for Rising-trend items. (3) Trading S-Tier items for cosmetic-themed items with no functional value. (4) Trusting 'fair trade' offers without independent verification. Always check the Trading Database first.",
+      "No. The displayed records are not a fairness test, transaction confirmation, or buying, selling, holding, investment, or profit recommendation. Confirm actual in-game terms independently.",
   },
   {
-    question: "When should I start trading in Grow a Garden?",
+    question: "Where can I see the underlying records?",
     answer:
-      "Wait until you have 50K+ coins of bankroll and can confidently evaluate item values — usually after 5+ hours of progression. Trading is high-variance; new players often get scammed. Start with small trades to learn the market dynamics, then scale up to S-Tier item flipping once you understand the value landscape.",
+      "Browse the Trading Reference page for the complete project table, or open an item link from the comparison sections below. The fields remain internal editorial references rather than current market data.",
   },
 ];
 
 export default function TradingGuidePage() {
   return (
     <ContentLayout
-      title="Grow a Garden Trading Guide"
-      description="Complete Grow a Garden trading guide: trading basics, value evaluation, demand and trend explanation, and common mistakes to avoid. Sourced from canonical trading database."
+      title="Grow a Garden Trading Reference Guide"
+      description="Reference guide to the internal value, demand, trend, rarity, and category fields used by the Grow a Garden Trading pages. These are editorial project records, not official prices, live market quotes, or independently verified transaction data."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -122,103 +103,98 @@ export default function TradingGuidePage() {
       canonicalPath="/grow-a-garden/trading-guide"
       updatedAt={CONTENT_UPDATED_AT}
       articleSection="Trading"
-      keywords={["Grow a Garden trading guide", "Grow a Garden how to trade", "Grow a Garden trade value", "Grow a Garden demand trend", "Grow a Garden trade mistakes"]}
+      keywords={["Grow a Garden trading reference", "Grow a Garden trading fields", "Grow a Garden item records"]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
-      {/* Quick Answer - AI search summary */}
+      {/* Quick Answer - project reference summary */}
       <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          Trading happens at the Trade Hub through player-to-player negotiation — there is no central auction house. Both players place items in the trade window and must confirm, with a 5-second cooldown after any change to block last-minute swap scams. Tradeable items include pets, seeds, crops, and mutations, but coins cannot be traded directly. Always check the Trading Database for value, rarity, demand, and trend before confirming, since trades are final with no refunds.
+          This page explains how to read internal project records for items included in the trading-record dataset. Recorded value, rarity,
+          demand, trend, and category are editorial reference fields, not official prices, live market quotes,
+          independently verified transaction data, or a fairness test. The page does not provide buying, selling,
+          holding, investment, profit, or trade-safety guidance.
         </p>
       </section>
 
       {/* Hero */}
       <section className="rounded-xl border border-[#FFD700]/30 bg-[#FFD700]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          The Trade Hub is where Grow a Garden&apos;s economy comes alive — and where unprepared
-          players lose the most value. This guide covers trading basics, how to evaluate item
-          values, what demand and trend really mean, and the most common mistakes to avoid. For
-          current market values, browse the{" "}
+          The Trading pages organize {trading.length} project records across several item categories.
+          This guide explains how to read the recorded fields and their limits. For the full reference table,
+          browse the{" "}
           <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">
-            Trading Database
+            Trading Reference
           </Link>
           .
         </p>
       </section>
 
-      {/* Trading Basics */}
+      {/* Reference basics */}
       <section aria-labelledby="basics-heading">
         <h2
           id="basics-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🏪 Trading Basics
+          🏪 Reference Basics
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Where to Trade</h3>
+            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Value</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              The Trade Hub is a dedicated zone where players meet to exchange items. Walk up to
-              another player, initiate a trade request, and a trade window opens showing both
-              players&apos; offered items. Both players must confirm to execute the trade.
+              Value is an internal recorded field used to sort and compare entries in this project.
+              It is not an official price, live quote, or verified transaction amount.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">What Can Be Traded</h3>
+            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Rarity and Category</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Tradeable items include pets, seeds, crops, mutations, and select consumables. Coins
-              cannot be directly traded — they must be converted into tradeable items first. S-Tier
-              pets and mutations are the highest-value trade commodities.
+              These are recorded labels used to organize the reference. They do not establish item
+              availability, drop rates, mechanics, or market value.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Trade Confirmation</h3>
+            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Demand</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Both players must click confirm for a trade to execute. There&apos;s a 5-second
-              cooldown after any item change to prevent last-minute swap scams. Always re-check the
-              final offer before clicking confirm a second time.
+              Demand is an internal recorded label. It does not measure active buyers, transaction
+              volume, liquidity, speed, or the result of an in-game exchange.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">No Refunds</h3>
+            <h3 className="text-sm font-semibold text-[#00E676] mb-2">Trend</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Once a trade is confirmed, it&apos;s final. There&apos;s no undo button and no
-              customer support for bad trades. This is why value verification before confirming is
-              critical — see the next section.
+              Trend is an internal recorded label. It does not establish a live movement, forecast,
+              future change, or recommendation to buy, sell, or hold.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Value Evaluation */}
+      {/* Recorded field comparison */}
       <section aria-labelledby="value-heading">
         <h2
           id="value-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          💰 Value Evaluation
+          💰 Recorded Field Comparison
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          Every tradeable item has four metrics: <strong className="text-[#BAC4D1]">Value</strong>{" "}
-          (current market price in coins),{" "}
-          <strong className="text-[#BAC4D1]">Rarity</strong> (drop tier),{" "}
-          <strong className="text-[#BAC4D1]">Demand</strong> (buyer interest), and{" "}
-          <strong className="text-[#BAC4D1]">Trend</strong> (price direction). Evaluate all four
-          together — a high-value item with Low demand is harder to sell than a mid-value item with
-          High demand.
+          The table compares project-recorded fields: <strong className="text-[#BAC4D1]">value</strong>,{" "}
+          <strong className="text-[#BAC4D1]">rarity</strong>, <strong className="text-[#BAC4D1]">demand</strong>,
+          and <strong className="text-[#BAC4D1]">trend</strong>. These fields are editorial references only;
+          they do not establish prices, buyer activity, market movement, or transaction outcomes.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[760px] w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-[#252936] text-left text-xs text-[#768294] uppercase tracking-wider">
                 <th className="py-3 px-3 font-semibold">Item</th>
-                <th className="py-3 px-3 font-semibold">Rarity</th>
-                <th className="py-3 px-3 font-semibold">Demand</th>
-                <th className="py-3 px-3 font-semibold">Trend</th>
-                <th className="py-3 px-3 font-semibold">Value</th>
+                <th className="py-3 px-3 font-semibold">Recorded Rarity</th>
+                <th className="py-3 px-3 font-semibold">Recorded Demand</th>
+                <th className="py-3 px-3 font-semibold">Recorded Trend</th>
+                <th className="py-3 px-3 font-semibold">Recorded Value</th>
               </tr>
             </thead>
             <tbody>
@@ -257,7 +233,7 @@ export default function TradingGuidePage() {
                     </span>
                   </td>
                   <td className="py-3 px-3 text-sm font-bold text-[#00E676]">
-                    {t.value.toLocaleString()} 🪙
+                    {formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}
                   </td>
                 </tr>
               ))}
@@ -266,13 +242,13 @@ export default function TradingGuidePage() {
         </div>
       </section>
 
-      {/* Demand and Trend Explanation */}
+      {/* Recorded demand and trend */}
       <section aria-labelledby="demand-trend-heading">
         <h2
           id="demand-trend-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📈 Demand and Trend Explained
+          📈 Recorded Demand and Trend Labels
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
@@ -286,7 +262,7 @@ export default function TradingGuidePage() {
                   High
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Many active buyers — sells quickly at full value
+                  Internal label only; it does not establish buyer activity or transaction speed.
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -297,7 +273,7 @@ export default function TradingGuidePage() {
                   Medium
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Moderate buyer interest — may take a few sessions to sell
+                  Internal label only; it does not establish demand or a likely transaction outcome.
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -308,13 +284,13 @@ export default function TradingGuidePage() {
                   Low
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Few buyers — may need to discount to sell quickly
+                  Internal label only; it does not establish buyer count, liquidity, or pricing.
                 </span>
               </div>
             </div>
             <p className="mt-3 text-xs text-[#768294] leading-relaxed">
-              Demand is independent of rarity. A Common item with High demand is more liquid than a
-              Mythical with Low demand.
+              Demand and rarity are separate recorded fields. Neither field establishes liquidity,
+              scarcity, or market behavior.
             </p>
           </div>
           <div className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-5">
@@ -328,7 +304,7 @@ export default function TradingGuidePage() {
                   ↑ Rising
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Gaining value — hold for maximum profit
+                  Recorded label only; it is not a market forecast or holding recommendation.
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -339,7 +315,7 @@ export default function TradingGuidePage() {
                   → Stable
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Holding value — safe to trade at any time
+                  Recorded label only; it does not establish a transaction outcome or safety.
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -350,51 +326,51 @@ export default function TradingGuidePage() {
                   ↓ Falling
                 </span>
                 <span className="text-xs text-[#768294]">
-                  Losing value — sell quickly before further drops
+                  Recorded label only; it is not a forecast or selling recommendation.
                 </span>
               </div>
             </div>
             <p className="mt-3 text-xs text-[#768294] leading-relaxed">
-              Trend reflects recent market movement. Rising items compound value while held; Falling
-              items decay.
+              Trend is a project label. It does not establish recent market movement, future value,
+              or investment performance.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Common Mistakes */}
+      {/* Reference limitations */}
       <section aria-labelledby="mistakes-heading">
         <h2
           id="mistakes-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          ⚠️ Common Trading Mistakes
+          ⚠️ Reference Limitations
         </h2>
         <div className="space-y-3">
           {[
             {
-              title: "Trading Without Checking Values",
-              desc: "Always verify current market values in the Trading Database before any trade. 'It looks fair' is not verification — item values shift with updates and market trends.",
+              title: "Recorded value is not a price",
+              desc: "The value field is an internal project record. It is not a current market quote, official price, or verified transaction amount.",
             },
             {
-              title: "Accepting Falling Items for Rising Items",
-              desc: "A 50K-coin Falling-trend item is worth less tomorrow than today; a 50K Rising-trend item is worth more. Always check trend before accepting — Falling items should be discounted 10-20% in your evaluation.",
+              title: "Labels are not forecasts",
+              desc: "Rising, Stable, and Falling are recorded labels. They do not predict future movement or establish what an item will be worth later.",
             },
             {
-              title: "Trading S-Tier Items for Cosmetics",
-              desc: "S-Tier pets and mutations have functional value (multipliers). Cosmetic items have zero functional value. Never trade functional items for cosmetics — you're giving up permanent income for aesthetics.",
+              title: "Rarity is not a market conclusion",
+              desc: "Rarity and category organize the records but do not establish availability, mechanics, utility, or transaction value.",
             },
             {
-              title: "Trusting 'Fair Trade' Offers",
-              desc: "Other players benefit from your loss. A 'fair trade' offer from a stranger is often 30-50% in their favor. Always verify independently — the Trading Database is your source of truth.",
+              title: "A table is not transaction verification",
+              desc: "The project records do not confirm offers, completed trades, fairness, or another player's claims.",
             },
             {
-              title: "Trading Too Early",
-              desc: "New players (under 5 hours of progression) should avoid trading entirely. Without market knowledge, you're a target. Wait until you can confidently identify underpriced items before engaging.",
+              title: "Dates are editorial dates",
+              desc: "The page date identifies the project record. It is not a market sampling date or evidence of a particular update schedule.",
             },
             {
-              title: "Panic Selling Rising Items",
-              desc: "Rising-trend items gain value while held. Don't sell them at the first offer — wait for peak demand or hold longer for compounding gains. The exception: if you need liquidity for an emergency purchase.",
+              title: "Check version-sensitive facts elsewhere",
+              desc: "Use in-game documentation and version notes for gameplay rules and version-sensitive information. This page only documents project fields.",
             },
           ].map((m, i) => (
             <div key={i} className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
@@ -410,17 +386,17 @@ export default function TradingGuidePage() {
         </div>
       </section>
 
-      {/* High-Demand Showcase */}
+      {/* Recorded demand showcase */}
       <section aria-labelledby="showcase-heading">
         <h2
           id="showcase-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🔥 High-Demand Items Reference
+          🔥 High Demand Labels Reference
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          These items are currently in highest demand — they sell quickly at full market value.
-          Useful as benchmarks for evaluating other trades.
+          These records carry the High demand label. This is an internal grouping for reference,
+          not a statement about current buyer activity, transaction speed, or market value.
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {highDemandItems.map((t) => (
@@ -436,7 +412,7 @@ export default function TradingGuidePage() {
               </Link>
               <div className="text-xs text-[#768294] mt-1">{t.category}</div>
               <div className="text-lg font-bold text-[#00E676] mt-2">
-                {formatValue(t.value)} 🪙
+                {formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}
               </div>
             </div>
           ))}

@@ -49,7 +49,7 @@ const tierDescriptions = [
     color: tierColors.S,
     label: "Endgame Multipliers",
     mult: "4.5× - 5.0×",
-    desc: "The endgame-defining pets. S-Tier pets multiply your entire farm income by 4.5-5×, permanently. They're exclusively obtained from Legendary Eggs (10,000 coins each) with a ~5% drop rate, or from limited-time seasonal events. If you get one, it transforms your farm — a 5.0× Golden Phoenix Chick on a 4-plot Golden Wheat farm with Aurelian Crown mutations can generate 1M+ coins per hour.",
+    desc: "The endgame-defining pets. S-Tier pets multiply your entire farm income by 4.5-5×, permanently. They're listed as obtained from Legendary Eggs (10,000 coins each) with a low hatch rate — the exact rate is not independently verified here — or from limited-time seasonal events. If you get one, it transforms your farm — a 5.0× Golden Phoenix Chick on a 4-plot Golden Wheat farm with Aurelian Crown mutations can generate 1M+ coins per hour.",
   },
   {
     tier: "A",
@@ -88,7 +88,7 @@ const faqs = [
   {
     question: "What's the difference between early game and late game pets?",
     answer:
-      "Early game pets (C-Tier, 1.5×-1.9×) are obtained from 500-coin Basic Eggs and pay for themselves in 5-6 harvest cycles. Late game pets (S-Tier, 4.5×-5.0×) come from 10,000-coin Legendary Eggs with ~5% drop rate — they're endgame goals requiring 50K+ coins to reliably pursue. Mid-game pets (B-Tier, 2.0×-2.9×) bridge the gap.",
+      "Early game pets (C-Tier, 1.5×-1.9×) are obtained from 500-coin Basic Eggs and pay for themselves in 5-6 harvest cycles. Late game pets (S-Tier, 4.5×-5.0×) come from 10,000-coin Legendary Eggs with a low listed hatch rate — the exact rate is not independently verified here — and they're endgame goals. Mid-game pets (B-Tier, 2.0×-2.9×) bridge the gap.",
   },
   {
     question: "Which pet tier should I target first?",
@@ -98,12 +98,12 @@ const faqs = [
   {
     question: "Are S-Tier pets worth the Legendary Egg cost?",
     answer:
-      "Yes, but only in the endgame. With a ~5% S-Tier drop rate from 10,000-coin Legendary Eggs, you'd expect to spend ~200,000 coins per S-Tier pet on average. That's only worth it once your farm generates 50K+ coins/hour and you have nothing else to invest in. Before that, plot expansion and B-Tier pets are far better ROI.",
+      "This page does not make a purchase recommendation. Legendary Eggs are listed with a low S-Tier hatch rate that is not independently verified here, so the average coin cost per S-Tier pet can be high. Whether that cost is worthwhile depends on your current farm income and progression priorities, which should be checked against the current game.",
   },
   {
-    question: "How does pet ranking affect trade value?",
+    question: "How should I read the pet ranking?",
     answer:
-      "S-Tier pets command massive trade premiums — often 5-10× their coin-equivalent value on the trade market. A 5.0× Golden Phoenix Chick might trade for items worth 500K+ coins. Lower-tier pets (B and C) rarely hold trade value and are usually kept rather than traded. See the Trading Database for current market values.",
+      "Pet ranking on this page compares multiplier, tier, passive ability, and source egg rarity. The Trading Database may show matching internal project-recorded fields, but those records are not official game outcomes, transaction amounts, or live market quotes. Use the ranking to compare gameplay attributes only.",
   },
 ];
 
@@ -145,8 +145,8 @@ export default function PetRankingGuidePage() {
           Pets are ranked into four tiers by coin multiplier: S-Tier (4.5×-5.0× from Legendary
           Eggs), A-Tier (3.0×-4.0× from Rare Eggs), B-Tier (2.0×-2.9×, the mid-game workhorse), and
           C-Tier (1.5×-1.9× from Basic Eggs). Multiplier is the primary metric; passive abilities,
-          source egg rarity, and seasonal synergy break ties. A 5.0× Golden Phoenix Chick can trade
-          for items worth 500K+ coins.
+          source egg rarity, and seasonal synergy break ties. Trading-related fields are maintained separately
+          as internal project records and are not transaction amounts, market premiums, or trade recommendations.
         </p>
       </section>
 

@@ -53,7 +53,7 @@ export const seeds: Seed[] = [
     season: "Summer",
     tier: "S",
     cropId: "phoenix-bloom",
-    description: "Legendary seed that grows the most valuable Summer crop. Reborn from seasonal ashes — only available during Summer events. High mutation roll rate for Fire-type mutations.",
+    description: "Legendary seed that grows the Summer crop with the highest recorded coins-per-minute in this dataset. Reborn from seasonal ashes — only available during Summer events. High recorded mutation roll-rate label for Fire-type mutations.",
     imagePlaceholder: "/placeholder-seeds-phoenix-bloom-seed.png",
     tierRating: 10,
     updatedAt: "July 19, 2026",

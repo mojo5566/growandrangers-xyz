@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
-import { mutations, getMutationsByTier } from "@/data/garden/database/mutations";
+import { getMutationsByTier } from "@/data/garden/database/mutations";
 
 export const metadata: Metadata = {
   title: "Grow a Garden Mutations List — All 22",

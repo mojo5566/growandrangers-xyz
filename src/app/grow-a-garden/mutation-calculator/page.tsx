@@ -72,9 +72,9 @@ const faqs = [
       "Mutation profit = (crop base value × mutation multiplier) − crop base value. For example, Golden Wheat (480 coins) × Aurelian Crown (4.0×) = 1,920 coins. Profit vs baseline = 1,920 − 480 = +1,440 coins (+300%).",
   },
   {
-    question: "Which mutation is the most profitable?",
+    question: "Which mutation has the highest recorded multiplier?",
     answer:
-      `Prismatic Rainbow is the most profitable mutation at 6.0× multiplier. On the highest-value crop (Golden Wheat at 480 coins), it yields 2,880 coins per harvest — a +500% profit increase vs baseline. Midas Bloom (5.0×) is second at 2,400 coins.`,
+      `Prismatic Rainbow has the highest recorded multiplier at 6.0×. On the highest recorded-value crop (Golden Wheat at 480 coins), the stacking math yields 2,880 coins per harvest — 6× the unmodified baseline. Midas Bloom (5.0×) is second at 2,400 coins.`,
   },
   {
     question: "What is a baseline harvest in Grow a Garden?",
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "How does mutation profit compare to trading?",
     answer:
-      "S-Tier mutated crops often command 5-10× premium on the trade market vs their base sell value. A Prismatic Rainbow Golden Wheat harvest sells for 2,880 coins but can trade for 15,000+ coins. Check the Trading Value Calculator to compare sell-vs-trade decisions.",
+      "This calculator shows game-economy calculations for harvest coins and keeps them separate from the Trading Calculator's internal project-recorded fields. Trading records are not transaction amounts and cannot establish a market return or a sell-versus-trade decision. Verify any in-game terms independently.",
   },
 ];
 

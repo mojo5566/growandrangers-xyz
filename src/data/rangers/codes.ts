@@ -125,7 +125,7 @@ const data: CodesPageData = {
     { question: "What are Soul Fragments and how do I use them?", answer: "Soul Fragments are a special currency used for awakening and enhancing high-tier units. They drop from boss raids, event rewards, and promo codes. Stockpile them for S-Tier and A-Tier units — never spend Soul Fragments on units below A-Tier." },
     { question: "What are Anniversary Coins?", answer: "Anniversary Coins are a limited-time event currency from the 1st Anniversary celebration. They can be exchanged for exclusive units, traits, and items in the anniversary shop. Codes like SorryForAnniversary and AnimeMaintX give large amounts of Anniversary Coins." },
     { question: "How often are new Re:Rangers X codes released?", answer: "New codes release frequently — often alongside updates, bug fixes, milestones, and developer apologies. The developer is very active with compensation codes after patches. We monitor all channels daily and update this page within hours of any new code drop." },
-    { question: "What is the CATCHINGUP code?", answer: "CATCHINGUP is a catch-up code that gives 1x Asto (Half) unit, 150 Trait Rerolls, 20,000 Gems, and 100,000 Gold. It is designed to help newer players catch up to veterans. It is one of the most valuable codes currently available." },
+    { question: "What is the CATCHINGUP code?", answer: "CATCHINGUP is a catch-up code that gives 1x Asto (Half) unit, 150 Trait Rerolls, 20,000 Gems, and 100,000 Gold. It is designed to help newer players catch up to veterans. It is one of the highest-value code rewards currently recorded." },
   ],
   relatedGuides: [
     { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Learn which units to reroll and when to stop" },

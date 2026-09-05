@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
-import { seeds, getSeedsByTier } from "@/data/garden/database/seeds";
+import { getSeedsByTier } from "@/data/garden/database/seeds";
 
 export const metadata: Metadata = {
   title: "Grow a Garden Seeds List — All 20 Seeds",

@@ -29,7 +29,7 @@ export default function BestPetsPage() {
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The best pet is Golden Phoenix Chick at 5.0× multiplier, hatched from Legendary Eggs (10,000 coins, ~5% drop rate) — it pairs with Aurelian Crown (4.0×) for a 20.0× maximum yield. Close alternatives are Golden Dragon (4.8×) and Crystal Unicorn Foal (4.5×). For mid-game, target A-Tier pets like Neon Dragon Hatchling (3.5×) from Rare Eggs, and always use Pet Growth Potions before hatching eggs over 2,000 coins.
+          The best pet is Golden Phoenix Chick at 5.0× multiplier, hatched from Legendary Eggs (10,000 coins, low listed S-Tier hatch chance — the exact rate is not independently verified here) — it pairs with Aurelian Crown (4.0×) for a 20.0× maximum calculated yield. Close alternatives are Golden Dragon (4.8×) and Crystal Unicorn Foal (4.5×). For mid-game, target A-Tier pets like Neon Dragon Hatchling (3.5×) from Rare Eggs, and always use Pet Growth Potions before hatching eggs over 2,000 coins.
         </p>
       </section>
 
@@ -65,7 +65,7 @@ export default function BestPetsPage() {
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[1.2fr_1.2fr_1.5fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">STAGE</span>
-            <span className="text-xs font-semibold text-[#768294]">INVESTMENT</span>
+            <span className="text-xs font-semibold text-[#768294]">PROJECT DATA</span>
             <span className="text-xs font-semibold text-[#768294]">GOAL</span>
           </div>
           {data.stages.map((s, i) => (
@@ -132,7 +132,7 @@ export default function BestPetsPage() {
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[60px_1fr_2fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">PRIORITY</span>
-            <span className="text-xs font-semibold text-[#768294]">PET / INVESTMENT</span>
+            <span className="text-xs font-semibold text-[#768294]">PET / REFERENCE</span>
             <span className="text-xs font-semibold text-[#768294]">REASON</span>
           </div>
           {data.priorityList.map((p, i) => (

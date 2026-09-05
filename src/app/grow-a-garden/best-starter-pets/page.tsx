@@ -365,8 +365,8 @@ export default function BestStarterPetsPage() {
                 <h3 className="text-sm font-semibold text-white">Legendary Eggs (10+ hours)</h3>
                 <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
                   Only after your farm generates 50K+ coins/hour. Legendary Eggs (10,000 coins each)
-                  have a ~5% S-Tier drop rate — gambles, but the 4.5×-5.0× S-Tier pets are
-                  endgame-defining.
+                  have a low listed S-Tier hatch chance — the exact rate is not independently verified
+                  here — but the 4.5×-5.0× S-Tier pets are endgame-defining.
                 </p>
               </div>
             </li>

@@ -84,9 +84,9 @@ const faqs = [
       "Base crop value × mutation multiplier = total value. For example, Golden Wheat (480 base coins) × Aurelian Crown (4.0× mutation) = 1,920 coins per harvest. Pet multipliers stack multiplicatively on top — a 5.0× pet brings the same harvest to 9,600 coins.",
   },
   {
-    question: "What is the most profitable crop in Grow a Garden?",
+    question: "Which crop has the highest recorded value and CPM?",
     answer:
-      `Golden Wheat is the most profitable crop by both raw value and CPM (coins-per-minute). At ${topCrop.coins} base coins with a 3-minute grow time, it produces 160 CPM — the highest in the game. Stacked with ${topMutations[0].name} (${topMutations[0].multiplier}×), a single harvest yields ${topCombo.perHarvest.toLocaleString()} coins.`,
+      `Golden Wheat tops this dataset by both recorded base value and CPM (coins-per-minute). At ${topCrop.coins} recorded base coins with a 3-minute grow time, it produces a recorded 160 CPM — the highest recorded value in this dataset. Stacked with ${topMutations[0].name} (${topMutations[0].multiplier}×), the stacking math yields ${topCombo.perHarvest.toLocaleString()} coins in a single harvest.`,
   },
   {
     question: "How do mutations affect crop value?",
@@ -106,7 +106,7 @@ const faqs = [
   {
     question: "Should I sell my crops or trade them?",
     answer:
-      "Check the Trading Value Calculator to compare. If a crop's trade value exceeds its harvest value, trade it. Otherwise, sell directly for coins. S-Tier mutated crops often command 5-10× premium on the trade market vs their base sell value.",
+      "The Trading Calculator only displays internal project-recorded fields. Those records cannot be compared with harvest coins to establish a real trading return, and this page does not recommend selling or trading. Keep the game's harvest coin values and Trading recorded units as separate, non-equivalent references.",
   },
 ];
 

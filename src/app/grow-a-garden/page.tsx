@@ -8,18 +8,18 @@ import { pets } from "@/data/garden/database/pets";
 import { eggs } from "@/data/garden/database/eggs";
 import { seeds } from "@/data/garden/database/seeds";
 import { updates, getLatestUpdate } from "@/data/garden/database/updates";
-import { trading, getHighDemandItems } from "@/data/garden/database/trading";
+import { trading } from "@/data/garden/database/trading";
 import { events, getActiveEvents } from "@/data/garden/database/events";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
   title: "Grow a Garden — Codes & Guides",
   description:
-    "Complete Grow a Garden hub: working promo codes, mutation tier list, pet rankings, crop value calculator, beginner guide, and money-making strategies. Updated daily.",
+    "Grow a Garden reference hub with project records, navigation, calculators, and guides. Trading-related fields are internal editorial references, not official prices, live market quotes, or independently verified transaction data.",
   alternates: { canonical: "/grow-a-garden/" },
   openGraph: {
     title: "Grow a Garden — Codes & Guides",
-    description: "Complete Grow a Garden hub with codes, tier lists, and guides.",
+    description: "Grow a Garden reference hub with project records, navigation, calculators, and guides.",
     type: "website",
   },
 };
@@ -27,31 +27,31 @@ export const metadata: Metadata = {
 const databaseCards = [
   {
     title: "Crops Database",
-    description: "All crops with values, growth times, and mutation compatibility.",
+    description: "Project records for crop labels and related reference fields.",
     href: "/grow-a-garden/crops",
     count: `${crops.length} crops`,
   },
   {
     title: "Mutations Database",
-    description: "All mutations ranked by rarity, multiplier, and pet synergy.",
+    description: "Project records for mutation labels and related reference fields.",
     href: "/grow-a-garden/mutations",
     count: `${mutations.length} mutations`,
   },
   {
     title: "Pets Database",
-    description: "All pets with hatching odds, abilities, and multiplier stats.",
+    description: "Project records for pet labels and related reference fields.",
     href: "/grow-a-garden/pets",
     count: `${pets.length} pets`,
   },
   {
-    title: "Eggs Database",
-    description: "All eggs with price, hatch time, pet drop rates, and rarity distribution.",
+    title: "Egg Project Records",
+    description: "Project records for egg labels and related reference fields.",
     href: "/grow-a-garden/eggs",
     count: `${eggs.length} eggs`,
   },
   {
-    title: "Seeds Database",
-    description: "All seeds with rarity, price, growth time, season, and tier.",
+    title: "Seed Project Records",
+    description: "Project records for seed labels and related reference fields.",
     href: "/grow-a-garden/seeds",
     count: `${seeds.length} seeds`,
   },
@@ -62,8 +62,8 @@ const databaseCards = [
     count: `${updates.length} updates`,
   },
   {
-    title: "Trading Values",
-    description: "All tradeable pets, seeds, crops, and mutations with verified market values.",
+    title: "Trading Records",
+    description: "Trading project records for internal comparison and reference; not official prices, live market quotes, or independently verified transaction data.",
     href: "/grow-a-garden/trading",
     count: `${trading.length} items`,
   },
@@ -78,57 +78,57 @@ const databaseCards = [
 const guideLinks = [
   {
     title: "Active Codes",
-    description: "All working promo codes with rewards — updated daily.",
+    description: "Project-reference list of recorded code entries and labels.",
     href: "/grow-a-garden/codes",
   },
   {
     title: "Mutation Tier List",
-    description: "Every mutation ranked by rarity tier and value multiplier.",
+    description: "Editorial comparison of recorded mutation labels and project-reference fields.",
     href: "/grow-a-garden/mutation-tier-list",
   },
   {
     title: "Pet Tier List",
-    description: "All pets ranked by hatching value, ability, and farm impact.",
+    description: "Editorial comparison of recorded pet labels and project-reference fields.",
     href: "/grow-a-garden/pet-tier-list",
   },
   {
     title: "Crop Value List",
-    description: "Complete crop value sheet with base prices and mutation bonuses.",
+    description: "Project-reference page for recorded crop and mutation fields.",
     href: "/grow-a-garden/crop-value-list",
   },
   {
     title: "Value Calculator",
-    description: "Estimate the sell value of any crop with any mutation multiplier.",
+    description: "Compare project-record crop and mutation fields in a mathematical display.",
     href: "/grow-a-garden/value-calculator",
   },
   {
     title: "Beginner Guide",
-    description: "Start your farm the right way — tips, tricks, and early strategies.",
+    description: "Project-reference navigation for recorded beginner resources.",
     href: "/grow-a-garden/beginner-guide",
   },
   {
-    title: "Best Mutations",
-    description: "Top mutations for profit and progression in the current meta.",
+    title: "Mutation Project Records",
+    description: "Project-record comparison page for recorded mutation fields.",
     href: "/grow-a-garden/best-mutations",
   },
   {
-    title: "Best Pets",
-    description: "Highest-value pets and how to get them efficiently.",
+    title: "Pet Project Records",
+    description: "Project-record page for recorded pet fields and navigation.",
     href: "/grow-a-garden/best-pets",
   },
   {
     title: "Money Making Guide",
-    description: "Proven strategies to maximize earnings per hour on your farm.",
+    description: "Project-reference page for recorded fields and navigation.",
     href: "/grow-a-garden/money-making-guide",
   },
   {
-    title: "Eggs Database",
-    description: "All eggs with price, hatch time, pet drop rates, and rarity distribution.",
+    title: "Egg Project Records",
+    description: "Project records for egg labels and related reference fields.",
     href: "/grow-a-garden/eggs",
   },
   {
-    title: "Seeds Database",
-    description: "All seeds with rarity, price, growth time, season, and tier.",
+    title: "Seed Project Records",
+    description: "Project records for seed labels and related reference fields.",
     href: "/grow-a-garden/seeds",
   },
   {
@@ -137,8 +137,8 @@ const guideLinks = [
     href: "/grow-a-garden/updates",
   },
   {
-    title: "Trading Values",
-    description: "All tradeable pets, seeds, crops, and mutations with verified market values.",
+    title: "Trading Records",
+    description: "Trading project records for internal comparison and reference; not official prices, live market quotes, or independently verified transaction data.",
     href: "/grow-a-garden/trading",
   },
   {
@@ -150,23 +150,23 @@ const guideLinks = [
 
 const comparisonLinks = [
   {
-    title: "Best Mythical Pets",
-    description: "Ranked comparison of all S-Tier pets — multipliers, trade value, and demand.",
+    title: "Mythical Pet Project Records",
+    description: "Editorial comparison of recorded pet labels and project-reference fields.",
     href: "/grow-a-garden/best-mythical-pets",
   },
   {
-    title: "Best Seeds",
-    description: "All seeds ranked by tier, rarity, price, growth, and trade value.",
+    title: "Seed Project Records Comparison",
+    description: "Editorial comparison of recorded seed labels and project-reference fields.",
     href: "/grow-a-garden/best-seeds",
   },
   {
-    title: "Best Crops",
-    description: "All crops ranked by CPM with mutation potential and trade value.",
+    title: "Crop Project Records Comparison",
+    description: "Editorial comparison of recorded crop labels and project-reference fields.",
     href: "/grow-a-garden/best-crops",
   },
   {
-    title: "Top Trading Items",
-    description: "Highest-value, highest-demand, and fastest-rising items in the market.",
+    title: "Trading Project Records",
+    description: "Editorial comparison of recorded trading fields for project reference; not a market ranking or trading recommendation.",
     href: "/grow-a-garden/top-trading-items",
   },
 ];
@@ -174,31 +174,31 @@ const comparisonLinks = [
 const calculatorLinks = [
   {
     title: "Calculators Hub",
-    description: "Browse all Grow a Garden profit and value calculators in one place.",
+    description: "Browse Grow a Garden project-reference calculators and record comparisons in one place.",
     href: "/grow-a-garden/calculators",
     icon: "🧮",
   },
   {
     title: "Crop Value Calculator",
-    description: "Pre-computed crop × mutation profit table — base, bonus, and total value.",
+    description: "Project-reference table for recorded crop and mutation fields.",
     href: "/grow-a-garden/crop-value-calculator",
     icon: "🌾",
   },
   {
     title: "Mutation Calculator",
-    description: "Compare mutation profit on every crop. Multiplier, estimated value, profit %.",
+    description: "Project-reference comparison of recorded crop and mutation fields.",
     href: "/grow-a-garden/mutation-calculator",
     icon: "✨",
   },
   {
     title: "Trading Calculator",
-    description: "Compare tradeable item values by category, rarity, demand, and trend.",
+    description: "Compare recorded trading categories, rarity, demand, trend, and value fields for project reference.",
     href: "/grow-a-garden/trading-calculator",
     icon: "💱",
   },
   {
     title: "Pet Value Calculator",
-    description: "Pet multiplier × trade value ranking with rarity, demand, trend, and market price.",
+    description: "Project-reference comparison of recorded pet multiplier, rarity, demand, trend, and value fields.",
     href: "/grow-a-garden/pet-value-calculator",
     icon: "🐾",
   },
@@ -219,49 +219,49 @@ const seoGuideLinks = [
   },
   {
     title: "How to Get Rich",
-    description: "Fastest coin methods: best crops, mutation farming, pets, and trading strategy.",
+    description: "Project-reference navigation for recorded crops, pets, and mutations.",
     href: "/grow-a-garden/how-to-get-rich",
     icon: "💰",
   },
   {
     title: "Best Money Making Methods",
-    description: "Side-by-side comparison of farming, mutations, pets, and trading methods.",
+    description: "Project-reference comparison page for recorded fields and navigation.",
     href: "/grow-a-garden/best-money-making-methods",
     icon: "📊",
   },
   {
-    title: "Best Starter Pets",
-    description: "Beginner-friendly pets with passive abilities and recommended progression.",
+    title: "Starter Pet Project Records",
+    description: "Project-reference navigation for recorded starter-pet labels.",
     href: "/grow-a-garden/best-starter-pets",
     icon: "🐾",
   },
   {
     title: "Pet Ranking Guide",
-    description: "S/A/B/C tier explanation, why pets rank differently, and early vs late game picks.",
+    description: "Guide to the site’s recorded pet labels and editorial comparison boundaries.",
     href: "/grow-a-garden/pet-ranking-guide",
     icon: "🏆",
   },
   {
     title: "Mutation Guide",
-    description: "What mutations are, how multipliers work, how to get mutations, and profit examples.",
+    description: "Project-reference guide for recorded mutation fields and terminology.",
     href: "/grow-a-garden/mutation-guide",
     icon: "🧬",
   },
   {
     title: "Best Mutation Combinations",
-    description: "Highest-value mutation × crop × pet stacking with real coin values.",
+    description: "Project-reference comparison of recorded crop, mutation, and pet fields.",
     href: "/grow-a-garden/best-mutation-combinations",
     icon: "🎯",
   },
   {
     title: "Trading Guide",
-    description: "Trading basics, value evaluation, demand/trend explanation, and common mistakes.",
+    description: "Guide to the site’s recorded trading fields such as demand, trend, rarity, and category.",
     href: "/grow-a-garden/trading-guide",
     icon: "💱",
   },
   {
     title: "Value Trading Guide",
-    description: "How item value works: rarity, demand, trend, and fair trade examples.",
+    description: "Guide to reading the site’s recorded value, rarity, demand, trend, and category labels.",
     href: "/grow-a-garden/value-trading-guide",
     icon: "⚖️",
   },
@@ -270,92 +270,92 @@ const seoGuideLinks = [
 // New SEO guides added in the latest content update (July 27, 2026)
 const latestGuides = [
   {
-    title: "Best Dragon Pets",
-    description: "Ranked comparison of every dragon pet with multipliers and trade values.",
+    title: "Dragon Pet Project Records",
+    description: "Editorial comparison of recorded dragon-pet fields for project reference.",
     href: "/grow-a-garden/best-dragon-pets",
     icon: "🐉",
     category: "Pets",
   },
   {
     title: "Best Phoenix Pets",
-    description: "Complete phoenix pet ranking with abilities, multipliers, and acquisition paths.",
+    description: "Phoenix pet project records with recorded labels for reference.",
     href: "/grow-a-garden/best-phoenix-pets",
     icon: "🔥",
     category: "Pets",
   },
   {
-    title: "Best Mythical Pets Ranking",
-    description: "S-Tier pets ranked by multiplier, demand, and trade value.",
+    title: "Mythical Pet Project Records Ranking",
+    description: "Editorial comparison of recorded mythical-pet labels and project-reference fields.",
     href: "/grow-a-garden/best-mythical-pets-ranking",
     icon: "🌟",
     category: "Pets",
   },
   {
-    title: "Best Pets for Money",
-    description: "Top profit-generating pets with estimated coins per harvest.",
+    title: "Pet Project Records Comparison",
+    description: "Editorial comparison of recorded pet fields for project reference.",
     href: "/grow-a-garden/best-pets-for-money",
     icon: "💰",
     category: "Pets",
   },
   {
-    title: "Best Event Pets",
-    description: "Seasonal event pets ranked by multiplier and post-event trade value.",
+    title: "Event Pet Project Records",
+    description: "Editorial comparison page for recorded event-pet fields.",
     href: "/grow-a-garden/best-event-pets",
     icon: "🎉",
     category: "Pets",
   },
   {
     title: "Rainbow Mutation Guide",
-    description: "Prismatic Rainbow mutation mechanics, profit table, and farming strategy.",
+    description: "Project-reference guide for recorded Rainbow mutation labels.",
     href: "/grow-a-garden/rainbow-mutation-guide",
     icon: "🌈",
     category: "Mutations",
   },
   {
     title: "Gold Mutation Guide",
-    description: "Midas Bloom vs Rainbow mutation profit comparison and farming tips.",
+    description: "Project-reference guide for recorded mutation labels and comparisons.",
     href: "/grow-a-garden/gold-mutation-guide",
     icon: "✨",
     category: "Mutations",
   },
   {
     title: "Shock Mutation Guide",
-    description: "Frozen, Wet, Glowing, Toxic, Giant, Rotten mutation profit ranking.",
+    description: "Editorial comparison of recorded mutation labels for project reference.",
     href: "/grow-a-garden/shock-mutation-guide",
     icon: "⚡",
     category: "Mutations",
   },
   {
     title: "Best Mutation Combinations",
-    description: "Highest-value mutation × crop × pet stacking with real coin values.",
+    description: "Project-reference comparison of recorded crop, mutation, and pet fields.",
     href: "/grow-a-garden/best-mutation-combinations",
     icon: "🎯",
     category: "Mutations",
   },
   {
-    title: "Best Legendary Seeds",
-    description: "Legendary seeds ranked by tier, growth time, and trade value.",
+    title: "Legendary Seed Project Records",
+    description: "Editorial comparison of recorded legendary-seed labels and project-reference fields.",
     href: "/grow-a-garden/best-legendary-seeds",
     icon: "🌱",
     category: "Seeds",
   },
   {
-    title: "Best Event Seeds",
-    description: "Seasonal event seeds with trade value and acquisition paths.",
+    title: "Event Seed Project Records",
+    description: "Editorial comparison page for recorded event-seed fields.",
     href: "/grow-a-garden/best-event-seeds",
     icon: "🎁",
     category: "Seeds",
   },
   {
-    title: "Rare Items Value",
-    description: "Top 20 most valuable tradeable items with verified market values.",
+    title: "Trading Project Records",
+    description: "Editorial comparison of recorded trading fields for project reference.",
     href: "/grow-a-garden/rare-items-value",
     icon: "💎",
     category: "Trading",
   },
   {
     title: "Trading Tips",
-    description: "Proven trading tips: evaluate offers, spot scams, time trades, build strategy.",
+    description: "Guide to the site’s recorded trading labels and their project-reference boundaries.",
     href: "/grow-a-garden/trading-tips",
     icon: "💱",
     category: "Trading",
@@ -368,8 +368,8 @@ const latestGuides = [
     category: "Beginner",
   },
   {
-    title: "How to Get Rich Fast",
-    description: "Quickest coin methods: active codes, event flips, fast mutation farming.",
+    title: "Project Reference Navigation",
+    description: "Project-reference navigation for recorded codes and event fields.",
     href: "/grow-a-garden/how-to-get-rich-fast",
     icon: "💸",
     category: "Beginner",
@@ -386,24 +386,24 @@ const faqs = [
       "Open the game in Roblox, tap the Twitter/Bird icon on the side menu, paste your code, and hit submit. Rewards appear in your inventory instantly.",
   },
   {
-    question: "What is the rarest mutation in Grow a Garden?",
+    question: "What do recorded mutation labels mean on this site?",
     answer:
-      "The Bunny Mutation (Tier-5) introduced in the Easter Event Update is currently the rarest. It provides the highest crop value multiplier in the game.",
+      "Mutation labels are internal editorial project records used for site navigation and comparison. They do not establish official rarity, game mechanics, performance, or a trading conclusion.",
   },
   {
-    question: "How often does Grow a Garden get new codes?",
+    question: "How should I use the project record pages?",
     answer:
-      "New codes typically drop with major updates, seasonal events (Easter, Summer, Halloween, Winter), and milestone celebrations. We verify and update our list daily.",
+      "Use project record pages as navigation and internal editorial reference. Check an appropriate primary source before relying on information that may change.",
   },
   {
-    question: "What are the best pets for making money?",
+    question: "Where can I compare recorded pet fields?",
     answer:
-      "Pets with high multiplier stats like the Golden Phoenix Chick (5.0x), Golden Dragon (4.8x), and Crystal Unicorn Foal (4.5x) dominate the current meta. Check our Pet Tier List for the full ranking.",
+      "The pet project-record pages compare recorded labels and fields for reference. They do not establish game performance, market value, trade fairness, or a buying, selling, holding, earnings, or investment recommendation.",
   },
   {
-    question: "How do mutations affect crop values?",
+    question: "Do record comparisons provide recommendations?",
     answer:
-      "Each mutation applies a value multiplier to the base crop price. Higher-tier mutations like Prismatic Rainbow (6.0x) and Midas Bloom (5.0x) can multiply values dramatically. Stack mutations with pet bonuses for maximum profit.",
+      "No. Project-record comparisons do not establish official game outcomes, market values, trade fairness, or a buying, selling, holding, earnings, or investment recommendation.",
   },
 ];
 
@@ -411,7 +411,7 @@ export default function GrowAGardenHubPage() {
   return (
     <ContentLayout
       title="Grow a Garden Hub"
-      description="Complete Grow a Garden hub: working promo codes, mutation tier list, pet rankings, crop value calculator, beginner guide, and money-making strategies. Updated daily."
+      description="Grow a Garden reference hub with project records, navigation, calculators, and guides. Trading-related fields are internal editorial references, not official prices, live market quotes, or independently verified transaction data."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },

@@ -8,26 +8,28 @@ import {
   trading,
   getHighDemandItems,
   getTradingByTrend,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
 } from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Pet Value Calculator — Grow a Garden",
+  title: "Pet Multiplier & Record Reference — Grow a Garden",
   description:
-    "Compare every Grow a Garden pet by multiplier, tier, rarity, demand, trend, and trade value. Pre-computed pet value table from canonical databases.",
+    "Compare Grow a Garden pets by multiplier, tier, ability, and recorded trading fields. Internal project reference only, not official prices, live market quotes, or independently verified transaction data.",
   keywords: [
-    "Grow a Garden pet value calculator",
-    "Grow a Garden pet trade value",
+    "Grow a Garden pet multiplier reference",
+    "Grow a Garden pet record comparison",
     "Grow a Garden pet multiplier ranking",
     "Grow a Garden pet tier list",
-    "Grow a Garden pet rarity guide",
-    "Grow a Garden pet demand trend",
+    "Grow a Garden pet ability reference",
+    "Grow a Garden internal trading records",
   ],
   alternates: { canonical: "/grow-a-garden/pet-value-calculator" },
   openGraph: {
-    title: "Pet Value Calculator — Grow a Garden",
+    title: "Pet Multiplier & Record Reference — Grow a Garden",
     description:
-      "Compare every pet by multiplier, tier, rarity, demand, trend, and trade value. Pre-computed pet value table.",
+      "Compare pet multipliers, tiers, abilities, and internal project trading fields. Not official prices, live market quotes, or independently verified transaction data.",
     type: "website",
   },
 };
@@ -59,15 +61,8 @@ const trendColors: Record<string, string> = {
   Falling: "#FF3D00",
 };
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
-// Build pet value entries by joining pets.ts with trading.ts (Pet category)
-// Match on case-insensitive name. Pets without a trading entry are still listed
-// with their multiplier and tier, but trade value shows as "Not traded".
+// Join the pet records with matching internal trading records for side-by-side reference.
+// Match on case-insensitive name so unmatched pets remain visible.
 interface PetValueEntry {
   pet: Pet;
   trade:
@@ -77,7 +72,6 @@ interface PetValueEntry {
         demand: string;
         trend: string;
         value: number;
-        notes?: string;
       }
     | null;
 }
@@ -94,12 +88,10 @@ const petValueEntries: PetValueEntry[] = pets.map((pet) => {
   return { pet, trade };
 });
 
-// Sort by trade value descending (pets without trade value sort last, by multiplier desc)
+// Sort by the pet's recorded multiplier, then by the internal record value.
 const rankedPets = [...petValueEntries].sort((a, b) => {
-  const av = a.trade?.value ?? -1;
-  const bv = b.trade?.value ?? -1;
-  if (av !== bv) return bv - av;
-  return b.pet.multiplier - a.pet.multiplier;
+  if (a.pet.multiplier !== b.pet.multiplier) return b.pet.multiplier - a.pet.multiplier;
+  return (b.trade?.value ?? -1) - (a.trade?.value ?? -1);
 });
 
 // Tier distribution
@@ -108,28 +100,28 @@ const tierA = getPetsByTier("A");
 const tierB = getPetsByTier("B");
 const tierC = getPetsByTier("C");
 
-// Pets with trade entries
-const tradedPets = petValueEntries.filter((e) => e.trade !== null);
+// Pets with matching internal trading records
+const matchedRecordPets = petValueEntries.filter((e) => e.trade !== null);
 
 // Top multipliers (by pet.multiplier desc)
 const topMultipliers = [...pets].sort((a, b) => b.multiplier - a.multiplier).slice(0, 6);
 
-// High-demand pets (filtered from trading Pet category)
+// Internal demand labels (filtered from the Pet records)
 const highDemandPets = getHighDemandItems()
   .filter((t) => t.category === "Pet")
   .sort((a, b) => b.value - a.value);
 
-// Rising-trend pets
+// Internal trend labels
 const risingPets = getTradingByTrend("Rising")
   .filter((t) => t.category === "Pet")
   .sort((a, b) => b.value - a.value);
 
-// Stable-trend pets
+// Internal trend labels
 const stablePets = getTradingByTrend("Stable")
   .filter((t) => t.category === "Pet")
   .sort((a, b) => b.value - a.value);
 
-// Falling-trend pets
+// Internal trend labels
 const fallingPets = getTradingByTrend("Falling")
   .filter((t) => t.category === "Pet")
   .sort((a, b) => b.value - a.value);
@@ -144,43 +136,43 @@ const tierStats = [
 
 const faqs = [
   {
-    question: "How is Grow a Garden pet value calculated?",
+    question: "What does this Grow a Garden pet reference compare?",
     answer:
-      "Pet value combines two datasets: the pet's coin multiplier (from the pets database) and the player-to-player trade value (from the trading database). The calculator shows both metrics side-by-side so you can evaluate farming impact AND market liquidity for every pet.",
+      "The page compares each pet's recorded multiplier, tier, and ability with matching internal trading-record fields where available. The trading fields are project references only, not official prices, live market quotes, or independently verified transaction data.",
   },
   {
-    question: "What is the most valuable pet in Grow a Garden?",
-    answer: rankedPets[0]?.trade
-      ? `${rankedPets[0].pet.name} is the most valuable pet at ${rankedPets[0].trade.value.toLocaleString()} coins trade value (${rankedPets[0].trade.rarity} rarity, ${rankedPets[0].trade.demand} demand). It has a ${rankedPets[0].pet.multiplier}x coin multiplier and is ${rankedPets[0].trade.trend.toLowerCase()} in the current market.`
-      : "The most valuable pet updates as the market shifts — see the top of the ranking table above for the current #1.",
+    question: "Which pet has the highest recorded multiplier?",
+    answer: topMultipliers[0]
+      ? `${topMultipliers[0].name} has the highest multiplier in the current pet dataset at ${topMultipliers[0].multiplier.toFixed(1)}x. This is a comparison of the project's pet records, not a forecast of harvest output or trading results.`
+      : "No pet multiplier records are available in the current dataset.",
   },
   {
-    question: "Which pet has the highest coin multiplier?",
+    question: "What do the pet tiers represent here?",
     answer:
-      "The Golden Phoenix Chick leads with a 5.0x coin multiplier, followed by the Golden Dragon at 4.8x and Crystal Unicorn Foal at 4.5x. These S-Tier pets stack multiplicatively with crop base value and mutation multipliers to deliver the highest coins-per-hour ceiling in the game.",
+      "S, A, B, and C are the tier labels stored in the pet dataset. They organize the records for comparison and do not establish drop rates, availability, market value, or a recommended choice.",
   },
   {
-    question: "Why is a higher-multiplier pet sometimes worth less in trade?",
+    question: "What does a matching trading record add?",
     answer:
-      "Trade value reflects player demand, not just multiplier. A 3.5x pet from Rare Eggs (Neon Dragon Hatchling) trades higher than a 4.0x seasonal pet because supply is tighter. Demand (Low/Medium/High) and trend (Rising/Stable/Falling) drive price independently of multiplier.",
+      "A matching record adds the project's recorded rarity, demand, trend, and numeric value fields. These labels and numbers are shown as internal references and should not be interpreted as transaction evidence or an exchange outcome.",
   },
   {
-    question: "Should I trade a Falling-trend pet?",
+    question: "What do demand and trend labels mean on this page?",
     answer:
-      "Falling-trend pets are losing market value — trade or sell them quickly before further drops. Rising-trend pets are gaining value — hold them longer for maximum profit. Stable-trend pets are safe to trade at any time at their listed value. Always check both trend and demand before committing.",
+      "Demand and trend are labels recorded in the internal project data. They do not measure active buyers, transaction speed, recent movement, future change, or likely results.",
   },
   {
-    question: "How do pet multipliers stack with mutations?",
+    question: "Does this page calculate combined harvest output?",
     answer:
-      "Pet multipliers stack multiplicatively with mutation multipliers and crop base value. Total = crop base × mutation multiplier × pet multiplier. For example, a Golden Wheat crop (480 coins) with Prismatic Rainbow (6.0x) and Golden Phoenix Chick (5.0x) sells for 480 × 6.0 × 5.0 = 14,400 coins per harvest.",
+      "No. The page displays the multiplier stored for each pet and does not turn it into earnings, hourly estimates, or a broader return calculation. Use the game's current mechanics directly when checking how systems interact.",
   },
 ];
 
 export default function PetValueCalculatorPage() {
   return (
     <ContentLayout
-      title="Grow a Garden Pet Value Calculator"
-      description="Compare every Grow a Garden pet by multiplier, tier, rarity, demand, trend, and trade value. Pre-computed pet value table from canonical databases — no inputs required."
+      title="Grow a Garden Pet Multiplier & Record Reference"
+      description="Compare Grow a Garden pets by multiplier, tier, ability, and recorded trading fields. Internal project reference only, not official prices, live market quotes, or independently verified transaction data."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -191,17 +183,15 @@ export default function PetValueCalculatorPage() {
       canonicalPath="/grow-a-garden/pet-value-calculator"
       updatedAt={CONTENT_UPDATED_AT}
     >
-      {/* Formula Card */}
+      {/* Reference summary */}
       <section className="rounded-xl border border-[#3A86FF]/30 bg-[#3A86FF]/5 p-5">
-        <h2 className="text-sm font-semibold text-[#3A86FF] mb-2">🐾 How Pet Value Works</h2>
+        <h2 className="text-sm font-semibold text-[#3A86FF] mb-2">🐾 Pet Record Fields</h2>
         <p className="text-xs text-[#768294] leading-relaxed">
-          Each pet has six metrics: <strong className="text-[#BAC4D1]">Multiplier</strong> (coin yield bonus),
-          {" "}<strong className="text-[#BAC4D1]">Tier</strong> (S/A/B/C farming strength),{" "}
-          <strong className="text-[#BAC4D1]">Rarity</strong> (trade drop tier),{" "}
-          <strong className="text-[#BAC4D1]">Demand</strong> (buyer interest),{" "}
-          <strong className="text-[#BAC4D1]">Trend</strong> (price direction), and{" "}
-          <strong className="text-[#BAC4D1]">Trade Value</strong> (market price). Use all six together
-          to plan farm builds and identify profitable pet trades.
+          Each pet record includes a <strong className="text-[#BAC4D1]">Multiplier</strong>,{" "}
+          <strong className="text-[#BAC4D1]">Tier</strong>, and ability description. Where a pet name
+          matches an internal trading record, the table also shows recorded rarity, demand, trend, and
+          value fields. Those fields are project references, not official prices, live market quotes, or
+          independently verified transactions.
         </p>
       </section>
 
@@ -240,17 +230,17 @@ export default function PetValueCalculatorPage() {
         </div>
       </section>
 
-      {/* Complete Pet Value Ranking */}
+      {/* Complete Pet Comparison */}
       <section aria-labelledby="ranking-heading">
         <h2
           id="ranking-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🥇 Complete Pet Value Ranking
+          🥇 Complete Pet Comparison
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          All {pets.length} pets ranked by trade value (where available) and multiplier. Pets without
-          an active trading entry are sorted by multiplier and marked “Not traded”.
+          All {pets.length} pets are sorted by the multiplier stored in the pet dataset. Matching
+          internal trading records are shown alongside them; pets without a match remain in the table.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[860px] w-full text-sm border-collapse">
@@ -263,7 +253,7 @@ export default function PetValueCalculatorPage() {
                 <th className="py-3 px-3 font-semibold">Rarity</th>
                 <th className="py-3 px-3 font-semibold">Demand</th>
                 <th className="py-3 px-3 font-semibold">Trend</th>
-                <th className="py-3 px-3 font-semibold">Trade Value</th>
+                <th className="py-3 px-3 font-semibold">Recorded Value</th>
               </tr>
             </thead>
             <tbody>
@@ -340,7 +330,7 @@ export default function PetValueCalculatorPage() {
                       )}
                     </td>
                     <td className="py-3 px-3 text-sm font-bold text-[#FFD700]">
-                      {trade ? `${formatValue(trade.value)} 🪙` : <span className="text-xs text-[#768294] font-normal">Not traded</span>}
+                      {trade ? `${formatTradingRecordValue(trade.value)} ${TRADING_RECORD_VALUE_LABEL}` : <span className="text-xs text-[#768294] font-normal">No matching record</span>}
                     </td>
                   </tr>
                 );
@@ -359,8 +349,8 @@ export default function PetValueCalculatorPage() {
           ⚡ Highest Multiplier Pets
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          Pets ranked by coin multiplier — the single most important stat for farming profit. Stack
-          these with high-value crops and mutations for maximum coins-per-hour.
+          Pets sorted by the multiplier stored in the pet dataset. The list is a project comparison
+          and does not estimate earnings or rank trading outcomes.
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {topMultipliers.map((pet) => (
@@ -389,25 +379,22 @@ export default function PetValueCalculatorPage() {
                 {pet.multiplier.toFixed(1)}x
               </div>
               <p className="text-xs text-[#768294] leading-relaxed mb-2">{pet.abilities[0]}</p>
-              <p className="text-xs text-[#768294]">
-                Source: <span className="text-[#BAC4D1]">{pet.source}</span>
-              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* High-Demand Pets */}
+      {/* Internal demand labels */}
       <section aria-labelledby="demand-heading">
         <h2
           id="demand-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🔥 High-Demand Pets ({highDemandPets.length})
+          🔥 High Internal Demand Labels ({highDemandPets.length})
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          Pets with the highest buyer interest — these sell quickly at full market value. Focus
-          trades here for fast liquidity.
+          Pet records carrying the High internal demand label. This label does not establish buyer
+          activity, transaction speed, liquidity, or price.
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {highDemandPets.slice(0, 9).map((t) => {
@@ -429,7 +416,7 @@ export default function PetValueCalculatorPage() {
                   </span>
                 </div>
                 <div className="text-xl font-bold text-[#00E676] mb-2">
-                  {formatValue(t.value)} 🪙
+                  {formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}
                 </div>
                 <div className="flex items-center gap-2 text-xs">
                   {petMatch && (
@@ -453,13 +440,13 @@ export default function PetValueCalculatorPage() {
         </div>
       </section>
 
-      {/* Trend Analysis */}
+      {/* Internal trend labels */}
       <section aria-labelledby="trend-heading">
         <h2
           id="trend-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📈 Pet Trade Trend Analysis
+          📈 Pet Internal Trend Labels
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4">
@@ -467,7 +454,8 @@ export default function PetValueCalculatorPage() {
               ↑ Rising ({risingPets.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Gaining value — hold for maximum profit.
+              Records carrying the Rising internal trend label. This does not establish live movement
+              or a recommendation to buy, sell, or hold.
             </p>
             <ul className="space-y-1.5">
               {risingPets.slice(0, 5).map((t) => (
@@ -478,7 +466,7 @@ export default function PetValueCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#00E676] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#00E676] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -488,7 +476,8 @@ export default function PetValueCalculatorPage() {
               → Stable ({stablePets.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Holding value — safe to trade at any time.
+              Records carrying the Stable internal trend label. This does not establish a trade result
+              or a recommendation.
             </p>
             <ul className="space-y-1.5">
               {stablePets.slice(0, 5).map((t) => (
@@ -499,7 +488,7 @@ export default function PetValueCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#FFD700] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#FFD700] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -509,7 +498,8 @@ export default function PetValueCalculatorPage() {
               ↓ Falling ({fallingPets.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Losing value — sell quickly before further drops.
+              Records carrying the Falling internal trend label. This does not establish live movement
+              or a recommendation.
             </p>
             <ul className="space-y-1.5">
               {fallingPets.slice(0, 5).map((t) => (
@@ -520,7 +510,7 @@ export default function PetValueCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#FF3D00] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#FF3D00] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -534,7 +524,7 @@ export default function PetValueCalculatorPage() {
           id="coverage-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📊 Database Coverage
+          📊 Pet Record Coverage
         </h2>
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-[#3A86FF]/30 bg-[#14161D] p-4 text-center">
@@ -542,12 +532,12 @@ export default function PetValueCalculatorPage() {
             <div className="text-xs text-[#768294] mt-1">Total Pets</div>
           </div>
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4 text-center">
-            <div className="text-2xl font-bold text-[#00E676]">{tradedPets.length}</div>
-            <div className="text-xs text-[#768294] mt-1">Tradeable Pets</div>
+            <div className="text-2xl font-bold text-[#00E676]">{matchedRecordPets.length}</div>
+            <div className="text-xs text-[#768294] mt-1">Matched Trading Records</div>
           </div>
           <div className="rounded-xl border border-[#FFD700]/30 bg-[#14161D] p-4 text-center">
             <div className="text-2xl font-bold text-[#FFD700]">{highDemandPets.length}</div>
-            <div className="text-xs text-[#768294] mt-1">High-Demand Pets</div>
+            <div className="text-xs text-[#768294] mt-1">High Internal Demand Labels</div>
           </div>
         </div>
       </section>

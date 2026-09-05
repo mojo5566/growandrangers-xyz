@@ -138,10 +138,10 @@ export default function Summer2026TierListAndGardenPage() {
           {/* ===== INTRO ===== */}
           <section className="rounded-xl border border-[#252936] bg-[#14161D] p-6 lg:p-8">
             <p className="text-sm text-[#BAC4D1] leading-relaxed">
-              欢迎来到《Grow a Garden + Anime Rangers X》的<strong className="text-white">终极策略中心</strong>！在这款将"模拟经营园艺"与"动漫角色大乱斗"完美融合的神作中，很多玩家容易把<strong className="text-[#00E676]">'种地（Grow a Garden）'</strong>和<strong className="text-[#FF3D00]">'推图（Anime Rangers）'</strong>割裂开来。
+              欢迎来到《Grow a Garden + Anime Rangers X》的<strong className="text-white">终极策略中心</strong>！在这款将&quot;模拟经营园艺&quot;与&quot;动漫角色大乱斗&quot;完美融合的神作中，很多玩家容易把<strong className="text-[#00E676]">&apos;种地（Grow a Garden）&apos;</strong>和<strong className="text-[#FF3D00]">&apos;推图（Anime Rangers）&apos;</strong>割裂开来。
             </p>
             <p className="mt-3 text-sm text-[#BAC4D1] leading-relaxed">
-              事实上，<span className="inline-block px-1.5 py-0.5 rounded text-xs font-bold" style={{ color: "#FFD700", backgroundColor: "rgba(255,215,0,0.12)" }}>你的花园产出什么植物，直接决定了你的动漫 Rangers 能发挥出几成战力！</span> 今天我们就来拆解一套当前版本最顶级的<strong className="text-white">"园艺产出 ➕ 战队输出"</strong>的完美联动开局套路。
+              事实上，<span className="inline-block px-1.5 py-0.5 rounded text-xs font-bold" style={{ color: "#FFD700", backgroundColor: "rgba(255,215,0,0.12)" }}>你的花园产出什么植物，直接决定了你的动漫 Rangers 能发挥出几成战力！</span> 今天我们就来拆解一套当前版本最顶级的<strong className="text-white">&quot;园艺产出 ➕ 战队输出&quot;</strong>的完美联动开局套路。
             </p>
           </section>
 
@@ -152,7 +152,7 @@ export default function Summer2026TierListAndGardenPage() {
                 PART 01
               </span>
               <h2 id="part1-heading" className="font-heading text-[22px] font-semibold text-white lg:text-[28px]">
-                核心联动机制：植物如何为 Rangers 提供'神级 Buff'？
+                核心联动机制：植物如何为 Rangers 提供&apos;神级 Buff&apos;？
               </h2>
             </div>
             <p className="text-sm text-[#768294] mb-6 leading-relaxed">
@@ -170,7 +170,7 @@ export default function Summer2026TierListAndGardenPage() {
                   </div>
                 </div>
                 <p className="text-xs text-[#BAC4D1] leading-relaxed mb-3">
-                  在花园中成熟后，会持续产生<strong className="text-[#FF3D00]">"热能结界"</strong>。火属性 Rangers 在出战时获得强力增益。
+                  在花园中成熟后，会持续产生<strong className="text-[#FF3D00]">&quot;热能结界&quot;</strong>。火属性 Rangers 在出战时获得强力增益。
                 </p>
                 <div className="rounded-lg bg-[#1E212B] border border-[#252936] p-3 mb-3">
                   <span className="text-xs text-[#768294]">⚡ 增益效果</span>
@@ -200,7 +200,7 @@ export default function Summer2026TierListAndGardenPage() {
                   </div>
                 </div>
                 <p className="text-xs text-[#BAC4D1] leading-relaxed mb-3">
-                  成长周期较长，但成熟后能提供源源不断的<strong className="text-[#00E676]">"生命树汁"</strong>。所有前排坦克型 Rangers 的最强奶妈。
+                  成长周期较长，但成熟后能提供源源不断的<strong className="text-[#00E676]">&quot;生命树汁&quot;</strong>。所有前排坦克型 Rangers 的最强奶妈。
                 </p>
                 <div className="rounded-lg bg-[#1E212B] border border-[#252936] p-3 mb-3">
                   <span className="text-xs text-[#768294]">🛡️ 增益效果</span>
@@ -236,7 +236,7 @@ export default function Summer2026TierListAndGardenPage() {
                 PART 02
               </span>
               <h2 id="part2-heading" className="font-heading text-[22px] font-semibold text-white lg:text-[28px]">
-                2026 赛季黄金开局：'极速发育流'植物与角色组合
+                2026 赛季黄金开局：&apos;极速发育流&apos;植物与角色组合
               </h2>
             </div>
             <p className="text-sm text-[#768294] mb-6 leading-relaxed">
@@ -309,7 +309,7 @@ export default function Summer2026TierListAndGardenPage() {
               <div className="relative">
                 <h4 className="text-sm font-bold text-[#FFD700] mb-2">⚗️ 联动化学反应</h4>
                 <p className="text-xs text-[#BAC4D1] leading-relaxed">
-                  闪电风铃草产出的雷电元素，能让御坂美琴的"超电磁炮"触发<strong className="text-[#FFD700] text-sm">【超导过载】</strong>全屏AOE伤害，前期推图速度提升
+                  闪电风铃草产出的雷电元素，能让御坂美琴的&quot;超电磁炮&quot;触发<strong className="text-[#FFD700] text-sm">【超导过载】</strong>全屏AOE伤害，前期推图速度提升
                   <span className="inline-block ml-1 px-2 py-0.5 rounded text-sm font-bold" style={{ color: "#FFD700", backgroundColor: "rgba(255,215,0,0.15)" }}>300%</span>！
                 </p>
               </div>
@@ -368,7 +368,7 @@ export default function Summer2026TierListAndGardenPage() {
                   <div className="flex-1">
                     <h3 className="text-sm font-semibold text-white">给 Rangers 喂食</h3>
                     <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
-                      将特定果实喂给你对应的核心 Rangers，可以快速提升<strong className="text-[#FF3D00]">"羁绊等级"</strong>，解锁隐藏的<strong className="text-[#FFD700]">专属被动技能</strong>。每个角色有 3 条隐藏被动，满羁绊全部解锁。
+                      将特定果实喂给你对应的核心 Rangers，可以快速提升<strong className="text-[#FF3D00]">&quot;羁绊等级&quot;</strong>，解锁隐藏的<strong className="text-[#FFD700]">专属被动技能</strong>。每个角色有 3 条隐藏被动，满羁绊全部解锁。
                     </p>
                     <div className="mt-2 flex gap-2">
                       <span className="code-text text-[10px] rounded px-2 py-0.5 bg-[#FF3D00]/10 text-[#FF3D00]">🍎 喂食</span>
@@ -388,7 +388,7 @@ export default function Summer2026TierListAndGardenPage() {
                   <div className="flex-1">
                     <h3 className="text-sm font-semibold text-white">派遣挂机</h3>
                     <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
-                      下线前，把多余的 Rangers <strong className="text-[#3A86FF]">派遣到花园里当"全自动园丁"</strong>，他们不仅能防止地精偷菜，还能稍微增加作物<strong className="text-[#00E676]">10% 的生长速度</strong>。挂机收益最大化。
+                      下线前，把多余的 Rangers <strong className="text-[#3A86FF]">派遣到花园里当&quot;全自动园丁&quot;</strong>，他们不仅能防止地精偷菜，还能稍微增加作物<strong className="text-[#00E676]">10% 的生长速度</strong>。挂机收益最大化。
                     </p>
                     <div className="mt-2 flex gap-2">
                       <span className="code-text text-[10px] rounded px-2 py-0.5 bg-[#3A86FF]/10 text-[#3A86FF]">🛡️ 防偷菜</span>

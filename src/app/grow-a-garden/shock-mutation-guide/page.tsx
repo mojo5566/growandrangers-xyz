@@ -49,13 +49,6 @@ const profitMatrix = shockMutations.map((m) => ({
   })),
 }));
 
-const tierColors: Record<string, string> = {
-  S: "#FF3D00",
-  A: "#FF8C00",
-  B: "#FFD700",
-  C: "#3A86FF",
-};
-
 // Helper: lookup specific mutations for matrix references
 const frozenBloom = shockMutations.find((m) => m.name === "Frozen Bloom");
 const giantBloom = shockMutations.find((m) => m.name === "Giant Bloom");
@@ -72,7 +65,7 @@ const faqs = [
   {
     question: "Which shock mutation is the best?",
     answer:
-      "Among the shock-themed bloom mutations, the ones with the highest multipliers are the most valuable. Use our ranking table below to compare them. Generally, Glowing Bloom and Giant Bloom tend to be the strongest in this family, while Rotten Bloom is the only mutation in the game with a multiplier below 1.0× — it actually reduces crop value and should be overwritten immediately.",
+      "Among the shock-themed bloom mutations, the ones with the highest recorded multipliers top this comparison. Use our ranking table below to compare them. Generally, Glowing Bloom and Giant Bloom tend to be the strongest in this family, while Rotten Bloom is the only mutation in the game with a multiplier below 1.0× — it actually reduces crop value and should be overwritten immediately.",
   },
   {
     question: "Should I keep shock mutations or reroll for S-Tier?",
@@ -170,7 +163,6 @@ export default function ShockMutationGuidePage() {
                   const isGiant = m.name === "Giant Bloom";
                   const isGlowing = m.name === "Glowing Bloom";
                   const isWet = m.name === "Wet Bloom";
-                  const peak = m.conditionalBonus?.bonusMultiplier ?? m.multiplier;
                   return (
                     <tr key={m.id} className={isRotten ? "bg-[#FF3D00]/5" : ""}>
                       <td className="px-4 py-3">
@@ -323,7 +315,7 @@ export default function ShockMutationGuidePage() {
             <p><strong className="text-white">Day 6 (Allocation):</strong> If you landed {glowingBloom?.name} ({glowingBloom?.multiplier}×), apply it to plot #2 (secondary), not plot #1 (main). Reason: you will roll an S-Tier for plot #1 later, and overwriting a {glowingBloom?.multiplier}× mutation wastes it. Plot #1 stays empty until you land a 4.0×+ roll.</p>
             <p><strong className="text-white">Day 7–14 (Accumulate):</strong> Keep the remaining 4 shards. Do not single-roll. Repeat daily logins and code redemption until you have 10+ shards again, then bulk-roll for plot #3. Goal: all 3 plots running at least a 2.0× shock mutation within 2 weeks, with shards banked for the next boosted event.</p>
             <p className="text-xs text-[#00E676] mt-3">
-              Result: 3 plots running shock mutations generating ~{Math.round(topCrops[2].coins * 2.3).toLocaleString()}–{Math.round(topCrops[2].coins * 3.2).toLocaleString()} coins/harvest each (with 1.8× pet = ~{Math.round(topCrops[2].coins * 2.3 * 1.8).toLocaleString()}–{Math.round(topCrops[2].coins * 3.2 * 1.8).toLocaleString()} effective). Not end-game income, but enough to fund Rare Eggs and <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">shard trading</Link> for the eventual S-Tier push.
+              Result: 3 plots running shock mutations generating ~{Math.round(topCrops[2].coins * 2.3).toLocaleString()}–{Math.round(topCrops[2].coins * 3.2).toLocaleString()} coins/harvest each (with 1.8× pet = ~{Math.round(topCrops[2].coins * 2.3 * 1.8).toLocaleString()}–{Math.round(topCrops[2].coins * 3.2 * 1.8).toLocaleString()} effective). Not end-game income, but enough to fund Rare Eggs and keep building a shard reserve for the eventual S-Tier push.
             </p>
           </div>
         </div>

@@ -10,22 +10,22 @@ import { pets } from "@/data/garden/database/pets";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Calculators — Profit Tools",
+  title: "Grow a Garden Calculators — Reference Tools",
   description:
-    "Free Grow a Garden calculators: crop profit, mutation multipliers, trading values, and pet value rankings. All values sourced from canonical databases.",
+    "Free Grow a Garden reference tools for comparing recorded crop, mutation, pet, and trading fields with simple mathematical formulas.",
   keywords: [
     "Grow a Garden calculator",
-    "Grow a Garden profit calculator",
+    "Grow a Garden reference calculator",
     "crop value calculator Grow a Garden",
     "mutation calculator Grow a Garden",
-    "trading value calculator",
-    "Grow a Garden coin estimator",
+    "trading comparison calculator",
+    "Grow a Garden multiplier calculator",
   ],
   alternates: { canonical: "/grow-a-garden/calculators" },
   openGraph: {
-    title: "Grow a Garden Calculators — Profit Tools",
+    title: "Grow a Garden Calculators — Reference Tools",
     description:
-      "Free Grow a Garden calculators: crop profit, mutation multipliers, trading values, and pet value rankings.",
+      "Free Grow a Garden reference tools for comparing recorded fields and simple mathematical relationships.",
     type: "website",
   },
 };
@@ -34,7 +34,7 @@ const calculatorCards = [
   {
     title: "Crop Value Calculator",
     description:
-      "Pre-calculated profit table for every crop × every mutation. See base value, mutation bonus, and total value at a glance.",
+      "Compare recorded crop and mutation fields with the project’s documented formulas. See base values, multipliers, and calculated reference results.",
     href: "/grow-a-garden/crop-value-calculator",
     icon: "🌾",
     accent: "#00E676",
@@ -43,25 +43,25 @@ const calculatorCards = [
   {
     title: "Mutation Profit Calculator",
     description:
-      "Compare mutation profit on every crop. See multiplier, estimated value, and profit comparison vs baseline harvest.",
+      "Compare recorded mutation multipliers and calculated reference results against a baseline crop value.",
     href: "/grow-a-garden/mutation-calculator",
     icon: "✨",
     accent: "#FF8C00",
     stat: `${mutations.length} mutations ranked`,
   },
   {
-    title: "Trading Value Calculator",
+    title: "Trading Record Calculator",
     description:
-      "Compare tradeable item values by category, rarity, demand, and trend. Verified market values for every item.",
+      "Compare recorded trading fields by category, rarity, demand, and trend. These are project reference labels, not live prices.",
     href: "/grow-a-garden/trading-calculator",
     icon: "💱",
     accent: "#FFD700",
-    stat: `${trading.length} tradeable items`,
+    stat: `${trading.length} recorded item entries`,
   },
   {
     title: "Pet Value Calculator",
     description:
-      "Pet multiplier × trade value ranking — see each pet's coin multiplier, tier, rarity, demand, trend, and market price.",
+      "Compare recorded pet multipliers and project reference labels such as tier, rarity, demand, and trend.",
     href: "/grow-a-garden/pet-value-calculator",
     icon: "🐾",
     accent: "#3A86FF",
@@ -73,32 +73,32 @@ const faqs = [
   {
     question: "How do Grow a Garden calculators work?",
     answer:
-      "Each calculator pre-computes profit and value scenarios from our canonical crop, mutation, pet, and trading databases. The crop calculator multiplies base coin value × mutation multiplier. The mutation calculator ranks mutations by total yield. The trading calculator sorts items by market value, rarity, demand, and trend.",
+      "Each tool reads recorded fields from the project databases and applies simple formulas where appropriate. Crop and mutation tools show mathematical comparisons using base values and multipliers; trading and pet tools organize recorded labels rather than reporting live or verified prices.",
   },
   {
     question: "Are Grow a Garden calculator values accurate?",
     answer:
-      "Yes. All values are pulled directly from our canonical databases, which are verified against in-game data and updated regularly. The crop base values, mutation multipliers, and trading market values reflect the July 2026 game state.",
+      "The displayed inputs are project-recorded values and labels, not a live or independently verified feed. Game updates can change mechanics or values, so confirm current details in the game or official announcements.",
   },
   {
     question: "Do pet multipliers stack with mutation multipliers?",
     answer:
-      "Yes, pet and mutation multipliers stack multiplicatively. To estimate the full stacked value, multiply the calculator result by your pet's multiplier. For example, a 1,920 coin crop result with a Golden Phoenix Chick (5.0×) pet would sell for 9,600 coins.",
+      "The tools can show multiplication between recorded pet and mutation multipliers when the relevant calculator supports it. Treat the result as a mathematical reference, and confirm the current stacking rules in the game or official announcements.",
   },
   {
     question: "Which calculator should I use first?",
     answer:
-      "Start with the Crop Value Calculator to understand base profit per crop. Then use the Mutation Profit Calculator to see which mutations multiply your chosen crop best. Finally, check the Trading Value Calculator to see if your harvest is worth more sold directly or traded to other players.",
+      "Start with the tool that matches the fields you want to compare. Crop and mutation tools explain recorded base values and multipliers; trading and pet tools help you review project labels without making a market or transaction recommendation.",
   },
   {
     question: "Why are some crops worth more than others at the same tier?",
     answer:
-      "Crop value depends on three factors: base coin value, growth time (which determines coins-per-minute), and mutation compatibility. An S-Tier crop like Golden Wheat has high base value (480 coins) AND fast growth (3 min) for a CPM of 160 — the highest in the game. Seasonal bonuses (+20%) further boost in-season crops.",
+      "The project records crop fields such as base coin value, growth time, tier, and season. A comparison between those fields is not a complete gameplay rule or earnings forecast; check current crop mechanics in the game or official announcements.",
   },
   {
     question: "How often are calculator values updated?",
     answer:
-      "Calculator values update whenever the underlying canonical databases are updated. We refresh trading values regularly to reflect market shifts, and crop/mutation/pet values whenever game patches change base stats. Check the 'Last Updated' badge on each calculator page for the latest refresh date.",
+      "The tools change when their underlying project records change. The displayed date identifies the project content review, not a market sampling time or guarantee of current game state. Recheck important details after patches and events.",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function CalculatorsHubPage() {
   return (
     <ContentLayout
       title="Grow a Garden Calculators"
-      description="Free Grow a Garden calculators: crop profit, mutation multipliers, trading values, and pet value rankings. All values sourced from canonical databases — no sign-up required."
+      description="Free Grow a Garden reference tools for comparing recorded crop, mutation, pet, and trading fields with simple mathematical formulas."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -119,10 +119,10 @@ export default function CalculatorsHubPage() {
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          Plan your farm with precision. Our Grow a Garden calculators pre-compute profit scenarios
-          across every crop, mutation, and tradeable item using canonical database values. Pick a
-          calculator below to see exact coin values, multipliers, and trade comparisons — no inputs
-          required, all data rendered at build time for instant load.
+          Review Grow a Garden records with simple mathematical references. The tools below organize
+          crop, mutation, pet, and trading fields from the project databases. Results are rendered at
+          build time for quick lookup; confirm current mechanics and availability in the game or
+          official announcements.
         </p>
       </section>
 
@@ -179,29 +179,29 @@ export default function CalculatorsHubPage() {
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
             <h3 className="text-sm font-semibold text-[#00E676] mb-2">1. Source Data</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              All values come from our canonical databases — crops, mutations, pets, and trading
-              items. Single source of truth across every page.
+              Values and labels come from the project databases for crops, mutations, pets, and
+              trading items. They are editorial records, not a live or independently verified feed.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
             <h3 className="text-sm font-semibold text-[#00E676] mb-2">2. Pre-Compute</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Calculations run at build time. Every crop × mutation pair, every trading value
-              comparison — all rendered as static HTML for instant load.
+              Calculations run at build time. Crop and mutation comparisons use the recorded inputs
+              and documented formulas, then render as static HTML for quick lookup.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
             <h3 className="text-sm font-semibold text-[#00E676] mb-2">3. Stack Multipliers</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Total = base × mutation × pet. Crop value calculator shows the full stacking breakdown
-              so you can plan your optimal farm build.
+              Where supported, a result can be expressed as base × mutation × pet. This is a
+              mathematical reference, not a guarantee of how current game mechanics stack.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#00E676] mb-2">4. Verify Trade Value</h3>
+            <h3 className="text-sm font-semibold text-[#00E676] mb-2">4. Review Recorded Labels</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
-              Cross-reference with the trading calculator to decide: sell harvest for coins, or trade
-              the item to other players for premium value.
+              Use the trading calculator to review recorded category, rarity, demand, and trend
+              labels. It does not determine a fair price or recommend a transaction.
             </p>
           </div>
         </div>
@@ -218,19 +218,19 @@ export default function CalculatorsHubPage() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4 text-center">
             <div className="text-2xl font-bold text-[#00E676]">{crops.length}</div>
-            <div className="text-xs text-[#768294] mt-1">Crops Analyzed</div>
+            <div className="text-xs text-[#768294] mt-1">Crops Recorded</div>
           </div>
           <div className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-4 text-center">
             <div className="text-2xl font-bold text-[#FF8C00]">{mutations.length}</div>
-            <div className="text-xs text-[#768294] mt-1">Mutations Ranked</div>
+            <div className="text-xs text-[#768294] mt-1">Mutations Recorded</div>
           </div>
           <div className="rounded-xl border border-[#3A86FF]/30 bg-[#14161D] p-4 text-center">
             <div className="text-2xl font-bold text-[#3A86FF]">{pets.length}</div>
-            <div className="text-xs text-[#768294] mt-1">Pets Tracked</div>
+            <div className="text-xs text-[#768294] mt-1">Pets Recorded</div>
           </div>
           <div className="rounded-xl border border-[#FFD700]/30 bg-[#14161D] p-4 text-center">
             <div className="text-2xl font-bold text-[#FFD700]">{trading.length}</div>
-            <div className="text-xs text-[#768294] mt-1">Tradeable Items</div>
+            <div className="text-xs text-[#768294] mt-1">Trading Records</div>
           </div>
         </div>
       </section>

@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "How do pets interact with mutations?",
     answer:
-      "Pet multipliers stack multiplicatively with mutation multipliers. For example, a Golden Phoenix Chick (5.0x) paired with an Aurelian Crown mutation (4.0x) produces a 20.0x total yield — the theoretical maximum in the current meta. Always equip your highest-multiplier pet when rolling mutations, as the stacking is automatic and applies to every harvest on the affected plot.",
+      "Pet multipliers stack multiplicatively with mutation multipliers. For example, a Golden Phoenix Chick (5.0x) paired with an Aurelian Crown mutation (4.0x) produces a 20.0x total yield — the theoretical maximum in this stacking math demonstration. Always equip your highest-multiplier pet when rolling mutations, as the stacking is automatic and applies to every harvest on the affected plot.",
   },
   {
     question: "What is the best pet in Grow a Garden?",
@@ -508,16 +508,16 @@ export default function PetGuidePage() {
             <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">
               Best Mythical Pets →
             </span>
-            <p className="mt-1 text-xs text-[#768294]">Ranked S-Tier pets with trading values</p>
+            <p className="mt-1 text-xs text-[#768294]">Ranked S-Tier pets with internal record fields</p>
           </Link>
           <Link
             href="/grow-a-garden/trading"
             className="group rounded-lg border border-[#00E676]/30 bg-[#14161D] p-4 transition hover:border-[#00E676]"
           >
             <span className="text-sm font-semibold text-[#BAC4D1] group-hover:text-[#00E676] transition">
-              Trading Values →
+              Trading Records →
             </span>
-            <p className="mt-1 text-xs text-[#768294]">Current market values for every pet</p>
+            <p className="mt-1 text-xs text-[#768294]">Internal recorded fields for matching pets</p>
           </Link>
         </div>
       </section>

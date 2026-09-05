@@ -62,7 +62,7 @@ export default function AboutPage() {
               growandrangers.xyz
             </a>{" "}
             and serve hundreds of static pages covering crops, seeds, pets,
-            mutations, eggs, codes, updates, trading values, and events. Every
+            mutations, eggs, codes, updates, trading records, and events. Every
             page is prerendered at build time so the site loads instantly on any
             device.
           </p>
@@ -103,15 +103,16 @@ export default function AboutPage() {
             </li>
             <li className="flex items-start gap-2 text-sm text-[#BAC4D1]">
               <span className="text-[#00E676] shrink-0 mt-0.5">•</span>
-              <strong>No clear trading values</strong> — Players get scammed
-              without a trusted reference. Our{" "}
+              <strong>No clear trading records</strong> — Players need clear
+              project context when reviewing item fields. Our{" "}
               <Link
                 href="/grow-a-garden/trading"
                 className="text-[#00E676] hover:underline"
               >
-                trading database
+                trading records database
               </Link>{" "}
-              tracks rarity, demand, and value trends for 50 in-game items.
+              organizes internal rarity, demand, trend, and recorded-field data
+              for project reference across in-game items.
             </li>
           </ul>
           <p className="mt-3 text-sm leading-relaxed text-[#BAC4D1]">
@@ -192,7 +193,7 @@ export default function AboutPage() {
             <code className="rounded bg-[#1E212B] px-1.5 py-0.5 text-xs text-[#00E676] font-mono">
               src/data/garden/database/
             </code>
-            . Each entity (pet, seed, crop, mutation, code, update, trading value,
+            . Each entity (pet, seed, crop, mutation, code, update, trading record,
             event) has a single canonical source file. Every page on the site
             imports from these files — there is no copy-pasted data.
           </p>
@@ -202,7 +203,7 @@ export default function AboutPage() {
           <ul className="mt-3 space-y-2">
             <li className="flex items-start gap-2 text-sm text-[#BAC4D1]">
               <span className="text-[#00E676] shrink-0 mt-0.5">•</span>
-              <strong>Daily</strong> — Codes page and trading values are reviewed
+            <strong>Daily</strong> — Codes page and trading records are reviewed
               for changes; the homepage and game hubs are rebuilt with the latest
               date stamp.
             </li>

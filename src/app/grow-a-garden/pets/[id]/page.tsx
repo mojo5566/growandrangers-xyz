@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
@@ -44,29 +43,6 @@ const tierBadge: Record<string, string> = {
   B: "bg-[#FFD700]/20 text-[#FFD700]",
   C: "bg-[#3A86FF]/20 text-[#3A86FF]",
 };
-
-const relatedGuides = [
-  {
-    href: "/grow-a-garden/pet-tier-list",
-    label: "Pet Tier List",
-    description: "Full pet rankings with detailed analysis",
-  },
-  {
-    href: "/grow-a-garden/best-pets",
-    label: "Best Pets Guide",
-    description: "Which pets to hatch and why",
-  },
-  {
-    href: "/grow-a-garden/mutations",
-    label: "All Mutations Database",
-    description: "Browse every mutation in the Grow a Garden database",
-  },
-  {
-    href: "/grow-a-garden/codes",
-    label: "Codes",
-    description: "Latest active codes for free rewards",
-  },
-];
 
 export default async function PetDetailPage({ params }: PageProps) {
   const { id } = await params;

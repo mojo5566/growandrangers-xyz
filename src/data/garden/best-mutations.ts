@@ -45,7 +45,7 @@ function buildBestMutationsData(): EvolutionPageData {
         name: "Mutation Shards",
         icon: "🔮",
         desc: "The exclusive currency for rolling mutations at the Mutation Station. Each roll costs 1 shard. Bulk rolling (10 shards at once) improves your cumulative odds slightly.",
-        sources: ["Daily login rewards (3-5 shards per day)", "Promo codes (10-20 shards per drop — check our Codes page)", "Seasonal events (20-50 shards per event)", "Trading with other players (variable rates)"],
+        sources: ["Daily login rewards (3-5 shards per day)", "Promo codes (10-20 shards per drop — check our Codes page)", "Seasonal events (20-50 shards per event)", "Starter and progression quests"],
         tip: "Never spend shards one at a time. Save to 50+ and roll 10 at once during boosted events. A single roll has ~1.2% S-Tier odds. Ten rolls during a +50% boosted event pushes cumulative odds to roughly 16%. The math strongly favors patience.",
       },
       {
@@ -66,7 +66,7 @@ function buildBestMutationsData(): EvolutionPageData {
         name: "Seed Upgrades",
         icon: "🌾",
         desc: "Better seeds sell for more coins. Your mutation multiplies the seed's base value, so upgrading seeds compounds your mutation's effectiveness.",
-        sources: ["Farm Shop (incremental cost per tier)", "Promo codes (free seed packs)", "Trading (player-to-player)"],
+        sources: ["Farm Shop (incremental cost per tier)", "Promo codes (free seed packs)", "Starter and progression quests"],
         tip: "A 4.0x Aurelian Crown on Wheat (50 coins) yields 200 coins. The same mutation on Golden Wheat (480 coins) yields 1,920 coins. Always upgrade your seeds before investing heavily in mutations — the seed base value is the foundation everything multiplies from.",
       },
       {
@@ -121,7 +121,7 @@ function buildBestMutationsData(): EvolutionPageData {
       { question: "What is the best mutation in Grow a Garden?", answer: `${prismaticRainbow.name} (S-Tier, ${prismaticRainbow.multiplier.toFixed(1)}x) is the highest-multiplier mutation in the game, but its ultra-low ${prismaticRainbow.rollRate} roll rate makes it a trophy item most players will never roll. ${midasBloom.name} (${midasBloom.multiplier.toFixed(1)}x) is the next highest, with a 25% chance to double coin payouts. For realistic farming, ${aurelianCrown.name} (${aurelianCrown.multiplier.toFixed(1)}x) is the best farmable mutation — the most reliable S-Tier with no conditions and a connected-plot harvest passive. ${crystallineMycelium.name} (${crystallineMycelium.multiplier.toFixed(1)}x) is the runner-up with its auto-water quality-of-life feature. Notable A-Tier options include Frozen Bloom (3.2x, preservation passive), Giant Bloom (3.0x, double-yield passive), and ${phosphorSporebloom.name} (${phosphorSporebloom.multiplier.toFixed(1)}x). ${leporineBloom.name} can situationally exceed Aurelian Crown when paired with Lucky Clover Bunny.` },
       { question: "How do I get more Mutation Shards?", answer: "The most reliable sources are daily login rewards (3-5 shards/day), promo codes (10-20 shards — check our Codes page regularly), and seasonal event rewards (20-50 shards per event). Save every shard. Do not buy shards with Coins until you are in the endgame with nothing else to spend on." },
       { question: "When should I roll for mutations?", answer: "Only during mutation-boosted seasonal events (+50% S/A-Tier rates). Save shards between events. Bulk roll 10 at once during the event window. The four major boosted events are Easter (March/April), Summer Festival (June/July), Halloween Harvest (October), and Winter Celebration (December)." },
-      { question: "What are the S-Tier roll odds?", answer: "Base S-Tier rate is ~1.2% per roll. During a +50% boosted event, this rises to ~5.5% per roll. Bulk rolling 10 at once during a boosted event gives ~43% cumulative chance of landing at least one S or A-Tier mutation. Without the event boost, 10 rolls give only ~11% cumulative — a massive difference." },
+      { question: "What are the S-Tier roll odds?", answer: "The dataset records the base S-Tier rate label at ~1.2% per roll, rising to a recorded ~5.5% label during a +50% boosted event, and a recorded ~43% cumulative label for bulk rolling 10 at once during the event window (~11% cumulative unboosted). These are recorded gameplay reference labels, not independently verified probabilities." },
       { question: "Can I move a mutation to a different plot?", answer: "No. Mutations are permanently bound to the plot they are applied to. You cannot transfer, swap, or unequip a mutation. If you want a different mutation on a plot, you must overwrite the existing one — the old mutation is permanently destroyed. Always plan which plot gets your best rolls." },
       { question: "Do seasonal mutations work outside their season?", answer: "Yes, but at reduced effectiveness. Hoarfrost Corolla (B-Tier, 2.0x base) surges to 2.5x during Winter but drops back to 2.0x in other seasons. The mutation never stops working entirely — the seasonal bonus is additive on top of the base multiplier. If you play year-round, prioritize all-season mutations for your main plots and use seasonal mutations on secondary plots." },
       { question: "How many plots should I have before grinding mutations?", answer: "Get to 4 plots before seriously investing in mutations. Plot expansion provides guaranteed, permanent income increases with zero RNG. A 1.0x mutation on 4 plots earns more than a 4.0x mutation on 1 plot. Use your free starter shards to learn the system, then focus on plot expansion until you have at least 4 running." },
@@ -132,7 +132,7 @@ function buildBestMutationsData(): EvolutionPageData {
       { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Every mutation ranked from S-Tier to C-Tier with detailed stats" },
       { label: "Active Codes", href: "/grow-a-garden/codes", description: "Get free Mutation Shards from promo codes" },
       { label: "Pet Tier List", href: "/grow-a-garden/pet-tier-list", description: "Pair your best pets with your mutations" },
-      { label: "Crop Value List", href: "/grow-a-garden/crop-value-list", description: "Apply your best mutations to the most profitable crops" },
+      { label: "Crop Value List", href: "/grow-a-garden/crop-value-list", description: "Recorded crop coin fields for mutation math reference" },
     ],
   };
 }

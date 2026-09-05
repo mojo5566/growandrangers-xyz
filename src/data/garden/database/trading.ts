@@ -1,8 +1,13 @@
 // ============================================================
-// Grow a Garden — Canonical Trading Value Database
-// Single source of truth for all tradeable item values.
+// Grow a Garden — Canonical Trading Record Database
+// Single source of truth for all trade-related project records.
 // All page data files should import from here.
 // ============================================================
+
+export const TRADING_RECORD_DATE = "July 27, 2026";
+export const TRADING_RECORD_VALUE_LABEL = "recorded units";
+export const TRADING_RECORD_DISCLAIMER =
+  "Internal editorial project records only. They are not official prices, live market quotes, or independently verified transaction data.";
 
 /** trading interface */
 export interface TradingValue {
@@ -12,14 +17,34 @@ export interface TradingValue {
   rarity: "Common" | "Rare" | "Epic" | "Legendary" | "Mythical";
   demand: "Low" | "Medium" | "High";
   value: number;
+  valueUnit: "recorded units";
   trend: "Rising" | "Stable" | "Falling";
+  sourceType: "Editorial";
+  verificationStatus: "Unverified";
   notes?: string;
   updatedAt: string;
 }
 
-export const trading: TradingValue[] = [
+type TradingValueInput = Omit<
+  TradingValue,
+  "valueUnit" | "sourceType" | "verificationStatus" | "updatedAt"
+> & {
+  updatedAt?: string;
+};
+
+function createTradingRecord(input: TradingValueInput): TradingValue {
+  return {
+    ...input,
+    valueUnit: TRADING_RECORD_VALUE_LABEL,
+    sourceType: "Editorial",
+    verificationStatus: "Unverified",
+    updatedAt: input.updatedAt ?? TRADING_RECORD_DATE,
+  };
+}
+
+const tradingInputs: TradingValueInput[] = [
   // ============================================================
-  // PETS (20 entries)
+  // PETS (22 entries)
   // ============================================================
   {
     id: "pet-golden-phoenix-chick",
@@ -29,7 +54,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 5000000,
     trend: "Rising",
-    notes: "Rarest pet in the game — 5.0x multiplier. Collectors pay premium. Never accept under 4.5M.",
+    notes: "Project record notes a 5.0x multiplier and a high internal demand label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -40,7 +65,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 2800000,
     trend: "Rising",
-    notes: "4.8x multiplier — added in Zen Update. Demand outstrips supply.",
+    notes: "Project record notes a 4.8x multiplier and a high internal demand label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -51,7 +76,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 2400000,
     trend: "Stable",
-    notes: "4.5x multiplier. Stable price — consistent supply from Legendary Egg.",
+    notes: "Project record notes a 4.5x multiplier and a stable internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -73,7 +98,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 1500000,
     trend: "Rising",
-    notes: "4.0x multiplier. Trending up due to mutation meta shift.",
+    notes: "Project record notes a 4.0x multiplier and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -84,7 +109,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 1300000,
     trend: "Stable",
-    notes: "3.8x multiplier. Solid pick for all-season farming.",
+    notes: "Project record notes a 3.8x multiplier for this all-season farming entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -95,7 +120,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 850000,
     trend: "Stable",
-    notes: "3.8x multiplier but Winter-only. Slight premium during Winter events.",
+    notes: "Project record notes a 3.8x multiplier and Winter-only availability.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -117,7 +142,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 480000,
     trend: "Falling",
-    notes: "3.2x multiplier. Falling out of meta as better Epic pets release.",
+    notes: "Project record notes a 3.2x multiplier and a falling internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -128,7 +153,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 420000,
     trend: "Stable",
-    notes: "3.0x multiplier. Spring-only pet — niche demand outside Spring events.",
+    notes: "Project record notes a 3.0x multiplier and Spring-only availability.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -139,7 +164,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 180000,
     trend: "Stable",
-    notes: "2.5x multiplier. Popular mid-tier pick for newer players.",
+    notes: "Project record notes a 2.5x multiplier for this mid-tier entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -150,7 +175,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 165000,
     trend: "Rising",
-    notes: "2.4x multiplier. Rising due to synergy with Moonflower farms.",
+    notes: "Project record notes a 2.4x multiplier and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -161,7 +186,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 130000,
     trend: "Falling",
-    notes: "2.2x multiplier. Outclassed by newer Rare pets.",
+    notes: "Project record notes a 2.2x multiplier for this Rare entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -172,7 +197,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 110000,
     trend: "Stable",
-    notes: "2.0x multiplier. Stable but low demand — mostly collector interest.",
+    notes: "Project record notes a 2.0x multiplier and low internal demand label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -183,7 +208,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 95000,
     trend: "Stable",
-    notes: "1.8x multiplier + crop protection passive. Niche utility pick.",
+    notes: "Project record notes a 1.8x multiplier and a crop-protection passive.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -194,7 +219,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 35000,
     trend: "Stable",
-    notes: "1.5x multiplier. First non-starter pet most players obtain.",
+    notes: "Project record notes a 1.5x multiplier for this non-starter entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -205,7 +230,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 22000,
     trend: "Stable",
-    notes: "1.3x multiplier. Common pick for early game.",
+    notes: "Project record notes a 1.3x multiplier for this early-game entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -216,7 +241,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 18000,
     trend: "Stable",
-    notes: "1.2x multiplier. Common starter pet.",
+    notes: "Project record notes a 1.2x multiplier for this starter entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -227,7 +252,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 12000,
     trend: "Falling",
-    notes: "1.1x multiplier. Bottom-tier Common — only trade for filler.",
+    notes: "Project record notes a 1.1x multiplier for this Common entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -238,12 +263,12 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 8000,
     trend: "Stable",
-    notes: "1.0x multiplier — free tutorial pet. No trade value beyond goodwill.",
+    notes: "Project record notes a 1.0x multiplier for this free tutorial pet.",
     updatedAt: "July 27, 2026",
   },
 
   // ============================================================
-  // SEEDS (10 entries)
+  // SEEDS (12 entries)
   // ============================================================
   {
     id: "seed-mythstar",
@@ -253,7 +278,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 750000,
     trend: "Rising",
-    notes: "Only seed that can spawn S-Tier mutations. Traded in bulk by mutation farmers.",
+    notes: "Project record notes this seed's mutation-related use and high internal demand label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -264,7 +289,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 320000,
     trend: "Rising",
-    notes: "Summer-only — demand spikes during Summer Event. Stock up off-season for profit.",
+    notes: "Project record notes Summer-only availability and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -275,7 +300,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 280000,
     trend: "Stable",
-    notes: "All-season Legendary — most consistent high-tier seed trade.",
+    notes: "Project record notes this all-season Legendary seed entry and a stable internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -286,7 +311,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 195000,
     trend: "Stable",
-    notes: "Best CPM seed — high volume trades. Stable price floor.",
+    notes: "Project record notes this seed's CPM comparison and a stable internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -297,7 +322,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 150000,
     trend: "Stable",
-    notes: "Robux-only seed. Traded at slight discount to Robux equivalent.",
+    notes: "Project record notes that this seed is listed as Robux-only.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -308,7 +333,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 80000,
     trend: "Stable",
-    notes: "Solid mid-tier all-season seed — common in budget farming builds.",
+    notes: "Project record notes this mid-tier, all-season seed entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -319,7 +344,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 75000,
     trend: "Rising",
-    notes: "Winter-only — demand rises as Winter Event approaches.",
+    notes: "Project record notes Winter-only availability and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -330,7 +355,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 72000,
     trend: "Stable",
-    notes: "Autumn-only — consistent demand during Autumn Event.",
+    notes: "Project record notes Autumn-only availability and a stable internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -341,7 +366,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 55000,
     trend: "Falling",
-    notes: "Summer-only — falling as Phoenix Bloom dominates Summer meta.",
+    notes: "Project record notes Summer-only availability and a falling internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -352,7 +377,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 110000,
     trend: "Stable",
-    notes: "Robux seed with +25% mutation roll. Niche but stable market.",
+    notes: "Project record notes the listed Robux seed and its +25% mutation-roll effect.",
     updatedAt: "July 27, 2026",
   },
 
@@ -367,7 +392,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 12500,
     trend: "Rising",
-    notes: "Most valuable harvestable crop — Summer-only with mutation potential.",
+    notes: "Project record notes this Summer-only crop and its mutation potential.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -378,7 +403,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 11000,
     trend: "Stable",
-    notes: "All-season Legendary crop — top trade volume.",
+    notes: "Project record notes this all-season Legendary crop entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -389,7 +414,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 9500,
     trend: "Stable",
-    notes: "Best CPM crop — backbone of crop trading market.",
+    notes: "Project record notes this crop's CPM comparison.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -400,7 +425,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 6800,
     trend: "Stable",
-    notes: "Autumn-only — decent mid-tier trade during Autumn Event.",
+    notes: "Project record notes Autumn-only availability for this mid-tier crop entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -411,7 +436,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 6500,
     trend: "Rising",
-    notes: "Winter-only — rising demand as Winter Event approaches.",
+    notes: "Project record notes Winter-only availability and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -422,7 +447,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 5200,
     trend: "Falling",
-    notes: "Summer-only — outclassed by Phoenix Bloom in Summer meta.",
+    notes: "Project record notes Summer-only availability and a falling internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -433,7 +458,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 4800,
     trend: "Stable",
-    notes: "All-season Rare — solid mid-tier crop trade.",
+    notes: "Project record notes this all-season Rare crop entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -444,7 +469,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 4200,
     trend: "Stable",
-    notes: "All-season Rare — consistent volume from semi-AFK farmers.",
+    notes: "Project record notes this all-season Rare crop entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -455,7 +480,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 1800,
     trend: "Stable",
-    notes: "Slow-growth crop — niche trade for AFK builds.",
+    notes: "Project record notes this slow-growth crop entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -466,7 +491,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 1200,
     trend: "Stable",
-    notes: "Common all-season filler crop — bulk trades only.",
+    notes: "Project record notes this common all-season crop entry.",
     updatedAt: "July 27, 2026",
   },
 
@@ -481,7 +506,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 4500000,
     trend: "Rising",
-    notes: "S-Tier 6.0x mutation — rarest in game. Trades at premium to any pet.",
+    notes: "Project record notes a 6.0x multiplier and a high internal demand label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -492,7 +517,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 3200000,
     trend: "Rising",
-    notes: "5.0x mutation — second most valuable. Rising demand.",
+    notes: "Project record notes a 5.0x multiplier and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -503,7 +528,7 @@ export const trading: TradingValue[] = [
     demand: "High",
     value: 1800000,
     trend: "Stable",
-    notes: "4.5x mutation — most traded Legendary mutation.",
+    notes: "Project record notes a 4.5x multiplier for this Legendary mutation entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -514,7 +539,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 1400000,
     trend: "Stable",
-    notes: "4.0x mutation — stable market for mid-Legendary trades.",
+    notes: "Project record notes a 4.0x multiplier and a stable internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -525,7 +550,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 1100000,
     trend: "Stable",
-    notes: "3.5x mutation — stable but limited supply.",
+    notes: "Project record notes a 3.5x multiplier for this Legendary mutation entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -536,7 +561,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 650000,
     trend: "Rising",
-    notes: "3.0x mutation — rising during Winter Event prep.",
+    notes: "Project record notes a 3.0x multiplier and a rising internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -547,7 +572,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 580000,
     trend: "Stable",
-    notes: "2.8x mutation — Summer staple mutation trade.",
+    notes: "Project record notes a 2.8x multiplier for this Summer-related mutation entry.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -558,7 +583,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 420000,
     trend: "Falling",
-    notes: "2.5x mutation — falling out of favor in current meta.",
+    notes: "Project record notes a 2.5x multiplier and a falling internal trend label.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -569,7 +594,7 @@ export const trading: TradingValue[] = [
     demand: "Medium",
     value: 220000,
     trend: "Stable",
-    notes: "2.0x mutation — popular entry-tier mutation for new farmers.",
+    notes: "Project record notes a 2.0x multiplier for this entry-tier mutation.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -580,7 +605,7 @@ export const trading: TradingValue[] = [
     demand: "Low",
     value: 140000,
     trend: "Stable",
-    notes: "1.5x mutation — low demand Rare. Winter trades only.",
+    notes: "Project record notes a 1.5x multiplier and Winter-only availability.",
     updatedAt: "July 27, 2026",
   },
   {
@@ -628,6 +653,85 @@ export const trading: TradingValue[] = [
     updatedAt: "July 27, 2026",
   }
 ];
+
+const allowedCategories = new Set<TradingValue["category"]>([
+  "Pet",
+  "Seed",
+  "Crop",
+  "Mutation",
+]);
+const allowedRarities = new Set<TradingValue["rarity"]>([
+  "Common",
+  "Rare",
+  "Epic",
+  "Legendary",
+  "Mythical",
+]);
+const allowedDemand = new Set<TradingValue["demand"]>(["Low", "Medium", "High"]);
+const allowedTrends = new Set<TradingValue["trend"]>(["Rising", "Stable", "Falling"]);
+
+function validateTradingRecords(records: TradingValue[]): void {
+  const ids = new Set<string>();
+  const names = new Set<string>();
+
+  records.forEach((record) => {
+    if (!record.id.trim() || ids.has(record.id)) {
+      throw new Error(`Trading record has a missing or duplicate id: ${record.id || "<empty>"}`);
+    }
+    if (!record.name.trim() || names.has(record.name)) {
+      throw new Error(`Trading record has a missing or duplicate name: ${record.id}`);
+    }
+    if (!Number.isFinite(record.value) || record.value < 0) {
+      throw new Error(`Trading record has an invalid value for ${record.id}`);
+    }
+    if (record.valueUnit !== TRADING_RECORD_VALUE_LABEL) {
+      throw new Error(`Trading record has an invalid value unit for ${record.id}`);
+    }
+    if (record.sourceType !== "Editorial") {
+      throw new Error(`Trading record has an invalid source type for ${record.id}`);
+    }
+    if (record.verificationStatus !== "Unverified") {
+      throw new Error(`Trading record has an invalid verification status for ${record.id}`);
+    }
+    if (record.updatedAt !== TRADING_RECORD_DATE) {
+      throw new Error(`Trading record has an inconsistent record date for ${record.id}`);
+    }
+    if (!allowedCategories.has(record.category)) {
+      throw new Error(`Trading record has an invalid category for ${record.id}`);
+    }
+    if (!allowedRarities.has(record.rarity)) {
+      throw new Error(`Trading record has an invalid rarity for ${record.id}`);
+    }
+    if (!allowedDemand.has(record.demand)) {
+      throw new Error(`Trading record has an invalid demand label for ${record.id}`);
+    }
+    if (!allowedTrends.has(record.trend)) {
+      throw new Error(`Trading record has an invalid trend label for ${record.id}`);
+    }
+
+    ids.add(record.id);
+    names.add(record.name);
+  });
+
+  for (const category of allowedCategories) {
+    if (!records.some((record) => record.category === category)) {
+      throw new Error(`Trading records are missing category: ${category}`);
+    }
+  }
+}
+
+export const trading: TradingValue[] = tradingInputs.map(createTradingRecord);
+validateTradingRecords(trading);
+
+export function formatTradingRecordValue(value: number): string {
+  if (value >= 1_000_000) {
+    return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
+  }
+  if (value >= 1_000) {
+    return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
+  }
+  return value.toString();
+}
 
 export function getTradingItemById(id: string): TradingValue | undefined {
   return trading.find((t) => t.id === id);

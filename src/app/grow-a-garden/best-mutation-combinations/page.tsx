@@ -11,12 +11,12 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Best Mutation Combinations — Grow a Garden",
   description:
-    "Highest-value mutation × crop × pet combinations in Grow a Garden with real coin values. Pre-calculated profit per harvest for every top-tier stack.",
+    "Recorded mutation × crop × pet field combinations in Grow a Garden using recorded base coin fields. Pre-calculated harvest-yield math demonstration for reference.",
   keywords: [
     "best mutation combinations Grow a Garden",
     "Grow a Garden mutation stacking",
     "Grow a Garden crop mutation pet combo",
-    "highest profit mutation Grow a Garden",
+    "mutation yield math Grow a Garden",
     "Grow a Garden best mutation crop pair",
     "Grow a Garden mutation pet stack",
   ],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Mutation Combinations — Grow a Garden",
     description:
-      "Highest-value mutation × crop × pet combinations with real coin values. Pre-calculated profit per harvest for every top-tier stack.",
+      "Recorded mutation × crop × pet field combinations using recorded base coin fields. Pre-calculated harvest-yield math demonstration for reference.",
     type: "website",
   },
 };
@@ -75,7 +75,7 @@ const faqs = [
   {
     question: "How do mutation and pet multipliers stack?",
     answer:
-      "Mutation and pet multipliers stack multiplicatively. Total harvest = crop base coins × mutation multiplier × pet multiplier. For example, a 480-coin crop × Prismatic Rainbow (6.0×) × Golden Phoenix Chick (5.0×) = 14,400 coins. This is why pairing your best pet with your best mutation on your highest-value crop is the single most profitable farm configuration.",
+      "Mutation and pet multipliers stack multiplicatively. Total harvest = crop base coins × mutation multiplier × pet multiplier. For example, a 480-coin crop × Prismatic Rainbow (6.0×) × Golden Phoenix Chick (5.0×) = 14,400 coins. In this stacking math demonstration, pairing the highest recorded multipliers on the highest recorded-value crop produces the mathematically highest-yield configuration.",
   },
   {
     question: "Should I spread mutations across plots or stack on one?",
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "What is the best crop for mutation stacking?",
     answer:
-      "The best crop is the one with the highest base coin value, because mutation and pet multipliers amplify the base rather than add to it. A 6.0× mutation on a 60-coin Carrot yields 360 coins, but the same mutation on a 480-coin crop yields 2,880 coins — an 8× difference. Check our Crops Database for the current highest-value crop, and always apply your strongest mutation to your highest-base-coin plot for maximum profit.",
+      "The best crop is the one with the highest base coin value, because mutation and pet multipliers amplify the base rather than add to it. A 6.0× mutation on a 60-coin Carrot yields 360 coins, but the same mutation on a 480-coin crop yields 2,880 coins — an 8× difference. Check our Crops Database for the recorded highest-value crop, and in this stacking example the strongest mutation goes on the highest-base-coin plot for the highest calculated yield.",
   },
   {
     question: "Can I have multiple mutations on the same plot?",
@@ -103,7 +103,7 @@ export default function BestMutationCombinationsPage() {
   return (
     <ContentLayout
       title="Best Mutation Combinations — Grow a Garden"
-      description="Highest-value mutation × crop × pet combinations with real coin values. Pre-calculated profit per harvest for every top-tier stack."
+      description="Recorded mutation × crop × pet field combinations using recorded base coin fields. Pre-calculated harvest-yield math demonstration for reference."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -117,7 +117,7 @@ export default function BestMutationCombinationsPage() {
         "best mutation combinations Grow a Garden",
         "Grow a Garden mutation stacking",
         "Grow a Garden crop mutation pet combo",
-        "highest profit mutation Grow a Garden",
+        "mutation yield math Grow a Garden",
         "Grow a Garden best mutation crop pair",
       ]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
@@ -203,7 +203,7 @@ export default function BestMutationCombinationsPage() {
             <li>
               <strong className="text-white">Never overwrite a higher-tier mutation with a lower one.</strong>
               <br />
-              If you roll a new mutation, compare its multiplier to the plot it would go on. If the new mutation is <em>lower</em>, do not apply it — bank it for a future plot or <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">trade the shard</Link>. Mutations do not refund.
+              If you roll a new mutation, compare its multiplier to the plot it would go on. If the new mutation is <em>lower</em>, do not apply it — keep the result banked for a future roll or plot. Mutations do not refund.
             </li>
           </ol>
           <p className="mt-4 text-xs text-[#00E676]">

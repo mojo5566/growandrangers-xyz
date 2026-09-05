@@ -41,7 +41,7 @@ export default function GuildGuidePage() {
     <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden-2/guild-guide" accent="garden" updatedAt={data.updatedAt}>
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          The <strong className="text-white">guild system</strong> is one of Grow a Garden 2's biggest additions over the original.
+          The <strong className="text-white">guild system</strong> is one of Grow a Garden 2&apos;s biggest additions over the original.
           Guilds let you team up for weekly competitions, earn exclusive rewards like the <strong className="text-[#00E676]">Black Dragon</strong> and <strong className="text-[#00E676]">Ice Snake pets</strong>,
           and coordinate night defense with trusted allies. This guide covers everything from joining your first guild to competing for top-tier rewards.
         </p>

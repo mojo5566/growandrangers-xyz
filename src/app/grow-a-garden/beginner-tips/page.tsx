@@ -88,9 +88,9 @@ const tips = [
   },
   {
     n: 10,
-    title: "Don't Trade Until You Understand Values",
-    category: "Mutation Basics",
-    body: "The Trade Hub is where new players lose the most value. Before making any trade, check the Trading Database for current market values, demand, and trend. A 'fair' trade offer from another player is often 30-50% in their favor. Wait until you can confidently evaluate item values before engaging in player-to-player trades.",
+    title: "Treat Trading Records as Reference Only",
+    category: "Database Notes",
+    body: "The Trading Database contains internal project-recorded value, demand, and trend fields for reference only. They are not official game outcomes, transaction amounts, or live market quotes. Verify current in-game information independently.",
   },
 ];
 
@@ -98,7 +98,7 @@ const faqs = [
   {
     question: "What is the most important beginner tip in Grow a Garden?",
     answer:
-      "Expand plots before anything else. Going from 1 to 4 plots quadruples your earning potential and is the single highest-ROI investment in the entire game. Plot #2 costs 400 coins, Plot #3 costs 800, and Plot #4 costs 1,200 — together less than one Legendary Egg. Cosmetic items, premium eggs, and even mutation shards should all wait until you have 4 plots running with B-Tier mutations.",
+      "Expand plots before anything else. Going from 1 to 4 plots quadruples your earning potential and is the highest-value permanent upgrade for early-game coins. Plot #2 costs 400 coins, Plot #3 costs 800, and Plot #4 costs 1,200 — together less than one Legendary Egg. Cosmetic items, premium eggs, and even mutation shards should all wait until you have 4 plots running with B-Tier mutations.",
   },
   {
     question: "How can I improve my farming efficiency in Grow a Garden?",
@@ -157,7 +157,8 @@ export default function BeginnerTipsPage() {
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
           Expand to 4 plots before anything else — going from 1 to 4 plots (400 → 800 → 1,200 coins)
-          quadruples your earning potential and is the highest-ROI investment in the game. Always
+          quadruples your earning potential and is the highest-value permanent upgrade for early-game
+          coins. Always
           harvest before logging off, since unharvested crops earn zero passive income. Hatch a
           500-coin Basic Egg on day one (pays back in 5-6 cycles), save 50+ Mutation Shards for
           bulk-rolling, and never buy Legendary Eggs until endgame.

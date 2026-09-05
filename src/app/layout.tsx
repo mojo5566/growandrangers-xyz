@@ -91,7 +91,7 @@ const jsonLd = {
         height: 630,
       },
       description:
-        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading values and updates.",
+        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading records and updates.",
       sameAs: [],
     },
     {
@@ -100,7 +100,7 @@ const jsonLd = {
       name: "GrowAndRangers",
       url: BASE_URL,
       description:
-        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading values and updates.",
+        "Grow a Garden and Anime Rangers X game guides, databases, codes, trading records and updates.",
       publisher: { "@id": `${BASE_URL}/#organization` },
       potentialAction: {
         "@type": "SearchAction",

@@ -40,8 +40,8 @@ export default function NightStealingGuidePage() {
     <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/grow-a-garden-2/night-stealing-guide" accent="garden" updatedAt={data.updatedAt}>
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          The <strong className="text-white">night stealing mechanic</strong> is Grow a Garden 2's headline feature.
-          Every night cycle (lasting ~2 minutes 30 seconds), you can raid other players' farms for their crops —
+          The <strong className="text-white">night stealing mechanic</strong> is Grow a Garden 2&apos;s headline feature.
+          Every night cycle (lasting ~2 minutes 30 seconds), you can raid other players&apos; farms for their crops —
           but they can raid yours too. This guide covers both <strong className="text-[#00E676]">offense (raiding)</strong> and
           <strong className="text-[#FF3D00]"> defense (protecting your farm)</strong>.
         </p>

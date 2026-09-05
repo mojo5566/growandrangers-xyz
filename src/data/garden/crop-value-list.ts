@@ -1,5 +1,5 @@
 import type { CropValuesPageData } from "../types";
-import { crops, getCropsByTier, getCropsBySeason } from "./database/crops";
+import { crops, getCropsByTier } from "./database/crops";
 
 function buildCropValuesData(): CropValuesPageData {
   const sTierCrops = getCropsByTier("S");
@@ -68,7 +68,7 @@ function buildCropValuesData(): CropValuesPageData {
       "<strong>Active vs AFK farming:</strong> If you play actively, prioritize short-cycle crops (Golden Wheat, Lucky Carrot). For AFK sessions, plant longer-cycle crops (Crystal Berry, Moonflower).",
     ],
     faq: [
-      { question: "What is the most profitable crop?", answer: "Golden Wheat (S-Tier) at 480 coins per 3 minutes yields 160 coins-per-minute — the highest raw profit rate in the game. Crystal Berry is close behind at 84 coins-per-minute with a longer growth time." },
+      { question: "Which crop has the highest recorded coins-per-minute?", answer: "Golden Wheat (S-Tier) is recorded at 480 coins per 3 minutes — 160 coins-per-minute, the highest recorded CPM value in this dataset. Crystal Berry follows at a recorded 84 coins-per-minute with a longer growth time." },
       { question: "How do mutations and pets affect crop values?", answer: "Mutations multiply the base crop value, and pets multiply the result again. Example: Golden Wheat (480) x Aurelian Crown mutation (4.0x) = 1,920 coins. Add Golden Phoenix Chick (5.0x) = 9,600 coins per harvest." },
       { question: "Should I plant all-season or seasonal crops?", answer: "All-season crops provide consistent income year-round for your main plots. Plant seasonal crops on secondary plots to capitalize on the +20% seasonal bonus when active — then switch back in the off-season." },
     ],

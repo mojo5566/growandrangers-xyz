@@ -3,26 +3,32 @@ import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
-import { trading, getHighDemandItems, getTradingByTrend } from "@/data/garden/database/trading";
+import {
+  trading,
+  getHighDemandItems,
+  getTradingByTrend,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
+} from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Top Trading Items in Grow a Garden — Ranked",
+  title: "Grow a Garden Trading Item Reference",
   description:
-    "The highest-value, highest-demand, and fastest-rising tradeable items in Grow a Garden. Compare pets, seeds, crops, and mutations side-by-side with live market values and trends.",
+    "Browse internal editorial records for Grow a Garden pets, seeds, crops, and mutations. Value, demand, trend, rarity, and category are project reference fields, not official prices, live market quotes, or independently verified transaction data.",
   keywords: [
-    "top trading items Grow a Garden",
-    "Grow a Garden trade values",
-    "highest demand pets Grow a Garden",
-    "rising trade items Grow a Garden",
-    "Grow a Garden market trends 2026",
-    "most valuable items Grow a Garden",
+    "Grow a Garden trading item reference",
+    "Grow a Garden internal trade records",
+    "Grow a Garden recorded item values",
+    "Grow a Garden demand labels",
+    "Grow a Garden trend labels",
+    "Grow a Garden trading categories",
   ],
   alternates: { canonical: "/grow-a-garden/top-trading-items" },
   openGraph: {
-    title: "Top Trading Items in Grow a Garden — Ranked",
+    title: "Grow a Garden Trading Item Reference",
     description:
-      "Highest-value, highest-demand, and fastest-rising tradeable items in Grow a Garden.",
+      "Internal editorial records for Grow a Garden items included in the trading-record dataset. Value, demand, trend, rarity, and category are project reference fields, not official prices, live market quotes, or independently verified transaction data.",
     type: "website",
   },
 };
@@ -54,12 +60,6 @@ const categoryBadge: Record<string, string> = {
   Mutation: "bg-[#FF8C00]/20 text-[#FF8C00]",
 };
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
 // Highest value — top 10 across all categories
 const highestValue = [...trading].sort((a, b) => b.value - a.value).slice(0, 10);
 
@@ -71,79 +71,77 @@ const risingItems = [...getTradingByTrend("Rising")].sort((a, b) => b.value - a.
 
 const faqs = [
   {
-    question: "What is the most valuable tradeable item in Grow a Garden?",
+    question: "What does this Grow a Garden trading reference show?",
     answer:
-      "The Golden Phoenix Chick is the most valuable item at approximately 5M Sheckles, classified as Mythical rarity with High demand and a Rising trend. It is the only Mythical-rarity pet in the trading market and commands a premium that has held steady for multiple updates.",
+      "This page groups internal editorial records by recorded value, demand label, and trend label. The records also include category and rarity fields for project reference; they are not official prices, live market quotes, or independently verified transaction data.",
   },
   {
-    question: "Which trading items have the highest demand right now?",
+    question: "How are the trading records grouped on this page?",
     answer:
-      `As of ${CONTENT_UPDATED_AT}, ${highestDemand.length} items have High demand. The top three by value are ${highestDemand[0]?.name ?? "—"} (${formatValue(highestDemand[0]?.value ?? 0)}), ${highestDemand[1]?.name ?? "—"} (${formatValue(highestDemand[1]?.value ?? 0)}), and ${highestDemand[2]?.name ?? "—"} (${formatValue(highestDemand[2]?.value ?? 0)}). High-demand items sell quickly but also command premium prices when buying.`,
+      `The page uses internal labels and records to show ${highestDemand.length} entries marked High demand and ${risingItems.length} entries marked Rising trend. These groupings describe project data only and do not establish market activity, transaction volume, or a trade outcome.`,
   },
   {
-    question: "What are the fastest-rising trade values?",
+    question: "What does a Rising trend label mean here?",
     answer:
-      `Items with a Rising trend are appreciating in value. Currently ${risingItems.length} items are rising, led by ${risingItems[0]?.name ?? "—"} at ${formatValue(risingItems[0]?.value ?? 0)}. Rising items are good candidates to hold rather than sell immediately — check the trend before listing.`,
+      `Rising is an internal trend label attached to ${risingItems.length} project records. It is not a live market measurement, price forecast, or recommendation to buy, sell, or hold an item.`,
   },
   {
-    question: "How often do Grow a Garden trade values change?",
+    question: "What date applies to these records?",
     answer:
-      "Trade values shift with every major update, event, and meta change. New pet releases tend to depress older pet values, while limited-time events can spike demand for seasonal items. We update the trading database continuously and mark each item with its trend (Rising, Stable, or Falling).",
+      "The displayed date is an editorial record date for this project view. It is not a transaction collection date, market sampling date, or promise of a particular update schedule.",
   },
   {
-    question: "Where can I find the full trading values list?",
+    question: "Where can I find the underlying item records?",
     answer:
-      "Our Trading Values database lists all 50 tradeable items with verified market values, demand ratings, and trend indicators. Visit the full Trading Values page to filter by category (Pets, Seeds, Crops, Mutations) and view detailed trade pages for each item. Each page shows the item's current value, rarity tier, demand level, and price trend so you can evaluate offers without guessing. The database is updated continuously after every major patch and seasonal event.",
+      "The full Trading Reference page contains the project records for pets, seeds, crops, and mutations. It provides category, rarity, value, demand, and trend fields as internal editorial references; it does not confirm transactions or establish official prices.",
   },
   {
-    question: "Should I trade my high-value items during an event?",
+    question: "Can this page confirm whether a trade is fair?",
     answer:
-      "Events are double-edged for high-value trades. During events, market activity spikes and more buyers are online, which makes selling faster — but new event items can depress values of existing items if they compete directly. If you own a Rising-trend item, hold it through the event unless you need liquidity. If you own a Falling-trend item, sell it early in the event before the supply of new items pushes the price down further. Always check the trend column before listing.",
+      "No. The internal records are not transaction confirmations, fair-price determinations, or investment guidance. Verify any in-game trade terms independently rather than treating the displayed fields as a buying, selling, holding, or profit recommendation.",
   },
   {
-    question: "What is the difference between trading pets and trading seeds?",
+    question: "What is the difference between the item categories?",
     answer:
-      "Pets and seeds trade on different value drivers. Pets command the highest absolute values — the Golden Phoenix Chick at approximately 5M Sheckles is the ceiling — because their multipliers apply permanently to every harvest. Seeds are cheaper entry points (Mythstar Seed at 250K) but can be stockpiled for off-season profit, especially seasonal seeds like Phoenix Bloom that rise in value outside their event window. Pets are better for long-term holds; seasonal seeds are better for short-term flips.",
+      "Pet, Seed, Crop, and Mutation are recorded category labels used to organize the project reference. The category field does not establish different market rules, item mechanics, acquisition conditions, or trading recommendations.",
   },
 ];
 
 export default function TopTradingItemsPage() {
   return (
     <ContentLayout
-      title="Top Trading Items in Grow a Garden"
-      description="Ranked comparison of the highest-value, highest-demand, and fastest-rising tradeable items in Grow a Garden. Compare pets, seeds, crops, and mutations side-by-side with live market values and trend indicators."
+      title="Grow a Garden Trading Item Reference"
+      description="Internal editorial records for Grow a Garden items included in the trading-record dataset. Value, demand, trend, rarity, and category are project reference fields, not official prices, live market quotes, or independently verified transaction data."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
-        { label: "Top Trading Items", href: "/grow-a-garden/top-trading-items" },
+        { label: "Trading Item Records", href: "/grow-a-garden/top-trading-items" },
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/top-trading-items"
       updatedAt={CONTENT_UPDATED_AT}
       articleSection="Trading"
-      keywords={["top trading items Grow a Garden", "Grow a Garden trade values", "highest demand pets Grow a Garden", "rising trade items Grow a Garden", "Grow a Garden market trends 2026"]}
+      keywords={["Grow a Garden trading item reference", "Grow a Garden internal trade records", "Grow a Garden recorded item values", "Grow a Garden demand labels", "Grow a Garden trend labels"]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
-      {/* Quick Answer - AI search summary */}
+      {/* Quick Answer - project reference summary */}
       <section aria-labelledby="quick-answer-heading" className="rounded-xl border border-[#00E676]/30 bg-[#00E676]/5 p-5">
         <h2 id="quick-answer-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-3">
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The Golden Phoenix Chick is the most valuable tradeable item at approximately 5M Sheckles, Mythical rarity, High demand, and a Rising trend. It leads the top-10 value ranking and the high-demand quick-sell list. The database tracks all tradeable items across pets, seeds, crops, and mutations, ranked by value, demand, and trend. Rising-trend items are worth holding rather than selling immediately — check the trend column before listing any trade.
+          This page groups internal editorial records across pets, seeds, crops, and mutations. Value, demand, trend, rarity, and category are recorded project-reference fields, not official prices, live market quotes, or independently verified transaction data. The page does not provide buying, selling, holding, investment, profit, or trade-safety guidance.
         </p>
       </section>
 
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The Grow a Garden trading market moves fast. This comparison ranks all{" "}
-          <strong className="text-white">{trading.length} tradeable items</strong> across pets, seeds, crops, and
-          mutations by three lenses: <strong className="text-white">highest value</strong>,{" "}
-          <strong className="text-white">highest demand</strong>, and{" "}
-          <strong className="text-white">rising trend</strong>. Use these rankings to decide what to hold, what to
-          sell, and what to chase in trades. Values are sourced from our verified trading database and updated
-          continuously.
+          This project view organizes{" "}
+          <strong className="text-white">{trading.length} recorded items</strong> across pets, seeds, crops, and
+          mutations using internal value, demand, and trend fields. The fields are editorial references only: they
+          are not official prices, live market quotes, independently verified transaction data, or recommendations
+          about buying, selling, holding, investment, profit, or trade safety.
         </p>
       </section>
 
@@ -153,10 +151,10 @@ export default function TopTradingItemsPage() {
           id="highest-value-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          💎 Highest Value — Top 10 Items
+          💎 Highest Internal Value Records — 10 Items
         </h2>
         <p className="text-xs text-[#768294] mb-4">
-          The ten most valuable items in the Grow a Garden trading market, ranked by current Sheckle value.
+          Ten records sorted by the internal value field. This ordering is a project reference and not a market-price ranking.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[760px] w-full text-sm border-collapse">
@@ -193,7 +191,7 @@ export default function TopTradingItemsPage() {
                       {item.rarity}
                     </span>
                   </td>
-                  <td className="py-3 px-3 text-base font-bold text-[#00E676]">{formatValue(item.value)} 🪙</td>
+                  <td className="py-3 px-3 text-base font-bold text-[#00E676]">{formatTradingRecordValue(item.value)} {TRADING_RECORD_VALUE_LABEL}</td>
                   <td className="py-3 px-3">
                     <span className={`rounded px-2 py-0.5 text-xs font-semibold ${demandBadge[item.demand]}`}>
                       {item.demand}
@@ -217,11 +215,11 @@ export default function TopTradingItemsPage() {
           id="highest-demand-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          🔥 Highest Demand — Quick-Sell Items
+          🔥 High Internal Demand Labels
         </h2>
         <p className="text-xs text-[#768294] mb-4">
-          {highestDemand.length} items with High demand. These move fastest in the trading market —
-          buyers are actively seeking them. Higher demand typically means easier trades but premium buy prices.
+          {highestDemand.length} records carry the High internal demand label. This label does not establish trading
+          speed, buyer activity, price, or transaction volume.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[760px] w-full text-sm border-collapse">
@@ -233,7 +231,7 @@ export default function TopTradingItemsPage() {
                 <th className="py-3 px-3 font-semibold">Rarity</th>
                 <th className="py-3 px-3 font-semibold">Value</th>
                 <th className="py-3 px-3 font-semibold">Trend</th>
-                <th className="py-3 px-3 font-semibold">Trade Link</th>
+                <th className="py-3 px-3 font-semibold">Record Link</th>
               </tr>
             </thead>
             <tbody>
@@ -258,7 +256,7 @@ export default function TopTradingItemsPage() {
                       {item.rarity}
                     </span>
                   </td>
-                  <td className="py-3 px-3 text-base font-bold text-[#00E676]">{formatValue(item.value)} 🪙</td>
+                  <td className="py-3 px-3 text-base font-bold text-[#00E676]">{formatTradingRecordValue(item.value)} {TRADING_RECORD_VALUE_LABEL}</td>
                   <td className="py-3 px-3">
                     <span className={`rounded px-2 py-0.5 text-xs font-semibold ${trendBadge[item.trend]}`}>
                       {item.trend}
@@ -269,7 +267,7 @@ export default function TopTradingItemsPage() {
                       href={`/grow-a-garden/trading/${item.id}`}
                       className="text-xs font-semibold text-[#00E676] hover:underline"
                     >
-                      View trade page →
+                      View record page →
                     </Link>
                   </td>
                 </tr>
@@ -285,12 +283,11 @@ export default function TopTradingItemsPage() {
           id="rising-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          📈 Rising Items — Appreciating Assets
+          📈 Rising Internal Trend Labels
         </h2>
         <p className="text-xs text-[#768294] mb-4">
-          {risingItems.length} items with a Rising trend. Their values are climbing — consider holding these
-          rather than selling immediately. Rising trends are typically driven by meta shifts, new update
-          synergies, or supply shortages.
+          {risingItems.length} records carry the Rising internal trend label. This label does not establish a live
+          price movement, forecast, supply condition, or recommendation to buy, sell, or hold.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {risingItems.map((item) => (
@@ -302,7 +299,7 @@ export default function TopTradingItemsPage() {
                 >
                   {item.name}
                 </Link>
-                <span className="text-base font-bold text-[#00E676]">{formatValue(item.value)} 🪙</span>
+                <span className="text-base font-bold text-[#00E676]">{formatTradingRecordValue(item.value)} {TRADING_RECORD_VALUE_LABEL}</span>
               </div>
               <div className="flex flex-wrap gap-2 mb-3">
                 <span className={`rounded px-2 py-0.5 text-xs font-semibold ${categoryBadge[item.category]}`}>
@@ -318,9 +315,10 @@ export default function TopTradingItemsPage() {
                   {item.trend}
                 </span>
               </div>
-              {item.notes && (
-                <p className="text-xs text-[#768294] leading-relaxed">{item.notes}</p>
-              )}
+              <p className="text-xs text-[#768294] leading-relaxed">
+                Internal editorial record only. Value, demand, trend, rarity, and category are project reference
+                fields, not official prices, live market quotes, or independently verified transaction data.
+              </p>
             </div>
           ))}
         </div>

@@ -22,7 +22,7 @@ const beginnerFarming: GuidePageData & {
     },
     {
       question: "How do I get Golden Wheat seeds?",
-      answer: "Golden Wheat seeds are purchased from the Seed Shop for 2,000 Coins. It's the best investment in the game — at 160 CPM with all-season availability, Golden Wheat pays for itself in just 5 harvests and then generates pure profit forever. You never need to rotate it out, which makes it the ideal main-plot crop.",
+      answer: "Golden Wheat seeds are purchased from the Seed Shop for 2,000 Coins. At a recorded 160 CPM with all-season availability, Golden Wheat pays for itself in about 5 harvests in this in-game calculation. You never need to rotate it out, which makes it the ideal main-plot crop.",
     },
     {
       question: "How do I get my first mutation?",

@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "How accurate are the crop base values?",
     answer:
-      "All crop base values are pulled directly from our canonical Grow a Garden database, which is verified against in-game data and updated regularly. Values reflect the June 2026 game state. If a recent update changed a value, check the Crop Value List for the latest figures.",
+      "All crop base values are pulled directly from our project's Grow a Garden database and updated regularly. Values are recorded as of the June 2026 project review, not a live game-state check. If a recent update changed a value, check the Crop Value List for the latest recorded figures.",
   },
 ];
 

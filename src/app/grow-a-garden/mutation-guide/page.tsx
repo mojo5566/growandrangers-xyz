@@ -76,7 +76,7 @@ const faqs = [
   {
     question: "How do I get mutations in Grow a Garden?",
     answer:
-      "Visit the Mutation Station (unlocks at 1,500 total coins earned) and spend Mutation Shards. Single rolls cost 1 shard (~1.2% S-Tier rate); bulk rolls of 10 cost 10 shards (~11% S-Tier rate). Shards come from daily login rewards (3-5 per day), promo codes (10-20 per drop), seasonal events (20-50 per event), and trading with other players.",
+      "Visit the Mutation Station (unlocks at 1,500 total coins earned) and spend Mutation Shards. Single rolls cost 1 shard (~1.2% S-Tier rate); bulk rolls of 10 cost 10 shards (~11% S-Tier rate). Shards come from daily login rewards (3-5 per day), promo codes (10-20 per drop), seasonal events (20-50 per event), and any additional sources enabled by the current game version.",
   },
   {
     question: "What is the best mutation in Grow a Garden?",
@@ -235,8 +235,8 @@ export default function MutationGuidePage() {
             <h3 className="text-sm font-semibold text-[#00E676] mb-3">Step 2: Collect Mutation Shards</h3>
             <p className="text-xs text-[#768294] leading-relaxed">
               Shards come from daily login rewards (3-5/day), promo codes (10-20/drop — see our
-              Codes page), seasonal events (20-50/event), and trading. Target 50+ shards before
-              rolling seriously.
+              Codes page), seasonal events (20-50/event), and any additional sources enabled by
+              the current game version. Target 50+ shards before rolling seriously.
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
@@ -301,9 +301,9 @@ export default function MutationGuidePage() {
           🏆 Best Mutation Combinations
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          Top 3 mutations × top 3 crops — pre-calculated profit per harvest. The intersection of
-          highest multipliers and highest base values yields the most profitable combinations in
-          the game.
+          Top 3 mutations × top 3 crops — pre-calculated yield per harvest using recorded fields. The intersection of
+          highest recorded multipliers and highest recorded base values yields the mathematically highest-yield combinations in
+          this example.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[640px] w-full text-sm border-collapse">

@@ -4,7 +4,6 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { pets } from "@/data/garden/database/pets";
-import { seeds } from "@/data/garden/database/seeds";
 import { crops } from "@/data/garden/database/crops";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
@@ -33,12 +32,6 @@ export const metadata: Metadata = {
 const firstPets = pets
   .filter((p) => p.tier === "C" || p.tier === "B")
   .sort((a, b) => b.multiplier - a.multiplier)
-  .slice(0, 5);
-
-// Cheap Common/Uncommon seeds for the very first plantings
-const firstSeeds = seeds
-  .filter((s) => s.rarity === "Common" || s.rarity === "Uncommon")
-  .sort((a, b) => a.price - b.price)
   .slice(0, 5);
 
 // Easiest first crops (low tier, fast growth, all-season)
@@ -194,7 +187,7 @@ export default function HowToStartPage() {
                 <h3 className="text-sm font-semibold text-white">Buy a Second Plot</h3>
                 <p className="mt-1 text-xs text-[#BAC4D1] leading-relaxed">
                   Visit the Farm Shop and buy Plot #2 for 400 coins. Two plots double your passive
-                  income — plot expansion is the highest-ROI investment in the entire game.
+                  income — plot expansion is the highest-value permanent upgrade for early-game coins.
                 </p>
               </div>
             </li>
@@ -236,7 +229,7 @@ export default function HowToStartPage() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { step: "Plant", desc: "Select highest-tier seeds you can afford. Plant all available plots." },
-              { step: "Wait", desc: "Crops grow on a timer. Use this window to hatch pets or check the trade hub." },
+              { step: "Wait", desc: "Crops grow on a timer. Use this window to hatch pets or review quests and inventory." },
               { step: "Harvest", desc: "Click mature crops to collect. Yield = base × mutation × pet multiplier." },
               { step: "Sell", desc: "Crops auto-sell for coins on harvest. Coins appear in your top bar." },
               { step: "Reinvest", desc: "Spend coins on the next priority: plots > mutations > pets > seeds." },
@@ -371,7 +364,7 @@ export default function HowToStartPage() {
             },
             {
               title: "Buying Legendary Eggs Too Early",
-              desc: "Legendary Eggs cost 10,000 coins for a ~5% S-Tier pet rate. That same 10,000 coins could expand your farm from 4 to 6 plots — a guaranteed 50% income increase. Buy Legendary Eggs only in the endgame.",
+              desc: "Legendary Eggs cost 10,000 coins and are listed with a low S-Tier pet rate — the exact rate is not independently verified here. That same 10,000 coins could expand your farm from 4 to 6 plots — a guaranteed 50% income increase. Buy Legendary Eggs only in the endgame.",
             },
           ].map((m, i) => (
             <div key={i} className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
@@ -398,7 +391,7 @@ export default function HowToStartPage() {
         <div className="overflow-hidden rounded-xl border border-[#252936]">
           <div className="grid grid-cols-[1fr_1.2fr_1.5fr] gap-2 bg-[#1E212B] px-4 py-2.5 items-center">
             <span className="text-xs font-semibold text-[#768294]">STAGE</span>
-            <span className="text-xs font-semibold text-[#768294]">INVESTMENT</span>
+            <span className="text-xs font-semibold text-[#768294]">PROJECT DATA</span>
             <span className="text-xs font-semibold text-[#768294]">GOAL</span>
           </div>
           {[
@@ -406,7 +399,7 @@ export default function HowToStartPage() {
             { stage: "15-45 min", inv: "1,500 coins + starter shards", goal: "Unlock Mutation Station, roll first mutation, hatch first pet" },
             { stage: "45 min - 2 hrs", inv: "5,000 coins + 50 shards", goal: "Expand to 4 plots, target B-Tier mutation on main plot" },
             { stage: "2-10 hrs", inv: "15,000+ coins + 200 shards", goal: "B-Tier mutations on all plots, mid-tier pet team, seed upgrades" },
-            { stage: "10+ hrs", inv: "50,000+ coins", goal: "S/A-Tier mutations, Legendary Egg pets, trade hub flipping" },
+            { stage: "10+ hrs", inv: "50,000+ coins", goal: "S/A-Tier mutations, Legendary Egg pets, and late-game system progression" },
           ].map((row, i) => (
             <div
               key={i}

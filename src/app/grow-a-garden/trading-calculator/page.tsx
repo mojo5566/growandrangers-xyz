@@ -8,26 +8,27 @@ import {
   getHighDemandItems,
   getTradingByTrend,
   getTradingByRarity,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
 } from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
-  title: "Trading Calculator — Grow a Garden Values",
+  title: "Trading Calculator — Grow a Garden Reference",
   description:
-    "Compare Grow a Garden trading values by category, rarity, demand, and trend. Pre-calculated market value table for every tradeable item.",
+    "Compare project-recorded trading fields by category, rarity, demand, and trend. This tool presents internal reference values, not official prices, live market quotes, or independently verified transaction data.",
   keywords: [
     "Grow a Garden trading calculator",
-    "Grow a Garden trade value calculator",
-    "Grow a Garden item value comparison",
+    "Grow a Garden trading record comparison",
+    "Grow a Garden item reference",
     "Grow a Garden rarity demand trend",
-    "Grow a Garden market value table",
-    "Grow a Garden price checker",
+    "Grow a Garden internal trading records",
   ],
   alternates: { canonical: "/grow-a-garden/trading-calculator" },
   openGraph: {
-    title: "Trading Calculator — Grow a Garden Values",
+    title: "Trading Calculator — Grow a Garden Reference",
     description:
-      "Compare trading values by category, rarity, demand, and trend. Pre-calculated market value table for every item.",
+      "Compare project-recorded trading fields by category, rarity, demand, and trend. This tool presents internal reference values, not official prices, live market quotes, or independently verified transaction data.",
     type: "website",
   },
 };
@@ -52,13 +53,7 @@ const trendColors: Record<string, string> = {
   Falling: "#FF3D00",
 };
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
-// Sort all trading items by value descending
+// Sort project records by their recorded value field for neutral comparison.
 const rankedTrading = [...trading].sort((a, b) => b.value - a.value);
 
 // Category breakdowns
@@ -73,7 +68,7 @@ const risingTrend = getTradingByTrend("Rising").sort((a, b) => b.value - a.value
 const stableTrend = getTradingByTrend("Stable").sort((a, b) => b.value - a.value);
 const fallingTrend = getTradingByTrend("Falling").sort((a, b) => b.value - a.value);
 
-// Rarity breakdowns — top tier counts
+// Rarity breakdowns by recorded classification.
 const mythicalItems = getTradingByRarity("Mythical");
 const legendaryItems = getTradingByRarity("Legendary");
 const epicItems = getTradingByRarity("Epic");
@@ -90,44 +85,44 @@ const categoryStats = [
 
 const faqs = [
   {
-    question: "How are Grow a Garden trading values calculated?",
+    question: "What does this Grow a Garden trading calculator show?",
     answer:
-      "Trading values reflect verified market prices from active player-to-player trades. Each item's value is influenced by rarity (Common → Mythical), demand (Low → High), and trend (Rising/Stable/Falling). The calculator above shows the current market value for every tradeable item.",
+      "The calculator compares values and labels stored in the current project record. Rarity, demand, and trend are internal editorial fields. They are not official prices, live market quotes, or independently verified transaction data.",
   },
   {
-    question: "What is the most valuable tradeable item in Grow a Garden?",
+    question: "Which item has the highest recorded field in this table?",
     answer:
       rankedTrading[0]
-        ? `${rankedTrading[0].name} is the most valuable tradeable item at ${rankedTrading[0].value.toLocaleString()} coins (${rankedTrading[0].rarity} rarity, ${rankedTrading[0].demand} demand). It's ${rankedTrading[0].trend.toLowerCase()} in the current market.`
-        : "The most valuable tradeable item updates as the market shifts — see the top of the ranking table above for the current #1.",
+        ? `${rankedTrading[0].name} has the highest recorded field value in this project table at ${formatTradingRecordValue(rankedTrading[0].value)} ${TRADING_RECORD_VALUE_LABEL} (${rankedTrading[0].rarity} recorded rarity, ${rankedTrading[0].demand} recorded demand). This ordering is an internal reference comparison, not a market ranking.`
+        : "No trading records are currently available in the project table.",
   },
   {
-    question: "Should I trade items that are Falling in trend?",
+    question: "How should I interpret the Rising, Stable, and Falling labels?",
     answer:
-      "Items with Falling trend are losing market value — sell or trade them quickly before they drop further. Items with Rising trend are gaining value — hold them longer for maximum profit. Stable items are safe to trade at any time at their listed value.",
+      "Rising, Stable, and Falling are recorded project labels. They do not establish a market movement, predict a future change, or provide a transaction or investment recommendation.",
   },
   {
     question: "What's the difference between rarity and demand?",
     answer:
-      "Rarity is the item's intrinsic drop rate (Mythical = rarest). Demand is how many players are actively seeking to buy it. A Common item with High demand can be more liquid than a Mythical with Low demand. The calculator shows both metrics so you can evaluate liquidity AND scarcity.",
+      "Rarity and demand are separate fields in the project record. Rarity is a recorded classification, while demand is a recorded label. The calculator displays both for neutral comparison and does not establish drop rates, player activity, liquidity, or scarcity.",
   },
   {
-    question: "How do I know if a trade is fair?",
+    question: "Does this calculator determine whether a trade is fair?",
     answer:
-      "Compare both items' market values in the table above. A fair trade has roughly equal total value on both sides (within 10-15%). Watch for players offering Falling-trend items in exchange for Rising-trend items — that's a common scam. Always verify values before confirming.",
+      "No. The table only compares internal project-recorded values. It does not determine whether an in-game transaction is fair or provide a transaction recommendation; confirm actual terms independently.",
   },
   {
-    question: "Where can I see all tradeable items by category?",
+    question: "Where can I see all recorded item entries by category?",
     answer:
-      "The trading calculator groups items by category (Pets, Seeds, Crops, Mutations) in separate tables above. For a single-page view of all tradeable items sorted by value, see the Trading Values database. For per-item detail pages with full notes, browse the trading database.",
+      "The trading calculator groups project records by category (Pets, Seeds, Crops, Mutations) in the tables above. For a single-page view of all records sorted by recorded value, see the Trading Records database. Per-item reference pages are available in the trading database.",
   },
 ];
 
 export default function TradingCalculatorPage() {
   return (
     <ContentLayout
-      title="Grow a Garden Trading Value Calculator"
-      description="Compare tradeable item values by category, rarity, demand, and trend. Pre-calculated market value table for every Grow a Garden item — no inputs required."
+      title="Grow a Garden Trading Record Calculator"
+      description="Compare project-recorded item fields by category, rarity, demand, and trend. The displayed values are internal reference records, not official prices, live market quotes, or independently verified transaction data."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -140,13 +135,15 @@ export default function TradingCalculatorPage() {
     >
       {/* Formula Card */}
       <section className="rounded-xl border border-[#FFD700]/30 bg-[#FFD700]/5 p-5">
-        <h2 className="text-sm font-semibold text-[#FFD700] mb-2">💱 How Trading Value Works</h2>
+        <h2 className="text-sm font-semibold text-[#FFD700] mb-2">💱 How This Reference Table Works</h2>
         <p className="text-xs text-[#768294] leading-relaxed">
-          Each tradeable item has four metrics: <strong className="text-[#BAC4D1]">Value</strong> (current market price),
-          {" "}<strong className="text-[#BAC4D1]">Rarity</strong> (drop tier),{" "}
-          <strong className="text-[#BAC4D1]">Demand</strong> (buyer interest), and{" "}
-          <strong className="text-[#BAC4D1]">Trend</strong> (price direction). Use all four together
-          to evaluate trade fairness and identify profitable flips.
+          Each project record has four displayed fields: <strong className="text-[#BAC4D1]">Recorded value</strong>,
+          {" "}<strong className="text-[#BAC4D1]">recorded rarity</strong>,{" "}
+          <strong className="text-[#BAC4D1]">recorded demand</strong>, and{" "}
+          <strong className="text-[#BAC4D1]">recorded trend</strong>. Use them for neutral comparison
+          within this project reference as a mathematical demonstration only. They are not official prices, live market quotes,
+          or independently verified transaction data, and the page does not determine fair trades or provide buy, sell, hold,
+          transaction, or investment advice.
         </p>
       </section>
 
@@ -173,7 +170,7 @@ export default function TradingCalculatorPage() {
               </div>
               {cat.top && (
                 <div className="pt-2 border-t border-[#252936]">
-                  <div className="text-xs text-[#768294] mb-1">Top Item</div>
+                  <div className="text-xs text-[#768294] mb-1">Highest Recorded Field</div>
                   <Link
                     href={`/grow-a-garden/trading/${cat.top.id}`}
                     className="text-sm font-semibold text-white hover:text-[#00E676] transition block truncate"
@@ -181,7 +178,7 @@ export default function TradingCalculatorPage() {
                     {cat.top.name}
                   </Link>
                   <div className="text-sm font-bold mt-1" style={{ color: cat.accent }}>
-                    {formatValue(cat.top.value)} 🪙
+                    {formatTradingRecordValue(cat.top.value)} {TRADING_RECORD_VALUE_LABEL}
                   </div>
                 </div>
               )}
@@ -190,17 +187,17 @@ export default function TradingCalculatorPage() {
         </div>
       </section>
 
-      {/* Full Trading Value Ranking */}
+      {/* Full recorded-value comparison */}
       <section aria-labelledby="ranking-heading">
         <h2
           id="ranking-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🏆 Complete Trading Value Ranking
+          🏆 Complete Trading Record Comparison
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          All {trading.length} tradeable items sorted by market value descending. Filter mentally by
-          category, rarity, demand, or trend using the color-coded badges.
+          All {trading.length} project records sorted by recorded value descending. Compare category, recorded rarity,
+          recorded demand, or recorded trend using the color-coded labels; this is not a market ranking.
         </p>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[820px] w-full text-sm border-collapse">
@@ -209,10 +206,10 @@ export default function TradingCalculatorPage() {
                 <th className="py-3 px-3 font-semibold">#</th>
                 <th className="py-3 px-3 font-semibold">Item</th>
                 <th className="py-3 px-3 font-semibold">Category</th>
-                <th className="py-3 px-3 font-semibold">Rarity</th>
-                <th className="py-3 px-3 font-semibold">Demand</th>
-                <th className="py-3 px-3 font-semibold">Trend</th>
-                <th className="py-3 px-3 font-semibold">Value</th>
+                <th className="py-3 px-3 font-semibold">Recorded Rarity</th>
+                <th className="py-3 px-3 font-semibold">Recorded Demand</th>
+                <th className="py-3 px-3 font-semibold">Recorded Trend</th>
+                <th className="py-3 px-3 font-semibold">Recorded Value</th>
               </tr>
             </thead>
             <tbody>
@@ -262,7 +259,7 @@ export default function TradingCalculatorPage() {
                     </span>
                   </td>
                   <td className="py-3 px-3 text-sm font-bold text-[#00E676]">
-                    {t.value.toLocaleString()} 🪙
+                    {formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}
                   </td>
                 </tr>
               ))}
@@ -271,17 +268,17 @@ export default function TradingCalculatorPage() {
         </div>
       </section>
 
-      {/* High-Demand Items */}
+      {/* Recorded demand labels */}
       <section aria-labelledby="demand-heading">
         <h2
           id="demand-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          🔥 High-Demand Items ({highDemand.length})
+          🔥 Recorded Demand Labels ({highDemand.length})
         </h2>
         <p className="text-sm text-[#768294] mb-4 leading-relaxed">
-          Items with the highest buyer interest — these sell quickly at full market value. Sort by
-          value to identify the most profitable flips.
+          Records carrying the High demand label. This is an internal grouping for comparison and does not
+          establish buyer activity, transaction speed, market value, or a transaction recommendation.
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {highDemand.slice(0, 9).map((t) => (
@@ -301,7 +298,7 @@ export default function TradingCalculatorPage() {
                 </span>
               </div>
               <div className="text-xl font-bold text-[#00E676] mb-2">
-                {formatValue(t.value)} 🪙
+                {formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}
               </div>
               <div className="flex items-center gap-2 text-xs">
                 <span
@@ -328,13 +325,13 @@ export default function TradingCalculatorPage() {
         </div>
       </section>
 
-      {/* Trend Analysis */}
+      {/* Recorded trend labels */}
       <section aria-labelledby="trend-heading">
         <h2
           id="trend-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          📈 Trend Analysis
+          📈 Recorded Trend Labels
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4">
@@ -342,7 +339,7 @@ export default function TradingCalculatorPage() {
               ↑ Rising ({risingTrend.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Gaining value — hold for maximum profit.
+              Rising is a recorded project label; it is not a market forecast or transaction recommendation.
             </p>
             <ul className="space-y-1.5">
               {risingTrend.slice(0, 5).map((t) => (
@@ -353,7 +350,7 @@ export default function TradingCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#00E676] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#00E676] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -363,7 +360,7 @@ export default function TradingCalculatorPage() {
               → Stable ({stableTrend.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Holding value — safe to trade at any time.
+              Stable is a recorded project label; it does not establish a transaction outcome.
             </p>
             <ul className="space-y-1.5">
               {stableTrend.slice(0, 5).map((t) => (
@@ -374,7 +371,7 @@ export default function TradingCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#FFD700] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#FFD700] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -384,7 +381,7 @@ export default function TradingCalculatorPage() {
               ↓ Falling ({fallingTrend.length})
             </h3>
             <p className="text-xs text-[#768294] mb-3">
-              Losing value — sell quickly before further drops.
+              Falling is a recorded project label; it does not predict a future change.
             </p>
             <ul className="space-y-1.5">
               {fallingTrend.slice(0, 5).map((t) => (
@@ -395,7 +392,7 @@ export default function TradingCalculatorPage() {
                   >
                     {t.name}
                   </Link>
-                  <span className="text-[#FF3D00] font-bold ml-2">{formatValue(t.value)}</span>
+                  <span className="text-[#FF3D00] font-bold ml-2">{formatTradingRecordValue(t.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 </li>
               ))}
             </ul>
@@ -409,7 +406,7 @@ export default function TradingCalculatorPage() {
           id="rarity-heading"
           className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]"
         >
-          💎 Rarity Distribution
+          💎 Recorded Rarity Distribution
         </h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {[

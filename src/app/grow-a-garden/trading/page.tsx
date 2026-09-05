@@ -6,15 +6,18 @@ import {
   trading,
   getTradingByCategory,
   getHighDemandItems,
+  TRADING_RECORD_DATE,
+  TRADING_RECORD_DISCLAIMER,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
 } from "@/data/garden/database/trading";
 
 export const metadata: Metadata = {
-  title: "Grow a Garden Trading Values — Internal Reference",
+  title: "Grow a Garden Trading Records — Internal Reference",
   description:
     "Browse internal editorial records for Grow a Garden pets, seeds, crops, and mutations. The listed value, demand, and trend fields are project reference values, not official prices or live market quotes.",
   keywords: [
-    "Grow a Garden trading values",
-    "Grow a Garden trade prices",
+    "Grow a Garden trading records",
     "Grow a Garden pet values",
     "Grow a Garden seed values",
     "Grow a Garden crop values",
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/grow-a-garden/trading" },
   openGraph: {
-    title: "Grow a Garden Trading Values — Internal Reference",
+    title: "Grow a Garden Trading Records — Internal Reference",
     description:
       "Internal editorial records for Grow a Garden trading categories. Values and labels are project reference fields, not official prices or live market quotes.",
     type: "website",
@@ -67,12 +70,6 @@ const categoryOrder: Array<"Pet" | "Seed" | "Crop" | "Mutation"> = [
   "Mutation",
 ];
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
 const faqs = [
   {
     question: "What does this Grow a Garden trading list show?",
@@ -92,7 +89,7 @@ const faqs = [
   {
     question: "What date applies to these trading records?",
     answer:
-      "The date shown on this page is an editorial record date for this project view. It is not a transaction collection date, market sampling date, or promise of a particular update schedule.",
+      `The date shown on this page is ${TRADING_RECORD_DATE}, an editorial record date for this project view. It is not a transaction collection date, market sampling date, or promise of a particular update schedule.`,
   },
   {
     question: "Can this list replace in-game trade verification?",
@@ -115,10 +112,10 @@ export default function TradingDatabasePage() {
       ]}
       accent="garden"
       canonicalPath="/grow-a-garden/trading"
-      updatedAt="July 19, 2026"
+      updatedAt={TRADING_RECORD_DATE}
     >
       <p className="rounded-xl border border-[#252936] bg-[#14161D] p-4 text-sm leading-relaxed text-[#BAC4D1]">
-        This page contains internal editorial records and project reference values. The listed fields are not official prices, live market quotes, or independently verified transaction data. The displayed date is an editorial record date, not a market sampling date.
+        {TRADING_RECORD_DISCLAIMER} The displayed date is an editorial record date, not a market sampling date. Values are shown in {TRADING_RECORD_VALUE_LABEL}.
       </p>
 
       {/* Category Filter Tabs (anchor links) */}
@@ -180,7 +177,7 @@ export default function TradingDatabasePage() {
               <span className={`rounded px-1.5 py-0.5 text-xs font-semibold w-fit ${rarityBadge[item.rarity]}`}>
                 {item.rarity}
               </span>
-              <span className="text-xs font-bold text-[#00E676]">{formatValue(item.value)}</span>
+              <span className="text-xs font-bold text-[#00E676]">{formatTradingRecordValue(item.value)} {TRADING_RECORD_VALUE_LABEL}</span>
               <span className={`rounded px-1.5 py-0.5 text-xs font-semibold w-fit ${trendBadge[item.trend]}`}>
                 {item.trend}
               </span>
@@ -231,7 +228,7 @@ export default function TradingDatabasePage() {
                   <span className={`rounded px-1.5 py-0.5 text-xs font-semibold w-fit ${demandBadge[item.demand]}`}>
                     {item.demand}
                   </span>
-                  <span className="text-xs font-bold text-[#00E676]">{formatValue(item.value)}</span>
+                  <span className="text-xs font-bold text-[#00E676]">{formatTradingRecordValue(item.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                   <span className={`rounded px-1.5 py-0.5 text-xs font-semibold w-fit ${trendBadge[item.trend]}`}>
                     {item.trend}
                   </span>

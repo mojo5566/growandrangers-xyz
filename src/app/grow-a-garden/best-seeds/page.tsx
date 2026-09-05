@@ -4,26 +4,24 @@ import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { seeds } from "@/data/garden/database/seeds";
-import { trading } from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
   title: "Best Seeds in Grow a Garden — Ranked",
   description:
-    "Ranked comparison of every seed in Grow a Garden by tier, rarity, price, and growth time. Cross-referenced with live trading values to find the most profitable seeds to buy and stockpile.",
+    "Ranked comparison of every seed in Grow a Garden by tier, rarity, recorded price, and growth time.",
   keywords: [
     "best seeds Grow a Garden",
     "Grow a Garden seed ranking",
-    "Mythstar Seed value",
+    "Mythstar Seed",
     "Phoenix Bloom Seed vs Star Melon",
     "top seeds Grow a Garden 2026",
-    "most profitable seeds",
   ],
   alternates: { canonical: "/grow-a-garden/best-seeds" },
   openGraph: {
     title: "Best Seeds in Grow a Garden — Ranked",
     description:
-      "Ranked comparison of every seed by tier, rarity, price, growth time, and trading value.",
+      "Ranked comparison of every seed by tier, rarity, recorded price, and growth time.",
     type: "website",
   },
 };
@@ -43,12 +41,6 @@ const rarityBadge: Record<string, string> = {
   Common: "bg-[#768294]/20 text-[#BAC4D1]",
 };
 
-function formatValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2).replace(/\.00$/, "")}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
-  return value.toString();
-}
-
 // Sort seeds by tier rating (S first), then by rarity weight
 const rarityWeight: Record<string, number> = {
   Mythical: 5,
@@ -63,49 +55,41 @@ const rankedSeeds = [...seeds].sort((a, b) => {
   return rarityWeight[b.rarity] - rarityWeight[a.rarity];
 });
 
-// Join with trading database
-const seedsWithTrading = rankedSeeds.map((seed) => {
-  const tradingEntry = trading.find(
-    (t) => t.category === "Seed" && t.name.toLowerCase() === seed.name.toLowerCase()
-  );
-  return { seed, trading: tradingEntry };
-});
-
 const faqs = [
   {
     question: "What is the best seed in Grow a Garden?",
     answer:
-      "The Mythstar Seed is the best seed in the game — it's the only Mythical-rarity seed and the only seed that can spawn S-Tier mutations on planting. At 250,000 Sheckles it's expensive, but its trading value sits at approximately 750,000 Sheckles due to High demand and a Rising trend. Serious mutation farmers stockpile Mythstars.",
+      "The Mythstar Seed is the top entry in this project’s comparison because it has the highest recorded tier rating and Mythical rarity. Use the ranking as an editorial reference, then confirm current availability, requirements, and mechanics in the game or official announcements.",
   },
   {
-    question: "Which seed gives the highest trading value?",
+    question: "Which seed has the highest recorded tier rating?",
     answer:
-      "Mythstar Seed has the highest trading value at approximately 750K Sheckles, followed by Phoenix Bloom Seed (320K, Summer-only) and Star Melon Seed (280K, all-season). All three have High demand. If you're trading seeds rather than planting them, prioritize these three.",
+      "Mythstar Seed is the highest-ranked seed in this project reference. The ranking is based on recorded seed fields such as tier rating and rarity; it is not a statement about market price, demand, or trade outcomes.",
   },
   {
-    question: "Are Robux seeds worth buying for trading?",
+    question: "What should I check before using a seed?",
     answer:
-      "Robux seeds (Premium Event Seed at 199 Robux, Frostbloom at 75 Robux, Lucky Clover at 99 Robux) typically trade at a slight discount to their Robux equivalent. They're worth buying for personal use but not for profit-flipping — the Sheckles-equivalent value is usually below what you paid in Robux. The exception is Premium Event Seed during mutation-farming meta shifts.",
+      "Check the seed’s recorded currency, price, tier, rarity, growth time, and season in the table. Availability and gameplay behavior can change, so confirm those details in the current game or an official announcement before spending currency.",
   },
   {
-    question: "Should I stockpile seasonal seeds off-season?",
+    question: "How should I read seasonal seed entries?",
     answer:
-      "Yes — seasonal seeds like Phoenix Bloom (Summer), Frost Melon (Winter), and Neon Pumpkin (Autumn) trade at a significant premium off-season due to scarcity. Buy during the event at base price, hold for 2-3 months, and sell when demand spikes ahead of the next event cycle. Phoenix Bloom Seed is currently Rising in value for this exact reason.",
+      "The Season column is a recorded availability label for this project. It can help you compare entries, but it does not predict future availability or establish a market premium. Confirm event timing and availability in the current game or official announcements.",
   },
   {
     question: "How does seed tier affect crop output?",
     answer:
-      "Seed tier directly determines the tier of crop it produces — an S-tier seed grows an S-tier crop. Higher-tier crops have higher coin values, higher coins-per-minute (CPM), and better mutation roll rates. Always plant the highest-tier seed you can afford; the ROI on tier upgrades is the single biggest profit lever in the game.",
+      "This page records seed tier and related fields for comparison. It does not establish that tier alone determines crop output or mutation behavior. Check the current game and official announcements for the mechanics that connect a seed to its crop.",
   },
   {
-    question: "Which seed is best for beginners with limited Sheckles?",
+    question: "Which seed is easiest to compare for a beginner?",
     answer:
-      "Star Melon Seed is the best starter seed — it is Legendary, all-season, and costs only 15,000 Sheckles while trading at 280K with High demand and a Stable trend. It produces solid coin value without the 250K upfront cost of Mythstar or the seasonal lock of Phoenix Bloom. Once you have banked 100K+ Sheckles, upgrade to Phoenix Bloom during its Summer event window for higher profit per harvest.",
+      "Star Melon Seed is a straightforward comparison entry because its recorded row includes tier, rarity, price, growth time, and season. Beginners can use those fields to understand the table, while confirming the current in-game requirements before choosing what to plant.",
   },
   {
     question: "Do seed prices change with game updates?",
     answer:
-      "Base seed prices in the shop are fixed and do not change with updates, but their trading values on the player market do shift. When a new mutation meta emerges, seeds that roll high-tier mutations (like Mythstar) see their trade value rise. Seasonal seeds spike in the weeks before their event returns due to scarcity. Always cross-reference the Trading Database before bulk-buying seeds for resale, since a Falling trend means you will lose money holding inventory.",
+      "The prices shown here are project-recorded seed fields, not a live feed. Game updates may change prices, currencies, growth behavior, or availability. Recheck the current game or official announcements when a patch or event changes the seed system.",
   },
 ];
 
@@ -113,7 +97,7 @@ export default function BestSeedsPage() {
   return (
     <ContentLayout
       title="Best Seeds in Grow a Garden"
-      description="Ranked comparison of every seed in Grow a Garden — compare tier, rarity, price, growth time, and live trading value to find the most profitable seeds to buy, plant, and stockpile."
+      description="Ranked comparison of every seed in Grow a Garden — compare recorded tier, rarity, price, growth time, and season fields."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -123,7 +107,7 @@ export default function BestSeedsPage() {
       canonicalPath="/grow-a-garden/best-seeds"
       updatedAt={CONTENT_UPDATED_AT}
       articleSection="Seeds"
-      keywords={["best seeds Grow a Garden", "Grow a Garden seed ranking", "Mythstar Seed value", "Phoenix Bloom Seed vs Star Melon", "top seeds Grow a Garden 2026"]}
+      keywords={["best seeds Grow a Garden", "Grow a Garden seed ranking", "Mythstar Seed", "Phoenix Bloom Seed vs Star Melon", "top seeds Grow a Garden 2026"]}
       about={[{ name: "Grow a Garden" }, { name: "Roblox game guides" }]}
     >
       {/* Quick Answer - AI search summary */}
@@ -132,18 +116,17 @@ export default function BestSeedsPage() {
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The Mythstar Seed is the best seed in the game — the only Mythical-rarity seed, priced at 250,000 Sheckles with a trade value near 750,000 and a Rising trend. For profit trading, Phoenix Bloom Seed (320K, Summer-only) and Star Melon Seed (280K, all-season) round out the top three. Stockpile seasonal seeds like Phoenix Bloom off-season and sell when demand spikes. Always plant the highest-tier seed you can afford, since tier upgrades are the biggest profit lever.
+          Mythstar Seed is the top entry in this project’s seed comparison, with a recorded Mythical rarity and S-tier rating. The table is an editorial reference for comparing recorded tier, rarity, price, growth time, and season fields; confirm current mechanics and availability in the game or official announcements.
         </p>
       </section>
 
       {/* Hero Intro */}
       <section className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-5">
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          Seeds are the foundation of every profitable Grow a Garden farm. This comparison ranks all{" "}
-          {seeds.length} seeds by tier rating and rarity, then cross-references each one with the live trading market
-          to surface the best seeds to buy, plant, and stockpile. Whether you&apos;re chasing the Mythical Mythstar
-          for S-Tier mutation farming or stockpiling seasonal seeds for off-season profit, the data below is your
-          shortcut to the right decision.
+          Seeds are a core part of the Grow a Garden progression system. This comparison ranks all{" "}
+          {seeds.length} seeds by recorded tier rating and rarity, then presents the recorded price, currency,
+          growth time, and season fields. Use it as a compact project reference and confirm current game behavior
+          before making a choice.
         </p>
       </section>
 
@@ -153,7 +136,7 @@ export default function BestSeedsPage() {
           id="ranking-heading"
           className="font-heading text-[24px] font-semibold text-white lg:text-[28px] mb-4"
         >
-          🏆 Ranked Comparison — Value, Rarity & Growth
+          🏆 Ranked Comparison — Tier, Rarity & Growth
         </h2>
         <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <table className="min-w-[820px] w-full text-sm border-collapse">
@@ -166,11 +149,11 @@ export default function BestSeedsPage() {
                 <th className="py-3 px-3 font-semibold">Price</th>
                 <th className="py-3 px-3 font-semibold">Growth</th>
                 <th className="py-3 px-3 font-semibold">Season</th>
-                <th className="py-3 px-3 font-semibold">Trade Value</th>
+                <th className="py-3 px-3 font-semibold">Record</th>
               </tr>
             </thead>
             <tbody>
-              {seedsWithTrading.map(({ seed, trading: t }, i) => (
+              {rankedSeeds.map((seed, i) => (
                 <tr key={seed.id} className="border-b border-[#252936] hover:bg-[#1E212B] transition">
                   <td className="py-3 px-3 text-[#768294]">{i + 1}</td>
                   <td className="py-3 px-3">
@@ -195,13 +178,11 @@ export default function BestSeedsPage() {
                     </span>
                   </td>
                   <td className="py-3 px-3 text-xs text-[#BAC4D1]">
-                    {formatValue(seed.price)} {seed.currency === "Robux" ? "R$" : "🪙"}
+                    {seed.price.toLocaleString()} {seed.currency === "Robux" ? "R$" : "🪙"}
                   </td>
                   <td className="py-3 px-3 text-xs text-[#BAC4D1]">{seed.growthTime}</td>
                   <td className="py-3 px-3 text-xs text-[#768294]">{seed.season}</td>
-                  <td className="py-3 px-3 text-xs font-bold text-[#00E676]">
-                    {t ? `${formatValue(t.value)} 🪙` : "—"}
-                  </td>
+                  <td className="py-3 px-3 text-xs text-[#768294]">Project seed record</td>
                 </tr>
               ))}
             </tbody>
@@ -219,30 +200,30 @@ export default function BestSeedsPage() {
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-5">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">🎯 Best for Mutation Farming</h3>
+            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">🎯 Highest Recorded Tier</h3>
             <p className="text-xs text-[#BAC4D1] leading-relaxed">
               <Link href="/grow-a-garden/seeds/mythstar-seed" className="font-semibold text-[#00E676] hover:underline">
                 Mythstar Seed
               </Link>{" "}
-              — only seed that can spawn S-Tier mutations. 250K Sheckles, 12 min growth, Mythical rarity. Trade value 750K and rising.
+              — recorded as Mythical rarity with an S-tier rating. Confirm its current mechanics and availability in the game.
             </p>
           </div>
           <div className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-5">
-            <h3 className="text-sm font-semibold text-[#FF8C00] mb-2">💰 Best for Profit Trading</h3>
+            <h3 className="text-sm font-semibold text-[#FF8C00] mb-2">☀️ Seasonal Reference</h3>
             <p className="text-xs text-[#BAC4D1] leading-relaxed">
               <Link href="/grow-a-garden/seeds/phoenix-bloom-seed" className="font-semibold text-[#00E676] hover:underline">
                 Phoenix Bloom Seed
               </Link>{" "}
-              — Summer-only, 50K Sheckles, trades at 320K. Stock up during Summer Event for off-season profit.
+              — recorded with a Summer season label. Confirm event timing and availability before relying on it.
             </p>
           </div>
           <div className="rounded-xl border border-[#FFD700]/30 bg-[#14161D] p-5">
-            <h3 className="text-sm font-semibold text-[#FFD700] mb-2">🌱 Best All-Season Starter</h3>
+            <h3 className="text-sm font-semibold text-[#FFD700] mb-2">🌱 All-Season Reference</h3>
             <p className="text-xs text-[#BAC4D1] leading-relaxed">
               <Link href="/grow-a-garden/seeds/star-melon-seed" className="font-semibold text-[#00E676] hover:underline">
                 Star Melon Seed
               </Link>{" "}
-              — Legendary, all-season, 15K Sheckles. Solid trade value at 280K with High demand and Stable trend.
+              — recorded as Legendary and all-season in this project reference. Check the current in-game row before planting.
             </p>
           </div>
         </div>

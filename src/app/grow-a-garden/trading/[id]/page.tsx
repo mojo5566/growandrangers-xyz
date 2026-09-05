@@ -4,7 +4,14 @@ import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
-import { trading, getTradingItemById, getTradingByCategory } from "@/data/garden/database/trading";
+import {
+  trading,
+  getTradingItemById,
+  getTradingByCategory,
+  TRADING_RECORD_DISCLAIMER,
+  TRADING_RECORD_VALUE_LABEL,
+  formatTradingRecordValue,
+} from "@/data/garden/database/trading";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -21,18 +28,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${item.name} — Grow a Garden Trading Reference`,
-    description: `${item.name} internal value record: ${item.value.toLocaleString()} Sheckles. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal ${item.demand.toLowerCase()} demand and ${item.trend.toLowerCase()} trend labels. This is a project reference, not an official price or independently verified transaction record.`,
+    description: `${item.name} internal value record: ${formatTradingRecordValue(item.value)} ${TRADING_RECORD_VALUE_LABEL}. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal ${item.demand.toLowerCase()} demand and ${item.trend.toLowerCase()} trend labels. ${TRADING_RECORD_DISCLAIMER}`,
     keywords: [
       item.name,
       `${item.name} value`,
-      `${item.name} trade price`,
+      `${item.name} value record`,
       `Grow a Garden ${item.category.toLowerCase()} value`,
       `${item.rarity} ${item.category.toLowerCase()} trade`,
     ],
     alternates: { canonical: `/grow-a-garden/trading/${id}` },
     openGraph: {
       title: `${item.name} — Grow a Garden Trading Reference`,
-      description: `${item.name} internal value record: ${item.value.toLocaleString()} Sheckles. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal demand and trend labels.`,
+      description: `${item.name} internal value record: ${formatTradingRecordValue(item.value)} ${TRADING_RECORD_VALUE_LABEL}. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal ${item.demand.toLowerCase()} demand and ${item.trend.toLowerCase()} trend labels. ${TRADING_RECORD_DISCLAIMER}`,
       type: "website",
     },
   };
@@ -58,10 +65,6 @@ const trendBadge: Record<string, string> = {
   Falling: "bg-[#FF3D00]/20 text-[#FF3D00]",
 };
 
-function formatValue(value: number): string {
-  return value.toLocaleString();
-}
-
 export default async function TradingDetailPage({ params }: PageProps) {
   const { id } = await params;
   const item = getTradingItemById(id);
@@ -76,10 +79,10 @@ export default async function TradingDetailPage({ params }: PageProps) {
   const faqs = [
     {
       question: `What does this ${item.name} trading page show?`,
-      answer: `This page shows an internal value record of ${formatValue(item.value)} Sheckles together with recorded ${item.rarity.toLowerCase()} rarity and internal ${item.demand.toLowerCase()} demand and ${item.trend.toLowerCase()} trend labels. These are project reference fields, not official prices or independently verified transaction data.`,
+      answer: `This page shows an internal value record of ${formatTradingRecordValue(item.value)} ${TRADING_RECORD_VALUE_LABEL} together with recorded ${item.rarity.toLowerCase()} rarity and internal ${item.demand.toLowerCase()} demand and ${item.trend.toLowerCase()} trend labels. ${TRADING_RECORD_DISCLAIMER}`,
     },
     {
-      question: `Is this ${item.name} record a guaranteed trade price?`,
+      question: `Is this ${item.name} record an official game value?`,
       answer: `No. The ${item.name} entry is an internal editorial record for project reference. It does not establish a fair price, predict an outcome, or recommend buying, selling, or holding.`,
     },
     {
@@ -95,7 +98,7 @@ export default async function TradingDetailPage({ params }: PageProps) {
   return (
     <ContentLayout
       title={`${item.name} — Trading Reference`}
-      description={`${item.name} internal value record: ${formatValue(item.value)} Sheckles. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal demand and trend labels. This project reference is not an official price or independently verified transaction record.`}
+      description={`${item.name} internal value record: ${formatTradingRecordValue(item.value)} ${TRADING_RECORD_VALUE_LABEL}. Recorded ${item.rarity.toLowerCase()} ${item.category.toLowerCase()} with internal demand and trend labels. ${TRADING_RECORD_DISCLAIMER}`}
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -107,7 +110,7 @@ export default async function TradingDetailPage({ params }: PageProps) {
       updatedAt={item.updatedAt}
     >
       <p className="rounded-xl border border-[#252936] bg-[#14161D] p-4 text-sm leading-relaxed text-[#BAC4D1]">
-        This page contains an internal editorial record for project reference. The displayed value, demand, trend, rarity, and category fields are not official prices, live market quotes, or independently verified transaction data. The displayed date is an editorial record date, not a market sampling date.
+        {TRADING_RECORD_DISCLAIMER} The displayed date is an editorial record date, not a market sampling date. The value unit is {TRADING_RECORD_VALUE_LABEL}.
       </p>
 
       {/* Core Stats */}
@@ -139,7 +142,7 @@ export default async function TradingDetailPage({ params }: PageProps) {
           <div className="rounded-xl border border-[#00E676]/30 bg-[#14161D] p-4 sm:col-span-2">
             <span className="text-xs text-[#768294]">Internal Value Record</span>
             <p className="mt-1 text-2xl font-bold text-[#00E676]">
-              {formatValue(item.value)} <span className="text-base font-normal text-[#768294]">Sheckles</span>
+              {formatTradingRecordValue(item.value)} <span className="text-base font-normal text-[#768294]">{TRADING_RECORD_VALUE_LABEL}</span>
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
@@ -199,7 +202,7 @@ export default async function TradingDetailPage({ params }: PageProps) {
                 </span>
               </div>
               <div className="flex items-center justify-between gap-2">
-                <span className="text-xs font-bold text-[#00E676]">Internal value: {formatValue(rel.value)} 🪙</span>
+                <span className="text-xs font-bold text-[#00E676]">Internal value: {formatTradingRecordValue(rel.value)} {TRADING_RECORD_VALUE_LABEL}</span>
                 <span className={`rounded px-1.5 py-0.5 text-xs font-semibold ${trendBadge[rel.trend]}`}>
                   Internal trend: {rel.trend}
                 </span>

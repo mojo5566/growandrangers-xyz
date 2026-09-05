@@ -31,7 +31,7 @@ export const crops: Crop[] = [
     season: "All",
     tier: "S",
     coinsPerMinute: 160,
-    description: "The most profitable crop in the game at 160 coins-per-minute. All-season availability means you never need to rotate it out. Stacked with S-Tier mutation and pet, a single harvest yields 9,600 coins.",
+    description: "The highest recorded coins-per-minute crop in this dataset at 160 coins-per-minute. All-season availability means you never need to rotate it out. Stacked with S-Tier mutation and pet, the in-game stacking math yields 9,600 coins in a single harvest.",
     imagePlaceholder: "/placeholder-crops-golden-wheat.png",
     tierRating: 10
   },
@@ -45,7 +45,7 @@ export const crops: Crop[] = [
     season: "All",
     tier: "S",
     coinsPerMinute: 84,
-    description: "Second most valuable all-season crop at 84 coins-per-minute. The longer 5-minute growth cycle means fewer replanting actions — ideal for semi-AFK farmers who check in periodically.",
+    description: "Second-highest recorded coins-per-minute among all-season entries in this dataset at 84 coins-per-minute. The longer 5-minute growth cycle means fewer replanting actions — ideal for semi-AFK farmers who check in periodically.",
     imagePlaceholder: "/placeholder-crops-crystal-berry.png",
     tierRating: 10
   },
@@ -59,7 +59,7 @@ export const crops: Crop[] = [
     season: "Autumn",
     tier: "A",
     coinsPerMinute: 48,
-    description: "The most valuable seasonal crop during Autumn with a +20% seasonal bonus. Slow growth (8 min) but high per-harvest value. Switch to all-season crops in other seasons.",
+    description: "The Autumn seasonal entry in this dataset with a recorded +20% seasonal bonus label. Slow growth (8 min) but high per-harvest value. Switch to all-season crops in other seasons.",
     imagePlaceholder: "/placeholder-crops-neon-pumpkin.png",
     tierRating: 8
   },
@@ -185,7 +185,7 @@ export const crops: Crop[] = [
     season: "All",
     tier: "S",
     coinsPerMinute: 125,
-    description: "A celestial melon that shimmers with starlight. The third most profitable all-season crop, pairing high per-harvest value with a manageable 4-minute cycle for sustained S-Tier farming.",
+    description: "A celestial melon that shimmers with starlight. Third-highest recorded coins-per-minute among all-season entries in this dataset, pairing high per-harvest value with a manageable 4-minute cycle for sustained S-Tier farming.",
     imagePlaceholder: "/placeholder-crops-star-melon.png",
     tierRating: 96
   },
@@ -199,7 +199,7 @@ export const crops: Crop[] = [
     season: "Summer",
     tier: "S",
     coinsPerMinute: 104,
-    description: "The most valuable Summer crop at 104 coins-per-minute. Reborn from seasonal ashes, it out-earns Magma Pepper per harvest but its 5-minute cycle limits throughput. Stack with Summer pets for maximum yield.",
+    description: "The Summer seasonal entry with the highest recorded coins-per-minute among Summer-label entries in this dataset at 104 coins-per-minute. Reborn from seasonal ashes; its 5-minute cycle limits throughput. Stack with Summer pets for the highest calculated yield.",
     imagePlaceholder: "/placeholder-crops-phoenix-bloom.png",
     tierRating: 97
   },

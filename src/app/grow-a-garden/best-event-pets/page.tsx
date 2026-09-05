@@ -5,13 +5,12 @@ import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { pets } from "@/data/garden/database/pets";
 import { events } from "@/data/garden/database/events";
-import { trading } from "@/data/garden/database/trading";
 import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 
 export const metadata: Metadata = {
   title: "Best Event Pets in Grow a Garden",
   description:
-    "Ranked guide to every event-exclusive pet in Grow a Garden. Compare multipliers, event availability, trade values, and which event pets are worth chasing.",
+    "Compare event-exclusive pets in Grow a Garden by recorded tier, multiplier, ability, and source. Use this page as an editorial reference for checking current game details.",
   keywords: [
     "best event pets Grow a Garden",
     "Grow a Garden event pet ranking",
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Event Pets in Grow a Garden",
     description:
-      "Ranked guide to every event-exclusive pet in Grow a Garden with multipliers, event availability, and trade values.",
+      "Compare event-exclusive pets by recorded multipliers, tiers, abilities, and source labels.",
     type: "website",
   },
 };
@@ -33,36 +32,6 @@ export const metadata: Metadata = {
 const eventPets = pets
   .filter((p) => p.source === "Seasonal Event")
   .sort((a, b) => b.multiplier - a.multiplier);
-
-const tradingByName = new Map<string, (typeof trading)[number]>();
-for (const t of trading) {
-  if (t.category === "Pet") tradingByName.set(t.name.toLowerCase(), t);
-}
-
-const eventRows = eventPets.map((p) => {
-  const trade = tradingByName.get(p.name.toLowerCase());
-  return {
-    id: p.id,
-    name: p.name,
-    multiplier: p.multiplier,
-    tier: p.tier,
-    ability: p.abilities[0] ?? "—",
-    tradeValue: trade?.value ?? null,
-    demand: trade?.demand ?? null,
-    trend: trade?.trend ?? null,
-  };
-});
-
-// Find related events by scanning event rewards for pet name mentions
-const eventsByPet = new Map<string, typeof events[number]>();
-for (const pet of eventPets) {
-  for (const ev of events) {
-    if (ev.rewards.some((r) => r.toLowerCase().includes(pet.name.toLowerCase().split(" ")[0]))) {
-      eventsByPet.set(pet.id, ev);
-      break;
-    }
-  }
-}
 
 const tierColors: Record<string, string> = {
   S: "#FF3D00",
@@ -73,34 +42,34 @@ const tierColors: Record<string, string> = {
 
 const faqs = [
   {
-    question: "What is an event pet in Grow a Garden?",
+    question: "Which event pet is ranked highest here?",
     answer:
-      "An event pet is a pet that is only obtainable during a limited-time seasonal or event update. These pets cannot be hatched from the standard Egg Shop and are typically tied to specific events such as the Winter Event, Spring Fairy Event, or Summer Event. Once the event ends, the pet becomes unavailable except through trading.",
+      "The first entry in this project’s comparison has the highest recorded multiplier among the event-source entries. The ordering is an editorial reference based on recorded fields, not an official tier list or a recommendation to acquire a specific pet.",
   },
   {
     question: "Are event pets better than regular pets?",
     answer:
-      "Event pets are competitive with but not strictly better than regular Legendary Egg pets. The strongest event pets reach 3.8×-4.0× multipliers, which places them in the A-to-S tier range. Their real value comes from limited availability — event pets often command premium trade values because they cannot be acquired after the event ends.",
+      "This page does not make that judgment. Event-source entries differ from always-available entries in the recorded source label, and multipliers should be read alongside tier, ability, and source fields. Confirm current gameplay impact in the game or official announcements.",
   },
   {
     question: "Can I still get event pets after the event ends?",
     answer:
-      "Only through trading. Event pets are not re-released unless the same event returns in a future year (for example, the Winter Event may return with the Frost Wolf Pup). If you missed an event pet, monitor the Trading Database for current verified values and trade with players who obtained it during the event window.",
+      "Acquisition rules depend on the current game state and whether an event returns. This page records the source label stored for each pet, but it does not track live availability or re-release schedules. Check the Events Tracker and official announcements for current details.",
   },
   {
     question: "Which event pet should I prioritize?",
     answer:
-      "Prioritize event pets with multipliers of 3.5× or higher and high trade demand, such as the Frost Wolf Pup (3.8×, ~850K coins value). These pets provide both immediate farm value and long-term trade value — their scarcity means values typically rise 30% within six months of the event ending. Always check the Trading Database for current demand trends before committing event currency or Robux to a specific pet, and never spend Robux on event pets below 3.0× multiplier.",
+      "This page does not make acquisition or spending recommendations. Review the recorded tier, multiplier, ability, and source fields for each entry, then confirm current event details in the game or official announcements.",
   },
   {
     question: "Do event pets come back in future events?",
     answer:
-      "Sometimes. Seasonal events (Winter, Summer, Autumn) tend to recur annually and may bring back popular event pets from the same event in previous years. Limited-time events (Lunar New Year, Valentine's) are less predictable. Check our Events Tracker for upcoming events that may re-release specific pets.",
+      "Re-release behavior is not recorded in this project’s pet fields. Some seasonal events recur, but whether a specific pet returns should be confirmed through official announcements rather than inferred from this comparison.",
   },
   {
     question: "Should I trade my event pet?",
     answer:
-      "Only if you have a duplicate or if you no longer need the pet for active farming. Event pets tend to appreciate in value over time because no new supply enters the market after the event ends. Holding a high-tier event pet is often a better long-term investment than trading it for a non-event equivalent.",
+      "This page does not assign trade values or make transaction recommendations. Whether and how pets can be traded depends on the current game rules, so confirm in the game before planning around trading.",
   },
 ];
 
@@ -108,7 +77,7 @@ export default function BestEventPetsPage() {
   return (
     <ContentLayout
       title="Best Event Pets in Grow a Garden"
-      description="Ranked guide to every event-exclusive pet in Grow a Garden with multipliers, event availability, and trade values."
+      description="Compare event-exclusive pets by recorded tier, multiplier, ability, and source labels."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
@@ -133,33 +102,28 @@ export default function BestEventPetsPage() {
           Quick Answer
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">
-          The best event pets in Grow a Garden reach 3.5×–4.0× multipliers and appreciate in trade value once their event ends. The <strong className="text-white">Frost Wolf Pup</strong> (3.8×) trades at roughly 850,000 coins and is projected to reach 1.1M within six months as supply dries up. Always acquire at least one event pet per active event window — the scarcity premium often exceeds the multiplier gap versus always-available Legendary pets.
+          This page lists Grow a Garden pets whose recorded source label is “Seasonal Event,” sorted by recorded multiplier. The table is an editorial reference for tier, multiplier, ability, and source fields. Confirm acquisition rules and current gameplay effects in the game or official announcements.
         </p>
       </section>
 
-      {/* Opening — opportunity-cost framing */}
+      {/* Opening — scope framing */}
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
         <p className="text-sm leading-relaxed text-[#BAC4D1]">
-          A player skips the Winter Event because "Frost Wolf Pup is only 3.8× — my Golden Dragon is 4.8×." Six months later, Frost Wolf Pup trades at <strong className="text-white">850,000 coins</strong> with no new supply entering the market, while Golden Dragon's value is stable. The skip cost them 850k in unrealized trade equity. Event pets are not about multiplier — they are about <strong className="text-white">scarcity appreciation</strong>. This guide uses canonical{" "}
+          This page narrows the{" "}
           <Link href="/grow-a-garden/pets" className="text-[#00E676] hover:underline">Pets Database</Link>{" "}
-          stats and{" "}
-          <Link href="/grow-a-garden/trading" className="text-[#00E676] hover:underline">Trading Database</Link>{" "}
-          values to show you the real opportunity cost of skipping each event window.
+          to entries whose recorded source is a seasonal event. It keeps the comparison focused on fields that are present in the project records: pet name, tier, multiplier, ability, and source. Because those records do not include an evidence trail for every mechanic, use them as a reference and verify important details in the current game.
         </p>
       </section>
 
-      {/* Event window opportunity-cost matrix — replaces generic Ranking Table */}
-      <section aria-labelledby="opportunity-heading">
-        <h2 id="opportunity-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
-          ⏳ Event Window Opportunity-Cost Matrix
+      {/* Event pet comparison table */}
+      <section aria-labelledby="ranking-heading">
+        <h2 id="ranking-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
+          🎉 Event Pet Quick Reference
         </h2>
         <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-          <p className="text-sm leading-relaxed text-[#BAC4D1] mb-3">
-            Each event pet has a <strong className="text-white">window cost</strong> (what you spend during the event) and an <strong className="text-white">appreciation curve</strong> (how much trade value it gains after the event ends). The matrix below assumes the event returns annually — if the event is one-time-only, appreciation is steeper.
-          </p>
-          {eventRows.length === 0 ? (
+          {eventPets.length === 0 ? (
             <p className="text-sm text-[#768294]">
-              No event-source pets in the canonical database currently. Check the{" "}
+              No event-source pets in the project database currently. Check the{" "}
               <Link href="/grow-a-garden/events" className="text-[#00E676] hover:underline">Events Tracker</Link>{" "}
               for upcoming event pet releases.
             </p>
@@ -171,34 +135,26 @@ export default function BestEventPetsPage() {
                     <th className="px-4 py-2 text-left font-semibold">Pet</th>
                     <th className="px-4 py-2 text-left font-semibold">Multiplier</th>
                     <th className="px-4 py-2 text-left font-semibold">Tier</th>
-                    <th className="px-4 py-2 text-left font-semibold">Trade Value (Now)</th>
-                    <th className="px-4 py-2 text-left font-semibold">Expected Value (6mo)</th>
-                    <th className="px-4 py-2 text-left font-semibold">Skip Cost</th>
+                    <th className="px-4 py-2 text-left font-semibold">Ability</th>
+                    <th className="px-4 py-2 text-left font-semibold">Source</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#252936]">
-                  {eventRows.map((row) => (
-                    <tr key={row.id} className="text-[#BAC4D1]">
+                  {eventPets.map((pet) => (
+                    <tr key={pet.id} className="text-[#BAC4D1]">
                       <td className="px-4 py-3">
-                        <Link href={`/grow-a-garden/pets/${row.id}`} className="text-[#00E676] hover:underline font-semibold">
-                          {row.name}
+                        <Link href={`/grow-a-garden/pets/${pet.id}`} className="text-[#00E676] hover:underline font-semibold">
+                          {pet.name}
                         </Link>
                       </td>
-                      <td className="px-4 py-3 text-white font-semibold">{row.multiplier}×</td>
+                      <td className="px-4 py-3 text-white font-semibold">{pet.multiplier}×</td>
                       <td className="px-4 py-3">
-                        <span className="rounded px-2 py-0.5 text-xs font-bold" style={{ color: tierColors[row.tier], background: tierColors[row.tier] + "22" }}>
-                          {row.tier}
+                        <span className="rounded px-2 py-0.5 text-xs font-bold" style={{ color: tierColors[pet.tier], background: tierColors[pet.tier] + "22" }}>
+                          {pet.tier}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-[#00E676]">
-                        {row.tradeValue ? row.tradeValue.toLocaleString() + " 🪙" : "—"}
-                      </td>
-                      <td className="px-4 py-3 text-[#FFD700]">
-                        {row.tradeValue ? Math.round(row.tradeValue * 1.3).toLocaleString() + " 🪙 (+30% est.)" : "—"}
-                      </td>
-                      <td className="px-4 py-3 text-xs text-[#FF3D00]">
-                        {row.tradeValue ? Math.round(row.tradeValue * 0.3).toLocaleString() + " 🪙 lost if skipped" : "—"}
-                      </td>
+                      <td className="px-4 py-3 text-xs">{pet.abilities[0] ?? "—"}</td>
+                      <td className="px-4 py-3 text-xs">{pet.source}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -206,93 +162,19 @@ export default function BestEventPetsPage() {
             </div>
           )}
           <p className="mt-3 text-xs text-[#768294]">
-            6-month appreciation estimate assumes the event does NOT return. If the event returns annually, appreciation is closer to 10–15%. Skip cost = unrealized trade equity if you do not acquire the pet during the event window.
+            Entries are sorted by the recorded multiplier. This ordering is an internal record comparison, not an official ranking or a statement about trade value.
           </p>
         </div>
       </section>
 
-      {/* Player scenario — NEW */}
-      <section aria-labelledby="scenario-heading">
-        <h2 id="scenario-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
-          🎮 Player Scenario: Skip vs. Grind Decision
-        </h2>
-        <div className="rounded-xl border border-[#FF8C00]/30 bg-[#14161D] p-5">
-          <div className="grid gap-3 sm:grid-cols-2 mb-4">
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Player Type</div>
-              <div className="text-sm text-white mt-1">Casual player, 2 weeks in</div>
-            </div>
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Current Resources</div>
-              <ul className="mt-1 text-xs text-[#BAC4D1] space-y-1">
-                <li>• 2 plots, Golden Wheat on both</li>
-                <li>• Bunny Rabbit pet (1.5×)</li>
-                <li>• 25,000 coins banked</li>
-                <li>• Winter Event live, ends in 5 days</li>
-                <li>• Frost Wolf Pup requires event currency grind</li>
-              </ul>
-            </div>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 mb-4">
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Goal</div>
-              <ul className="mt-1 text-xs text-[#BAC4D1] space-y-1">
-                <li>• Decide: Grind event for Frost Wolf Pup or skip?</li>
-                <li>• Maximize long-term farm value</li>
-              </ul>
-            </div>
-            <div className="rounded bg-[#1E212B] p-3 border border-[#252936]">
-              <div className="text-xs text-[#768294] uppercase tracking-wider">Recommended Route</div>
-              <ul className="mt-1 text-xs text-[#00E676] space-y-1">
-                <li>• Grind the event — even at the cost of 3 days farm income</li>
-                <li>• Frost Wolf Pup's 6-month appreciation &gt; 3 days of Golden Wheat farming</li>
-                <li>• Use the pet on a secondary plot post-event for steady income</li>
-              </ul>
-            </div>
-          </div>
-          <p className="text-sm leading-relaxed text-[#BAC4D1]">
-            <strong className="text-white">Why grind?</strong> Skipping the event saves you ~3 days of farming time (worth ~150,000 coins at your income level). But Frost Wolf Pup trades at 850,000 coins today and is expected to appreciate to ~1.1M coins within 6 months as Winter Event supply dries up. The 250,000 coin appreciation dwarfs the 150,000 coin farming income you would gain by skipping. Even if you do not use the pet on your farm (its 3.8× multiplier is below your eventual Legendary Egg targets), holding it as trade equity is strictly positive expected value.
-          </p>
-        </div>
-      </section>
-
-      {/* When to use — NEW */}
-      <section aria-labelledby="use-strategy-heading">
-        <h2 id="use-strategy-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
-          🎯 When to Use (and Not Use) Event Pets
-        </h2>
-        <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded bg-[#00E676]/5 p-3 border border-[#00E676]/20">
-              <div className="text-[#00E676] font-semibold mb-2 text-sm">✅ Use event pets when</div>
-              <ul className="space-y-1.5 text-xs text-[#BAC4D1]">
-                <li>• The event is live and the pet is only obtainable during the window. Always acquire at least one — even if you will not use it on your farm.</li>
-                <li>• You need a 3.5×+ multiplier pet and cannot afford Legendary Eggs yet. Event pets with 3.5×+ multipliers are competitive with mid-tier Legendary pets.</li>
-                <li>• The pet's passive ability matches your farm's seasonal needs (e.g., Frost Wolf Pup during Winter Event farming).</li>
-                <li>• You want trade leverage — event pets appreciate as supply dries up post-event.</li>
-              </ul>
-            </div>
-            <div className="rounded bg-[#FF3D00]/5 p-3 border border-[#FF3D00]/20">
-              <div className="text-[#FF3D00] font-semibold mb-2 text-sm">⚠️ Do NOT use event pets when</div>
-              <ul className="space-y-1.5 text-xs text-[#BAC4D1]">
-                <li>• The pet's multiplier is below 3.0× AND you already have a better pet. Low-tier event pets are collectibles, not farming assets.</li>
-                <li>• You are spending Robux on a low-multiplier event pet. The real-money cost is rarely justified for pets under 3.5×.</li>
-                <li>• You would have to sell your only high-tier pet to afford the event grind. Never sacrifice your farming multiplier for event currency.</li>
-                <li>• The event is recurring annually AND the pet's trade value is already flat. Recurring events limit appreciation upside.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming events — kept, refined */}
+      {/* Upcoming events — neutral release tracker */}
       <section aria-labelledby="upcoming-heading">
         <h2 id="upcoming-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
-          📅 Upcoming Event Pet Windows
+          📅 Upcoming Event Windows
         </h2>
         <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
           <p className="text-sm leading-relaxed text-[#BAC4D1] mb-3">
-            Plan your coin and event-currency budget around these windows. Missing a window means waiting up to 12 months for the event to potentially return — or paying post-event appreciation to acquire the pet via trading.
+            The Events Tracker records announced events and their listed reward text. Reward wording is reproduced as recorded and does not confirm drop rules, availability, or pet stats.
           </p>
           <ul className="mt-3 space-y-2">
             {events
@@ -317,45 +199,6 @@ export default function BestEventPetsPage() {
                 </li>
               ))}
           </ul>
-        </div>
-      </section>
-
-      {/* Common mistakes — NEW */}
-      <section aria-labelledby="mistakes-heading">
-        <h2 id="mistakes-heading" className="mb-4 font-heading text-[24px] font-semibold text-white lg:text-[28px]">
-          ⚠️ Common Event Pet Mistakes
-        </h2>
-        <div className="space-y-3">
-          <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 1: Comparing event pets to Legendary pets by multiplier only</h3>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              A 3.8× Frost Wolf Pup looks worse than a 4.8× Golden Dragon. But the Frost Wolf Pup is only available 2 months out of the year, while Golden Dragon is always hatchable. The scarcity premium on event pets often exceeds the multiplier gap — especially 6+ months post-event.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 2: Selling event pets immediately after the event ends</h3>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Event pet values are at their <em>lowest</em> during the event because supply is at peak. Values rise 30–50% in the 2–4 weeks after the event ends as supply dries up. Hold event pets for at least 1 month post-event before trading — unless you urgently need the coins for a Rare Egg.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 3: Skipping recurring events because "the pet will come back"</h3>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Even if the Winter Event returns next year, the Frost Wolf Pup's trade value will still be higher than during the original event window. Skipping is a 12-month opportunity cost — you lose the holding period AND the appreciation. Always acquire at least one event pet per event, even if it is recurring.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 4: Spending Robux on low-tier event pets</h3>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Event pets with multipliers below 3.0× are collectibles — they do not pay back their Robux cost through farming income. Reserve Robux for event pets with 3.5×+ multipliers or unique passive abilities (like auto-collect or crop protection). For free coin income, redeem <Link href="/grow-a-garden/codes" className="text-[#00E676] hover:underline">active codes</Link> instead of spending Robux.
-            </p>
-          </div>
-          <div className="rounded-xl border border-[#FF3D00]/30 bg-[#14161D] p-4">
-            <h3 className="text-sm font-semibold text-[#FF3D00] mb-2">Mistake 5: Trading your only event pet for a "better" Legendary pet</h3>
-            <p className="text-xs leading-relaxed text-[#768294]">
-              Even if the trade is mathematically fair, you lose the scarcity premium of the event pet. Legendary pets can always be re-hatched; event pets cannot. Only trade duplicate event pets, or event pets from events that are confirmed to return within 3 months.
-            </p>
-          </div>
         </div>
       </section>
 

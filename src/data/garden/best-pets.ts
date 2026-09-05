@@ -52,7 +52,7 @@ function buildBestPetsData(): EvolutionPageData {
         name: "Rare Egg",
         icon: "\uD83E\uDD5A\u2728",
         desc: "Mid-tier egg at 2,000 Coins. Contains Uncommon through Epic pets (1.5x-4.0x multiplier range). The sweet spot for cost-to-value ratio in the mid-game.",
-        sources: ["Pet Shop (2,000 Coins each)", "Event rewards (seasonal events)", "Promo codes (HONEYBEE2025 gives 1 Rare Egg)", "Trading with other players"],
+        sources: ["Pet Shop (2,000 Coins each)", "Event rewards (seasonal events)", "Promo codes (HONEYBEE2025 gives 1 Rare Egg)", "Starter and progression quests"],
         tip: "Rare Eggs are the best value in the game. Two Rare Eggs (4,000 Coins) give you two shots at a 2.0x+ pet, while one Legendary Egg (10,000 Coins) gives one shot. For building a balanced pet lineup, Rare Eggs are your workhorse.",
       },
       {
@@ -67,7 +67,7 @@ function buildBestPetsData(): EvolutionPageData {
         icon: "\uD83E\uDDEA",
         desc: "Consumable that increases your next egg hatch odds for rare pets by 15%. Stack up to 5 potions for a 75% boosted rare rate. Essential for Legendary Egg hatching.",
         sources: ["Promo codes (most reliable source)", "Daily spin wheel (uncommon prize)", "Seasonal event shops", "Premium shop (200 Coins each)"],
-        tip: "Never hatch a Legendary Egg without at least 3 Pet Growth Potions active. The difference between a ~5% S-Tier rate (unboosted) and a ~20% S-Tier rate (with 3 potions) is the difference between wasting 10,000 Coins and getting a Golden Phoenix Chick.",
+        tip: "Never hatch a Legendary Egg without at least 3 Pet Growth Potions active. The listed rates suggest a lower S-Tier chance unboosted than with 3 potions — these are listed gameplay references, not independently verified probabilities — but the in-game direction of the effect is what matters for the 10,000-Coin decision.",
       },
       {
         name: `${goldenDragon.name}`,
@@ -116,9 +116,9 @@ function buildBestPetsData(): EvolutionPageData {
     ],
 
     faq: [
-      { question: "What is the best pet in Grow a Garden?", answer: `${goldenPhoenix.name} (${goldenPhoenix.multiplier.toFixed(1)}x multiplier) is the best unconditional pet due to having the highest base multiplier with no seasonal, weather, or time-of-day restrictions. It is hatched exclusively from Legendary Eggs at roughly 5% drop rate. ${luckyBunny.name} can situationally exceed it with Leporine Bloom synergy (+18% on rabbit-type pairings) but is only available during the Easter seasonal event, making the Phoenix the more reliable endgame target.` },
+      { question: "What is the best pet in Grow a Garden?", answer: `${goldenPhoenix.name} (${goldenPhoenix.multiplier.toFixed(1)}x multiplier) is the best unconditional pet due to having the highest base multiplier with no seasonal, weather, or time-of-day restrictions. It is hatched exclusively from Legendary Eggs, which are listed with a low S-Tier drop rate — the exact rate is not independently verified here. ${luckyBunny.name} can situationally exceed it with Leporine Bloom synergy (+18% on rabbit-type pairings) but is only available during the Easter seasonal event, making the Phoenix the more reliable endgame target.` },
       { question: "How do I hatch a pet in Grow a Garden?", answer: "Visit the Pet Shop (marked with a paw icon on the minimap), purchase an egg (Basic: 500 Coins, Rare: 2,000 Coins, Legendary: 10,000 Coins), then click the egg in your inventory to hatch it. The pet appears immediately. You can apply Pet Growth Potions before hatching to boost your odds of getting a rarer pet." },
-      { question: "Do pets stack with mutations?", answer: `Yes — pet multipliers and mutation multipliers stack multiplicatively. For example: ${goldenPhoenix.name} (${goldenPhoenix.multiplier.toFixed(1)}x) x Aurelian Crown mutation (4.0x) = 20.0x total crop yield per harvest, the theoretical maximum in the current meta. This multiplicative stacking is the foundation of endgame farming optimization and is why you should invest in both systems rather than maxing one. Always equip your strongest pet before rolling mutations.` },
+      { question: "Do pets stack with mutations?", answer: `Yes — pet multipliers and mutation multipliers stack multiplicatively. For example: ${goldenPhoenix.name} (${goldenPhoenix.multiplier.toFixed(1)}x) x Aurelian Crown mutation (4.0x) = 20.0x total crop yield per harvest, the theoretical maximum in this recorded-field stacking example. This multiplicative stacking is the foundation of endgame farming optimization, which is why developing both systems together supports the highest recorded multipliers. Always equip your strongest pet before rolling mutations.` },
       { question: "How many Pet Growth Potions should I use before hatching?", answer: "Use 0-1 potions for Basic Eggs (500 Coins), 2-3 potions for Rare Eggs (2,000 Coins), and 5 potions for Legendary Eggs (10,000 Coins). The more expensive the egg, the more potions you should stack. A Legendary Egg without potions is gambling; with 5 potions, it is a strategic investment." },
       { question: "Can I have more than one pet active at a time?", answer: "You can own multiple pets but only one pet's multiplier is active on your farm at a time. However, owning multiple pets gives you flexibility — you can switch between them for different crops, seasons, or mutation synergy needs. Collecting a diverse pet roster is valuable for adapting to different farming strategies." },
       { question: "What is the difference between Basic, Rare, and Legendary Eggs?", answer: "Basic Eggs (500 Coins) hatch Common to Rare pets (1.0x-2.5x). Rare Eggs (2,000 Coins) hatch Uncommon to Epic pets (1.5x-4.0x). Legendary Eggs (10,000 Coins) hatch Epic to Mythic pets (2.5x-5.0x). Higher-tier eggs cost more but have significantly better odds for high-multiplier pets. Rare Eggs offer the best value for mid-game players." },
