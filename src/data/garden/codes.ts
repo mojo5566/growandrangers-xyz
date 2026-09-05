@@ -3,9 +3,11 @@ import type { CodesPageData } from "../types";
 const data: CodesPageData = {
   title: "Grow a Garden Codes — Active List",
   description: "Recorded Grow a Garden promo code entries for decorations, hats, and exclusive items. Code entries are project references — check each code in the game before use.",
-  updatedAt: "July 7, 2026",
-  lastChecked: "July 7, 2026",
+  updatedAt: "September 5, 2026",
+  lastChecked: "September 5, 2026",
   sources: [
+    { name: "Fossbytes", url: "https://fossbytes.com/grow-a-garden-codes-2/", type: "Community", lastChecked: "September 5, 2026" },
+    { name: "MMO Culture", url: "https://mmoculture.com/2026/08/roblox-grow-a-garden-codes/", type: "Community", lastChecked: "September 5, 2026" },
     { name: "Roonby", url: "https://roonby.com/2026/05/30/grow-a-garden-codes/", type: "Community", lastChecked: "July 7, 2026" },
     { name: "WishDown", url: "https://m.wishdown.com/article/890473.html", type: "Community", lastChecked: "July 7, 2026" },
     { name: "NetEase Gaming", url: "https://www.163.com/dy/article/L058JERK05561FY6.html", type: "Community", lastChecked: "July 7, 2026" },

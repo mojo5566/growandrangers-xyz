@@ -27,7 +27,7 @@ export const events: GardenEvent[] = [
     type: "Season",
     startDate: "June 2026",
     endDate: "August 2026",
-    status: "Active",
+    status: "Ended",
     rewards: [
       "Phoenix Bloom Seed (50,000 Sheckles, Summer only)",
       "Magma Pepper Seed (-25% price for event duration)",
@@ -36,8 +36,8 @@ export const events: GardenEvent[] = [
       "+20% harvest value on all Summer crops",
     ],
     description:
-      "Limited-time Summer seasonal event introducing Summer-only crops, the Phoenix Bloom seed at 50,000 Sheckles, and a +20% bonus on all Summer-season harvests. Event runs through August 2026.",
-    updatedAt: "July 27, 2026",
+      "Limited-time Summer seasonal event introducing Summer-only crops, the Phoenix Bloom seed at 50,000 Sheckles, and a +20% bonus on all Summer-season harvests. Event ran through August 2026.",
+    updatedAt: "September 5, 2026",
   },
   {
     id: "zen-update-event-2026",
@@ -45,7 +45,7 @@ export const events: GardenEvent[] = [
     type: "Event",
     startDate: "June 2026",
     endDate: "July 2026",
-    status: "Active",
+    status: "Ended",
     rewards: [
       "Code: RDCAward — RDC Award Trophy (cosmetic)",
       "Code: BEANORLEAVE10 — Green Bean Chamber (cosmetic)",
@@ -55,8 +55,43 @@ export const events: GardenEvent[] = [
       "8 new pets including Golden Dragon (Legendary)",
     ],
     description:
-      "Celebration event for the Zen Update (v2.4.0) introducing Zen-themed decorations, three new active codes (RDCAward, BEANORLEAVE10, torigate), and a database expansion with 19 new crops, 8 new mutations, and 8 new pets.",
-    updatedAt: "July 27, 2026",
+      "Celebration event for the Zen Update (v2.4.0) introducing Zen-themed decorations, three new codes (RDCAward, BEANORLEAVE10, torigate), and a database expansion with 19 new crops, 8 new mutations, and 8 new pets.",
+    updatedAt: "September 5, 2026",
+  },
+  {
+    id: "cooking-event-2026",
+    title: "Cooking Event 2026",
+    type: "Event",
+    startDate: "August 29, 2026",
+    endDate: "Ongoing as of September 5, 2026",
+    status: "Active",
+    rewards: [
+      "New Cooking Event activities (Update 1.65.0)",
+      "Various new seeds and items (individual names not yet recorded in this dataset)",
+    ],
+    description:
+      "Cooking Event introduced by the August 29, 2026 update (1.65.0), which also included cooking, pet-passive, and other fixes plus bug fixes. Event-tracker coverage lists a week-long event slot running August 29 through September 5, 2026.",
+    updatedAt: "September 5, 2026",
+  },
+  {
+    id: "harvest-moon-event-2026",
+    title: "Harvest Moon Event 2026",
+    type: "Event",
+    startDate: "August 1, 2026",
+    endDate: "August 29, 2026",
+    status: "Ended",
+    rewards: [
+      "Moon Coins from selling Moonbeam-mutated fruit",
+      "Moon Coin Madness milestone rewards (seven milestones)",
+      "Lunar Lantern Seed (all seven Moon Coin Madness milestones)",
+      "Moon Coin Shop",
+      "Wise Owl pet (Part 2)",
+      "Season Pass 7 (Part 2)",
+      "Harvest Moon Shovel cosmetic skin (80% Collection completion, Part 4)",
+    ],
+    description:
+      "Harvest Moon event announced on the official Grow a Garden X account on August 1, 2026 UTC. Place the required fruits on the surrounding pillars to summon Harvest Moon weather, collect Moonbeam-mutated fruit, and sell it for Moon Coins. Rolled out in weekly parts through August 29, 2026.",
+    updatedAt: "September 5, 2026",
   },
   {
     id: "campfire-event-part-3",
@@ -64,7 +99,7 @@ export const events: GardenEvent[] = [
     type: "Event",
     startDate: "June 2026",
     endDate: "July 2026",
-    status: "Active",
+    status: "Ended",
     rewards: [
       "Campfire Ritual mechanic — place 4 Inferno Shards + a pet to grant Inferno pet mutation",
       "Pet Level cap raised to 500 — unlock 4 new pet mutations at Level 500",
@@ -74,8 +109,8 @@ export const events: GardenEvent[] = [
       "2 new campfire crafting recipes",
     ],
     description:
-      "Third major content drop for the Campfire Event, released June 20, 2026. Introduces the Campfire Ritual mechanic for pet mutations, raises the pet level cap to 500, adds two new plants (Shadow Spine, Smoke Stalk) and two new pets (Shadow Cat, Flame Bear). Inferno Shards are earned every 25 Bearnaby quests and used to perform Campfire Rituals that grant the Inferno pet mutation.",
-    updatedAt: "July 27, 2026",
+      "Third major content drop for the Campfire Event, released June 20, 2026. Introduced the Campfire Ritual mechanic for pet mutations, raised the pet level cap to 500, added two new plants (Shadow Spine, Smoke Stalk) and two new pets (Shadow Cat, Flame Bear). Inferno Shards are earned every 25 Bearnaby quests and used to perform Campfire Rituals that grant the Inferno pet mutation.",
+    updatedAt: "September 5, 2026",
   },
 
   // ============================================================

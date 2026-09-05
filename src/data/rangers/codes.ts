@@ -1,11 +1,12 @@
 import type { CodesPageData } from "../types";
 
 const data: CodesPageData = {
-  title: "Re:Rangers X Codes — 48 Active",
-  description: "All 48 working Re:Rangers X promo codes for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Anniversary Coins, and exclusive units. Verified and updated daily.",
-  updatedAt: "July 7, 2026",
-  lastChecked: "July 7, 2026",
+  title: "Re:Rangers X Codes — 61 Recorded",
+  description: "Recorded Re:Rangers X promo code entries for Trait Rerolls, Gems, Gold, Soul Fragments, Stat Boosters, Anniversary Coins, and exclusive items. Code entries are project references — codes can expire at any time, so check each code in the game before use.",
+  updatedAt: "September 5, 2026",
+  lastChecked: "September 5, 2026",
   sources: [
+    { name: "Fossbytes", url: "https://fossbytes.com/re-rangers-x-codes/", type: "Community", lastChecked: "September 5, 2026" },
     { name: "MobileMatters", url: "https://mobilematters.gg/guides/redeem-codes/rerangers-x", type: "Community", lastChecked: "July 7, 2026" },
     { name: "Roonby", url: "https://roonby.com/2026/05/31/anime-rangers-x-codes/", type: "Community", lastChecked: "July 7, 2026" },
     { name: "ProGameGuides", url: "https://progameguides.com/roblox/re-rangers-x-codes/", type: "Community", lastChecked: "July 7, 2026" },
@@ -15,7 +16,20 @@ const data: CodesPageData = {
     { label: "Re:Rangers X Codes", href: "/anime-rangers-x/codes" },
   ],
   activeCodes: [
-    { code: "CATCHINGUP", reward: "1x Asto (Half) Unit + 150 Trait Rerolls + 20,000 Gems + 100,000 Gold", note: "Latest update — includes exclusive unit", source: "https://mobilematters.gg/guides/redeem-codes/rerangers-x" },
+    { code: "AdminAbuseNeedsABuff", reward: "1x Sovereign Voucher", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "HopeForRRX", reward: "100,000 Gems + 200 Shadow Shards", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "GrindBoost!", reward: "1,000,000 Sol Tokens + 1,000,000 Shadow Orbs", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "SummerPart1Flop", reward: "100 Summer Capsules + 50,000 Beach Balls", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "DemonKingReturns", reward: "100 Trait Rerolls + 25 Soul Fragments + 10 Stat Boosters + 25 All Universe Materials", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "SummerPart1", reward: "75 Trait Rerolls + 150,000 Gold + 20 Soul Fragments + 10 Dr. Megga Punk", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "delaRXy", reward: "200 Trait Rerolls + 100 Cursed Finger + 5 Stat Boosters + 30 All Universe Materials + 10,000 Summer Currency", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "Capsules?!?", reward: "50 Trait Rerolls + 10 Soul Fragments + 20 Summer Capsules", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "SummerTime", reward: "50 Trait Rerolls + 5 Stat Boosters + 5 Dr. Megga Punk + 15,000 Summer Currency", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "MOTIVATION", reward: "100 Trait Rerolls + 500,000 Shadow Orbs + 10 Stat Boosters + 25 Soul Fragments + 25 Dr. Megga Punk", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "JACKPOT", reward: "50 Trait Rerolls + 500,000 Shadow Orbs + 10 Stat Boosters + 20 Soul Fragments + 15 Dr. Megga Punk", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "ALPHA", reward: "30 Trait Rerolls + 10 Soul Fragments + 10,000 Gems + 5 Stat Boosters + 5 Dr. Megga Punk", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "OMEGA", reward: "20 Trait Rerolls + 100,000 Gold + 15 Soul Fragments + 5 Dr. Megga Punk + 15 All Universe Materials", note: "Reported active September 1, 2026 — codes can expire at any time", source: "https://fossbytes.com/re-rangers-x-codes/" },
+    { code: "CATCHINGUP", reward: "1x Asto (Half) Unit + 150 Trait Rerolls + 20,000 Gems + 100,000 Gold", note: "Includes exclusive unit — reported active July 2026; current status not re-verified", source: "https://mobilematters.gg/guides/redeem-codes/rerangers-x" },
     { code: "THESAGEKING", reward: "100 Trait Rerolls + 15 Grail Cups + 10 Stat Boosters + 25 Soul Fragments + 25 Dr. Megga Punk", note: "Requires level 20", source: "https://mobilematters.gg/guides/redeem-codes/rerangers-x" },
     { code: "SINGULARITY", reward: "50 Trait Rerolls + 50 Grail Crown + 10 Stat Boosters + 20 Soul Fragments + 15 Dr. Megga Punk + 15 All Universes", note: "Requires level 15", source: "https://mobilematters.gg/guides/redeem-codes/rerangers-x" },
     { code: "HOLYGRAIL", reward: "30 Trait Rerolls + 25 Grail Crown + 10,000 Gems + 5 Stat Boosters + 5 Dr. Megga Punk", note: "No level requirement", source: "https://mobilematters.gg/guides/redeem-codes/rerangers-x" },

@@ -25,6 +25,68 @@ export interface GardenUpdate {
 
 export const updates: GardenUpdate[] = [
   {
+    id: "cooking-event-update",
+    title: "Cooking Event Update",
+    date: "August 29, 2026",
+    type: "Update",
+    version: "1.65.0",
+    summary:
+      "August 29, 2026 update introducing a new Cooking Event, various new seeds and items, plus cooking, pet-passive, and other fixes and changes. Individual new-item names are not yet recorded in this dataset.",
+    features: [
+      "New Cooking Event",
+      "Various new seeds and items (individual names not yet recorded here)",
+      "Cooking, pet passive, and other fixes/changes",
+      "Bug fixes",
+    ],
+    status: "Current",
+    updatedAt: "September 5, 2026",
+  },
+  {
+    id: "harvest-moon-part-4",
+    title: "Harvest Moon Event Part 4",
+    date: "August 15, 2026",
+    type: "Update",
+    version: "1.63.0",
+    summary:
+      "Fourth part of the Harvest Moon Event adding 7 plants and 6 pets per the community update log (including Eclipse Berry, Maize Stalk, and Cornling), increased pet storage, the Harvest Moon Collection reward track, a Harvest Moon Shovel cosmetic, and multiple bug fixes.",
+    features: [
+      "7 new plants and 6 new pets recorded for this part, including Eclipse Berry, Maize Stalk, and Cornling",
+      "Increased pet storage",
+      "Harvest Moon Collection reward track — up to 20 tiers, resettable after tier 20; the Harvest Moon Shovel skin unlocks at 80% completion",
+      "New quest stand — three active quests at a time with a four-hour refresh timer",
+      "Moon Egg moved into Harvest Moon Crafting",
+      "Wise Owl cooldown now decreases twice as fast while a Harvest Moon is active",
+      "Bug fixes: plants occasionally stopping growth, sell-NPC distance handling, and floating apples; general performance improvements",
+    ],
+    newItems: {
+      seeds: ["Eclipse Berry", "Maize Stalk"],
+      pets: ["Cornling"],
+    },
+    status: "Current",
+    updatedAt: "September 5, 2026",
+  },
+  {
+    id: "harvest-moon-event-2026",
+    title: "Harvest Moon Event",
+    date: "August 1, 2026",
+    type: "Event",
+    summary:
+      "Harvest Moon event announced on the official Grow a Garden X account on August 1, 2026 UTC. Place the required fruits on the surrounding pillars to summon Harvest Moon weather, collect Moonbeam-mutated fruit, and sell it for Moon Coins. The event rolled out in weekly parts through August 29, 2026.",
+    features: [
+      "Pillar-fruit summoning mechanic for Harvest Moon weather",
+      "Moonbeam mutation for fruit, sold for Moon Coins",
+      "Moon Coin Madness milestone track — completing all seven milestones unlocks the Lunar Lantern Seed",
+      "Moon Coin Shop",
+      "Wise Owl pet introduced in Part 2 (August 8, 2026)",
+      "Season Pass 7 introduced in Part 2",
+    ],
+    newItems: {
+      seeds: ["Lunar Lantern Seed"],
+    },
+    status: "Archived",
+    updatedAt: "September 5, 2026",
+  },
+  {
     id: "campfire-part-3",
     title: "Campfire Event Part 3",
     date: "June 20, 2026",
@@ -47,8 +109,8 @@ export const updates: GardenUpdate[] = [
       seeds: ["Shadow Spine", "Smoke Stalk"],
       pets: ["Shadow Cat", "Flame Bear"],
     },
-    status: "Current",
-    updatedAt: "July 27, 2026",
+    status: "Archived",
+    updatedAt: "September 5, 2026",
   },
   {
     id: "zen-update",

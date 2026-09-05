@@ -48,7 +48,7 @@ const faqs = [
   {
     question: "What events are currently active in Grow a Garden?",
     answer:
-      "There are currently 2 active events: Summer Event 2026 (runs through August 2026, +20% harvest value on Summer crops) and Zen Update Celebration (celebrating the v2.4.0 update with three new codes — RDCAward, BEANORLEAVE10, torigate). Check the Active Events section above for full reward details.",
+      "As of the September 5, 2026 check, the active event is Cooking Event 2026, introduced by the August 29, 2026 update (1.65.0). Recently ended events include the Harvest Moon Event (August 1–29, 2026), Summer Event 2026, Zen Update Celebration, and Campfire Event Part 3. Check the Active Events section above for the current list and full reward details.",
   },
   {
     question: "What is the next Grow a Garden event?",
