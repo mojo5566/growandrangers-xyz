@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContentLayout from "@/components/ContentLayout";
+import AdsterraAd from "@/components/AdsterraAd";
 import ContentFAQ from "@/components/ContentFAQ";
 import RelatedContent from "@/components/RelatedContent";
 import { crops } from "@/data/garden/database/crops";
@@ -241,6 +242,7 @@ export default function BestCropsPage() {
       />
 
       <ContentFAQ faqs={faqs} />
+      <AdsterraAd />
     </ContentLayout>
   );
 }
