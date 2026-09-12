@@ -11,7 +11,8 @@ const boundary =
 
 export const metadata: Metadata = {
   title: "Event Seed Project Records — Grow a Garden",
-  description: `${boundary} Entries are ordered using recorded tier and price fields.`,
+  description:
+    "Recorded Grow a Garden event seed entries with tier, season, currency, and price fields for comparison. Internal editorial reference, not a market price guide.",
   keywords: [
     "Grow a Garden event seed records",
     "Grow a Garden seed project reference",
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/grow-a-garden/best-event-seeds" },
   openGraph: {
     title: "Event Seed Project Records — Grow a Garden",
-    description: `${boundary} Entries are ordered using recorded tier and price fields.`,
+    description:
+      "Recorded Grow a Garden event seed entries with tier, season, currency, and price fields for comparison. Internal editorial reference, not a market price guide.",
     type: "website",
   },
 };

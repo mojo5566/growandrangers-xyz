@@ -11,11 +11,13 @@ const boundary =
 
 export const metadata: Metadata = {
   title: "Legendary Seed Project Records — Grow a Garden",
-  description: `${boundary} Entries are ordered using recorded tier and price fields.`,
+  description:
+    "Grow a Garden seed records whose rarity field is Legendary, with tier, season, price, and growth time fields. Internal editorial reference for comparison.",
   alternates: { canonical: "/grow-a-garden/best-legendary-seeds" },
   openGraph: {
     title: "Legendary Seed Project Records — Grow a Garden",
-    description: `${boundary} Entries are ordered using recorded tier and price fields.`,
+    description:
+      "Grow a Garden seed records whose rarity field is Legendary, with tier, season, price, and growth time fields. Internal editorial reference for comparison.",
     type: "website",
   },
 };

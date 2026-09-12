@@ -15,11 +15,12 @@ import { CONTENT_UPDATED_AT } from "@/lib/content-dates";
 export const metadata: Metadata = {
   title: "Grow a Garden — Codes & Guides",
   description:
-    "Grow a Garden reference hub with project records, navigation, calculators, and guides. Trading-related fields are internal editorial references, not official prices, live market quotes, or independently verified transaction data.",
+    "Grow a Garden guides, recorded codes, updates, calculators, and reference databases for crops, pets, seeds, mutations, and trading fields.",
   alternates: { canonical: "/grow-a-garden/" },
   openGraph: {
     title: "Grow a Garden — Codes & Guides",
-    description: "Grow a Garden reference hub with project records, navigation, calculators, and guides.",
+    description:
+      "Grow a Garden guides, recorded codes, updates, calculators, and reference databases for crops, pets, seeds, mutations, and trading fields.",
     type: "website",
   },
 };
@@ -411,7 +412,7 @@ export default function GrowAGardenHubPage() {
   return (
     <ContentLayout
       title="Grow a Garden Hub"
-      description="Grow a Garden reference hub with project records, navigation, calculators, and guides. Trading-related fields are internal editorial references, not official prices, live market quotes, or independently verified transaction data."
+      description="Grow a Garden guides, recorded codes, updates, calculators, and reference databases for crops, pets, seeds, mutations, and trading fields."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden", href: "/grow-a-garden" },
