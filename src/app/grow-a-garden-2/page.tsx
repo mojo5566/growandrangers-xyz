@@ -5,7 +5,7 @@ import ContentFAQ from "@/components/ContentFAQ";
 
 export const metadata: Metadata = {
   title: "Grow a Garden 2 — Codes & Guides",
-  description: "Complete Grow a Garden 2 hub: active promo codes, beginner guide, night stealing tactics, guild system guide, and all new features. Updated daily for the Roblox sequel.",
+  description: "Complete Grow a Garden 2 hub: recorded promo code entries, beginner guide, night stealing tactics, guild system guide, and new feature breakdowns for the Roblox sequel.",
   alternates: { canonical: "/grow-a-garden-2/" },
   openGraph: {
     title: "Grow a Garden 2 — Codes & Guides",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const guideLinks = [
-  { title: "Active Codes", description: "All working Grow a Garden 2 promo codes — updated daily.", href: "/grow-a-garden-2/codes" },
+  { title: "Active Codes", description: "Recorded Grow a Garden 2 promo code entries — check each code in the game.", href: "/grow-a-garden-2/codes" },
   { title: "Beginner Guide", description: "Complete walkthrough: day/night cycle, Sheckles, planting, and more.", href: "/grow-a-garden-2/beginner-guide" },
   { title: "Night Stealing Guide", description: "Master raid tactics, defense setups, and garden gnome placement.", href: "/grow-a-garden-2/night-stealing-guide" },
   { title: "Guild Guide", description: "Create guilds, win weekly competitions, and earn the Black Dragon & Ice Snake pets.", href: "/grow-a-garden-2/guild-guide" },
@@ -35,14 +35,14 @@ const faqs = [
   { question: "Is Grow a Garden 2 free?", answer: "Yes, Grow a Garden 2 is completely free to play on Roblox. Optional in-game purchases exist using Robux, but all core gameplay is accessible without spending real money." },
   { question: "Should I play Grow a Garden 1 or 2?", answer: "Both games are active and worth playing. Grow a Garden 1 offers the classic farming experience with a mature meta. Grow a Garden 2 adds social features like stealing and guilds, making it better for players who want competitive and community-driven gameplay." },
   { question: "What's new in Grow a Garden 2?", answer: "The biggest additions are: night stealing (raid other players' farms), guild system (weekly competitions for exclusive pets), item shop (buy defensive gnomes and utility items), and the Sheckles currency system. The core planting and mutation mechanics return from the original." },
-  { question: "How do I redeem codes in Grow a Garden 2?", answer: "Launch the game, click the silver gear icon in the top-left corner, paste your code into the input field, and click Claim. Check our Codes page for all active codes and step-by-step instructions." },
+  { question: "How do I redeem codes in Grow a Garden 2?", answer: "Launch the game, click the silver gear icon in the top-left corner, paste your code into the input field, and click Claim. Check our Codes page for recorded code entries and step-by-step instructions." },
 ];
 
 export default function GrowAGarden2HubPage() {
   return (
     <ContentLayout
       title="Grow a Garden 2 Hub"
-      description="Complete Grow a Garden 2 hub: active promo codes, beginner guide, night stealing tactics, guild system guide, and all new features. Updated daily for the Roblox sequel."
+      description="Complete Grow a Garden 2 hub: recorded promo code entries, beginner guide, night stealing tactics, guild system guide, and new feature breakdowns for the Roblox sequel."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Grow a Garden 2", href: "/grow-a-garden-2" },

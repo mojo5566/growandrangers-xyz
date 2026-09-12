@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | BloxPulse",
   },
   description:
-    "Your daily index for updated working Roblox promo codes, meta tier rankings, item values, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+    "Roblox game reference site with recorded promo codes, meta tier rankings, item value notes, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
   keywords: [
     "Roblox codes",
     "Grow a Garden codes",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "BloxPulse",
     title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides",
     description:
-      "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+      "Recorded promo codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
     url: BASE_URL,
     locale: "en_US",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BloxPulse — Roblox Codes, Tier Lists & Gameplay Guides",
     description:
-      "Updated working Roblox codes, tier lists, and gameplay guides.",
+      "Recorded Roblox promo codes, tier lists, and gameplay guides.",
     images: [`${BASE_URL}/og-image.png`],
   },
   robots: {

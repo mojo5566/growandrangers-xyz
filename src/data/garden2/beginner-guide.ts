@@ -16,7 +16,7 @@ const data: GuidePageData = {
     { question: "How do I join a guild?", answer: "To join a guild, open the guild menu (usually accessible from the main HUD), search for open guilds, and apply. You can also create your own guild if you have enough Sheckles. Guilds participate in weekly competitions for exclusive rewards like the Black Dragon pet (top 25) and the Ice Snake pet (top 100)." },
   ],
   relatedGuides: [
-    { label: "Active Codes", href: "/grow-a-garden-2/codes", description: "All working Grow a Garden 2 promo codes" },
+    { label: "Active Codes", href: "/grow-a-garden-2/codes", description: "Recorded Grow a Garden 2 promo code entries" },
     { label: "Night Stealing Guide", href: "/grow-a-garden-2/night-stealing-guide", description: "Master nighttime raiding and farm defense" },
     { label: "Guild Guide", href: "/grow-a-garden-2/guild-guide", description: "Guild system, weekly competitions, and rewards" },
     { label: "Grow a Garden 1 Beginner Guide", href: "/grow-a-garden/beginner-guide", description: "Original game guide — still useful for fundamentals" },

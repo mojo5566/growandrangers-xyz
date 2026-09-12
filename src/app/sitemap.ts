@@ -62,7 +62,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/grow-a-garden/eggs", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/seeds", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/updates", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
-  { path: "/grow-a-garden/trading", priority: 0.8, changefreq: "daily" as const, lastModified: "July 19, 2026" },
+  { path: "/grow-a-garden/trading", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/events", priority: 0.8, changefreq: "weekly" as const, lastModified: "July 19, 2026" },
   { path: "/grow-a-garden/harvest-moon", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/beginner-farming", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBeginnerFarming.updatedAt },
@@ -70,7 +70,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/grow-a-garden/best-pets", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBestPets.updatedAt },
   { path: "/grow-a-garden/best-mythical-pets", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/best-seeds", priority: 0.7, changefreq: "weekly" as const },
-  { path: "/grow-a-garden/top-trading-items", priority: 0.7, changefreq: "daily" as const },
+  { path: "/grow-a-garden/top-trading-items", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/pet-guide", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/best-mutations", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenBestMutations.updatedAt },
   { path: "/grow-a-garden/beginner-guide", priority: 0.7, changefreq: "weekly" as const, lastModified: gardenGuideBeginner.updatedAt },
@@ -78,7 +78,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/grow-a-garden/calculators", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/crop-value-calculator", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/mutation-calculator", priority: 0.8, changefreq: "weekly" as const },
-  { path: "/grow-a-garden/trading-calculator", priority: 0.8, changefreq: "daily" as const },
+  { path: "/grow-a-garden/trading-calculator", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/pet-value-calculator", priority: 0.8, changefreq: "weekly" as const },
   { path: "/grow-a-garden/how-to-start", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/beginner-tips", priority: 0.7, changefreq: "weekly" as const },
@@ -106,7 +106,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/grow-a-garden/best-legendary-seeds", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/best-event-seeds", priority: 0.7, changefreq: "weekly" as const },
   // Trading专题
-  { path: "/grow-a-garden/rare-items-value", priority: 0.7, changefreq: "daily" as const },
+  { path: "/grow-a-garden/rare-items-value", priority: 0.7, changefreq: "weekly" as const },
   { path: "/grow-a-garden/trading-tips", priority: 0.7, changefreq: "weekly" as const },
   // Beginner专题
   { path: "/grow-a-garden/how-to-level-fast", priority: 0.7, changefreq: "weekly" as const },
@@ -166,7 +166,7 @@ const dynamicGarden: SitemapEntry[] = [
   ...trading.map((t) => ({
     path: `/grow-a-garden/trading/${t.id}`,
     priority: 0.7,
-    changefreq: "daily" as const,
+    changefreq: "weekly" as const,
     lastModified: t.updatedAt,
   })),
   ...events.map((e) => ({

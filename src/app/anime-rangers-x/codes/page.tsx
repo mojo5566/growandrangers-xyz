@@ -16,7 +16,7 @@ export default function AnimeRangersXCodesPage() {
   return (
     <ContentLayout title={data.title} description={data.description} breadcrumbs={data.breadcrumbs} canonicalPath="/anime-rangers-x/codes" accent="rangers" updatedAt={data.updatedAt}>
       <section className="rounded-xl border border-[#252936] bg-[#14161D] p-4" aria-label="Last updated">
-        <div className="flex items-center gap-2"><span className="text-sm">🕒</span><p className="text-sm text-[#BAC4D1]"><strong className="text-white">Last Updated:</strong> {data.updatedAt} — All {data.activeCodes.length} active codes verified and working.</p></div>
+        <div className="flex items-center gap-2"><span className="text-sm">🕒</span><p className="text-sm text-[#BAC4D1]"><strong className="text-white">Last Updated:</strong> {data.updatedAt} — {data.activeCodes.length} recorded code entries. Check each code in the game, as codes can expire at any time.</p></div>
       </section>
       <section aria-labelledby="active-heading">
         <h2 id="active-heading" className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4">🎁 Active Codes</h2>

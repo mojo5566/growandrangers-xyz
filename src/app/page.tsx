@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "BloxPulse",
     title: "BloxPulse — Roblox Guides & Databases",
     description:
-      "Updated working codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
+      "Recorded promo codes, meta tier rankings, and in-depth gameplay guides for Grow a Garden and Anime Rangers X.",
     url: "https://growandrangers.xyz",
     locale: "en_US",
   },
@@ -276,7 +276,7 @@ export default function Home() {
             className="mb-2 font-heading text-[24px] font-semibold text-white lg:text-[32px]"
           >
             🎁 Latest Active Promo Codes{" "}
-            <span className="text-sm font-normal text-[#768294]">(Updated July 2026)</span>
+            <span className="text-sm font-normal text-[#768294]">(Updated {gardenCodes.updatedAt})</span>
           </h2>
           <p className="mb-8 text-sm text-[#768294]">
             One-click copy — paste these codes in-game for free rewards.

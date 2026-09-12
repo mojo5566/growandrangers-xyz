@@ -28,7 +28,7 @@ export default function GrowAGarden2CodesPage() {
         <div className="flex items-center gap-2">
           <span className="text-sm">🕒</span>
           <p className="text-sm text-[#BAC4D1]">
-            <strong className="text-white">Last Checked:</strong> {data.lastChecked} — {data.activeCodes.length} active code{data.activeCodes.length !== 1 ? "s" : ""} verified.
+            <strong className="text-white">Last Checked:</strong> {data.lastChecked} — {data.activeCodes.length} recorded code{data.activeCodes.length !== 1 ? "s" : ""}. Check each code in the game before use.
           </p>
         </div>
       </section>

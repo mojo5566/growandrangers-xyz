@@ -32,7 +32,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
     { label: "All Mutations Database", href: "/grow-a-garden/mutations", description: "Browse every mutation in the Grow a Garden database", category: "database" },
     { label: "Pet Tier List", href: "/grow-a-garden/pet-tier-list", description: "All pets ranked — mutations and pets stack multiplicatively", category: "guide" },
     { label: "Crop Value List", href: "/grow-a-garden/crop-value-list", description: "Recorded crop coin fields and mutation multiplier reference", category: "guide" },
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest working codes for free shards and eggs", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest recorded codes for free shards and eggs", category: "guide" },
   ],
   pets: [
     { label: "Pet Tier List", href: "/grow-a-garden/pet-tier-list", description: "Full pet rankings with detailed analysis", category: "guide" },
@@ -41,7 +41,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
     { label: "Eggs Database", href: "/grow-a-garden/eggs", description: "Every egg with recorded price, hatch time, and source fields", category: "database" },
     { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Pets stack multiplicatively with mutations", category: "guide" },
     { label: "Money Making Guide", href: "/grow-a-garden/money-making-guide", description: "Recorded crop, pet, and mutation fields for project reference", category: "guide" },
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest working codes for free eggs", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest recorded codes for free eggs", category: "guide" },
   ],
   eggs: [
     { label: "All Pets Database", href: "/grow-a-garden/pets", description: "Browse every pet obtainable from eggs", category: "database" },
@@ -49,7 +49,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
     { label: "Best Pets Guide", href: "/grow-a-garden/best-pets", description: "Which eggs to buy and which pets to chase", category: "guide" },
     { label: "All Eggs Database", href: "/grow-a-garden/eggs", description: "Browse every egg in the Grow a Garden database", category: "database" },
     { label: "Money Making Guide", href: "/grow-a-garden/money-making-guide", description: "Recorded crop, pet, and mutation fields for project reference", category: "guide" },
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest working codes for free eggs and shards", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest recorded codes for free eggs and shards", category: "guide" },
   ],
   seeds: [
     { label: "All Crops Database", href: "/grow-a-garden/crops", description: "Browse every crop these seeds grow into", category: "database" },
@@ -61,7 +61,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
     { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Recorded mutation tiers and multipliers for reference", category: "guide" },
   ],
   updates: [
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest working codes released alongside updates", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest recorded codes released alongside updates", category: "guide" },
     { label: "All Seeds Database", href: "/grow-a-garden/seeds", description: "Browse every seed — many were introduced in updates", category: "database" },
     { label: "All Pets Database", href: "/grow-a-garden/pets", description: "Browse every pet — track which updates added them", category: "database" },
     { label: "All Crops Database", href: "/grow-a-garden/crops", description: "Browse every crop — track which updates added them", category: "database" },
@@ -78,7 +78,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
   ],
   events: [
     { label: "Updates Tracker", href: "/grow-a-garden/updates", description: "See which updates launched alongside events", category: "database" },
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest working codes — many released with events", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Latest recorded codes — many released with events", category: "guide" },
     { label: "All Seeds Database", href: "/grow-a-garden/seeds", description: "Browse every seed — many introduced via seasonal events", category: "database" },
     { label: "All Pets Database", href: "/grow-a-garden/pets", description: "Browse every pet — many introduced via limited-time events", category: "database" },
     { label: "Trading Records", href: "/grow-a-garden/trading", description: "Review internal records for event-related items", category: "database" },
@@ -87,7 +87,7 @@ const gardenLinks: Record<string, LinkEntry[]> = {
   guide: [
     { label: "Value Calculator", href: "/grow-a-garden/value-calculator", description: "Estimate crop sell values with any mutation multiplier", category: "tool" },
     { label: "Eggs Database", href: "/grow-a-garden/eggs", description: "All eggs with recorded price, hatch time, and source fields", category: "database" },
-    { label: "Active Codes", href: "/grow-a-garden/codes", description: "All working promo codes — updated daily", category: "guide" },
+    { label: "Active Codes", href: "/grow-a-garden/codes", description: "Recorded promo code entries — check each code in the game", category: "guide" },
     { label: "Beginner Guide", href: "/grow-a-garden/beginner-guide", description: "Everything new players need to know", category: "guide" },
     { label: "Mutation Tier List", href: "/grow-a-garden/mutation-tier-list", description: "Every mutation ranked by rarity and multiplier", category: "guide" },
     { label: "Pet Tier List", href: "/grow-a-garden/pet-tier-list", description: "All pets ranked by hatching value and ability", category: "guide" },
@@ -114,10 +114,10 @@ const rangersLinks: Record<string, LinkEntry[]> = {
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "See which units benefit most from each trait", category: "guide" },
     { label: "Best Units", href: "/anime-rangers-x/best-units", description: "Top-performing units and their ideal traits", category: "guide" },
     { label: "Evolution Guide", href: "/anime-rangers-x/evolution-guide", description: "Evolve your units to unlock more trait slots", category: "guide" },
-    { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Latest working codes for free gems and rerolls", category: "guide" },
+    { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Latest recorded codes for free gems and rerolls", category: "guide" },
   ],
   guide: [
-    { label: "Active Codes", href: "/anime-rangers-x/codes", description: "All working promo codes — updated daily", category: "guide" },
+    { label: "Active Codes", href: "/anime-rangers-x/codes", description: "Recorded promo code entries — check each code in the game", category: "guide" },
     { label: "Trait Reroll Guide", href: "/anime-rangers-x/trait-reroll", description: "Use Trait Rerolls efficiently at every stage", category: "guide" },
     { label: "Beginner Guide", href: "/anime-rangers-x/beginner-guide", description: "Everything new players need to know", category: "guide" },
     { label: "Unit Tier List", href: "/anime-rangers-x/unit-tier-list", description: "Every unit ranked by power and utility", category: "guide" },

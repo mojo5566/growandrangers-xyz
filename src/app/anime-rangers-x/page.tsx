@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Anime Rangers X — Codes & Guides",
   description:
-    "Complete Anime Rangers X hub: working promo codes, unit tier list, trait rankings, evolution guide, and team compositions. Updated daily for Re:Rangers X.",
+    "Complete Anime Rangers X hub: recorded promo code entries, unit tier list, trait rankings, evolution guide, and team compositions for Re:Rangers X.",
   alternates: { canonical: "/anime-rangers-x/" },
   openGraph: {
     title: "Anime Rangers X — Codes & Guides",
@@ -36,7 +36,7 @@ const databaseCards = [
 const guideLinks = [
   {
     title: "Active Codes",
-    description: "All working promo codes with rewards — updated daily.",
+    description: "Recorded promo code entries with rewards — check each code in the game.",
     href: "/anime-rangers-x/codes",
   },
   {
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "How often is the tier list updated?",
     answer:
-      "We update our tier lists within 24 hours of every balance patch or new unit release. The Re:Rangers restructure brought major changes — all rankings reflect the current patch.",
+      "Tier lists are revised after balance patches and new unit releases; each page shows its last updated date. The Re:Rangers restructure brought major changes to unit rankings.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function AnimeRangersXHubPage() {
   return (
     <ContentLayout
       title="Anime Rangers X Hub"
-      description="Complete Anime Rangers X hub: working promo codes, unit tier list, trait rankings, evolution guide, and team compositions. Updated daily for Re:Rangers X."
+      description="Complete Anime Rangers X hub: recorded promo code entries, unit tier list, trait rankings, evolution guide, and team compositions for Re:Rangers X."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Anime Rangers X", href: "/anime-rangers-x" },

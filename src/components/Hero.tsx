@@ -13,7 +13,7 @@ export default function Hero() {
         Ultimate Roblox Codes, Tier Lists &amp; Gameplay Guides Portal
       </h1>
       <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-[#BAC4D1] lg:text-base">
-        Your index for updated working codes, meta tier rankings, and item values.
+        Your index for recorded promo codes, meta tier rankings, and item value notes.
       </p>
 
       {/* CTA Buttons */}
