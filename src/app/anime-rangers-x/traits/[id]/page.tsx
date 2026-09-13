@@ -31,7 +31,7 @@ export async function generateMetadata({
     alternates: { canonical: `/anime-rangers-x/traits/${id}` },
     openGraph: {
       title: `${trait.name} — Re:Rangers X Trait Guide`,
-      description: `${trait.description}. ${trait.effect}`,
+      description: `${trait.description}. ${trait.effect} View ${trait.name}'s full effect, strengths, weaknesses, and best unit pairings in the Anime Rangers X trait database.`,
       type: "website",
     },
   };
@@ -80,22 +80,15 @@ export default async function TraitDetailPage({
 
   const faqs = [
     {
-      question: `Is ${trait.name} worth using?`,
-      answer:
-        trait.tier === "Mythic" || trait.tier === "Legendary"
-          ? `Yes! ${trait.name} is a ${trait.tier}-Tier trait and one of the best in the game. ${trait.strengths[0]}. If you roll this, equip it immediately on a suitable unit.`
-          : trait.tier === "Epic"
-          ? `${trait.name} is a solid Epic-tier trait. ${trait.strengths[0]}. It's a good choice if you don't have a Legendary or Mythic trait available.`
-          : trait.tier === "Rare"
-          ? `${trait.name} is a budget Rare-tier trait. ${trait.strengths[0]}. Use it as a placeholder until you roll an Epic or higher trait.`
-          : `${trait.name} is a Common-tier trait with minimal impact. ${trait.weaknesses[0]}. Replace it as soon as you roll anything better.`,
+      question: `What does the recorded ${trait.tier} tier label for ${trait.name} mean?`,
+      answer: `Within this project's dataset, ${trait.name} carries a recorded ${trait.tier} tier label that places it in the project's comparison group. ${trait.strengths.length > 0 ? `The dataset's recorded strengths list highlights: ${trait.strengths[0]}.` : ""} This label is an editorial reference only — it does not establish combat performance or a required loadout. Use the in-game description and current patch information to decide how the trait fits your team.`,
     },
     {
-      question: `What units work best with ${trait.name}?`,
+      question: `Which units does this dataset associate with ${trait.name}?`,
       answer:
         trait.bestOn.length > 0
-          ? `${trait.name} works best on: ${trait.bestOn.join(", ")}. ${trait.strengths[0]}.`
-          : `${trait.name} is a general-purpose trait that works on any unit, but doesn't particularly excel on any specific unit.`,
+          ? `The dataset's recorded bestOn field lists: ${trait.bestOn.join(", ")}. This association is an editorial reference for comparison and navigation — it does not establish an optimal or required pairing. Check current in-game behavior and patch notes before choosing a loadout.`
+          : `This record's bestOn field is currently empty, so the dataset does not associate ${trait.name} with any specific unit. Pairing decisions should rely on the in-game description and current patch information.`,
     },
   ];
 
@@ -133,7 +126,7 @@ export default async function TraitDetailPage({
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <span className="text-xs text-[#768294]">Roll Rate</span>
+            <span className="text-xs text-[#768294]">Recorded Roll Rate</span>
             <p className="mt-1 text-lg font-bold text-[#FF3D00]">{trait.rollRate}</p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
@@ -200,6 +193,27 @@ export default async function TraitDetailPage({
               <span className="text-sm font-semibold text-[#BAC4D1]">{unitName}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading">
+        <h2
+          id="read-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4"
+        >
+          📖 How to read this record
+        </h2>
+        <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+          <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+            This page shows the fields currently stored for {trait.name} in the project dataset. Labels such as tier, roll rate, effect, and bestOn are editorial reference fields for comparison and navigation. They do not by themselves establish combat performance, verified probabilities, or a required loadout — confirm current in-game details and patch information before making decisions.
+          </p>
+          <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+            <li>▸ Recorded tier: {trait.tier}</li>
+            <li>▸ Recorded roll rate: {trait.rollRate} (dataset value, not an independently verified probability)</li>
+            <li>▸ Recorded effect: {trait.effect}</li>
+            {trait.bestOn.length > 0 && <li>▸ Recorded bestOn list: {trait.bestOn.join(", ")}</li>}
+          </ul>
         </div>
       </section>
 

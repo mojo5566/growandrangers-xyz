@@ -57,16 +57,12 @@ export default async function MutationDetailPage({ params }: PageProps) {
     },
     {
       question: `How rare is ${mutation.name}?`,
-      answer: `${mutation.name} has a roll rate of ${mutation.rollRate}. ${mutation.tier === "S" ? "This makes it one of the rarest mutations in the game." : mutation.tier === "C" ? "This is a common roll, making it easy to obtain." : "This is a moderate roll rate — expect several shard rolls to get it."}`,
+      answer: `${mutation.name} has a recorded roll rate of ${mutation.rollRate} in this dataset. ${mutation.tier === "S" ? "This is among the lowest recorded roll-rate values in the dataset." : mutation.tier === "C" ? "This sits at the more frequently recorded end of the dataset's roll-rate range." : "This sits in the middle of the recorded roll-rate range in this dataset."} Roll rates here are recorded comparison values, not independently verified probabilities.`,
     },
-    ...(mutation.bestUse
-      ? [
-          {
-            question: `What is the best use for ${mutation.name}?`,
-            answer: mutation.bestUse,
-          },
-        ]
-      : []),
+    {
+      question: `What fields does the ${mutation.name} record include?`,
+      answer: `The dataset stores a recorded multiplier of ${mutation.multiplier}×, a ${mutation.tier} tier label, a roll-rate value, and${mutation.passives.length > 0 ? ` ${mutation.passives.length} recorded passive entr${mutation.passives.length === 1 ? "y" : "ies"}` : " no passive entries"}${mutation.conditionalBonus ? `, plus a conditional bonus of ${mutation.conditionalBonus.bonusMultiplier}× when ${mutation.conditionalBonus.condition.toLowerCase()}` : ""}${mutation.seasonal ? `, and a seasonal label (${mutation.seasonal})` : ""}. These fields are editorial references for comparison — they do not establish official game rules or outcomes.`,
+    },
   ];
 
   return (
@@ -106,7 +102,7 @@ export default async function MutationDetailPage({ params }: PageProps) {
             </p>
           </div>
           <div className="rounded-xl border border-[#252936] bg-[#14161D] p-4">
-            <span className="text-xs text-[#768294]">Roll Rate</span>
+            <span className="text-xs text-[#768294]">Recorded Roll Rate</span>
             <p className="mt-1 text-lg font-bold text-white">{mutation.rollRate}</p>
           </div>
           {mutation.seasonal && (
@@ -143,6 +139,23 @@ export default async function MutationDetailPage({ params }: PageProps) {
         </section>
       )}
 
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+        <h2 id="read-heading" className="font-heading text-[20px] font-semibold text-white mb-3">
+          📖 How to read this record
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+          This page shows the fields currently stored for {mutation.name} in the project dataset. Labels such as tier, multiplier, roll rate, and passives are editorial reference fields for comparison and navigation. They do not by themselves establish official game rules, verified probabilities, or guaranteed outcomes — confirm current in-game details through official information before making decisions.
+        </p>
+        <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+          <li>▸ Recorded multiplier: {mutation.multiplier}×{mutation.conditionalBonus ? ` (${mutation.conditionalBonus.bonusMultiplier}× when ${mutation.conditionalBonus.condition.toLowerCase()})` : ""}</li>
+          <li>▸ Recorded tier: {mutation.tier}</li>
+          <li>▸ Recorded roll rate: {mutation.rollRate} (dataset value, not an independently verified probability)</li>
+          {mutation.passives.length > 0 && <li>▸ Recorded passives: {mutation.passives.join("; ")}</li>}
+          {mutation.seasonal && <li>▸ Recorded seasonal label: {mutation.seasonal}</li>}
+        </ul>
+      </section>
+
       {/* Strengths & Weaknesses */}
       <div className="grid gap-4 md:grid-cols-2">
         <section aria-labelledby="strengths-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
@@ -172,16 +185,6 @@ export default async function MutationDetailPage({ params }: PageProps) {
           </ul>
         </section>
       </div>
-
-      {/* Best Use */}
-      {mutation.bestUse && (
-        <section aria-labelledby="bestuse-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
-          <h2 id="bestuse-heading" className="font-heading text-[20px] font-semibold text-white mb-3">
-            🎯 Best Use
-          </h2>
-          <p className="text-sm text-[#BAC4D1] leading-relaxed">{mutation.bestUse}</p>
-        </section>
-      )}
 
       {/* Related Guides */}
       <RelatedContent

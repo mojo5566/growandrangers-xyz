@@ -57,13 +57,13 @@ export default async function PetDetailPage({ params }: PageProps) {
     },
     {
       question: `How do I get ${pet.name}?`,
-      answer: `${pet.name} can be obtained from ${pet.source}.${pet.source === "Seasonal Event" ? " This pet is only available during limited-time seasonal events." : pet.source === "Legendary Egg" ? " Legendary Eggs cost 10,000 Coins each and have the highest drop rates for S-Tier pets." : pet.source === "Rare Egg" ? " Rare Eggs cost 2,000 Coins each." : " Basic Eggs cost 500 Coins each."}`,
+      answer: `${pet.name} is recorded in this dataset as obtainable from ${pet.source}.${pet.source === "Seasonal Event" ? " This source label indicates limited-time seasonal availability." : pet.source === "Legendary Egg" ? " Legendary Eggs are recorded in this dataset at 10,000 Coins each." : pet.source === "Rare Egg" ? " Rare Eggs are recorded in this dataset at 2,000 Coins each." : " Basic Eggs are recorded in this dataset at 500 Coins each."}`,
     },
     ...(pet.tier === "S" || pet.tier === "A"
       ? [
           {
-            question: `Is ${pet.name} worth investing in?`,
-            answer: `Yes. As a ${pet.tier}-Tier pet, ${pet.name} is among the best in the game. ${pet.description}`,
+            question: `What does the recorded ${pet.tier}-Tier label for ${pet.name} mean?`,
+            answer: `Within this project's dataset, ${pet.name} carries a recorded ${pet.tier}-Tier label based on its recorded multiplier and ability fields. The label is an editorial reference for comparison and navigation only. It does not establish in-game performance, value, or outcomes — confirm current pet behavior in the game or official announcements.`,
           },
         ]
       : []),
@@ -122,6 +122,22 @@ export default async function PetDetailPage({ params }: PageProps) {
           📝 About {pet.name}
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">{pet.description}</p>
+      </section>
+
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+        <h2 id="read-heading" className="font-heading text-[20px] font-semibold text-white mb-3">
+          📖 How to read this record
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+          This page shows the fields currently stored for {pet.name} in the project dataset. Labels such as tier, multiplier, source, and abilities are editorial reference fields for comparison and navigation. They do not by themselves establish official game rules, live market conditions, or guaranteed outcomes — confirm current in-game details through official information before making decisions.
+        </p>
+        <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+          <li>▸ Recorded multiplier: {pet.multiplier}×{pet.seasonalBonus ? ` (${pet.seasonalBonus.bonusMultiplier}× during ${pet.seasonalBonus.season})` : ""}</li>
+          <li>▸ Recorded tier: {pet.tier}</li>
+          <li>▸ Recorded source: {pet.source}</li>
+          {pet.abilities.length > 0 && <li>▸ Recorded abilities: {pet.abilities.join("; ")}</li>}
+        </ul>
       </section>
 
       {/* Strengths & Weaknesses */}

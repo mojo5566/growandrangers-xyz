@@ -62,33 +62,26 @@ export default async function EventDetailPage({ params }: PageProps) {
   const faqs = [
     {
       question: `When did ${event.title} run?`,
-      answer: `${event.title} ran from ${event.startDate} to ${event.endDate}. It is currently ${event.status.toLowerCase()} and classified as a ${event.type} event.`,
+      answer: `The dataset records ${event.title} with a start date of ${event.startDate} and an end date of ${event.endDate}, with a recorded status of ${event.status.toLowerCase()} and an event type of ${event.type}. These are recorded project references — dates and availability can change in the game, so check the in-game event panel for live details.`,
     },
     {
-      question: `What were the rewards for ${event.title}?`,
-      answer: `${event.title} offered ${event.rewards.length} rewards: ${event.rewards
+      question: `What rewards are recorded for ${event.title}?`,
+      answer: `The dataset records ${event.rewards.length} rewards for ${event.title}, including ${event.rewards
         .slice(0, 3)
-        .join("; ")}${event.rewards.length > 3 ? "; and more." : "."} See the full rewards list above for details.`,
+        .join("; ")}${event.rewards.length > 3 ? "; and more." : "."} The full recorded rewards list is shown above. Recorded rewards are reference fields and do not establish guaranteed outcomes.`,
     },
     {
       question: `Is ${event.title} still active?`,
       answer:
         event.status === "Active"
-          ? `Yes — ${event.title} is currently active until ${event.endDate}. Participate now to claim all rewards before the event ends.`
+          ? `The dataset records this event's status as Active, with an end date of ${event.endDate}. A recorded status may not reflect live availability for every player — check the in-game event panel and current version information to confirm whether the event is still running and what it currently requires.`
           : event.status === "Upcoming"
-          ? `Not yet — ${event.title} is scheduled to start on ${event.startDate}. Mark your calendar so you don't miss the launch.`
-          : `No — ${event.title} ended on ${event.endDate}. Its rewards are no longer obtainable, except for items that have returned in subsequent events.`,
+          ? `The dataset records a scheduled start date of ${event.startDate}. Recorded schedules can change, so check the in-game event panel and official announcements for the live schedule.`
+          : `The dataset records this event as Ended on ${event.endDate}. The recorded rewards are historical reference fields; whether specific items return in later events is not established by this page.`,
     },
     {
       question: `Will ${event.title} return in the future?`,
-      answer:
-        event.type === "Season"
-          ? `Yes — seasonal events typically return annually. ${event.title} follows the ${event.startDate.split(" ")[0] === "December" || event.startDate.split(" ")[0] === "February" ? "Winter" : event.startDate.split(" ")[0] === "September" || event.startDate.split(" ")[0] === "November" ? "Autumn" : event.startDate.split(" ")[0] === "June" || event.startDate.split(" ")[0] === "August" ? "Summer" : "Spring"} seasonal cycle and is expected to return next year with similar rewards but new cosmetics.`
-          : event.type === "Limited"
-          ? `Possibly — limited-time events like ${event.title} sometimes return by popular demand, but there's no guarantee. If it returns, it will likely have new rewards alongside classics.`
-          : event.type === "Admin Abuse"
-          ? `No — admin abuse incidents are one-time events. We document them transparently for community reference, but the incident itself is closed.`
-          : `${event.type} events like ${event.title} may or may not return. Check the Upcoming Events page for any announcement of a similar event.`,
+      answer: `This dataset does not record any future return schedule for ${event.title}. Whether a ${event.type.toLowerCase()} event returns is decided in the game, so check the in-game event panel, the game's official announcements, and current patch notes for any news. This page only records the event fields shown above.`,
     },
   ];
 
@@ -166,6 +159,28 @@ export default async function EventDetailPage({ params }: PageProps) {
                 <span className="leading-relaxed">{reward}</span>
               </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* How to read this event record */}
+      <section aria-labelledby="read-heading">
+        <h2
+          id="read-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4"
+        >
+          📖 How to read this event record
+        </h2>
+        <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+          <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+            This page records the event fields currently stored for {event.title} in the project dataset. The status, dates, rewards, and description shown here are recorded project references and may not represent live availability for every player. The listed fields do not by themselves establish official rules, live event status, drop probabilities, or guaranteed rewards — check the in-game event panel and current version information for live requirements and availability.
+          </p>
+          <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+            <li>▸ Recorded type: {event.type}</li>
+            <li>▸ Recorded status: {event.status}</li>
+            <li>▸ Recorded start date: {event.startDate}</li>
+            <li>▸ Recorded end date: {event.endDate}</li>
+            <li>▸ Recorded rewards: {event.rewards.length} entries</li>
           </ul>
         </div>
       </section>

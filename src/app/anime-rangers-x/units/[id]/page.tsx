@@ -33,7 +33,7 @@ export async function generateMetadata({
     alternates: { canonical: `/anime-rangers-x/units/${id}` },
     openGraph: {
       title: `${unit.name} — Re:Rangers X Unit Guide`,
-      description: unit.description,
+      description: `${unit.description} View ${unit.name}'s stats, abilities, best traits, and evolution cost in the Anime Rangers X unit database.`,
       type: "website",
     },
   };
@@ -87,31 +87,30 @@ export default async function UnitDetailPage({
 
   const faqs = [
     {
-      question: `Is ${unit.name} worth investing in?`,
+      question: `What does the recorded ${unit.tier}-Tier label for ${unit.name} mean?`,
       answer:
         unit.tier === "S" || unit.tier === "A"
-          ? `Yes! ${unit.name} is a ${unit.tier}-Tier unit and one of the best ${unit.role}s in the game. ${unit.strengths[0]}. Invest your Evolution Stones and Awakening Cores confidently.`
+          ? `Within this project's dataset, ${unit.name} carries a recorded ${unit.tier}-Tier label in its ${unit.role} comparison group. ${unit.strengths.length > 0 ? `The dataset's recorded strengths list highlights: ${unit.strengths[0]}.` : ""} This label is an editorial reference only — it does not establish combat performance, summon value, or outcomes. Decide how to spend Evolution Stones or Awakening Cores based on the in-game description and current patch information.`
           : unit.tier === "B"
-          ? `${unit.name} is a solid B-Tier ${unit.role}. ${unit.strengths[0]}. It's worth investing if you don't have a higher-tier ${unit.role}, but save your best resources for A/S-Tier units.`
-          : `${unit.name} is a C-Tier starter unit. ${unit.weaknesses[0]}. Do not invest Evolution Stones or Awakening Cores — save them for Rare or higher units.`,
+          ? `Within this project's dataset, ${unit.name} carries a recorded B-Tier label, placing it mid-group in the ${unit.role} comparison. ${unit.strengths.length > 0 ? `The dataset's recorded strengths list highlights: ${unit.strengths[0]}.` : ""} This label is an editorial reference only — it does not establish combat performance or summon value. Confirm current in-game details and patch information before deciding how to use the unit.`
+          : `Within this project's dataset, ${unit.name} carries a recorded C-Tier label in the starter range of the ${unit.role} comparison group. ${unit.weaknesses.length > 0 ? `The dataset's recorded weaknesses list notes: ${unit.weaknesses[0]}.` : ""} This label is an editorial reference only — it does not establish combat performance or summon value. Confirm current in-game details and patch information before deciding how to use the unit.`,
     },
     {
-      question: `What are the best traits for ${unit.name}?`,
+      question: `Which traits does this dataset associate with ${unit.name}?`,
       answer:
-        `The best traits for ${unit.name} are: ${unit.bestTraits.join(", ")}. ` +
-        (unit.bestTraits.length > 0
-          ? `${unit.bestTraits[0]} is the top pick because it synergizes perfectly with ${unit.name}'s ${unit.role} role.`
-          : ""),
+        unit.bestTraits.length > 0
+          ? `The dataset's recorded bestTraits field lists: ${unit.bestTraits.join(", ")}. ${unit.bestTraits[0]} appears first in that recorded list. These associations are editorial references for comparison and navigation — they do not establish an optimal or required loadout. Check the in-game trait descriptions and current patch information before choosing traits.`
+          : `This record's bestTraits field is currently empty, so the dataset does not associate ${unit.name} with any specific trait. Trait decisions should rely on the in-game descriptions and current patch information.`,
     },
     {
       question: `How do I get ${unit.name}?`,
       answer:
-        `${unit.name} can be obtained from: ${unit.sources.join(", ")}. ` +
+        `${unit.name} is recorded in this dataset as obtainable from: ${unit.sources.join(", ")}. ` +
         (unit.rarity === "Mythic"
-          ? "As a Mythic unit, the summon rate is very low — save Gems for limited event banners with boosted rates."
+          ? "The Mythic rarity label is a dataset record. This page does not establish current summon rates or banner schedules — check the in-game summon screen and official announcements."
           : unit.rarity === "Legendary"
-          ? "As a Legendary unit, the summon rate is decent — you should be able to pull this within a reasonable number of summons."
-          : "This unit is relatively accessible through standard summoning."),
+          ? "The Legendary rarity label is a dataset record. This page does not establish current summon rates — check the in-game summon screen and official announcements."
+          : "The rarity label is a dataset record. Availability and summon details can change, so check the in-game summon screen and official announcements."),
     },
   ];
 
@@ -222,6 +221,28 @@ export default async function UnitDetailPage({
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading">
+        <h2
+          id="read-heading"
+          className="font-heading text-[20px] font-semibold text-white lg:text-[24px] mb-4"
+        >
+          📖 How to read this record
+        </h2>
+        <div className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+          <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+            This page shows the fields currently stored for {unit.name} in the project dataset. Labels such as tier, rarity, role, ATK, HP, and bestTraits are editorial reference fields for comparison and navigation. They do not by themselves establish combat performance, verified summon rates, or a required loadout — confirm current in-game details and patch information before making decisions.
+          </p>
+          <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+            <li>▸ Recorded tier: {unit.tier}</li>
+            <li>▸ Recorded rarity: {unit.rarity}</li>
+            <li>▸ Recorded role: {unit.role}</li>
+            <li>▸ Recorded ATK / HP: {unit.atk.toLocaleString()} / {unit.hp.toLocaleString()}</li>
+            {unit.bestTraits.length > 0 && <li>▸ Recorded bestTraits list: {unit.bestTraits.join(", ")}</li>}
+          </ul>
         </div>
       </section>
 

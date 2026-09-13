@@ -88,13 +88,13 @@ export default async function SeedDetailPage({ params }: PageProps) {
       answer:
         seed.season === "All"
           ? `${seed.name} is an all-season seed, so you can plant it any time of year without worrying about seasonal restrictions.`
-          : `${seed.name} is a ${seed.season}-season seed. Plant it during ${seed.season} for a +20% seasonal bonus. Switch to all-season seeds outside ${seed.season}.`,
+          : `${seed.name} is a ${seed.season}-season seed, matching the recorded season label. Seasonal behavior can change, so confirm current planting rules in the game.`,
     },
     ...(seed.tier === "S" || seed.tier === "A"
       ? [
           {
-            question: `Is ${seed.name} worth buying?`,
-            answer: `Yes. As a ${seed.tier}-Tier ${seed.rarity} seed, ${seed.name} is among the best in the game. ${seed.description}`,
+            question: `What does the recorded ${seed.tier}-Tier label for ${seed.name} mean?`,
+            answer: `Within this project's dataset, ${seed.name} carries a recorded ${seed.tier}-Tier label on its ${seed.rarity} rarity record, based on the recorded price and growth fields. The label is an editorial reference for comparison and navigation only. It does not establish in-game performance, earnings, or outcomes — confirm current seed behavior in the game or official announcements.`,
           },
         ]
       : []),
@@ -177,6 +177,23 @@ export default async function SeedDetailPage({ params }: PageProps) {
           📝 About {seed.name}
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">{seed.description}</p>
+      </section>
+
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+        <h2 id="read-heading" className="font-heading text-[20px] font-semibold text-white mb-3">
+          📖 How to read this record
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+          This page shows the fields currently stored for {seed.name} in the project dataset. Labels such as tier, rarity, price, growth time, and season are editorial reference fields for comparison and navigation. They do not by themselves establish official game rules, live market conditions, or guaranteed outcomes — confirm current in-game details through official information before making decisions.
+        </p>
+        <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+          <li>▸ Recorded price: {seed.price.toLocaleString()} {seed.currency}</li>
+          <li>▸ Recorded growth time: {seed.growthTime}</li>
+          <li>▸ Recorded season: {seed.season}</li>
+          <li>▸ Recorded tier: {seed.tier}</li>
+          <li>▸ Recorded rarity: {seed.rarity}</li>
+        </ul>
       </section>
 
       {/* Aliases */}

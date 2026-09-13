@@ -63,13 +63,13 @@ export default async function CropDetailPage({ params }: PageProps) {
       answer:
         crop.season === "All"
           ? `${crop.name} is an all-season crop, so you can plant it any time of year without worrying about seasonal restrictions.`
-          : `${crop.name} is a ${crop.season}-season crop. Plant it during ${crop.season} for a +20% seasonal bonus. Switch to all-season crops outside ${crop.season}.`,
+          : `${crop.name} is a ${crop.season}-season crop, matching the recorded season label. Seasonal behavior can change, so confirm current planting rules in the game.`,
     },
     ...(crop.tier === "S" || crop.tier === "A"
       ? [
           {
-            question: `Is ${crop.name} worth investing in?`,
-            answer: `Yes. As a ${crop.tier}-Tier crop, ${crop.name} is among the best in the game. ${crop.description}`,
+            question: `What does the recorded ${crop.tier}-Tier label for ${crop.name} mean?`,
+            answer: `Within this project's dataset, ${crop.name} carries a recorded ${crop.tier}-Tier label based on its recorded coin, growth time, and CPM fields. The label is an editorial reference for comparison and navigation only. It does not establish in-game performance, earnings, or outcomes — confirm current crop behavior in the game or official announcements.`,
           },
         ]
       : []),
@@ -127,6 +127,23 @@ export default async function CropDetailPage({ params }: PageProps) {
           📝 About {crop.name}
         </h2>
         <p className="text-sm text-[#BAC4D1] leading-relaxed">{crop.description}</p>
+      </section>
+
+      {/* How to read this record */}
+      <section aria-labelledby="read-heading" className="rounded-xl border border-[#252936] bg-[#14161D] p-5">
+        <h2 id="read-heading" className="font-heading text-[20px] font-semibold text-white mb-3">
+          📖 How to read this record
+        </h2>
+        <p className="text-sm text-[#BAC4D1] leading-relaxed mb-3">
+          This page shows the fields currently stored for {crop.name} in the project dataset. Labels such as tier, coins, growth time, season, and CPM are editorial reference fields for comparison and navigation. They do not by themselves establish official game rules, live market conditions, or guaranteed outcomes — confirm current in-game details through official information before making decisions.
+        </p>
+        <ul className="space-y-1.5 text-sm text-[#BAC4D1]">
+          <li>▸ Recorded coins per harvest: {crop.coins} 🪙</li>
+          <li>▸ Recorded growth time: {crop.growthTime}</li>
+          <li>▸ Recorded season: {crop.season}</li>
+          <li>▸ Recorded tier: {crop.tier}</li>
+          <li>▸ Recorded CPM: {crop.coinsPerMinute} coins per minute</li>
+        </ul>
       </section>
 
       {/* Best Mutations for This Crop */}
